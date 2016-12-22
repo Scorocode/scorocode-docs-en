@@ -1,0 +1,130 @@
+////
+/// Copyright (c) 2016 Martin Donath <martin.donath@squidfunk.com>
+///
+/// Permission is hereby granted, free of charge, to any person obtaining a
+/// copy of this software and associated documentation files (the "Software"),
+/// to deal in the Software without restriction, including without limitation
+/// the rights to use, copy, modify, merge, publish, distribute, sublicense,
+/// and/or sell copies of the Software, and to permit persons to whom the
+/// Software is furnished to do so, subject to the following conditions:
+///
+/// The above copyright notice and this permission notice shall be included in
+/// all copies or substantial portions of the Software.
+///
+/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+/// FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL
+/// THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+/// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+/// DEALINGS
+////
+
+// ----------------------------------------------------------------------------
+// Rules
+// ----------------------------------------------------------------------------
+
+// Source container
+.md-source {
+  display: block;
+  transition: opacity 0.25s;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  white-space: nowrap;
+
+  // Hovered source information
+  &:hover {
+    opacity: 0.7;
+  }
+
+  // Necessary for vertical alignment
+  &::before {
+    display: inline-block;
+    height: 4.8rem;
+    content: "";
+    vertical-align: middle;
+  }
+
+  // Repository is hosted on platform
+  &--bitbucket,
+  &--github,
+  &--gitlab {
+
+    // Platform icon
+    &::before {
+      width: 4.8rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: $md-icon-size $md-icon-size;
+    }
+
+    // Adjust repository information for platform icon
+    .md-source__repository {
+      margin-left: -4.4rem;
+      padding-left: 4.0rem;
+    }
+  }
+
+  // Code is hosted on BitBucket
+  &--bitbucket::before {
+    background-image: url("../images/icons/bitbucket-white.svg");
+  }
+
+  // Code is hosted on GitHub
+  &--github::before {
+    background-image: url("../images/icons/github-white.svg");
+  }
+
+  // Code is hosted on GitLab
+  &--gitlab::before {
+    background-image: url("../images/icons/gitlab-white.svg");
+  }
+
+  // Repository name
+  &__repository {
+    display: inline-block;
+    max-width: 100%;
+    margin-left: 0.8rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+
+  // Source facts (statistics etc.)
+  &__facts {
+    margin: 0;
+    padding: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    opacity: 0.75;
+    list-style-type: none;
+  }
+
+  // Fact
+  &__fact {
+    float: left;
+    transform: translateY(0%);
+    transition:
+      transform 0.25s cubic-bezier(0.1, 0.7, 0.1, 1.0),
+      opacity   0.25s;
+    opacity: 1;
+
+    // Facts are hidden by default
+    &--hidden {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+
+    // Middle dots before fact
+    &::before {
+      margin: 0 0.2rem;
+      content: "\00B7";
+    }
+
+    // Remove middle dot on first fact
+    &:first-child::before {
+      display: none;
+    }
+  }
+}

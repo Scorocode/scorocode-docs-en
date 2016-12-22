@@ -1,0 +1,72 @@
+site_name: 'Scorocode documentation'
+pages:
+    - 'Scorocode': 
+        - 'General info': 'index.md'
+        - 'Get started': 'main/main1.md'
+        - 'My account': 'main/main2.md'
+        - 'Working with application': 'app/app.md'
+        - 'Application analytics': 'app/app1.md'
+        - 'Application data': 'app/app2.md'
+        - 'Indexes': 'app/app3.md'
+        - 'Triggers': 'app/app4.md'
+        - 'Serverside code': 'app/app5.md'
+        - 'Application settings': 'app/app6.md'
+    - 'HTTP API': 
+        - 'Working with application': 'httpapi/appapi.md'
+        - 'Users': 'httpapi/httpapi1.md'
+        - 'Data': 'httpapi/httpapi2.md'
+        - 'Files': 'httpapi/httpapi3.md'
+        - 'Messages': 'httpapi/httpapi4.md'
+        - 'Scripts': 'httpapi/httpapi5.md'
+        - 'Stats': 'httpapi/httpapi6.md'
+    - 'JavaScript SDK':
+        - 'JavaScript SDK': 'JS/javascript.md'
+        - 'Scorocode': 'JS/Scorocode.md'
+        - 'Scorocode.Object': 'JS/Scorocode.Object.md'
+        - 'Scorocode.Query': 'JS/Scorocode.Query.md'
+        - 'Scorocode.UpdateOps': 'JS/Scorocode.UpdateOps.md'
+        - 'Scorocode.User': 'JS/Scorocode.User.md'
+        - 'Scorocode.Messenger': 'JS/Scorocode.Messenger.md'
+        - 'Scorocode.CloudCode': 'JS/Scorocode.CloudCode.md'
+        - 'Scorocode.WebSocket': 'JS/Scorocode.Websocket.md'
+    - 'SWIFT SDK (iOs, Mac OS)':
+        - 'SWIFT SDK': 'SWIFT/SWIFT.md'
+        - 'SC': 'SWIFT/SC.md'
+        - 'SCValue': 'SWIFT/SCValue.md'
+        - 'SCObject': 'SWIFT/SCObject.md'
+        - 'SCQuery': 'SWIFT/SCQuery.md'
+        - 'SCUpdate': 'SWIFT/SCUpdate.md'
+        - 'SCUser': 'SWIFT/SCUser.md'
+        - 'SCMessage': 'SWIFT/SCMessage.md'
+        - 'SCScript': 'SWIFT/SCScript.md'
+        - 'WebSocket': 'SWIFT/WebSocket.md'
+    - 'Java SDK (Android)':
+        - 'Java SDK': 'Java/Java.md'
+        - 'ScorocodeSDK': 'Java/ScorocodeSDK.md'
+        - 'Document': 'Java/Document.md'
+        - 'Update': 'Java/Update.md'
+        - 'User': 'Java/User.md'
+        - 'Query': 'Java/Query.md'
+        - 'Script': 'Java/Script.md'
+        - 'Message': 'Java/Message.md'
+        - 'WebSocket': 'Java/WebSocket.md'
+    - 'Applications examples':
+        - 'Storehouse (Android)': 'Java/Storehouse.md'
+theme_dir: 'material'
+extra:
+  logo: 'img/logo.png'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  i18n:
+    prev: 'Previous'
+    next: 'Next'
+  palette:
+    primary: 'blue'
+    accent: 'light blue'
+markdown_extensions:
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite(guess_lang=false)
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc(permalink=true)

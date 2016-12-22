@@ -1,0 +1,34 @@
+<header class="md-header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="{{ homepage_url }}" title="{{ site_name }}" class="md-icon md-header-nav__icon md-header-nav__icon--home">
+          layers
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-header-nav__icon md-header-nav__icon--menu" for="drawer">
+          menu
+        </label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          {{ page_title | default(site_name, true) }}
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-header-nav__icon md-header-nav__icon--search" for="search">
+          search
+        </label>
+        {% include "partials/search.html" %}
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          {% if repo_url %}
+            {% include "partials/source.html" %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
