@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      <title>Triggers - Scorocode documentation</title>
+    
+    
+    
+    
+    <meta name="generator" content="mkdocs+mkdocs-material#0.2.1">
+    <script src="../../assets/javascripts/modernizr-dede1352ed.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../../assets/stylesheets/application.css">
+    
+  </head>
+  <body>
+    <input class="md-toggle md-toggle--drawer" type="checkbox" id="drawer">
+    <input class="md-toggle md-toggle--search" type="checkbox" id="search">
+    <label class="md-overlay" for="drawer"></label>
+    <header class="md-header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Scorocode documentation" class="md-icon md-header-nav__icon md-header-nav__icon--home">
+          layers
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-header-nav__icon md-header-nav__icon--menu" for="drawer">
+          menu
+        </label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          Triggers
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-header-nav__icon md-header-nav__icon--search" for="search">
+          search
+        </label>
+        <div class="md-search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form">
+      <input type="text" class="md-search__input" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" id="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap">
+        <div class="md-search-result">
+          <div class="md-search-result__meta">
+            Indexing
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    <div class="md-container">
+      <main class="md-main">
+        <div class="md-main__inner md-grid">
+          
+          
+            <div class="md-sidebar md-sidebar--primary" data-md-sidebar="primary">
+              <div class="md-sidebar__scrollwrap">
+                <div class="md-sidebar__inner">
+                  <nav class="md-nav md-nav--primary">
+  <label class="md-nav__title" for="drawer">Scorocode documentation</label>
+  <ul class="md-nav__list">
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Scorocode
+    </label>
+    <nav class="md-nav" data-md-collapse>
+      <label class="md-nav__title" for="nav-1">
+        Scorocode
+      </label>
+      <ul class="md-nav__list">
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../.." title="General info" class="md-nav__link">
+        General info
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../main/main1/" title="Get started" class="md-nav__link">
+        Get started
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../main/main2/" title="My account" class="md-nav__link">
+        My account
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../app/" title="Working with application" class="md-nav__link">
+        Working with application
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../app1/" title="Application analytics" class="md-nav__link">
+        Application analytics
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../app2/" title="Application data" class="md-nav__link">
+        Application data
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../app3/" title="Indexes" class="md-nav__link">
+        Indexes
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    <input class="md-toggle md-nav__toggle" type="checkbox" id="toc">
+    <label class="md-nav__link md-nav__link--active" for="toc">
+      Triggers
+    </label>
+    <a href="./" title="Triggers" class="md-nav__link md-nav__link--active">
+      Triggers
+    </a>
+    <nav class="md-nav md-nav--secondary">
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list">
+      
+        <li class="md-nav__item">
+  <a href="#pool-object" title="pool Object" class="md-nav__link">
+    pool Object
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-operation-insert" title="Before operation insert:" class="md-nav__link">
+    Before operation insert:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-operation-insert" title="After operation insert:" class="md-nav__link">
+    After operation insert:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#before-operation-remove" title="Before operation remove:" class="md-nav__link">
+    Before operation remove:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-operation-remove" title="After operation remove:" class="md-nav__link">
+    After operation remove:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#before-operation-update" title="Before operation update:" class="md-nav__link">
+    Before operation update:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-operation-update" title="After operation update:" class="md-nav__link">
+    After operation update:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#before-operation-updatebyid" title="Before operation updatebyid:" class="md-nav__link">
+    Before operation updatebyid:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-operation-updatebyid" title="After operation updatebyid:" class="md-nav__link">
+    After operation updatebyid:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datamanager-object" title="DataManager Object" class="md-nav__link">
+    DataManager Object
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datamanagerinsertdata-object" title="DataManager.Insert(data Object)" class="md-nav__link">
+    DataManager.Insert(data Object)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datamanagerremovedata-object" title="DataManager.Remove(data Object)" class="md-nav__link">
+    DataManager.Remove(data Object)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datamanagerupdatedata-object" title="DataManager.Update(data Object)" class="md-nav__link">
+    DataManager.Update(data Object)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datamanagerupdatebyiddata-object" title="DataManager.UpdateById(data Object)" class="md-nav__link">
+    DataManager.UpdateById(data Object)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datamanagerfinddata-object" title="DataManager.Find(data Object)" class="md-nav__link">
+    DataManager.Find(data Object)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datamanagercountdata-object" title="DataManager.Count(data Object)" class="md-nav__link">
+    DataManager.Count(data Object)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datamanagerrunscriptdata-object" title="DataManager.RunScript(data Object)" class="md-nav__link">
+    DataManager.RunScript(data Object)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trigger-examples" title="Trigger examples" class="md-nav__link">
+    Trigger examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="Установка обязательности наличия значения поля." class="md-nav__link">
+    Установка обязательности наличия значения поля.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" title="Установка значения по-умолчанию." class="md-nav__link">
+    Установка значения по-умолчанию.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="Добавление связанного документа другой коллекции." class="md-nav__link">
+    Добавление связанного документа другой коллекции.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="Удаление связанных документов другой коллекции." class="md-nav__link">
+    Удаление связанных документов другой коллекции.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="Вызов серверного скрипта." class="md-nav__link">
+    Вызов серверного скрипта.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../app5/" title="Serverside code" class="md-nav__link">
+        Serverside code
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../app6/" title="Application settings" class="md-nav__link">
+        Application settings
+      </a>
+    
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      HTTP API
+    </label>
+    <nav class="md-nav" data-md-collapse>
+      <label class="md-nav__title" for="nav-2">
+        HTTP API
+      </label>
+      <ul class="md-nav__list">
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../httpapi/appapi/" title="Working with application" class="md-nav__link">
+        Working with application
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../httpapi/httpapi1/" title="Users" class="md-nav__link">
+        Users
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../httpapi/httpapi2/" title="Data" class="md-nav__link">
+        Data
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../httpapi/httpapi3/" title="Files" class="md-nav__link">
+        Files
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../httpapi/httpapi4/" title="Messages" class="md-nav__link">
+        Messages
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../httpapi/httpapi5/" title="Scripts" class="md-nav__link">
+        Scripts
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../httpapi/httpapi6/" title="Stats" class="md-nav__link">
+        Stats
+      </a>
+    
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      JavaScript SDK
+    </label>
+    <nav class="md-nav" data-md-collapse>
+      <label class="md-nav__title" for="nav-3">
+        JavaScript SDK
+      </label>
+      <ul class="md-nav__list">
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/javascript/" title="JavaScript SDK" class="md-nav__link">
+        JavaScript SDK
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/Scorocode/" title="Scorocode" class="md-nav__link">
+        Scorocode
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/Scorocode.Object/" title="Scorocode.Object" class="md-nav__link">
+        Scorocode.Object
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/Scorocode.Query/" title="Scorocode.Query" class="md-nav__link">
+        Scorocode.Query
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/Scorocode.UpdateOps/" title="Scorocode.UpdateOps" class="md-nav__link">
+        Scorocode.UpdateOps
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/Scorocode.User/" title="Scorocode.User" class="md-nav__link">
+        Scorocode.User
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/Scorocode.Messenger/" title="Scorocode.Messenger" class="md-nav__link">
+        Scorocode.Messenger
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/Scorocode.CloudCode/" title="Scorocode.CloudCode" class="md-nav__link">
+        Scorocode.CloudCode
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../JS/Scorocode.Websocket/" title="Scorocode.WebSocket" class="md-nav__link">
+        Scorocode.WebSocket
+      </a>
+    
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      SWIFT SDK (iOs, Mac OS)
+    </label>
+    <nav class="md-nav" data-md-collapse>
+      <label class="md-nav__title" for="nav-4">
+        SWIFT SDK (iOs, Mac OS)
+      </label>
+      <ul class="md-nav__list">
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/SWIFT/" title="SWIFT SDK" class="md-nav__link">
+        SWIFT SDK
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/SC/" title="SC" class="md-nav__link">
+        SC
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/SCValue/" title="SCValue" class="md-nav__link">
+        SCValue
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/SCObject/" title="SCObject" class="md-nav__link">
+        SCObject
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/SCQuery/" title="SCQuery" class="md-nav__link">
+        SCQuery
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/SCUpdate/" title="SCUpdate" class="md-nav__link">
+        SCUpdate
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/SCUser/" title="SCUser" class="md-nav__link">
+        SCUser
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/SCMessage/" title="SCMessage" class="md-nav__link">
+        SCMessage
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/SCScript/" title="SCScript" class="md-nav__link">
+        SCScript
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../SWIFT/WebSocket/" title="WebSocket" class="md-nav__link">
+        WebSocket
+      </a>
+    
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Java SDK (Android)
+    </label>
+    <nav class="md-nav" data-md-collapse>
+      <label class="md-nav__title" for="nav-5">
+        Java SDK (Android)
+      </label>
+      <ul class="md-nav__list">
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../Java/Java/" title="Java SDK" class="md-nav__link">
+        Java SDK
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../Java/ScorocodeSDK/" title="ScorocodeSDK" class="md-nav__link">
+        ScorocodeSDK
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../Java/Document/" title="Document" class="md-nav__link">
+        Document
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../Java/Update/" title="Update" class="md-nav__link">
+        Update
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../Java/User/" title="User" class="md-nav__link">
+        User
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../Java/Query/" title="Query" class="md-nav__link">
+        Query
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../Java/Script/" title="Script" class="md-nav__link">
+        Script
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../Java/Message/" title="Message" class="md-nav__link">
+        Message
+      </a>
+    
+  </li>
+
+          
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../Java/WebSocket/" title="WebSocket" class="md-nav__link">
+        WebSocket
+      </a>
+    
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Applications examples
+    </label>
+    <nav class="md-nav" data-md-collapse>
+      <label class="md-nav__title" for="nav-6">
+        Applications examples
+      </label>
+      <ul class="md-nav__list">
+        
+          
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../../Java/Storehouse/" title="Storehouse (Android)" class="md-nav__link">
+        Storehouse (Android)
+      </a>
+    
+  </li>
+
+          
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+  
+</nav>
+                </div>
+              </div>
+            </div>
+          
+          
+            <div class="md-sidebar md-sidebar--secondary" data-md-sidebar="secondary">
+              <div class="md-sidebar__scrollwrap">
+                <div class="md-sidebar__inner">
+                  <nav class="md-nav md-nav--secondary">
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list">
+      
+        <li class="md-nav__item">
+  <a href="#pool-object" title="pool Object" class="md-nav__link">
+    pool Object
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-operation-insert" title="Before operation insert:" class="md-nav__link">
+    Before operation insert:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-operation-insert" title="After operation insert:" class="md-nav__link">
+    After operation insert:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#before-operation-remove" title="Before operation remove:" class="md-nav__link">
+    Before operation remove:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-operation-remove" title="After operation remove:" class="md-nav__link">
+    After operation remove:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#before-operation-update" title="Before operation update:" class="md-nav__link">
+    Before operation update:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-operation-update" title="After operation update:" class="md-nav__link">
+    After operation update:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#before-operation-updatebyid" title="Before operation updatebyid:" class="md-nav__link">
+    Before operation updatebyid:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-operation-updatebyid" title="After operation updatebyid:" class="md-nav__link">
+    After operation updatebyid:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datamanager-object" title="DataManager Object" class="md-nav__link">
+    DataManager Object
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datamanagerinsertdata-object" title="DataManager.Insert(data Object)" class="md-nav__link">
+    DataManager.Insert(data Object)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datamanagerremovedata-object" title="DataManager.Remove(data Object)" class="md-nav__link">
+    DataManager.Remove(data Object)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datamanagerupdatedata-object" title="DataManager.Update(data Object)" class="md-nav__link">
+    DataManager.Update(data Object)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datamanagerupdatebyiddata-object" title="DataManager.UpdateById(data Object)" class="md-nav__link">
+    DataManager.UpdateById(data Object)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datamanagerfinddata-object" title="DataManager.Find(data Object)" class="md-nav__link">
+    DataManager.Find(data Object)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datamanagercountdata-object" title="DataManager.Count(data Object)" class="md-nav__link">
+    DataManager.Count(data Object)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datamanagerrunscriptdata-object" title="DataManager.RunScript(data Object)" class="md-nav__link">
+    DataManager.RunScript(data Object)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trigger-examples" title="Trigger examples" class="md-nav__link">
+    Trigger examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="Установка обязательности наличия значения поля." class="md-nav__link">
+    Установка обязательности наличия значения поля.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" title="Установка значения по-умолчанию." class="md-nav__link">
+    Установка значения по-умолчанию.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="Добавление связанного документа другой коллекции." class="md-nav__link">
+    Добавление связанного документа другой коллекции.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="Удаление связанных документов другой коллекции." class="md-nav__link">
+    Удаление связанных документов другой коллекции.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="Вызов серверного скрипта." class="md-nav__link">
+    Вызов серверного скрипта.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                </div>
+              </div>
+            </div>
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                <p>On the Triggers tab, you can create descriptions for standard triggers.</p>
+<p><img alt="Triggers" src="../../img/datatriggers.png" /></p>
+<p>Triggers are Java scripts that are executed when specific operations are performed with respect to data. All triggers are closed and have a local context. Select a trigger from the presented descriptions and enter its description in the corresponding window. To save the entered description, click Save. To activate the created trigger, enable the Activate parameter. The trigger will not function without this parameter enabled.</p>
+<div class="admonition warning">
+<p class="admonition-title">Trigger execution time</p>
+<p>Maximum execution time for each trigger is 500 milliseconds.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Stack limit</p>
+<p>Maximum depth of the trigger calling stack is 10.
+Example:
+If you execute the "insert" operation for the same collection after the "insert" operation in the trigger, 10 documents will be inserted. After this, the call chain will be suspended.</p>
+</div>
+<p>When executing a trigger, the following objects are created in its context: <code>DataManager</code> and <code>pool</code>.</p>
+<h2 id="pool-object">pool Object<a class="headerlink" href="#pool-object" title="Permanent link">&para;</a></h2>
+<p>Object <code>pool</code> contains the following data:</p>
+<h3 id="before-operation-insert">Before operation <code>insert</code>:<a class="headerlink" href="#before-operation-insert" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>{
+    doc : {}, // document with field_name:value pairs
+}
+</pre></div>
+
+
+<h3 id="after-operation-insert">After operation <code>insert</code>:<a class="headerlink" href="#after-operation-insert" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>{
+    newDoc : {}, // newly created document with field_name:value pairs
+}
+</pre></div>
+
+
+<h3 id="before-operation-remove">Before operation <code>remove</code>:<a class="headerlink" href="#before-operation-remove" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>{
+    query : {}, // search query on the basis of which documents should be removed
+}
+</pre></div>
+
+
+<h3 id="after-operation-remove">After operation <code>remove</code>:<a class="headerlink" href="#after-operation-remove" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>{
+    count : int // number of removed documents
+    docs  : []  // array of deleted document IDs
+</pre></div>
+
+
+<h3 id="before-operation-update">Before operation <code>update</code>:<a class="headerlink" href="#before-operation-update" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>{
+    doc   : {}, // document with value update rules
+    query : {}, // search query on the basis of which documents should be updated
+}
+</pre></div>
+
+
+<h3 id="after-operation-update">After operation <code>update</code>:<a class="headerlink" href="#after-operation-update" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>{
+    count : int // number of updated documents
+    docs  : []  // array of updated document IDs
+}
+</pre></div>
+
+
+<h3 id="before-operation-updatebyid">Before operation <code>updatebyid</code>:<a class="headerlink" href="#before-operation-updatebyid" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>{
+    doc         : {}, // document with value update rules
+    query       : {}, // search query {&quot;_id&quot; : }
+}
+</pre></div>
+
+
+<h3 id="after-operation-updatebyid">After operation <code>updatebyid</code>:<a class="headerlink" href="#after-operation-updatebyid" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>{
+    newDoc      : { } // updated document
+}
+</pre></div>
+
+
+<h2 id="datamanager-object">DataManager Object<a class="headerlink" href="#datamanager-object" title="Permanent link">&para;</a></h2>
+<p>The <code>DataManager</code> object contains the following data handling methods:</p>
+<h3 id="datamanagerinsertdata-object">DataManager.Insert(data Object)<a class="headerlink" href="#datamanagerinsertdata-object" title="Permanent link">&para;</a></h3>
+<p>Method for inserting a document into a collection. Parameters:</p>
+<p><code>data Object</code> - object containing the following attributes:</p>
+<div class="codehilite"><pre><span></span>{
+    coll : &quot;&quot;, // collection name, mandatory
+    doc  : {}, // document with field_name:value pairs, optional
+}
+</pre></div>
+
+
+<p>Returned value – <code>Object</code>:</p>
+<p><em>Success</em></p>
+<div class="codehilite"><pre><span></span>{
+    error  : false
+    result : {} // created document
+}
+</pre></div>
+
+
+<p><em>Error</em></p>
+<div class="codehilite"><pre><span></span>{
+    error   : true,
+    errCode : 4XX/5XX, // Error code
+    errMsg  : &quot;Error text&quot;
+}
+</pre></div>
+
+
+<h3 id="datamanagerremovedata-object">DataManager.Remove(data Object)<a class="headerlink" href="#datamanagerremovedata-object" title="Permanent link">&para;</a></h3>
+<p>Method for removing documents from collection. Parameters:</p>
+<p><code>data Object</code> - object containing the following attributes:</p>
+<div class="codehilite"><pre><span></span>{
+    coll  : &quot;&quot;, // collection name, mandatory
+    query : {}, // query with field_name/operator:value pairs, optional
+    limit : int // limit for the number of documents to be removed, optional,
+                // if not specified, the first 1,000 documents will be removed
+}
+</pre></div>
+
+
+<p>Returned value – <code>Object</code>:</p>
+<p><em>Success</em></p>
+<div class="codehilite"><pre><span></span>{
+    error  : false
+    result : {
+        count : int, // number of removed documents
+        docs  : []  // array of removed document IDs
+    }
+}
+</pre></div>
+
+
+<p><em>Error</em></p>
+<div class="codehilite"><pre><span></span>{
+    error   : true,
+    errCode : 4XX/5XX, // Error code
+    errMsg  : &quot;Error text&quot;
+}
+</pre></div>
+
+
+<h3 id="datamanagerupdatedata-object">DataManager.Update(data Object)<a class="headerlink" href="#datamanagerupdatedata-object" title="Permanent link">&para;</a></h3>
+<p>Method for updating documents in a collection. Parameters:</p>
+<p><code>data Object</code> - object containing the following attributes:</p>
+<div class="codehilite"><pre><span></span>{
+    coll  : &quot;&quot;, // collection name, mandatory
+    query : {}, // query with field_name/operator:value pairs, optional
+    doc   : {}, // document with field_name:value pairs, mandatory
+    limit : int // limit for the number of documents to be updated, optional,
+                // if not specified, the first 1,000 documents will be updated
+}
+</pre></div>
+
+
+<p>Returned value – <code>Object</code>:</p>
+<p><em>Success</em></p>
+<div class="codehilite"><pre><span></span>{
+    error  : false
+    result : {
+        count : int, // number of removed documents
+        docs  : []  // array of updated document IDs
+    }
+}
+</pre></div>
+
+
+<p><em>Error</em></p>
+<div class="codehilite"><pre><span></span>{
+    error   : true,
+    errCode : 4XX/5XX, // Error code
+    errMsg  : &quot;Error text&quot;
+}
+</pre></div>
+
+
+<h3 id="datamanagerupdatebyiddata-object">DataManager.UpdateById(data Object)<a class="headerlink" href="#datamanagerupdatebyiddata-object" title="Permanent link">&para;</a></h3>
+<p>Method for updating one document in a collection which is identified by its ID. Parameters:</p>
+<p><code>data Object</code> - object containing the following attributes:</p>
+<div class="codehilite"><pre><span></span>{
+    coll  : &quot;&quot;, // collection name, mandatory
+    query : {}, // query in the following format: &quot;_id&quot; : &quot;&lt;document identifier&gt;&quot;, mandatory
+    doc   : {}, // document with field_name:value pairs, mandatory
+}
+</pre></div>
+
+
+<p>Возвращаемое значение - <code>Object</code>:</p>
+<p><em>Success</em></p>
+<div class="codehilite"><pre><span></span>{
+    error  : false
+    result : {} // updated document
+}
+</pre></div>
+
+
+<p><em>Error</em></p>
+<div class="codehilite"><pre><span></span>{
+    error   : true,
+    errCode : 4XX/5XX, // Error code
+    errMsg  : &quot;Error text&quot;
+}
+</pre></div>
+
+
+<h3 id="datamanagerfinddata-object">DataManager.Find(data Object)<a class="headerlink" href="#datamanagerfinddata-object" title="Permanent link">&para;</a></h3>
+<p>Method for requesting a document from a collection. Parameters:</p>
+<p><code>data Object</code> - object containing the following attributes:</p>
+<div class="codehilite"><pre><span></span>{
+    coll   : &quot;&quot;, // collection name, mandatory
+    query  : {}, // query with field_name/operator:value pairs, optional if empty
+                 // then first 100 documents will be returned
+    sort   : {}, // sorting by fields in format field_name:1/-1, optional
+    fields : [], // list of field names that will be returned in each document, optional
+    limit  : int,// limit of the sample size, by default, 50
+    skip   : int,// number of documents to be skipped in the sample
+}
+</pre></div>
+
+
+<p>Returned value – <code>Object</code>:</p>
+<p><em>Success</em></p>
+<div class="codehilite"><pre><span></span>{
+    error  : false
+    result : [] // array of selected documents taking into account the limit
+}
+</pre></div>
+
+
+<p><em>Error</em></p>
+<div class="codehilite"><pre><span></span>{
+    error   : true,
+    errCode : 4XX/5XX, // Error code
+    errMsg  : &quot;Error text&quot;
+}
+</pre></div>
+
+
+<h3 id="datamanagercountdata-object">DataManager.Count(data Object)<a class="headerlink" href="#datamanagercountdata-object" title="Permanent link">&para;</a></h3>
+<p>Method for requesting the number of documents in a collection Parameters:</p>
+<p><code>data Object</code> - object containing the following attributes:</p>
+<div class="codehilite"><pre><span></span>{
+    coll  : &quot;&quot;, // collection name, mandatory
+    query : {}, // query with field_name/operator:value pairs, optional
+}
+</pre></div>
+
+
+<p>Returned value – <code>Object</code>:</p>
+<p><em>Success</em></p>
+<div class="codehilite"><pre><span></span>{
+    error  : false
+    result : int // number of documents
+}
+</pre></div>
+
+
+<p><em>Error</em></p>
+<div class="codehilite"><pre><span></span>{
+    error   : true,
+    errCode : 4XX/5XX, // Error code
+    errMsg  : &quot;Error text&quot;
+}
+</pre></div>
+
+
+<h3 id="datamanagerrunscriptdata-object">DataManager.RunScript(data Object)<a class="headerlink" href="#datamanagerrunscriptdata-object" title="Permanent link">&para;</a></h3>
+<p>A method that runs a server-side script. Parameters:</p>
+<p><code>data Object</code> - object containing the following attributes:</p>
+<div class="codehilite"><pre><span></span>{
+    script   : &quot;&quot;, // script identifier, mandatory
+    pool     : {}, // object with the data that will be passed to the server-side script, optional
+}
+</pre></div>
+
+
+<p>Returned value – <code>Object</code>:</p>
+<p><em>Success</em></p>
+<div class="codehilite"><pre><span></span>{
+    error  : false
+}
+</pre></div>
+
+
+<p><em>Error</em></p>
+<div class="codehilite"><pre><span></span>{
+    error   : true,
+    errCode : 4XX/5XX, // Error code
+    errMsg  : &quot;Error text&quot;
+}
+</pre></div>
+
+
+<h2 id="trigger-examples">Trigger examples<a class="headerlink" href="#trigger-examples" title="Permanent link">&para;</a></h2>
+<h3 id="_1">Установка обязательности наличия значения поля.<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>Перед добавлением документа проверим наличие значения поля "name" и, в случае его отсутствия, прервем операцию добавления документа.</p>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span>   
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>                     
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>                      <span class="c1">// В случае, если значение поля присутствует - продолжим операцию</span>
+    <span class="p">};</span>
+</pre></div>
+
+
+<h3 id="-">Установка значения по-умолчанию.<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
+<p>Перед добавлением документа проверим наличие значения поля "name" и, в случае его отсутствия, установим значение по-умолчанию.</p>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// проверим наличие поля &quot;name&quot; в создаваемом документе</span>
+        <span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;Джон Сноу&quot;</span><span class="p">;</span>    <span class="c1">// в случае отсутствия значения, установим значение по-умолчанию</span>
+    <span class="p">}</span>
+
+<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>                    <span class="c1">// В случае, если значение поля присутствует - продолжим операцию.</span>
+</pre></div>
+
+
+<h3 id="_2">Добавление связанного документа другой коллекции.<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>После добавления документа, создадим документ в другой коллекции со ссылкой на добавленный.</p>
+<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">Insert</span><span class="p">({</span>                           <span class="c1">// выполним операцию добавления документа в коллекцию &quot;stuff&quot;</span>
+        <span class="nx">coll</span> <span class="o">:</span> <span class="s2">&quot;stuff&quot;</span><span class="p">,</span>
+        <span class="nx">doc</span>  <span class="o">:</span> <span class="p">{</span>
+                   <span class="s2">&quot;thing&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">newDoc</span><span class="p">.</span><span class="nx">_id</span>    <span class="c1">// передадим _id созданного документа в поле типа &quot;pointer&quot;</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+</pre></div>
+
+
+<h3 id="_3">Удаление связанных документов другой коллекции.<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>Перед удалением документа, удалим все документы другой коллекции со ссылкой на удаляемый.</p>
+<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">Remove</span><span class="p">({</span>                           <span class="c1">// выполним удаление связанных документов в коллекции &quot;stuff&quot;</span>
+    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;stuff&quot;</span><span class="p">,</span>
+    <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;thing&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">_id</span>                <span class="c1">// передадим _id удаляемого документа</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</pre></div>
+
+
+<h3 id="_4">Вызов серверного скрипта.<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>После добавления документа, запустим скрипт, передав ему новый документ. Скрипт может, например, осуществлять рассылку PUSH-уведомлений.</p>
+<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">RunScript</span><span class="p">({</span>                   <span class="c1">// выполним запуск скрипта с ID 580b386d42d52f1ba275fc24</span>
+    <span class="nx">script</span>  <span class="o">:</span> <span class="s2">&quot;580b386d42d52f1ba275fc24&quot;</span><span class="p">,</span>
+    <span class="nx">pool</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;doc&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">newDoc</span>                <span class="c1">// передадим новый документ</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+              
+              <hr>
+              <small class="md-content__copyright">
+                
+                This document was created with
+                <a href="http://www.mkdocs.org">
+                  MkDocs
+                </a>
+                and the
+                <a href="http://squidfunk.github.io/mkdocs-material/">
+                  Material
+                </a>
+                theme.
+              </small>
+            </article>
+          </div>
+        </div>
+      </main>
+      <footer class="md-footer">
+  <div class="md-footer__inner">
+    
+      <nav class="md-footer-nav md-grid">
+        
+          <a href="../app3/" title="Indexes" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--back md-footer-nav__icon"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Indexes
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../app5/" title="Serverside code" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Serverside code
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--forward md-footer-nav__icon"></i>
+            </div>
+          </a>
+        
+      </nav>
+    
+  </div>
+</footer>
+    </div>
+    <script src="../../assets/javascripts/application.js"></script>
+    <script>
+      /* Configuration for application */
+      var config = {
+        url: {
+          base: "../..",
+        },
+        repo: {
+          url: "",
+          icon: "",
+        },
+        storage: window.sessionStorage,
+      };
+      /* Initialize application */
+      var app = new Application(config);
+      app.initialize();
+    </script>
+    
+  </body>
+</html>
