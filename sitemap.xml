@@ -58,6 +58,12 @@
     </url>
         
     <url>
+     <loc>/app/bots/</loc>
+     <lastmod>2017-02-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/app/app6/</loc>
      <lastmod>2017-02-20</lastmod>
      <changefreq>daily</changefreq>
@@ -162,7 +168,19 @@
     </url>
         
     <url>
+     <loc>/JS/Scorocode.Bot/</loc>
+     <lastmod>2017-02-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/JS/Scorocode.Websocket/</loc>
+     <lastmod>2017-02-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/JS/Scorocode.System/</loc>
      <lastmod>2017-02-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -285,6 +303,36 @@
         
     <url>
      <loc>/Java/WebSocket/</loc>
+     <lastmod>2017-02-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Java/ApplicationInfo/</loc>
+     <lastmod>2017-02-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Java/Bot/</loc>
+     <lastmod>2017-02-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Java/Collections/</loc>
+     <lastmod>2017-02-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Java/Folders/</loc>
+     <lastmod>2017-02-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Java/ScorocodeScript/</loc>
      <lastmod>2017-02-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
