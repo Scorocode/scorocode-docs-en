@@ -20,7 +20,8 @@ When executing a trigger, the following objects are created in its context: `Dat
 
 !!! tip "Returning data when trigger operations are interrupted"
      In case there is a need to return data when a trigger operation was interrupted, one can specify data that needs to be returned in `pool.result`parameter.
-    For exmple, inside a trigger one can create a field validation for a mandatory value before adding a document.
+    For example, inside a trigger one can create a field validation for a mandatory value before adding a document.
+    
     ```js
     if (!pool.doc.hasOwnProperty('name')) { // проверим наличие поля "name" в создаваемом документе
         pool.result = "Необходимо указать имя";
@@ -28,7 +29,8 @@ When executing a trigger, the following objects are created in its context: `Dat
     }; 
     return true;    // В случае, если значение поля присутствует - продолжим операцию
     ```
-    Now when we try to create a docuemnt with an empty field `name` value, the operation will be interrupted and the following data will be returned: 
+    Now when we try to create a document with an empty field value for `name`, the operation will be interrupted and the following data will be returned: 
+    
     ```js
     {
         "errCode": 412,
