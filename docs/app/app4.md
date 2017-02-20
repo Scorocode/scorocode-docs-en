@@ -2,7 +2,7 @@ On the Triggers tab, you can create descriptions for standard triggers.
 
 ![Triggers](../img/datatriggers.png)
 
-Triggers are Java scripts that are executed when specific operations are performed with respect to data. All triggers are closed and have a local context. Select a trigger from the presented descriptions and enter its description in the corresponding window. To save the entered description, click Save. To activate the created trigger, enable the Activate parameter. The trigger will not function without this parameter enabled.
+Triggers are Java scripts that are executed when specific operations are performed with respect to data. All triggers are closed and have a local context. Select a trigger from the presented descriptions below and enter its description in the corresponding window. To save the entered description, click Save. To activate the created trigger, enable the Activate parameter. The trigger will not function without this parameter enabled.
 
 When executing a trigger, the following objects are created in its context: `DataManager` and `pool`.
 
@@ -11,16 +11,16 @@ When executing a trigger, the following objects are created in its context: `Dat
     Maximum execution time for each trigger is 500 milliseconds.
 
 !!! warning "Stack limit"
-    Maximum depth of the trigger calling stack is 10.
+    Maximum depth of triggers calling stack is 10.
     Example:
     If you execute the "insert" operation for the same collection after the "insert" operation in the trigger, 10 documents will be inserted. After this, the call chain will be suspended.
 
-!!! warning "Прерывание/выполнение операций в результате работы триггера"
-    При выполнении триггеров **перед** операциями "insert", "update" и "delete", необходимо в результате выполнять `return true` для продолжения выполнения операциий документа, и `return false` для прерывания выполнения операций. Если триггер не возвращает значения, то по умолчание результат его работы - `false`
+!!! warning "Operations interruption/execution due to a trigger"
+    When running triggers **before** operations "insert", "update" and "delete", one needs to execute `return true` to continue the document operations, and `return false` to interrupt them. The default result for a trigger is `false` if it doesn't return the value. 
 
-!!! tip "Возврат данных при прерывании выполнения операции триггера"
-    В случае, если при прерывании операции триггера вам необходимо вернуть данные - вы можете указать возвращаемые данные в параметре `pool.result`.
-    К примеру, в триггере перед добавлением документа реализуем проверку обязательности наличия поля.
+!!! tip "Returning data when trigger operations are interrupted"
+     In case there is a need to return data when a trigger operation was interrupted, one can specify data that needs to be returned in `pool.result`parameter.
+    For exmple, inside a trigger one can create a field validation for a mandatory value before adding a document.
     ```js
     if (!pool.doc.hasOwnProperty('name')) { // проверим наличие поля "name" в создаваемом документе
         pool.result = "Необходимо указать имя";
@@ -28,7 +28,7 @@ When executing a trigger, the following objects are created in its context: `Dat
     }; 
     return true;    // В случае, если значение поля присутствует - продолжим операцию
     ```
-    Теперь при попытке добавить документ с отсутствующим полем name, операция добавления документа прервется и будут возвращены следующие данные:
+    Now when we try to create a docuemnt with an empty field `name` value, the operation will be interrupted and the following data will be returned: 
     ```js
     {
         "errCode": 412,
