@@ -4,6 +4,9 @@ On the Triggers tab, you can create descriptions for standard triggers.
 
 Triggers are Java scripts that are executed when specific operations are performed with respect to data. All triggers are closed and have a local context. Select a trigger from the presented descriptions and enter its description in the corresponding window. To save the entered description, click Save. To activate the created trigger, enable the Activate parameter. The trigger will not function without this parameter enabled.
 
+When executing a trigger, the following objects are created in its context: `DataManager` and `pool`.
+
+
 !!! warning "Trigger execution time"
     Maximum execution time for each trigger is 500 milliseconds.
 
@@ -12,7 +15,28 @@ Triggers are Java scripts that are executed when specific operations are perform
     Example:
     If you execute the "insert" operation for the same collection after the "insert" operation in the trigger, 10 documents will be inserted. After this, the call chain will be suspended.
 
-When executing a trigger, the following objects are created in its context: `DataManager` and `pool`.
+!!! warning "Прерывание/выполнение операций в результате работы триггера"
+    При выполнении триггеров **перед** операциями "insert", "update" и "delete", необходимо в результате выполнять `return true` для продолжения выполнения операциий документа, и `return false` для прерывания выполнения операций. Если триггер не возвращает значения, то по умолчание результат его работы - `false`
+
+!!! tip "Возврат данных при прерывании выполнения операции триггера"
+    В случае, если при прерывании операции триггера вам необходимо вернуть данные - вы можете указать возвращаемые данные в параметре `pool.result`.
+    К примеру, в триггере перед добавлением документа реализуем проверку обязательности наличия поля.
+    ```js
+    if (!pool.doc.hasOwnProperty('name')) { // проверим наличие поля "name" в создаваемом документе
+        pool.result = "Необходимо указать имя";
+        return false;                     // прервем создание документа в случае отсутствия поля
+    }; 
+    return true;    // В случае, если значение поля присутствует - продолжим операцию
+    ```
+    Теперь при попытке добавить документ с отсутствующим полем name, операция добавления документа прервется и будут возвращены следующие данные:
+    ```js
+    {
+        "errCode": 412,
+        "errMsg": "beforeInsert Trigger result: false",
+        "error": true,
+        "result": "Необходимо указать имя"
+    }
+    ```
 
 ## pool Object
 
@@ -22,7 +46,8 @@ Object `pool` contains the following data:
 
 ```
 {
-    doc : {}, // document with field_name:value pairs
+    coll : "", // collection name
+    doc : {},  // document with field_name:value pairs
 }
 ```
 
@@ -30,7 +55,8 @@ Object `pool` contains the following data:
 
 ```
 {
-    newDoc : {}, // newly created document with field_name:value pairs
+    coll : "",   // collection name
+    newDoc : {}  // newly created document with field_name:value pairs
 }
 ```
 
@@ -38,7 +64,8 @@ Object `pool` contains the following data:
 
 ```
 {
-    query : {}, // search query on the basis of which documents should be removed
+    coll : "",  // collection name
+    query : {}  // search query on the basis of which documents should be removed
 }
 ```
 
@@ -46,7 +73,8 @@ Object `pool` contains the following data:
 
 ```
 {
-    count : int // number of removed documents
+    coll : "",  // collection name
+    count : int, // number of removed documents
     docs  : []  // array of deleted document IDs
 ```
 
@@ -54,6 +82,7 @@ Object `pool` contains the following data:
 
 ```
 {
+    coll : "",  // collection name
     doc   : {}, // document with value update rules
     query : {}, // search query on the basis of which documents should be updated
 }
@@ -63,7 +92,8 @@ Object `pool` contains the following data:
 
 ```
 {
-    count : int // number of updated documents
+    coll : "", // collection name
+    count : int, // number of updated documents
     docs  : []  // array of updated document IDs
 }
 ```

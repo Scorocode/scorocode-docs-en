@@ -38,7 +38,20 @@ To remove documents from a collection, select them in the table using the checkb
 
 ## ACL fields
 
-ACL fields can only contain user identifier values from the users collection and role identifiers from the roles collection up to 10 characters long and an asterisk (*). Using the asterisk specifies that the function is available for all users of the users and roles collections. Use copy/paste to enter user identifiers from the users collection and role identifiers from the roles collection. ACL fields are arrays. The list values should be comma-separated (","), and each value should be enclosed in quotes, for example: ["*","0123456789"].
+ACL fields can only contain user identifier values from the users collection and role identifiers from the roles collection up to 10 characters long and an asterisk (*). 
+
+!!! note "Anonymous access"
+	Using the asterisk specifies that the function is available for all users of the Users and Roles collections as well as unauthenticated (anonymous) users in case if anonymous access is allowed in the application's security settings.
+
+![ACL](../img/acleditor.png)
+
+When working with a widget you can use the filter "Show only selected documents", as well as a text search on the following fields:
+
+* For `roles` tab: "_id", "name".
+* For `users` tab: "_id", "username", "email"
+
+!!! note "Notice"
+     Search is case-sensitive
 
 ## Adding a field
 
