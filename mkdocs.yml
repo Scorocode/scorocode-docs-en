@@ -54,19 +54,23 @@ pages:
         - 'Storehouse (Android)': 'Java/Storehouse.md'
 theme_dir: 'material'
 extra:
-  logo: 'img/logo.png'
+  logo: 'logo.png'
   font:
     text: 'Roboto'
     code: 'Roboto Mono'
-  i18n:
-    prev: 'Previous'
-    next: 'Next'
   palette:
     primary: 'blue'
     accent: 'light blue'
+  social:
+    - type: 'github'
+      link: 'https://github.com/scorocode'
+    - type: 'facebook'
+      link: 'https://www.facebook.com/scorocode'
+    - type: 'linkedin'
+      link: 'https://www.linkedin.com/company/prof-it-group'
 markdown_extensions:
+  - pymdownx.superfences
   - markdown.extensions.admonition
   - markdown.extensions.codehilite(guess_lang=false)
   - markdown.extensions.footnotes
   - markdown.extensions.meta
-  - markdown.extensions.toc(permalink=true)
