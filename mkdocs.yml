@@ -10,6 +10,7 @@ pages:
         - 'Indexes': 'app/app3.md'
         - 'Triggers': 'app/app4.md'
         - 'Serverside code': 'app/app5.md'
+        - 'Telegram bots': 'app/bots.md'
         - 'Application settings': 'app/app6.md'
     - 'HTTP API': 
         - 'Working with application': 'httpapi/appapi.md'
@@ -28,7 +29,9 @@ pages:
         - 'Scorocode.User': 'JS/Scorocode.User.md'
         - 'Scorocode.Messenger': 'JS/Scorocode.Messenger.md'
         - 'Scorocode.CloudCode': 'JS/Scorocode.CloudCode.md'
+        - 'Scorocode.Bot': 'JS/Scorocode.Bot.md'
         - 'Scorocode.WebSocket': 'JS/Scorocode.Websocket.md'
+        - 'Scorocode.System': 'JS/Scorocode.System.md'
     - 'SWIFT SDK (iOs, Mac OS)':
         - 'SWIFT SDK': 'SWIFT/SWIFT.md'
         - 'SC': 'SWIFT/SC.md'
@@ -50,6 +53,11 @@ pages:
         - 'Script': 'Java/Script.md'
         - 'Message': 'Java/Message.md'
         - 'WebSocket': 'Java/WebSocket.md'
+        - 'ApplicationInfo':  'Java/ApplicationInfo.md'
+        - 'Bot':  'Java/Bot.md'
+        - 'Collections':  'Java/Collections.md'
+        - 'Folders':  'Java/Folders.md'
+        - 'ScorocodeScript':  'Java/ScorocodeScript.md'
     - 'Applications examples':
         - 'Storehouse (Android)': 'Java/Storehouse.md'
 theme_dir: 'material'
