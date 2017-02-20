@@ -1032,7 +1032,21 @@
 <h2 id="removing-a-document-from-a-collection">Removing a document from a collection</h2>
 <p>To remove documents from a collection, select them in the table using the checkboxes and click the Delete link. To enter a value for an editable field in the selected document, double-click in its area of the table. Enter one or several comma-separated values.</p>
 <h2 id="acl-fields">ACL fields</h2>
-<p>ACL fields can only contain user identifier values from the users collection and role identifiers from the roles collection up to 10 characters long and an asterisk (<em>). Using the asterisk specifies that the function is available for all users of the users and roles collections. Use copy/paste to enter user identifiers from the users collection and role identifiers from the roles collection. ACL fields are arrays. The list values should be comma-separated (","), and each value should be enclosed in quotes, for example: ["</em>","0123456789"].</p>
+<p>ACL fields can only contain user identifier values from the users collection and role identifiers from the roles collection up to 10 characters long and an asterisk (*). </p>
+<div class="admonition note">
+<p class="admonition-title">Anonymous access</p>
+<p>Using the asterisk specifies that the function is available for all users of the Users and Roles collections as well as unauthenticated (anonymous) users in case if anonymous access is allowed in the application's security settings.</p>
+</div>
+<p><img alt="ACL" src="../../img/acleditor.png" /></p>
+<p>When working with a widget you can use the filter "Show only selected documents", as well as a text search on the following fields:</p>
+<ul>
+<li>For <code>roles</code> tab: "_id", "name".</li>
+<li>For <code>users</code> tab: "_id", "username", "email"</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Notice</p>
+</div>
+<p>Search is case-sensitive</p>
 <h2 id="adding-a-field">Adding a field</h2>
 <p>To add a field to a document, click the Add field link.</p>
 <p><img alt="Data" src="../../img/dataddfield.png" /></p>
