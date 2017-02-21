@@ -16,11 +16,11 @@ When executing a trigger, the following objects are created in its context: `Dat
     If you execute the "insert" operation for the same collection after the "insert" operation in the trigger, 10 documents will be inserted. After this, the call chain will be suspended.
 
 !!! warning "Operations interruption/execution due to a trigger"
-    When running triggers **before** operations "insert", "update" and "delete", one needs to execute `return true` to continue the document operations, and `return false` to interrupt them. The default result for a trigger is `false` if it doesn't return the value. 
+    When running triggers **before** operations "insert", "update" and "delete", you need to execute `return true` to continue the document operations, and `return false` to interrupt them. The default result for a trigger is `false` if it doesn't return the value. 
 
 !!! tip "Returning data when trigger operations are interrupted"
-     In case there is a need to return data when a trigger operation was interrupted, one can specify data that needs to be returned in `pool.result`parameter.
-    For example, inside a trigger one can create a field validation for a mandatory value before adding a document.
+     In case there is a need to return data when a trigger operation was interrupted, you can specify data that needs to be returned in `pool.result`parameter.
+    For example, inside a trigger you can create a field validation for a mandatory value before adding a document.
     
     ```js
     if (!pool.doc.hasOwnProperty('name')) {  // check if pool.doc does not have property "name"
@@ -380,9 +380,9 @@ Returned value – `Object`:
 
 ## Trigger examples
 
-### Установка обязательности наличия значения поля.
+### Setting a field value as mandatory.
 
-Перед добавлением документа проверим наличие значения поля "name" и, в случае его отсутствия, прервем операцию добавления документа.
+Before adding a document you can check whether a value is specified in the "name" field. In case it is not, you can interrupt the operation of adding the document.
 
 ```js
 if (!pool.doc.hasOwnProperty('name')) {   
@@ -392,9 +392,9 @@ if (!pool.doc.hasOwnProperty('name')) {
     };
 ```
 
-### Установка значения по-умолчанию.
+### Setting a default value.
 
-Перед добавлением документа проверим наличие значения поля "name" и, в случае его отсутствия, установим значение по-умолчанию.
+Before adding a document you can check whether a value is specified in the "name" field. In case it is not, you can set the value as a default one.
 
 ```js
 if (!pool.doc.hasOwnProperty('name')) { 
@@ -404,9 +404,9 @@ if (!pool.doc.hasOwnProperty('name')) {
 return true;                    
 ```
 
-### Добавление связанного документа другой коллекции.
+### Creating a document related in a different collection.
 
-После добавления документа, создадим документ в другой коллекции со ссылкой на добавленный.
+After adding a document, you can create another document in a different collection with a link to the added one.
 
 ```js
 DataManager.Insert({                           // create new document in the "stuff" collection
@@ -417,29 +417,29 @@ DataManager.Insert({                           // create new document in the "st
     })
 ```
 
-### Удаление связанных документов другой коллекции.
+### Deleting related documents from a different collection.
 
-Перед удалением документа, удалим все документы другой коллекции со ссылкой на удаляемый.
+Before deleting a document, you can delete all documents from a different collection with a link to the document you want to delete.
 
 ```js
-DataManager.Remove({                           // выполним удаление связанных документов в коллекции "stuff"
+DataManager.Remove({                           //  delete all related documents in the "stuff" collection
     coll  : "stuff",
     query: {
-        "thing": pool.query._id                // передадим _id удаляемого документа
+        "thing": pool.query._id                // pass _id to the document which is about to be deleted
     }
 })
 return true;
 ```
 
-### Вызов серверного скрипта.
+### Running a server-side script from a trigger.
 
-После добавления документа, запустим скрипт, передав ему новый документ. Скрипт может, например, осуществлять рассылку PUSH-уведомлений.
-
+After a document is created, a script can be executed with the new document data. As an example, the script can send PUSH-notifications.
+ 
 ```js
-DataManager.RunScript({                   // выполним запуск скрипта с ID 580b386d42d52f1ba275fc24
+DataManager.RunScript({                   // run a script with the ID 580b386d42d52f1ba275fc24
     script  : "580b386d42d52f1ba275fc24",
     pool: {
-        "doc": pool.newDoc                // передадим новый документ
+        "doc": pool.newDoc                // pass a new document to the script 
     }
 })
 ```
