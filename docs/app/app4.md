@@ -23,11 +23,11 @@ When executing a trigger, the following objects are created in its context: `Dat
     For example, inside a trigger one can create a field validation for a mandatory value before adding a document.
     
     ```js
-    if (!pool.doc.hasOwnProperty('name')) { // проверим наличие поля "name" в создаваемом документе
-        pool.result = "Необходимо указать имя";
-        return false;                     // прервем создание документа в случае отсутствия поля
+    if (!pool.doc.hasOwnProperty('name')) {  // check if pool.doc does not have property "name"
+        pool.result = "You Shall Not Pass";  
+        return false;                        // interrupt document creation
     }; 
-    return true;    // В случае, если значение поля присутствует - продолжим операцию
+    return true;    // else - create the document
     ```
     Now when we try to create a document with an empty field value for `name`, the operation will be interrupted and the following data will be returned: 
     
@@ -36,7 +36,7 @@ When executing a trigger, the following objects are created in its context: `Dat
         "errCode": 412,
         "errMsg": "beforeInsert Trigger result: false",
         "error": true,
-        "result": "Необходимо указать имя"
+        "result": "You Shall Not Pass"
     }
     ```
 
@@ -49,7 +49,7 @@ Object `pool` contains the following data:
 ```
 {
     coll : "", // collection name
-    doc : {},  // document with field_name:value pairs
+    doc : {}   // document with field_name:value pairs
 }
 ```
 
@@ -86,7 +86,7 @@ Object `pool` contains the following data:
 {
     coll : "",  // collection name
     doc   : {}, // document with value update rules
-    query : {}, // search query on the basis of which documents should be updated
+    query : {}  // search query on the basis of which documents should be updated
 }
 ```
 
@@ -104,6 +104,7 @@ Object `pool` contains the following data:
 
 ```
 {
+    coll        : "", // collection name
     doc         : {}, // document with value update rules
     query       : {}, // search query {"_id" : }
 }
@@ -113,6 +114,7 @@ Object `pool` contains the following data:
 
 ```
 {
+    coll        : "", // collection name
     newDoc      : { } // updated document
 }
 ```
@@ -130,7 +132,7 @@ Method for inserting a document into a collection. Parameters:
 ```
 {
     coll : "", // collection name, mandatory
-    doc  : {}, // document with field_name:value pairs, optional
+    doc  : {}  // document with field_name:value pairs, optional
 }
 ```
 
@@ -140,8 +142,8 @@ Returned value – `Object`:
 
 ```
 {
-    error  : false
-    result : {} // created document
+    error  : false,
+    result : {}     // created document
 }
 ```
 
@@ -176,7 +178,7 @@ Returned value – `Object`:
 
 ```
 {
-    error  : false
+    error  : false,
     result : {
         count : int, // number of removed documents
         docs  : []  // array of removed document IDs
@@ -216,7 +218,7 @@ Returned value – `Object`:
 
 ```
 {
-    error  : false
+    error  : false,
     result : {
         count : int, // number of removed documents
         docs  : []  // array of updated document IDs
@@ -243,18 +245,18 @@ Method for updating one document in a collection which is identified by its ID. 
 ```
 {
     coll  : "", // collection name, mandatory
-    query : {}, // query in the following format: "_id" : "<document identifier>", mandatory
-    doc   : {}, // document with field_name:value pairs, mandatory
+    query : {}, // query in the following format: "_id" : "document identifier", mandatory
+    doc   : {}  // document with field_name:value pairs, mandatory
 }
 ```
 
-Возвращаемое значение - `Object`:
+Returned value - `Object`:
 
 *Success*
 
 ```
 {
-    error  : false
+    error  : false,
     result : {} // updated document
 }
 ```
@@ -283,7 +285,7 @@ Method for requesting a document from a collection. Parameters:
     sort   : {}, // sorting by fields in format field_name:1/-1, optional
     fields : [], // list of field names that will be returned in each document, optional
     limit  : int,// limit of the sample size, by default, 50
-    skip   : int,// number of documents to be skipped in the sample
+    skip   : int // number of documents to be skipped in the sample
 }
 
 ```
@@ -294,7 +296,7 @@ Returned value – `Object`:
 
 ```
 {
-    error  : false
+    error  : false,
     result : [] // array of selected documents taking into account the limit
 }
 ```
@@ -318,7 +320,7 @@ Method for requesting the number of documents in a collection Parameters:
 ```
 {
     coll  : "", // collection name, mandatory
-    query : {}, // query with field_name/operator:value pairs, optional
+    query : {}  // query with field_name/operator:value pairs, optional
 }
 ```
 
@@ -328,7 +330,7 @@ Returned value – `Object`:
 
 ```
 {
-    error  : false
+    error  : false,
     result : int // number of documents
 }
 ```
@@ -352,7 +354,7 @@ A method that runs a server-side script. Parameters:
 ```
 {
     script   : "", // script identifier, mandatory
-    pool     : {}, // object with the data that will be passed to the server-side script, optional
+    pool     : {}  // object with the data that will be passed to the server-side script, optional
 }
 ```
 
@@ -384,9 +386,9 @@ Returned value – `Object`:
 
 ```js
 if (!pool.doc.hasOwnProperty('name')) {   
-        return false;                     
+        return false;                     // if name is not specified then document creation will be interrupted
     } else {
-        return true;                      // В случае, если значение поля присутствует - продолжим операцию
+        return true;                      
     };
 ```
 
@@ -395,11 +397,11 @@ if (!pool.doc.hasOwnProperty('name')) {
 Перед добавлением документа проверим наличие значения поля "name" и, в случае его отсутствия, установим значение по-умолчанию.
 
 ```js
-if (!pool.doc.hasOwnProperty('name')) { // проверим наличие поля "name" в создаваемом документе
-        pool.doc.name = "Джон Сноу";    // в случае отсутствия значения, установим значение по-умолчанию
+if (!pool.doc.hasOwnProperty('name')) { 
+        pool.doc.name = "John Snow";    // if not specified, name is now "John Snow" dy default 
     }
 
-return true;                    // В случае, если значение поля присутствует - продолжим операцию.
+return true;                    
 ```
 
 ### Добавление связанного документа другой коллекции.
@@ -407,10 +409,10 @@ return true;                    // В случае, если значение п
 После добавления документа, создадим документ в другой коллекции со ссылкой на добавленный.
 
 ```js
-DataManager.Insert({                           // выполним операцию добавления документа в коллекцию "stuff"
+DataManager.Insert({                           // create new document in the "stuff" collection
         coll : "stuff",
         doc  : {
-                   "thing": pool.newDoc._id    // передадим _id созданного документа в поле типа "pointer"
+                   "thing": pool.newDoc._id    // pass _id value to the new document's field "thing"
         }
     })
 ```
