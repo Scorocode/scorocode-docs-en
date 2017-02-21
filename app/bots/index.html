@@ -271,15 +271,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#telegram" title="Создание бота Telegram" class="md-nav__link">
-    Создание бота Telegram
+  <a href="#telegram-bot-creation" title="Telegram Bot creation" class="md-nav__link">
+    Telegram Bot creation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="Принципы работы" class="md-nav__link">
-    Принципы работы
+  <a href="#main-principles" title="Main principles" class="md-nav__link">
+    Main principles
   </a>
   
 </li>
@@ -911,15 +911,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#telegram" title="Создание бота Telegram" class="md-nav__link">
-    Создание бота Telegram
+  <a href="#telegram-bot-creation" title="Telegram Bot creation" class="md-nav__link">
+    Telegram Bot creation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="Принципы работы" class="md-nav__link">
-    Принципы работы
+  <a href="#main-principles" title="Main principles" class="md-nav__link">
+    Main principles
   </a>
   
 </li>
@@ -946,16 +946,16 @@
                 
                   <h1>Telegram bots</h1>
                 
-                <h2 id="telegram">Создание бота Telegram</h2>
-<p>Прежде чем начинать разработку, в качестве первого шага, бота необходимо зарегистрировать в Telegram и получить его уникальный id. Для этого в Telegram существует специальный бот — <code>@BotFather</code>. Отправьте ему команду <code>/newbot</code> — и бот просит придумать имя новому боту. Единственное ограничение на имя — в конце оно должно оканчиваться на «bot». В случае успеха <code>@BotFather</code> возвращает id бота.</p>
-<p>Затем, в вашем приложении на Scorocode необходимо создать серверный скрипт, который будет привязан к боту и в котором будет происходить обработка событий.</p>
-<p>Третьим шагом, необходимо создать бота в приложении. Для этого предейтите в раздел "Боты" и нажмите на кнопку "Создать бота". В открывшейся форме создания бота задайте слeдующие данные:</p>
+                <h2 id="telegram-bot-creation">Telegram Bot creation</h2>
+<p>Before you start developing your new bot, at first you need to register bot in Telegram and receive his unique identifier. On Telegram, open the <code>@BotFather</code> profile, and start to talk with “him”. Type the command “/newbot”. <code>@BotFather</code> will ask you for a bot name, which is a free text, and a bot username: it always end by “bot”. After that <code>@BotFather</code> will give you new bot id, which looks like <code>321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg</code></p>
+<p>Secondly, you need to create server-side script in your Scorocode application that will be associated with the bot to hande all data processing.</p>
+<p>After that you need to create new Scorocode bot. You can do it in the "Bots" page by pressing "Create new bot" button. This action will show you a form in witch you can specify bot's data:</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Свойства</th>
-<th>Описание</th>
+<th>Parameter</th>
+<th>Properties</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -981,10 +981,10 @@
 </tr>
 </tbody>
 </table>
-<p>Для сохранения бота, нажмите кнопку "сохранить" и ваш бот появится в списке ботов приложения. Вы в любой момент можете отредактировать любые настройки бота, заданные при его создании, нажав на кнопку редактирования бота.  </p>
-<p><img alt="Редактирование бота" src="../../img/botedit.png" /></p>
-<h2 id="_1">Принципы работы</h2>
-<p>При включении бота создается <code>webhook</code> на который приходят данные от <code>Telegram</code>. Эти данные доступны в серверном скрипте в объекте <code>pool</code> при каждом вызове. Полное описание полей доступно в <a href="https://core.telegram.org/bots/api#getting-updates">документации к Telegram Bot API</a></p>
+<p>Press save button to save new bot. At any time you can edit bot's setting by pressing "edit" button.</p>
+<p><img alt="Edit bot" src="../../img/botedit.png" /></p>
+<h2 id="main-principles">Main principles</h2>
+<p>When your bot is activated Scorocode creates the <code>webhook</code> to receive Telegram data. This data is available in your server-side script 'pool' object everytime it receives update from Telegram. See <a href="https://core.telegram.org/bots/api#getting-updates">'getting updates' documentation</a> for a complete <code>Update</code> object description.</p>
 <p>Ответные сообщения от бота передаются при помощи метода .send(data) класса sc.Bot, где data - объект, имеющий следующую структуру:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="err">&#39;method&#39;:</span> <span class="err">&#39;sendMessage&#39;,</span>                            <span class="err">//</span> <span class="err">Telegram</span> <span class="err">Bot</span> <span class="err">API</span> <span class="err">method</span>
