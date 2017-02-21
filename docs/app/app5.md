@@ -41,4 +41,5 @@ Example:
         }
     }
 ```
-   
+ 
+Whenever you need to use module in your script, you can require it like this: `var sc = require('scorocode')`
