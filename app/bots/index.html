@@ -271,8 +271,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#telegram-bot-creation" title="Telegram Bot creation" class="md-nav__link">
-    Telegram Bot creation
+  <a href="#create-a-telegram-bot" title="Create a Telegram Bot" class="md-nav__link">
+    Create a Telegram Bot
   </a>
   
 </li>
@@ -911,8 +911,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#telegram-bot-creation" title="Telegram Bot creation" class="md-nav__link">
-    Telegram Bot creation
+  <a href="#create-a-telegram-bot" title="Create a Telegram Bot" class="md-nav__link">
+    Create a Telegram Bot
   </a>
   
 </li>
@@ -946,10 +946,10 @@
                 
                   <h1>Telegram bots</h1>
                 
-                <h2 id="telegram-bot-creation">Telegram Bot creation</h2>
-<p>Before you start developing your new bot, at first you need to register bot in Telegram and receive his unique identifier. On Telegram, open the <code>@BotFather</code> profile, and start to talk with “him”. Type the command “/newbot”. <code>@BotFather</code> will ask you for a bot name, which is a free text, and a bot username: it always end by “bot”. After that <code>@BotFather</code> will give you new bot id, which looks like <code>321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg</code></p>
-<p>Secondly, you need to create server-side script in your Scorocode application that will be associated with the bot to hande all data processing.</p>
-<p>After that you need to create new Scorocode bot. You can do it in the "Bots" page by pressing "Create new bot" button. This action will show you a form in witch you can specify bot's data:</p>
+                <h2 id="create-a-telegram-bot">Create a Telegram Bot</h2>
+<p>Before you start developing your new bot, at first you need to register it in Telegram and receive its unique identifier. In Telegram, open the <code>@BotFather</code> profile and start to talk with “it”. Type the command “/newbot”. <code>@BotFather</code> will ask you for a bot name, which is a free text, and a bot username. The only restriction for a username is that it should always end by “bot”. If all is done correctly, the <code>@BotFather</code> would give your new bot an ID, which looks like <code>321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg</code></p>
+<p>The next step is to create a server-side script in your Scorocode application. The script will be associated with the bot to hande all data processing.</p>
+<p>After that you need to create a new Scorocode bot. You can do it in the "Bots" page by pressing the "Create a new bot" button. This action will show you a form in witch you can specify bot's data:</p>
 <table>
 <thead>
 <tr>
@@ -967,7 +967,7 @@
 <tr>
 <td>Bot identifier</td>
 <td>Mandatory</td>
-<td>Bot's Telegram id , given by '@BotFather'</td>
+<td>Bot's Telegram ID , given by '@BotFather'</td>
 </tr>
 <tr>
 <td>Script identifier</td>
@@ -981,14 +981,14 @@
 </tr>
 </tbody>
 </table>
-<p>Press save button to save new bot. At any time you can edit bot's setting by pressing "edit" button.</p>
+<p>Press save button to save the new bot. At any time you can edit bot's settings by pressing the "edit" button.</p>
 <p><img alt="Edit bot" src="../../img/botedit.png" /></p>
 <h2 id="main-principles">Main principles</h2>
-<p>When your bot is activated Scorocode creates the <code>webhook</code> to receive Telegram data. This data is available in your server-side script 'pool' object everytime it receives update from Telegram. See <a href="https://core.telegram.org/bots/api#getting-updates">'getting updates' documentation</a> for a complete <code>Update</code> object description.</p>
-<p>Ответные сообщения от бота передаются при помощи метода .send(data) класса sc.Bot, где data - объект, имеющий следующую структуру:</p>
+<p>When your bot is activated, Scorocode creates the <code>webhook</code> to receive Telegram data. The data is available in your server-side script 'pool' object everytime it receives update from Telegram. See <a href="https://core.telegram.org/bots/api#getting-updates">'getting updates' documentation</a> for a complete <code>Update</code> object description.</p>
+<p>Bot's answers are transmitted with the .send(data) method and sc.Bot class, where data is an object with the following structure:</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="err">&#39;method&#39;:</span> <span class="err">&#39;sendMessage&#39;,</span>                            <span class="err">//</span> <span class="err">Telegram</span> <span class="err">Bot</span> <span class="err">API</span> <span class="err">method</span>
-    <span class="err">&#39;method_params&#39;:</span> <span class="err">{</span>                                  <span class="err">//</span> <span class="err">method</span> <span class="err">params</span> <span class="err">to</span> <span class="err">be</span> <span class="err">passed</span>
+    <span class="err">&#39;method_params&#39;:</span> <span class="err">{</span>                                  <span class="err">//</span> <span class="err">method</span> <span class="err">parameters</span> <span class="err">to</span> <span class="err">be</span> <span class="err">passed</span>
       <span class="err">&#39;chat_id&#39;:</span> <span class="err">pool.message.chat.id.toString(),</span>
       <span class="err">&#39;text&#39;:</span> <span class="err">&#39;Hello!&#39;,</span>
       <span class="err">&#39;reply_to_message_id&#39;:</span> <span class="err">pool.message.message_id,</span>
@@ -1015,7 +1015,7 @@
 <span class="kd">var</span> <span class="nx">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Bot</span><span class="p">(</span><span class="s2">&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">querystring</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;querystring&#39;</span><span class="p">);</span>
 
-<span class="c1">// Crate new button for ReplyKeyboardMarkup</span>
+<span class="c1">// Crate a new button for ReplyKeyboardMarkup</span>
 <span class="kd">function</span> <span class="nx">newKeyboardButton</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="nx">request_contact</span><span class="p">,</span> <span class="nx">request_location</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">button</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;text&#39;</span><span class="o">:</span> <span class="nx">text</span>
