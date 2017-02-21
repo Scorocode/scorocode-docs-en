@@ -1,25 +1,25 @@
-## Создание бота Telegram
+## Telegram Bot creation
 
-Прежде чем начинать разработку, в качестве первого шага, бота необходимо зарегистрировать в Telegram и получить его уникальный id. Для этого в Telegram существует специальный бот — `@BotFather`. Отправьте ему команду `/newbot` — и бот просит придумать имя новому боту. Единственное ограничение на имя — в конце оно должно оканчиваться на «bot». В случае успеха `@BotFather` возвращает id бота.
+Before you start developing your new bot, at first you need to register bot in Telegram and receive his unique identifier. On Telegram, open the `@BotFather` profile, and start to talk with “him”. Type the command “/newbot”. `@BotFather` will ask you for a bot name, which is a free text, and a bot username: it always end by “bot”. After that `@BotFather` will give you new bot id, which looks like `321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg`
 
-Затем, в вашем приложении на Scorocode необходимо создать серверный скрипт, который будет привязан к боту и в котором будет происходить обработка событий.
+Secondly, you need to create server-side script in your Scorocode application that will be associated with the bot to hande all data processing.
 
-Третьим шагом, необходимо создать бота в приложении. Для этого предейтите в раздел "Боты" и нажмите на кнопку "Создать бота". В открывшейся форме создания бота задайте слeдующие данные:
+After that you need to create new Scorocode bot. You can do it in the "Bots" page by pressing "Create new bot" button. This action will show you a form in witch you can specify bot's data:
 
-| Параметр      | Свойства | Описание |
+| Parameter      | Properties | Description |
 | ------------- | -------- | -------- |
 | Bot name | Mandatory | Application bot name |
 | Bot identifier | Mandatory | Bot's Telegram id , given by '@BotFather' |
 | Script identifier | Mandatory | Choose script from the list of application server-side scripts |
 | Bot activation flag | Optional, `false` by default | Set the flag to activate your bot |
 
-Для сохранения бота, нажмите кнопку "сохранить" и ваш бот появится в списке ботов приложения. Вы в любой момент можете отредактировать любые настройки бота, заданные при его создании, нажав на кнопку редактирования бота.  
+Press save button to save new bot. At any time you can edit bot's setting by pressing "edit" button.
 
-![Редактирование бота](../img/botedit.png)
+![Edit bot](../img/botedit.png)
 
-## Принципы работы
+## Main principles
 
-При включении бота создается `webhook` на который приходят данные от `Telegram`. Эти данные доступны в серверном скрипте в объекте `pool` при каждом вызове. Полное описание полей доступно в [документации к Telegram Bot API](https://core.telegram.org/bots/api#getting-updates)
+When your bot is activated Scorocode creates the `webhook` to receive Telegram data. This data is available in your server-side script 'pool' object everytime it receives update from Telegram. See ['getting updates' documentation](https://core.telegram.org/bots/api#getting-updates) for a complete `Update` object description.
 
 Ответные сообщения от бота передаются при помощи метода .send(data) класса sc.Bot, где data - объект, имеющий следующую структуру:
 
