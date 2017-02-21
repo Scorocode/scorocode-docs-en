@@ -1284,11 +1284,11 @@ If you execute the "insert" operation for the same collection after the "insert"
 <p class="admonition-title">Returning data when trigger operations are interrupted</p>
 <p>In case there is a need to return data when a trigger operation was interrupted, one can specify data that needs to be returned in <code>pool.result</code>parameter.
 For example, inside a trigger one can create a field validation for a mandatory value before adding a document.</p>
-<p><div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// проверим наличие поля &quot;name&quot; в создаваемом документе</span>
-    <span class="nx">pool</span><span class="p">.</span><span class="nx">result</span> <span class="o">=</span> <span class="s2">&quot;Необходимо указать имя&quot;</span><span class="p">;</span>
-    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>                     <span class="c1">// прервем создание документа в случае отсутствия поля</span>
+<p><div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span>  <span class="c1">// check if pool.doc does not have property &quot;name&quot;</span>
+    <span class="nx">pool</span><span class="p">.</span><span class="nx">result</span> <span class="o">=</span> <span class="s2">&quot;You Shall Not Pass&quot;</span><span class="p">;</span>  
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>                        <span class="c1">// interrupt document creation</span>
 <span class="p">};</span> 
-<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>    <span class="c1">// В случае, если значение поля присутствует - продолжим операцию</span>
+<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>    <span class="c1">// else - create the document</span>
 </pre></div>
 
 Now when we try to create a document with an empty field value for <code>name</code>, the operation will be interrupted and the following data will be returned: </p>
@@ -1296,7 +1296,7 @@ Now when we try to create a document with an empty field value for <code>name</c
     <span class="s2">&quot;errCode&quot;</span><span class="o">:</span> <span class="mi">412</span><span class="p">,</span>
     <span class="s2">&quot;errMsg&quot;</span><span class="o">:</span> <span class="s2">&quot;beforeInsert Trigger result: false&quot;</span><span class="p">,</span>
     <span class="s2">&quot;error&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">&quot;result&quot;</span><span class="o">:</span> <span class="s2">&quot;Необходимо указать имя&quot;</span>
+    <span class="s2">&quot;result&quot;</span><span class="o">:</span> <span class="s2">&quot;You Shall Not Pass&quot;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1307,7 +1307,7 @@ Now when we try to create a document with an empty field value for <code>name</c
 <h3 id="before-operation-insert">Before operation <code>insert</code>:</h3>
 <div class="codehilite"><pre><span></span>{
     coll : &quot;&quot;, // collection name
-    doc : {},  // document with field_name:value pairs
+    doc : {}   // document with field_name:value pairs
 }
 </pre></div>
 
@@ -1340,7 +1340,7 @@ Now when we try to create a document with an empty field value for <code>name</c
 <div class="codehilite"><pre><span></span>{
     coll : &quot;&quot;,  // collection name
     doc   : {}, // document with value update rules
-    query : {}, // search query on the basis of which documents should be updated
+    query : {}  // search query on the basis of which documents should be updated
 }
 </pre></div>
 
@@ -1356,6 +1356,7 @@ Now when we try to create a document with an empty field value for <code>name</c
 
 <h3 id="before-operation-updatebyid">Before operation <code>updatebyid</code>:</h3>
 <div class="codehilite"><pre><span></span>{
+    coll        : &quot;&quot;, // collection name
     doc         : {}, // document with value update rules
     query       : {}, // search query {&quot;_id&quot; : }
 }
@@ -1364,6 +1365,7 @@ Now when we try to create a document with an empty field value for <code>name</c
 
 <h3 id="after-operation-updatebyid">After operation <code>updatebyid</code>:</h3>
 <div class="codehilite"><pre><span></span>{
+    coll        : &quot;&quot;, // collection name
     newDoc      : { } // updated document
 }
 </pre></div>
@@ -1376,7 +1378,7 @@ Now when we try to create a document with an empty field value for <code>name</c
 <p><code>data Object</code> - object containing the following attributes:</p>
 <div class="codehilite"><pre><span></span>{
     coll : &quot;&quot;, // collection name, mandatory
-    doc  : {}, // document with field_name:value pairs, optional
+    doc  : {}  // document with field_name:value pairs, optional
 }
 </pre></div>
 
@@ -1384,8 +1386,8 @@ Now when we try to create a document with an empty field value for <code>name</c
 <p>Returned value – <code>Object</code>:</p>
 <p><em>Success</em></p>
 <div class="codehilite"><pre><span></span>{
-    error  : false
-    result : {} // created document
+    error  : false,
+    result : {}     // created document
 }
 </pre></div>
 
@@ -1414,7 +1416,7 @@ Now when we try to create a document with an empty field value for <code>name</c
 <p>Returned value – <code>Object</code>:</p>
 <p><em>Success</em></p>
 <div class="codehilite"><pre><span></span>{
-    error  : false
+    error  : false,
     result : {
         count : int, // number of removed documents
         docs  : []  // array of removed document IDs
@@ -1448,7 +1450,7 @@ Now when we try to create a document with an empty field value for <code>name</c
 <p>Returned value – <code>Object</code>:</p>
 <p><em>Success</em></p>
 <div class="codehilite"><pre><span></span>{
-    error  : false
+    error  : false,
     result : {
         count : int, // number of removed documents
         docs  : []  // array of updated document IDs
@@ -1471,16 +1473,16 @@ Now when we try to create a document with an empty field value for <code>name</c
 <p><code>data Object</code> - object containing the following attributes:</p>
 <div class="codehilite"><pre><span></span>{
     coll  : &quot;&quot;, // collection name, mandatory
-    query : {}, // query in the following format: &quot;_id&quot; : &quot;&lt;document identifier&gt;&quot;, mandatory
-    doc   : {}, // document with field_name:value pairs, mandatory
+    query : {}, // query in the following format: &quot;_id&quot; : &quot;document identifier&quot;, mandatory
+    doc   : {}  // document with field_name:value pairs, mandatory
 }
 </pre></div>
 
 
-<p>Возвращаемое значение - <code>Object</code>:</p>
+<p>Returned value - <code>Object</code>:</p>
 <p><em>Success</em></p>
 <div class="codehilite"><pre><span></span>{
-    error  : false
+    error  : false,
     result : {} // updated document
 }
 </pre></div>
@@ -1505,7 +1507,7 @@ Now when we try to create a document with an empty field value for <code>name</c
     sort   : {}, // sorting by fields in format field_name:1/-1, optional
     fields : [], // list of field names that will be returned in each document, optional
     limit  : int,// limit of the sample size, by default, 50
-    skip   : int,// number of documents to be skipped in the sample
+    skip   : int // number of documents to be skipped in the sample
 }
 </pre></div>
 
@@ -1513,7 +1515,7 @@ Now when we try to create a document with an empty field value for <code>name</c
 <p>Returned value – <code>Object</code>:</p>
 <p><em>Success</em></p>
 <div class="codehilite"><pre><span></span>{
-    error  : false
+    error  : false,
     result : [] // array of selected documents taking into account the limit
 }
 </pre></div>
@@ -1533,7 +1535,7 @@ Now when we try to create a document with an empty field value for <code>name</c
 <p><code>data Object</code> - object containing the following attributes:</p>
 <div class="codehilite"><pre><span></span>{
     coll  : &quot;&quot;, // collection name, mandatory
-    query : {}, // query with field_name/operator:value pairs, optional
+    query : {}  // query with field_name/operator:value pairs, optional
 }
 </pre></div>
 
@@ -1541,7 +1543,7 @@ Now when we try to create a document with an empty field value for <code>name</c
 <p>Returned value – <code>Object</code>:</p>
 <p><em>Success</em></p>
 <div class="codehilite"><pre><span></span>{
-    error  : false
+    error  : false,
     result : int // number of documents
 }
 </pre></div>
@@ -1561,7 +1563,7 @@ Now when we try to create a document with an empty field value for <code>name</c
 <p><code>data Object</code> - object containing the following attributes:</p>
 <div class="codehilite"><pre><span></span>{
     script   : &quot;&quot;, // script identifier, mandatory
-    pool     : {}, // object with the data that will be passed to the server-side script, optional
+    pool     : {}  // object with the data that will be passed to the server-side script, optional
 }
 </pre></div>
 
@@ -1587,29 +1589,29 @@ Now when we try to create a document with an empty field value for <code>name</c
 <h3 id="_1">Установка обязательности наличия значения поля.</h3>
 <p>Перед добавлением документа проверим наличие значения поля "name" и, в случае его отсутствия, прервем операцию добавления документа.</p>
 <div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span>   
-        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>                     
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>                     <span class="c1">// if name is not specified then document creation will be interrupted</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>                      <span class="c1">// В случае, если значение поля присутствует - продолжим операцию</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>                      
     <span class="p">};</span>
 </pre></div>
 
 
 <h3 id="-">Установка значения по-умолчанию.</h3>
 <p>Перед добавлением документа проверим наличие значения поля "name" и, в случае его отсутствия, установим значение по-умолчанию.</p>
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// проверим наличие поля &quot;name&quot; в создаваемом документе</span>
-        <span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;Джон Сноу&quot;</span><span class="p">;</span>    <span class="c1">// в случае отсутствия значения, установим значение по-умолчанию</span>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span> 
+        <span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;John Snow&quot;</span><span class="p">;</span>    <span class="c1">// if not specified, name is now &quot;John Snow&quot; dy default </span>
     <span class="p">}</span>
 
-<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>                    <span class="c1">// В случае, если значение поля присутствует - продолжим операцию.</span>
+<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>                    
 </pre></div>
 
 
 <h3 id="_2">Добавление связанного документа другой коллекции.</h3>
 <p>После добавления документа, создадим документ в другой коллекции со ссылкой на добавленный.</p>
-<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">Insert</span><span class="p">({</span>                           <span class="c1">// выполним операцию добавления документа в коллекцию &quot;stuff&quot;</span>
+<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">Insert</span><span class="p">({</span>                           <span class="c1">// create new document in the &quot;stuff&quot; collection</span>
         <span class="nx">coll</span> <span class="o">:</span> <span class="s2">&quot;stuff&quot;</span><span class="p">,</span>
         <span class="nx">doc</span>  <span class="o">:</span> <span class="p">{</span>
-                   <span class="s2">&quot;thing&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">newDoc</span><span class="p">.</span><span class="nx">_id</span>    <span class="c1">// передадим _id созданного документа в поле типа &quot;pointer&quot;</span>
+                   <span class="s2">&quot;thing&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">newDoc</span><span class="p">.</span><span class="nx">_id</span>    <span class="c1">// pass _id value to the new document&#39;s field &quot;thing&quot;</span>
         <span class="p">}</span>
     <span class="p">})</span>
 </pre></div>
