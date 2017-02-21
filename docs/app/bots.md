@@ -8,10 +8,10 @@
 
 | Параметр      | Свойства | Описание |
 | ------------- | -------- | -------- |
-| Название бота | Обязательный | Название бота приложения |
-| Идентификатор бота | Обязательный | Telegram id бота, полученный от '@BotFather' |
-| Идентификатор скрипта | Обязательный | Выберите скрипт из списка серверных скриптов приложения |
-| Флаг включения бота | Необязательный, по-умолчанию `false` | Флаг включения бота |
+| Bot name | Mandatory | Application bot name |
+| Bot identifier | Mandatory | Bot's Telegram id , given by '@BotFather' |
+| Script identifier | Mandatory | Choose script from the list of application server-side scripts |
+| Bot activation flag | Optional, `false` by default | Set the flag to activate your bot |
 
 Для сохранения бота, нажмите кнопку "сохранить" и ваш бот появится в списке ботов приложения. Вы в любой момент можете отредактировать любые настройки бота, заданные при его создании, нажав на кнопку редактирования бота.  
 
@@ -25,8 +25,8 @@
 
 ```JSON
 {
-    'method': 'sendMessage',                            // метод Telegram Bot API
-    'method_params': {                                  // параметры для передачи в метод
+    'method': 'sendMessage',                            // Telegram Bot API method
+    'method_params': {                                  // method params to be passed
       'chat_id': pool.message.chat.id.toString(),
       'text': 'Hello!',
       'reply_to_message_id': pool.message.message_id,
@@ -35,20 +35,20 @@
   }
 ```
 
-Полное описание поддерживаемых методов доступно в [документации к Telegram Bot API](https://core.telegram.org/bots/api#available-methods)
+See [Telegram Bot API documentation](https://core.telegram.org/bots/api#available-methods) for a complete list of available methods and their parameters.
 
-!!! Note "Поддерживаемые методы"
-	Поддерживаеются все методы Telegram Bot API 2.3.1, за исключением Telegram Bot Games API
+!!! Note "Supported methods"
+    All `Telegram Bot API` v 2.3.1 methods are supported, except `Telegram Bot Games API` methods.
 
-## Пример серверного скрипта Бота:
+## Bot server-side script example:
 
 ```js
 var sc = require('scorocode');
 
 var client = sc.Init({
-  ApplicationID: "xxx", // <- заменить xxx на ключ appId приложения
-  JavaScriptKey: "xxx", // <- заменить xxx на ключ javascript приложения
-  MasterKey: "xxx" // <- заменить xxx на ключ masterKey приложения
+  ApplicationID: "xxx", // <- replace xxx with your appId key
+  JavaScriptKey: "xxx", // <- replace xxx with your JavaScript key
+  MasterKey: "xxx"      // <- replace xxx with your MasterKey key
 });
 
 var bot = new sc.Bot("321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg");
@@ -71,16 +71,16 @@ function newKeyboardButton(text, request_contact, request_location) {
   return button
 }
 
-// Основная логика
+// Main logic
 
 const sourceMessage = pool.message.text.toLowerCase()
 var request = null
 
-if (sourceMessage === '/start' || sourceMessage === 'привет') {
+if (sourceMessage === '/start' || sourceMessage === 'Hi there') {
 
   var keyBoard = {
     'keyboard': [
-      [ newKeyboardButton('Привет') ],
+      [ newKeyboardButton('Hi there') ],
       [ newKeyboardButton('my phone number', true)],
       [ newKeyboardButton('logo') ]
     ]
@@ -90,7 +90,7 @@ if (sourceMessage === '/start' || sourceMessage === 'привет') {
     'method': 'sendMessage',
     'method_params': {
       'chat_id': pool.message.chat.id.toString(),
-      'text': 'Привет',
+      'text': 'Hello!',
       'reply_to_message_id': pool.message.message_id,
       'reply_markup': keyBoard
     },

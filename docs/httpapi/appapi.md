@@ -477,7 +477,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 -------------------------------------------------------------------------------------
 
-## Получение списка коллекций приложения и их настроек
+## Retrieve list of collections and their settings
 
 **https://api.scorocode.ru/api/v1/app/collections**
 
