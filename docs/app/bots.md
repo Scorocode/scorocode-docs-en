@@ -1,32 +1,32 @@
-## Telegram Bot creation
+## Create a Telegram Bot 
 
-Before you start developing your new bot, at first you need to register bot in Telegram and receive his unique identifier. On Telegram, open the `@BotFather` profile, and start to talk with “him”. Type the command “/newbot”. `@BotFather` will ask you for a bot name, which is a free text, and a bot username: it always end by “bot”. After that `@BotFather` will give you new bot id, which looks like `321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg`
+Before you start developing your new bot, at first you need to register it in Telegram and receive its unique identifier. In Telegram, open the `@BotFather` profile and start to talk with “it”. Type the command “/newbot”. `@BotFather` will ask you for a bot name, which is a free text, and a bot username. The only restriction for a username is that it should always end by “bot”. If all is done correctly, the `@BotFather` would give your new bot an ID, which looks like `321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg`
 
-Secondly, you need to create server-side script in your Scorocode application that will be associated with the bot to hande all data processing.
+The next step is to create a server-side script in your Scorocode application. The script will be associated with the bot to hande all data processing.
 
-After that you need to create new Scorocode bot. You can do it in the "Bots" page by pressing "Create new bot" button. This action will show you a form in witch you can specify bot's data:
+After that you need to create a new Scorocode bot. You can do it in the "Bots" page by pressing the "Create a new bot" button. This action will show you a form in witch you can specify bot's data:
 
 | Parameter      | Properties | Description |
 | ------------- | -------- | -------- |
 | Bot name | Mandatory | Application bot name |
-| Bot identifier | Mandatory | Bot's Telegram id , given by '@BotFather' |
+| Bot identifier | Mandatory | Bot's Telegram ID , given by '@BotFather' |
 | Script identifier | Mandatory | Choose script from the list of application server-side scripts |
 | Bot activation flag | Optional, `false` by default | Set the flag to activate your bot |
 
-Press save button to save new bot. At any time you can edit bot's setting by pressing "edit" button.
+Press save button to save the new bot. At any time you can edit bot's settings by pressing the "edit" button.
 
 ![Edit bot](../img/botedit.png)
 
 ## Main principles
 
-When your bot is activated Scorocode creates the `webhook` to receive Telegram data. This data is available in your server-side script 'pool' object everytime it receives update from Telegram. See ['getting updates' documentation](https://core.telegram.org/bots/api#getting-updates) for a complete `Update` object description.
+When your bot is activated, Scorocode creates the `webhook` to receive Telegram data. The data is available in your server-side script 'pool' object everytime it receives update from Telegram. See ['getting updates' documentation](https://core.telegram.org/bots/api#getting-updates) for a complete `Update` object description.
 
-Ответные сообщения от бота передаются при помощи метода .send(data) класса sc.Bot, где data - объект, имеющий следующую структуру:
+Bot's answers are transmitted with the .send(data) method and sc.Bot class, where data is an object with the following structure:
 
 ```JSON
 {
     'method': 'sendMessage',                            // Telegram Bot API method
-    'method_params': {                                  // method params to be passed
+    'method_params': {                                  // method parameters to be passed
       'chat_id': pool.message.chat.id.toString(),
       'text': 'Hello!',
       'reply_to_message_id': pool.message.message_id,
@@ -54,7 +54,7 @@ var client = sc.Init({
 var bot = new sc.Bot("321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg");
 var querystring = require('querystring');
 
-// Crate new button for ReplyKeyboardMarkup
+// Crate a new button for ReplyKeyboardMarkup
 function newKeyboardButton(text, request_contact, request_location) {
   var button = {
     'text': text
