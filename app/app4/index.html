@@ -388,36 +388,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" title="Установка обязательности наличия значения поля." class="md-nav__link">
-    Установка обязательности наличия значения поля.
+  <a href="#setting-a-field-value-as-mandatory" title="Setting a field value as mandatory." class="md-nav__link">
+    Setting a field value as mandatory.
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#-" title="Установка значения по-умолчанию." class="md-nav__link">
-    Установка значения по-умолчанию.
+  <a href="#setting-a-default-value" title="Setting a default value." class="md-nav__link">
+    Setting a default value.
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" title="Добавление связанного документа другой коллекции." class="md-nav__link">
-    Добавление связанного документа другой коллекции.
+  <a href="#creating-a-document-related-in-a-different-collection" title="Creating a document related in a different collection." class="md-nav__link">
+    Creating a document related in a different collection.
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" title="Удаление связанных документов другой коллекции." class="md-nav__link">
-    Удаление связанных документов другой коллекции.
+  <a href="#deleting-related-documents-from-a-different-collection" title="Deleting related documents from a different collection." class="md-nav__link">
+    Deleting related documents from a different collection.
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="Вызов серверного скрипта." class="md-nav__link">
-    Вызов серверного скрипта.
+  <a href="#running-a-server-side-script-from-a-trigger" title="Running a server-side script from a trigger." class="md-nav__link">
+    Running a server-side script from a trigger.
   </a>
   
 </li>
@@ -1208,36 +1208,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" title="Установка обязательности наличия значения поля." class="md-nav__link">
-    Установка обязательности наличия значения поля.
+  <a href="#setting-a-field-value-as-mandatory" title="Setting a field value as mandatory." class="md-nav__link">
+    Setting a field value as mandatory.
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#-" title="Установка значения по-умолчанию." class="md-nav__link">
-    Установка значения по-умолчанию.
+  <a href="#setting-a-default-value" title="Setting a default value." class="md-nav__link">
+    Setting a default value.
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" title="Добавление связанного документа другой коллекции." class="md-nav__link">
-    Добавление связанного документа другой коллекции.
+  <a href="#creating-a-document-related-in-a-different-collection" title="Creating a document related in a different collection." class="md-nav__link">
+    Creating a document related in a different collection.
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" title="Удаление связанных документов другой коллекции." class="md-nav__link">
-    Удаление связанных документов другой коллекции.
+  <a href="#deleting-related-documents-from-a-different-collection" title="Deleting related documents from a different collection." class="md-nav__link">
+    Deleting related documents from a different collection.
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="Вызов серверного скрипта." class="md-nav__link">
-    Вызов серверного скрипта.
+  <a href="#running-a-server-side-script-from-a-trigger" title="Running a server-side script from a trigger." class="md-nav__link">
+    Running a server-side script from a trigger.
   </a>
   
 </li>
@@ -1278,12 +1278,12 @@ If you execute the "insert" operation for the same collection after the "insert"
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Operations interruption/execution due to a trigger</p>
-<p>When running triggers <strong>before</strong> operations "insert", "update" and "delete", one needs to execute <code>return true</code> to continue the document operations, and <code>return false</code> to interrupt them. The default result for a trigger is <code>false</code> if it doesn't return the value. </p>
+<p>When running triggers <strong>before</strong> operations "insert", "update" and "delete", you need to execute <code>return true</code> to continue the document operations, and <code>return false</code> to interrupt them. The default result for a trigger is <code>false</code> if it doesn't return the value. </p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Returning data when trigger operations are interrupted</p>
-<p>In case there is a need to return data when a trigger operation was interrupted, one can specify data that needs to be returned in <code>pool.result</code>parameter.
-For example, inside a trigger one can create a field validation for a mandatory value before adding a document.</p>
+<p>In case there is a need to return data when a trigger operation was interrupted, you can specify data that needs to be returned in <code>pool.result</code>parameter.
+For example, inside a trigger you can create a field validation for a mandatory value before adding a document.</p>
 <p><div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span>  <span class="c1">// check if pool.doc does not have property &quot;name&quot;</span>
     <span class="nx">pool</span><span class="p">.</span><span class="nx">result</span> <span class="o">=</span> <span class="s2">&quot;You Shall Not Pass&quot;</span><span class="p">;</span>  
     <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>                        <span class="c1">// interrupt document creation</span>
@@ -1586,8 +1586,8 @@ Now when we try to create a document with an empty field value for <code>name</c
 
 
 <h2 id="trigger-examples">Trigger examples</h2>
-<h3 id="_1">Установка обязательности наличия значения поля.</h3>
-<p>Перед добавлением документа проверим наличие значения поля "name" и, в случае его отсутствия, прервем операцию добавления документа.</p>
+<h3 id="setting-a-field-value-as-mandatory">Setting a field value as mandatory.</h3>
+<p>Before adding a document you can check whether a value is specified in the "name" field. In case it is not, you can interrupt the operation of adding the document.</p>
 <div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span>   
         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>                     <span class="c1">// if name is not specified then document creation will be interrupted</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -1596,8 +1596,8 @@ Now when we try to create a document with an empty field value for <code>name</c
 </pre></div>
 
 
-<h3 id="-">Установка значения по-умолчанию.</h3>
-<p>Перед добавлением документа проверим наличие значения поля "name" и, в случае его отсутствия, установим значение по-умолчанию.</p>
+<h3 id="setting-a-default-value">Setting a default value.</h3>
+<p>Before adding a document you can check whether a value is specified in the "name" field. In case it is not, you can set the value as a default one.</p>
 <div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span> 
         <span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;John Snow&quot;</span><span class="p">;</span>    <span class="c1">// if not specified, name is now &quot;John Snow&quot; dy default </span>
     <span class="p">}</span>
@@ -1606,8 +1606,8 @@ Now when we try to create a document with an empty field value for <code>name</c
 </pre></div>
 
 
-<h3 id="_2">Добавление связанного документа другой коллекции.</h3>
-<p>После добавления документа, создадим документ в другой коллекции со ссылкой на добавленный.</p>
+<h3 id="creating-a-document-related-in-a-different-collection">Creating a document related in a different collection.</h3>
+<p>After adding a document, you can create another document in a different collection with a link to the added one.</p>
 <div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">Insert</span><span class="p">({</span>                           <span class="c1">// create new document in the &quot;stuff&quot; collection</span>
         <span class="nx">coll</span> <span class="o">:</span> <span class="s2">&quot;stuff&quot;</span><span class="p">,</span>
         <span class="nx">doc</span>  <span class="o">:</span> <span class="p">{</span>
@@ -1617,24 +1617,24 @@ Now when we try to create a document with an empty field value for <code>name</c
 </pre></div>
 
 
-<h3 id="_3">Удаление связанных документов другой коллекции.</h3>
-<p>Перед удалением документа, удалим все документы другой коллекции со ссылкой на удаляемый.</p>
-<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">Remove</span><span class="p">({</span>                           <span class="c1">// выполним удаление связанных документов в коллекции &quot;stuff&quot;</span>
+<h3 id="deleting-related-documents-from-a-different-collection">Deleting related documents from a different collection.</h3>
+<p>Before deleting a document, you can delete all documents from a different collection with a link to the document you want to delete.</p>
+<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">Remove</span><span class="p">({</span>                           <span class="c1">//  delete all related documents in the &quot;stuff&quot; collection</span>
     <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;stuff&quot;</span><span class="p">,</span>
     <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;thing&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">_id</span>                <span class="c1">// передадим _id удаляемого документа</span>
+        <span class="s2">&quot;thing&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">_id</span>                <span class="c1">// pass _id to the document which is about to be deleted</span>
     <span class="p">}</span>
 <span class="p">})</span>
 <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
 </pre></div>
 
 
-<h3 id="_4">Вызов серверного скрипта.</h3>
-<p>После добавления документа, запустим скрипт, передав ему новый документ. Скрипт может, например, осуществлять рассылку PUSH-уведомлений.</p>
-<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">RunScript</span><span class="p">({</span>                   <span class="c1">// выполним запуск скрипта с ID 580b386d42d52f1ba275fc24</span>
+<h3 id="running-a-server-side-script-from-a-trigger">Running a server-side script from a trigger.</h3>
+<p>After a document is created, a script can be executed with the new document data. As an example, the script can send PUSH-notifications.</p>
+<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">RunScript</span><span class="p">({</span>                   <span class="c1">// run a script with the ID 580b386d42d52f1ba275fc24</span>
     <span class="nx">script</span>  <span class="o">:</span> <span class="s2">&quot;580b386d42d52f1ba275fc24&quot;</span><span class="p">,</span>
     <span class="nx">pool</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;doc&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">newDoc</span>                <span class="c1">// передадим новый документ</span>
+        <span class="s2">&quot;doc&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">newDoc</span>                <span class="c1">// pass a new document to the script </span>
     <span class="p">}</span>
 <span class="p">})</span>
 </pre></div>
