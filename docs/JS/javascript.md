@@ -147,7 +147,7 @@ class App extends Component {
 
         // Authenticating an application user with their email and password
         appUser.login(email, password)
-            // Ivent handler for a successful request run
+            // Event handler for a successful request run
             .then((data)=>{
                 // ОUpdating the result variable by transferring the object in the code line
                 this.setState({loginResult: JSON.stringify(data, null, 2)})
