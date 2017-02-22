@@ -4,11 +4,9 @@
 
 Method: `POST`
 
-Headers:
+Headers: `Content-Type: application/json`
 
-`Content-Type: application/json`
-
-```
+```JSON
 {
     "app"         : "", // application identifier, mandatory
     "cli"         : "", // client key, mandatory
@@ -16,30 +14,912 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb"
+    }' "https://api.scorocode.ru/api/v1/app"
+    ```
+
 **Responses:**
 
 *Success*
 
-```
+!!! success "Success"
+    ```JSON
+    {
+      "app": {
+        "_id": "584e64f8982fd55332741516",
+        "appId": "48f172923acd719b42c73ac3a492cfc8",
+        "name": "HTTPApp",
+        "description": "",
+        "userId": "5745b2123evlfh062612e3f",
+        "serverId": "5745a5e63ef62fs0626ftgeb",
+        "limits": {
+          "rps": 20,
+          "store": 10737418240,
+          "pushValue": 0,
+          "pushUsed": 0,
+          "developers": 1,
+          "ws": 200,
+          "scriptTimeout": 3
+        },
+        "schemas": {
+          "devices": {
+            "id": "584e64f8982fd55332741515",
+            "name": "devices",
+            "useDocsACL": false,
+            "ACL": {
+              "create": [
+                "*"
+              ],
+              "read": [
+                "*"
+              ],
+              "remove": [
+                "*"
+              ],
+              "update": [
+                "*"
+              ]
+            },
+            "triggers": {
+              "afterFind": {
+                "code": "",
+                "isActive": false
+              },
+              "afterInsert": {
+                "code": "",
+                "isActive": false
+              },
+              "afterRemove": {
+                "code": "",
+                "isActive": false
+              },
+              "afterUpdate": {
+                "code": "",
+                "isActive": false
+              },
+              "beforeInsert": {
+                "code": "",
+                "isActive": false
+              },
+              "beforeRemove": {
+                "code": "",
+                "isActive": false
+              },
+              "beforeUpdate": {
+                "code": "",
+                "isActive": false
+              }
+            },
+            "fields": [
+              {
+                "name": "readACL",
+                "type": "ACL",
+                "target": "",
+                "system": true,
+                "readonly": false,
+                "required": false
+              },
+              {
+                "name": "updateACL",
+                "type": "ACL",
+                "target": "",
+                "system": true,
+                "readonly": false,
+                "required": false
+              },
+              {
+                "name": "removeACL",
+                "type": "ACL",
+                "target": "",
+                "system": true,
+                "readonly": false,
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "Date",
+                "target": "",
+                "system": true,
+                "readonly": true,
+                "required": false
+              },
+              {
+                "name": "updatedAt",
+                "type": "Date",
+                "target": "",
+                "system": true,
+                "readonly": true,
+                "required": false
+              },
+              {
+                "name": "userId",
+                "type": "String",
+                "target": "",
+                "system": true,
+                "readonly": false,
+                "required": false
+              },
+              {
+                "name": "deviceId",
+                "type": "String",
+                "target": "",
+                "system": true,
+                "readonly": true,
+                "required": true
+              },
+              {
+                "name": "deviceType",
+                "type": "String",
+                "target": "",
+                "system": true,
+                "readonly": true,
+                "required": true
+              }
+            ],
+            "system": true,
+            "indexes": []
+          },
+          "roles": {
+            "id": "584e64f8982fd55332741513",
+            "name": "roles",
+            "useDocsACL": false,
+            "ACL": {
+              "create": [
+                "*"
+              ],
+              "read": [
+                "*"
+              ],
+              "remove": [
+                "*"
+              ],
+              "update": [
+                "*"
+              ]
+            },
+            "triggers": {
+              "afterFind": {
+                "code": "",
+                "isActive": false
+              },
+              "afterInsert": {
+                "code": "",
+                "isActive": false
+              },
+              "afterRemove": {
+                "code": "",
+                "isActive": false
+              },
+              "afterUpdate": {
+                "code": "",
+                "isActive": false
+              },
+              "beforeInsert": {
+                "code": "",
+                "isActive": false
+              },
+              "beforeRemove": {
+                "code": "",
+                "isActive": false
+              },
+              "beforeUpdate": {
+                "code": "",
+                "isActive": false
+              }
+            },
+            "fields": [
+              {
+                "name": "name",
+                "type": "String",
+                "target": "",
+                "system": true,
+                "readonly": false,
+                "required": true
+              },
+              {
+                "name": "readACL",
+                "type": "ACL",
+                "target": "",
+                "system": true,
+                "readonly": false,
+                "required": false
+              },
+              {
+                "name": "updateACL",
+                "type": "ACL",
+                "target": "",
+                "system": true,
+                "readonly": false,
+                "required": false
+              },
+              {
+                "name": "removeACL",
+                "type": "ACL",
+                "target": "",
+                "system": true,
+                "readonly": false,
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "Date",
+                "target": "",
+                "system": true,
+                "readonly": true,
+                "required": false
+              },
+              {
+                "name": "updatedAt",
+                "type": "Date",
+                "target": "",
+                "system": true,
+                "readonly": true,
+                "required": false
+              }
+            ],
+            "system": true,
+            "indexes": []
+          },
+          "users": {
+            "id": "584e64f8982fd55332741514",
+            "name": "users",
+            "useDocsACL": false,
+            "ACL": {
+              "create": [
+                "*"
+              ],
+              "read": [
+                "*"
+              ],
+              "remove": [
+                "*"
+              ],
+              "update": [
+                "*"
+              ]
+            },
+            "triggers": {
+              "afterFind": {
+                "code": "",
+                "isActive": false
+              },
+              "afterInsert": {
+                "code": "",
+                "isActive": false
+              },
+              "afterRemove": {
+                "code": "",
+                "isActive": false
+              },
+              "afterUpdate": {
+                "code": "",
+                "isActive": false
+              },
+              "beforeInsert": {
+                "code": "",
+                "isActive": false
+              },
+              "beforeRemove": {
+                "code": "",
+                "isActive": false
+              },
+              "beforeUpdate": {
+                "code": "",
+                "isActive": false
+              }
+            },
+            "fields": [
+              {
+                "name": "email",
+                "type": "String",
+                "target": "",
+                "system": true,
+                "readonly": true,
+                "required": true
+              },
+              {
+                "name": "phone",
+                "type": "String",
+                "target": "",
+                "system": true,
+                "readonly": false,
+                "required": false
+              },
+              {
+                "name": "readACL",
+                "type": "ACL",
+                "target": "",
+                "system": true,
+                "readonly": false,
+                "required": false
+              },
+              {
+                "name": "updateACL",
+                "type": "ACL",
+                "target": "",
+                "system": true,
+                "readonly": false,
+                "required": false
+              },
+              {
+                "name": "removeACL",
+                "type": "ACL",
+                "target": "",
+                "system": true,
+                "readonly": false,
+                "required": false
+              },
+              {
+                "name": "createdAt",
+                "type": "Date",
+                "target": "",
+                "system": true,
+                "readonly": true,
+                "required": false
+              },
+              {
+                "name": "updatedAt",
+                "type": "Date",
+                "target": "",
+                "system": true,
+                "readonly": true,
+                "required": false
+              },
+              {
+                "name": "username",
+                "type": "String",
+                "target": "",
+                "system": true,
+                "readonly": false,
+                "required": true
+              },
+              {
+                "name": "password",
+                "type": "Password",
+                "target": "",
+                "system": true,
+                "readonly": false,
+                "required": true
+              },
+              {
+                "name": "emailVerified",
+                "type": "Boolean",
+                "target": "",
+                "system": true,
+                "readonly": true,
+                "required": false
+              },
+              {
+                "name": "roles",
+                "type": "Array",
+                "target": "",
+                "system": true,
+                "readonly": false,
+                "required": false
+              },
+              {
+                "name": "token",
+                "type": "String",
+                "target": "",
+                "system": true,
+                "readonly": true,
+                "required": false
+              }
+            ],
+            "system": true,
+            "indexes": []
+          }
+        },
+        "accessKeys": {
+          "fileKey": "31adc32bac245299cfad0d7b1912bc2a",
+          "masterKey": "ffe86fefg25fbklacsdee8cd4c59644a",
+          "messageKey": "605a1248a2d27424ec43f6bdf435b0a7",
+          "scriptKey": "333efb738b82c3096a3fgdbabd27f702",
+          "websocketKey": "9627612736b1129d2ea9d615fb482a41"
+        },
+        "clientKeys": {
+          "android": "db993776551ed6267fbe256ef0296cb8",
+          "ios": "840ff61458ec11bf411859dbbf46d46a",
+          "javascript": "d6859f41223c9997ff78c6b4vb3a96bb",
+          "winphone": "3fbce82fafba9dccc60036f92b971654"
+        },
+        "readonly": true,
+        "ACLPublic": {
+          "create": false,
+          "read": false,
+          "remove": false,
+          "update": false
+        },
+        "settings": {
+          "emailVerified": false,
+          "sessionTimeout": 72,
+          "androidApiKey": "",
+          "gcmSenderId": "",
+          "mailTemplates": {
+            "forgot": {
+              "subject": "",
+              "body": ""
+            },
+            "reg": {
+              "subject": "",
+              "body": ""
+            }
+          },
+          "smtp": null
+        },
+        "storage": {
+          "user": "",
+          "password": ""
+        },
+        "npm": "{\"dependencies\":{}}",
+        "stringId": "584e64f8982fd55332741516"
+      },
+      "error": false
+    }
+    ```
+
+!!! failure "Error"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
+-------------------------------------------------------------------------------------
+
+## Retrieve list of collections and their settings
+
+**https://api.scorocode.ru/api/v1/app/collections**
+
+Method: `POST`
+
+Headers: `Content-Type: application/json`
+
+```JSON
 {
-  "app": {
-    "_id": "584e64f8982fd55332741516",
-    "appId": "48f172923acd719b42c73ac3a492cfc8",
-    "name": "HTTPApp",
-    "description": "",
-    "userId": "5745b2123evlfh062612e3f",
-    "serverId": "5745a5e63ef62fs0626ftgeb",
-    "limits": {
-      "rps": 20,
-      "store": 10737418240,
-      "pushValue": 0,
-      "pushUsed": 0,
-      "developers": 1,
-      "ws": 200,
-      "scriptTimeout": 3
-    },
-    "schemas": {
-      "devices": {
+    "app"         : "", // application identifier, mandatory
+    "cli"         : "", // client key, mandatory
+    "acc"         : ""  // access key, mandatory, masterKey only
+}
+```
+
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb"
+    }' "https://api.scorocode.ru/api/v1/app/collections"
+    ```
+
+
+!!! success "Success"
+    ```JSON
+    {
+      "collections": {
+        "devices": {
+          "id": "584e64f8982fd55332741515",
+          "name": "devices",
+          "useDocsACL": false,
+          "ACL": {
+            "create": [
+              "*"
+            ],
+            "read": [
+              "*"
+            ],
+            "remove": [
+              "*"
+            ],
+            "update": [
+              "*"
+            ]
+          },
+          "triggers": {
+            "afterFind": {
+              "code": "",
+              "isActive": false
+            },
+            "afterInsert": {
+              "code": "",
+              "isActive": false
+            },
+            "afterRemove": {
+              "code": "",
+              "isActive": false
+            },
+            "afterUpdate": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeInsert": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeRemove": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeUpdate": {
+              "code": "",
+              "isActive": false
+            }
+          },
+          "fields": [
+            {
+              "name": "readACL",
+              "type": "ACL",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "updateACL",
+              "type": "ACL",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "removeACL",
+              "type": "ACL",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "createdAt",
+              "type": "Date",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": false
+            },
+            {
+              "name": "updatedAt",
+              "type": "Date",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": false
+            },
+            {
+              "name": "userId",
+              "type": "String",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "deviceId",
+              "type": "String",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": true
+            },
+            {
+              "name": "deviceType",
+              "type": "String",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": true
+            }
+          ],
+          "system": true,
+          "indexes": []
+        },
+        "roles": {
+          "id": "584e64f8982fd55332741513",
+          "name": "roles",
+          "useDocsACL": false,
+          "ACL": {
+            "create": [
+              "*"
+            ],
+            "read": [
+              "*"
+            ],
+            "remove": [
+              "*"
+            ],
+            "update": [
+              "*"
+            ]
+          },
+          "triggers": {
+            "afterFind": {
+              "code": "",
+              "isActive": false
+            },
+            "afterInsert": {
+              "code": "",
+              "isActive": false
+            },
+            "afterRemove": {
+              "code": "",
+              "isActive": false
+            },
+            "afterUpdate": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeInsert": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeRemove": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeUpdate": {
+              "code": "",
+              "isActive": false
+            }
+          },
+          "fields": [
+            {
+              "name": "name",
+              "type": "String",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": true
+            },
+            {
+              "name": "readACL",
+              "type": "ACL",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "updateACL",
+              "type": "ACL",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "removeACL",
+              "type": "ACL",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "createdAt",
+              "type": "Date",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": false
+            },
+            {
+              "name": "updatedAt",
+              "type": "Date",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": false
+            }
+          ],
+          "system": true,
+          "indexes": []
+        },
+        "users": {
+          "id": "584e64f8982fd55332741514",
+          "name": "users",
+          "useDocsACL": false,
+          "ACL": {
+            "create": [
+              "*"
+            ],
+            "read": [
+              "*"
+            ],
+            "remove": [
+              "*"
+            ],
+            "update": [
+              "*"
+            ]
+          },
+          "triggers": {
+            "afterFind": {
+              "code": "",
+              "isActive": false
+            },
+            "afterInsert": {
+              "code": "",
+              "isActive": false
+            },
+            "afterRemove": {
+              "code": "",
+              "isActive": false
+            },
+            "afterUpdate": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeInsert": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeRemove": {
+              "code": "",
+              "isActive": false
+            },
+            "beforeUpdate": {
+              "code": "",
+              "isActive": false
+            }
+          },
+          "fields": [
+            {
+              "name": "email",
+              "type": "String",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": true
+            },
+            {
+              "name": "phone",
+              "type": "String",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "readACL",
+              "type": "ACL",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "updateACL",
+              "type": "ACL",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "removeACL",
+              "type": "ACL",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "createdAt",
+              "type": "Date",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": false
+            },
+            {
+              "name": "updatedAt",
+              "type": "Date",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": false
+            },
+            {
+              "name": "username",
+              "type": "String",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": true
+            },
+            {
+              "name": "password",
+              "type": "Password",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": true
+            },
+            {
+              "name": "emailVerified",
+              "type": "Boolean",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": false
+            },
+            {
+              "name": "roles",
+              "type": "Array",
+              "target": "",
+              "system": true,
+              "readonly": false,
+              "required": false
+            },
+            {
+              "name": "token",
+              "type": "String",
+              "target": "",
+              "system": true,
+              "readonly": true,
+              "required": false
+            }
+          ],
+          "system": true,
+          "indexes": []
+        }
+      },
+      "error": false
+    }
+    ```
+
+!!! failure "Error"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
+
+-------------------------------------------------------------------------------------
+
+## Retrieve collection info.
+
+**https://api.scorocode.ru/api/v1/app/collections/get**
+
+Method: `POST`
+
+Headers: `Content-Type: application/json`
+
+```JSON
+{
+    "app"         : "", // application identifier, mandatory
+    "cli"         : "", // client key, mandatory
+    "acc"         : "", // access key, mandatory, masterKey only
+    "coll"        : ""  // collection name, mandatory
+}
+```
+
+
+!!! tip "Пример cURL"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+            "coll": "devices"
+    }' "https://api.scorocode.ru/api/v1/app/collections/get"
+    ```
+
+**Responses:**
+
+!!! success "Выполнено"
+    ```JSON
+    {
+      "collection": {
         "id": "584e64f8982fd55332741515",
         "name": "devices",
         "useDocsACL": false,
@@ -156,911 +1036,18 @@ Headers:
         "system": true,
         "indexes": []
       },
-      "roles": {
-        "id": "584e64f8982fd55332741513",
-        "name": "roles",
-        "useDocsACL": false,
-        "ACL": {
-          "create": [
-            "*"
-          ],
-          "read": [
-            "*"
-          ],
-          "remove": [
-            "*"
-          ],
-          "update": [
-            "*"
-          ]
-        },
-        "triggers": {
-          "afterFind": {
-            "code": "",
-            "isActive": false
-          },
-          "afterInsert": {
-            "code": "",
-            "isActive": false
-          },
-          "afterRemove": {
-            "code": "",
-            "isActive": false
-          },
-          "afterUpdate": {
-            "code": "",
-            "isActive": false
-          },
-          "beforeInsert": {
-            "code": "",
-            "isActive": false
-          },
-          "beforeRemove": {
-            "code": "",
-            "isActive": false
-          },
-          "beforeUpdate": {
-            "code": "",
-            "isActive": false
-          }
-        },
-        "fields": [
-          {
-            "name": "name",
-            "type": "String",
-            "target": "",
-            "system": true,
-            "readonly": false,
-            "required": true
-          },
-          {
-            "name": "readACL",
-            "type": "ACL",
-            "target": "",
-            "system": true,
-            "readonly": false,
-            "required": false
-          },
-          {
-            "name": "updateACL",
-            "type": "ACL",
-            "target": "",
-            "system": true,
-            "readonly": false,
-            "required": false
-          },
-          {
-            "name": "removeACL",
-            "type": "ACL",
-            "target": "",
-            "system": true,
-            "readonly": false,
-            "required": false
-          },
-          {
-            "name": "createdAt",
-            "type": "Date",
-            "target": "",
-            "system": true,
-            "readonly": true,
-            "required": false
-          },
-          {
-            "name": "updatedAt",
-            "type": "Date",
-            "target": "",
-            "system": true,
-            "readonly": true,
-            "required": false
-          }
-        ],
-        "system": true,
-        "indexes": []
-      },
-      "users": {
-        "id": "584e64f8982fd55332741514",
-        "name": "users",
-        "useDocsACL": false,
-        "ACL": {
-          "create": [
-            "*"
-          ],
-          "read": [
-            "*"
-          ],
-          "remove": [
-            "*"
-          ],
-          "update": [
-            "*"
-          ]
-        },
-        "triggers": {
-          "afterFind": {
-            "code": "",
-            "isActive": false
-          },
-          "afterInsert": {
-            "code": "",
-            "isActive": false
-          },
-          "afterRemove": {
-            "code": "",
-            "isActive": false
-          },
-          "afterUpdate": {
-            "code": "",
-            "isActive": false
-          },
-          "beforeInsert": {
-            "code": "",
-            "isActive": false
-          },
-          "beforeRemove": {
-            "code": "",
-            "isActive": false
-          },
-          "beforeUpdate": {
-            "code": "",
-            "isActive": false
-          }
-        },
-        "fields": [
-          {
-            "name": "email",
-            "type": "String",
-            "target": "",
-            "system": true,
-            "readonly": true,
-            "required": true
-          },
-          {
-            "name": "phone",
-            "type": "String",
-            "target": "",
-            "system": true,
-            "readonly": false,
-            "required": false
-          },
-          {
-            "name": "readACL",
-            "type": "ACL",
-            "target": "",
-            "system": true,
-            "readonly": false,
-            "required": false
-          },
-          {
-            "name": "updateACL",
-            "type": "ACL",
-            "target": "",
-            "system": true,
-            "readonly": false,
-            "required": false
-          },
-          {
-            "name": "removeACL",
-            "type": "ACL",
-            "target": "",
-            "system": true,
-            "readonly": false,
-            "required": false
-          },
-          {
-            "name": "createdAt",
-            "type": "Date",
-            "target": "",
-            "system": true,
-            "readonly": true,
-            "required": false
-          },
-          {
-            "name": "updatedAt",
-            "type": "Date",
-            "target": "",
-            "system": true,
-            "readonly": true,
-            "required": false
-          },
-          {
-            "name": "username",
-            "type": "String",
-            "target": "",
-            "system": true,
-            "readonly": false,
-            "required": true
-          },
-          {
-            "name": "password",
-            "type": "Password",
-            "target": "",
-            "system": true,
-            "readonly": false,
-            "required": true
-          },
-          {
-            "name": "emailVerified",
-            "type": "Boolean",
-            "target": "",
-            "system": true,
-            "readonly": true,
-            "required": false
-          },
-          {
-            "name": "roles",
-            "type": "Array",
-            "target": "",
-            "system": true,
-            "readonly": false,
-            "required": false
-          },
-          {
-            "name": "token",
-            "type": "String",
-            "target": "",
-            "system": true,
-            "readonly": true,
-            "required": false
-          }
-        ],
-        "system": true,
-        "indexes": []
-      }
-    },
-    "accessKeys": {
-      "fileKey": "31adc32bac245299cfad0d7b1912bc2a",
-      "masterKey": "ffe86fefg25fbklacsdee8cd4c59644a",
-      "messageKey": "605a1248a2d27424ec43f6bdf435b0a7",
-      "scriptKey": "333efb738b82c3096a3fgdbabd27f702",
-      "websocketKey": "9627612736b1129d2ea9d615fb482a41"
-    },
-    "clientKeys": {
-      "android": "db993776551ed6267fbe256ef0296cb8",
-      "ios": "840ff61458ec11bf411859dbbf46d46a",
-      "javascript": "d6859f41223c9997ff78c6b4vb3a96bb",
-      "winphone": "3fbce82fafba9dccc60036f92b971654"
-    },
-    "readonly": true,
-    "ACLPublic": {
-      "create": false,
-      "read": false,
-      "remove": false,
-      "update": false
-    },
-    "settings": {
-      "emailVerified": false,
-      "sessionTimeout": 72,
-      "androidApiKey": "",
-      "gcmSenderId": "",
-      "mailTemplates": {
-        "forgot": {
-          "subject": "",
-          "body": ""
-        },
-        "reg": {
-          "subject": "",
-          "body": ""
-        }
-      },
-      "smtp": null
-    },
-    "storage": {
-      "user": "",
-      "password": ""
-    },
-    "npm": "{\"dependencies\":{}}",
-    "stringId": "584e64f8982fd55332741516"
-  },
-  "error": false
-}
-```
-
-*Error*
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-        "app": "48f172923acd719b42c73ac3a492cfc8",
-        "cli": "d6859f41223c9997ff78c6b4vb3a96bb"
-}' "https://api.scorocode.ru/api/v1/app"
-```
-
--------------------------------------------------------------------------------------
-
-## Retrieve list of collections and their settings
-
-**https://api.scorocode.ru/api/v1/app/collections**
-
-Method: `POST`
-
-Headers:
-
-`Content-Type: application/json`
-
-```
-{
-    "app"         : "", // application identifier, mandatory
-    "cli"         : "", // client key, mandatory
-    "acc"         : ""  // access key, mandatory, masterKey only
-}
-```
-**Responses:**
-
-*Success*
-
-```
-{
-  "collections": {
-    "devices": {
-      "id": "584e64f8982fd55332741515",
-      "name": "devices",
-      "useDocsACL": false,
-      "ACL": {
-        "create": [
-          "*"
-        ],
-        "read": [
-          "*"
-        ],
-        "remove": [
-          "*"
-        ],
-        "update": [
-          "*"
-        ]
-      },
-      "triggers": {
-        "afterFind": {
-          "code": "",
-          "isActive": false
-        },
-        "afterInsert": {
-          "code": "",
-          "isActive": false
-        },
-        "afterRemove": {
-          "code": "",
-          "isActive": false
-        },
-        "afterUpdate": {
-          "code": "",
-          "isActive": false
-        },
-        "beforeInsert": {
-          "code": "",
-          "isActive": false
-        },
-        "beforeRemove": {
-          "code": "",
-          "isActive": false
-        },
-        "beforeUpdate": {
-          "code": "",
-          "isActive": false
-        }
-      },
-      "fields": [
-        {
-          "name": "readACL",
-          "type": "ACL",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "updateACL",
-          "type": "ACL",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "removeACL",
-          "type": "ACL",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "createdAt",
-          "type": "Date",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": false
-        },
-        {
-          "name": "updatedAt",
-          "type": "Date",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": false
-        },
-        {
-          "name": "userId",
-          "type": "String",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "deviceId",
-          "type": "String",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": true
-        },
-        {
-          "name": "deviceType",
-          "type": "String",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": true
-        }
-      ],
-      "system": true,
-      "indexes": []
-    },
-    "roles": {
-      "id": "584e64f8982fd55332741513",
-      "name": "roles",
-      "useDocsACL": false,
-      "ACL": {
-        "create": [
-          "*"
-        ],
-        "read": [
-          "*"
-        ],
-        "remove": [
-          "*"
-        ],
-        "update": [
-          "*"
-        ]
-      },
-      "triggers": {
-        "afterFind": {
-          "code": "",
-          "isActive": false
-        },
-        "afterInsert": {
-          "code": "",
-          "isActive": false
-        },
-        "afterRemove": {
-          "code": "",
-          "isActive": false
-        },
-        "afterUpdate": {
-          "code": "",
-          "isActive": false
-        },
-        "beforeInsert": {
-          "code": "",
-          "isActive": false
-        },
-        "beforeRemove": {
-          "code": "",
-          "isActive": false
-        },
-        "beforeUpdate": {
-          "code": "",
-          "isActive": false
-        }
-      },
-      "fields": [
-        {
-          "name": "name",
-          "type": "String",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": true
-        },
-        {
-          "name": "readACL",
-          "type": "ACL",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "updateACL",
-          "type": "ACL",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "removeACL",
-          "type": "ACL",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "createdAt",
-          "type": "Date",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": false
-        },
-        {
-          "name": "updatedAt",
-          "type": "Date",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": false
-        }
-      ],
-      "system": true,
-      "indexes": []
-    },
-    "users": {
-      "id": "584e64f8982fd55332741514",
-      "name": "users",
-      "useDocsACL": false,
-      "ACL": {
-        "create": [
-          "*"
-        ],
-        "read": [
-          "*"
-        ],
-        "remove": [
-          "*"
-        ],
-        "update": [
-          "*"
-        ]
-      },
-      "triggers": {
-        "afterFind": {
-          "code": "",
-          "isActive": false
-        },
-        "afterInsert": {
-          "code": "",
-          "isActive": false
-        },
-        "afterRemove": {
-          "code": "",
-          "isActive": false
-        },
-        "afterUpdate": {
-          "code": "",
-          "isActive": false
-        },
-        "beforeInsert": {
-          "code": "",
-          "isActive": false
-        },
-        "beforeRemove": {
-          "code": "",
-          "isActive": false
-        },
-        "beforeUpdate": {
-          "code": "",
-          "isActive": false
-        }
-      },
-      "fields": [
-        {
-          "name": "email",
-          "type": "String",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": true
-        },
-        {
-          "name": "phone",
-          "type": "String",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "readACL",
-          "type": "ACL",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "updateACL",
-          "type": "ACL",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "removeACL",
-          "type": "ACL",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "createdAt",
-          "type": "Date",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": false
-        },
-        {
-          "name": "updatedAt",
-          "type": "Date",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": false
-        },
-        {
-          "name": "username",
-          "type": "String",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": true
-        },
-        {
-          "name": "password",
-          "type": "Password",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": true
-        },
-        {
-          "name": "emailVerified",
-          "type": "Boolean",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": false
-        },
-        {
-          "name": "roles",
-          "type": "Array",
-          "target": "",
-          "system": true,
-          "readonly": false,
-          "required": false
-        },
-        {
-          "name": "token",
-          "type": "String",
-          "target": "",
-          "system": true,
-          "readonly": true,
-          "required": false
-        }
-      ],
-      "system": true,
-      "indexes": []
+      "error": false
     }
-  },
-  "error": false
-}
-```
+    ```
 
-*Error*
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-        "app": "48f172923acd719b42c73ac3a492cfc8",
-        "cli": "d6859f41223c9997ff78c6b4vb3a96bb"
-}' "https://api.scorocode.ru/api/v1/app/collections"
-```
-
--------------------------------------------------------------------------------------
-
-## Retrieve collection info.
-
-**https://api.scorocode.ru/api/v1/app/collections/get**
-
-Method: `POST`
-
-Headers:
-
-`Content-Type: application/json`
-
-```
-{
-    "app"         : "", // application identifier, mandatory
-    "cli"         : "", // client key, mandatory
-    "acc"         : "", // access key, mandatory, masterKey only
-    "coll"        : ""  // collection name, mandatory
-}
-```
-
-**Responses:**
-
-*Success*
-
-```
-{
-  "collection": {
-    "id": "584e64f8982fd55332741515",
-    "name": "devices",
-    "useDocsACL": false,
-    "ACL": {
-      "create": [
-        "*"
-      ],
-      "read": [
-        "*"
-      ],
-      "remove": [
-        "*"
-      ],
-      "update": [
-        "*"
-      ]
-    },
-    "triggers": {
-      "afterFind": {
-        "code": "",
-        "isActive": false
-      },
-      "afterInsert": {
-        "code": "",
-        "isActive": false
-      },
-      "afterRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "afterUpdate": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeInsert": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeUpdate": {
-        "code": "",
-        "isActive": false
-      }
-    },
-    "fields": [
-      {
-        "name": "readACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "updateACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "removeACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "createdAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "updatedAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "userId",
-        "type": "String",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "deviceId",
-        "type": "String",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": true
-      },
-      {
-        "name": "deviceType",
-        "type": "String",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": true
-      }
-    ],
-    "system": true,
-    "indexes": []
-  },
-  "error": false
-}
-```
-
-*Error*
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-        "app": "48f172923acd719b42c73ac3a492cfc8",
-        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-        "coll": "devices"
-}' "https://api.scorocode.ru/api/v1/app/collections/get"
-```
+!!! failure "Ошибка"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -1070,9 +1057,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
-
-`Content-Type: application/json`
+Headers: `Content-Type: application/json`
 
 ```
 {

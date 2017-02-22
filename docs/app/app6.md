@@ -20,6 +20,7 @@ By default, the FREE price plan with the following options is activated:
 * Requests per second – 20;
 * Disk space – 10 GB;
 * Push notifications – 500,000 (maximum);
+* Server-side script execution time - 3 seconds;
 * Developers – 1 (including the application owner).
 
 To acquire additional options, you will need to change your price plan to INDIE. To change the price plan, use the Change link in the line with the same name.
