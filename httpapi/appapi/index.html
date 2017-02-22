@@ -1229,1044 +1229,1059 @@
                 <h2 id="get-application-info">Get application info</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app</strong></p>
 <p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;         : &quot;&quot;, // application identifier, mandatory
-    &quot;cli&quot;         : &quot;&quot;, // client key, mandatory
-    &quot;acc&quot;         : &quot;&quot;  // access key, mandatory, masterKey only
-}
+<p>Headers: <code>Content-Type: application/json</code></p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">application</span> <span class="err">identifier,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">client</span> <span class="err">key,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span>  <span class="err">//</span> <span class="err">access</span> <span class="err">key</span><span class="p">,</span> <span class="err">mandatory,</span> <span class="err">masterKey</span> <span class="err">only</span>
+<span class="p">}</span>
 </pre></div>
 
 
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app&quot;</span>
+</pre></div>
+
+
+</div>
 <p><strong>Responses:</strong></p>
 <p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-  &quot;app&quot;: {
-    &quot;_id&quot;: &quot;584e64f8982fd55332741516&quot;,
-    &quot;appId&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-    &quot;name&quot;: &quot;HTTPApp&quot;,
-    &quot;description&quot;: &quot;&quot;,
-    &quot;userId&quot;: &quot;5745b2123evlfh062612e3f&quot;,
-    &quot;serverId&quot;: &quot;5745a5e63ef62fs0626ftgeb&quot;,
-    &quot;limits&quot;: {
-      &quot;rps&quot;: 20,
-      &quot;store&quot;: 10737418240,
-      &quot;pushValue&quot;: 0,
-      &quot;pushUsed&quot;: 0,
-      &quot;developers&quot;: 1,
-      &quot;ws&quot;: 200,
-      &quot;scriptTimeout&quot;: 3
-    },
-    &quot;schemas&quot;: {
-      &quot;devices&quot;: {
-        &quot;id&quot;: &quot;584e64f8982fd55332741515&quot;,
-        &quot;name&quot;: &quot;devices&quot;,
-        &quot;useDocsACL&quot;: false,
-        &quot;ACL&quot;: {
-          &quot;create&quot;: [
-            &quot;*&quot;
-          ],
-          &quot;read&quot;: [
-            &quot;*&quot;
-          ],
-          &quot;remove&quot;: [
-            &quot;*&quot;
-          ],
-          &quot;update&quot;: [
-            &quot;*&quot;
-          ]
-        },
-        &quot;triggers&quot;: {
-          &quot;afterFind&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          },
-          &quot;afterInsert&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          },
-          &quot;afterRemove&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          },
-          &quot;afterUpdate&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          },
-          &quot;beforeInsert&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          },
-          &quot;beforeRemove&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          },
-          &quot;beforeUpdate&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          }
-        },
-        &quot;fields&quot;: [
-          {
-            &quot;name&quot;: &quot;readACL&quot;,
-            &quot;type&quot;: &quot;ACL&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: false,
-            &quot;required&quot;: false
-          },
-          {
-            &quot;name&quot;: &quot;updateACL&quot;,
-            &quot;type&quot;: &quot;ACL&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: false,
-            &quot;required&quot;: false
-          },
-          {
-            &quot;name&quot;: &quot;removeACL&quot;,
-            &quot;type&quot;: &quot;ACL&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: false,
-            &quot;required&quot;: false
-          },
-          {
-            &quot;name&quot;: &quot;createdAt&quot;,
-            &quot;type&quot;: &quot;Date&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: true,
-            &quot;required&quot;: false
-          },
-          {
-            &quot;name&quot;: &quot;updatedAt&quot;,
-            &quot;type&quot;: &quot;Date&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: true,
-            &quot;required&quot;: false
-          },
-          {
-            &quot;name&quot;: &quot;userId&quot;,
-            &quot;type&quot;: &quot;String&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: false,
-            &quot;required&quot;: false
-          },
-          {
-            &quot;name&quot;: &quot;deviceId&quot;,
-            &quot;type&quot;: &quot;String&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: true,
-            &quot;required&quot;: true
-          },
-          {
-            &quot;name&quot;: &quot;deviceType&quot;,
-            &quot;type&quot;: &quot;String&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: true,
-            &quot;required&quot;: true
-          }
-        ],
-        &quot;system&quot;: true,
-        &quot;indexes&quot;: []
-      },
-      &quot;roles&quot;: {
-        &quot;id&quot;: &quot;584e64f8982fd55332741513&quot;,
-        &quot;name&quot;: &quot;roles&quot;,
-        &quot;useDocsACL&quot;: false,
-        &quot;ACL&quot;: {
-          &quot;create&quot;: [
-            &quot;*&quot;
-          ],
-          &quot;read&quot;: [
-            &quot;*&quot;
-          ],
-          &quot;remove&quot;: [
-            &quot;*&quot;
-          ],
-          &quot;update&quot;: [
-            &quot;*&quot;
-          ]
-        },
-        &quot;triggers&quot;: {
-          &quot;afterFind&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          },
-          &quot;afterInsert&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          },
-          &quot;afterRemove&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          },
-          &quot;afterUpdate&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          },
-          &quot;beforeInsert&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          },
-          &quot;beforeRemove&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          },
-          &quot;beforeUpdate&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          }
-        },
-        &quot;fields&quot;: [
-          {
-            &quot;name&quot;: &quot;name&quot;,
-            &quot;type&quot;: &quot;String&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: false,
-            &quot;required&quot;: true
-          },
-          {
-            &quot;name&quot;: &quot;readACL&quot;,
-            &quot;type&quot;: &quot;ACL&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: false,
-            &quot;required&quot;: false
-          },
-          {
-            &quot;name&quot;: &quot;updateACL&quot;,
-            &quot;type&quot;: &quot;ACL&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: false,
-            &quot;required&quot;: false
-          },
-          {
-            &quot;name&quot;: &quot;removeACL&quot;,
-            &quot;type&quot;: &quot;ACL&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: false,
-            &quot;required&quot;: false
-          },
-          {
-            &quot;name&quot;: &quot;createdAt&quot;,
-            &quot;type&quot;: &quot;Date&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: true,
-            &quot;required&quot;: false
-          },
-          {
-            &quot;name&quot;: &quot;updatedAt&quot;,
-            &quot;type&quot;: &quot;Date&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: true,
-            &quot;required&quot;: false
-          }
-        ],
-        &quot;system&quot;: true,
-        &quot;indexes&quot;: []
-      },
-      &quot;users&quot;: {
-        &quot;id&quot;: &quot;584e64f8982fd55332741514&quot;,
-        &quot;name&quot;: &quot;users&quot;,
-        &quot;useDocsACL&quot;: false,
-        &quot;ACL&quot;: {
-          &quot;create&quot;: [
-            &quot;*&quot;
-          ],
-          &quot;read&quot;: [
-            &quot;*&quot;
-          ],
-          &quot;remove&quot;: [
-            &quot;*&quot;
-          ],
-          &quot;update&quot;: [
-            &quot;*&quot;
-          ]
-        },
-        &quot;triggers&quot;: {
-          &quot;afterFind&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          },
-          &quot;afterInsert&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          },
-          &quot;afterRemove&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          },
-          &quot;afterUpdate&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          },
-          &quot;beforeInsert&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          },
-          &quot;beforeRemove&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          },
-          &quot;beforeUpdate&quot;: {
-            &quot;code&quot;: &quot;&quot;,
-            &quot;isActive&quot;: false
-          }
-        },
-        &quot;fields&quot;: [
-          {
-            &quot;name&quot;: &quot;email&quot;,
-            &quot;type&quot;: &quot;String&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: true,
-            &quot;required&quot;: true
-          },
-          {
-            &quot;name&quot;: &quot;phone&quot;,
-            &quot;type&quot;: &quot;String&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: false,
-            &quot;required&quot;: false
-          },
-          {
-            &quot;name&quot;: &quot;readACL&quot;,
-            &quot;type&quot;: &quot;ACL&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: false,
-            &quot;required&quot;: false
-          },
-          {
-            &quot;name&quot;: &quot;updateACL&quot;,
-            &quot;type&quot;: &quot;ACL&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: false,
-            &quot;required&quot;: false
-          },
-          {
-            &quot;name&quot;: &quot;removeACL&quot;,
-            &quot;type&quot;: &quot;ACL&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: false,
-            &quot;required&quot;: false
-          },
-          {
-            &quot;name&quot;: &quot;createdAt&quot;,
-            &quot;type&quot;: &quot;Date&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: true,
-            &quot;required&quot;: false
-          },
-          {
-            &quot;name&quot;: &quot;updatedAt&quot;,
-            &quot;type&quot;: &quot;Date&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: true,
-            &quot;required&quot;: false
-          },
-          {
-            &quot;name&quot;: &quot;username&quot;,
-            &quot;type&quot;: &quot;String&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: false,
-            &quot;required&quot;: true
-          },
-          {
-            &quot;name&quot;: &quot;password&quot;,
-            &quot;type&quot;: &quot;Password&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: false,
-            &quot;required&quot;: true
-          },
-          {
-            &quot;name&quot;: &quot;emailVerified&quot;,
-            &quot;type&quot;: &quot;Boolean&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: true,
-            &quot;required&quot;: false
-          },
-          {
-            &quot;name&quot;: &quot;roles&quot;,
-            &quot;type&quot;: &quot;Array&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: false,
-            &quot;required&quot;: false
-          },
-          {
-            &quot;name&quot;: &quot;token&quot;,
-            &quot;type&quot;: &quot;String&quot;,
-            &quot;target&quot;: &quot;&quot;,
-            &quot;system&quot;: true,
-            &quot;readonly&quot;: true,
-            &quot;required&quot;: false
-          }
-        ],
-        &quot;system&quot;: true,
-        &quot;indexes&quot;: []
-      }
-    },
-    &quot;accessKeys&quot;: {
-      &quot;fileKey&quot;: &quot;31adc32bac245299cfad0d7b1912bc2a&quot;,
-      &quot;masterKey&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-      &quot;messageKey&quot;: &quot;605a1248a2d27424ec43f6bdf435b0a7&quot;,
-      &quot;scriptKey&quot;: &quot;333efb738b82c3096a3fgdbabd27f702&quot;,
-      &quot;websocketKey&quot;: &quot;9627612736b1129d2ea9d615fb482a41&quot;
-    },
-    &quot;clientKeys&quot;: {
-      &quot;android&quot;: &quot;db993776551ed6267fbe256ef0296cb8&quot;,
-      &quot;ios&quot;: &quot;840ff61458ec11bf411859dbbf46d46a&quot;,
-      &quot;javascript&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-      &quot;winphone&quot;: &quot;3fbce82fafba9dccc60036f92b971654&quot;
-    },
-    &quot;readonly&quot;: true,
-    &quot;ACLPublic&quot;: {
-      &quot;create&quot;: false,
-      &quot;read&quot;: false,
-      &quot;remove&quot;: false,
-      &quot;update&quot;: false
-    },
-    &quot;settings&quot;: {
-      &quot;emailVerified&quot;: false,
-      &quot;sessionTimeout&quot;: 72,
-      &quot;androidApiKey&quot;: &quot;&quot;,
-      &quot;gcmSenderId&quot;: &quot;&quot;,
-      &quot;mailTemplates&quot;: {
-        &quot;forgot&quot;: {
-          &quot;subject&quot;: &quot;&quot;,
-          &quot;body&quot;: &quot;&quot;
-        },
-        &quot;reg&quot;: {
-          &quot;subject&quot;: &quot;&quot;,
-          &quot;body&quot;: &quot;&quot;
-        }
-      },
-      &quot;smtp&quot;: null
-    },
-    &quot;storage&quot;: {
-      &quot;user&quot;: &quot;&quot;,
-      &quot;password&quot;: &quot;&quot;
-    },
-    &quot;npm&quot;: &quot;{\&quot;dependencies\&quot;:{}}&quot;,
-    &quot;stringId&quot;: &quot;584e64f8982fd55332741516&quot;
-  },
-  &quot;error&quot;: false
-}
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;app&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;_id&quot;</span><span class="p">:</span> <span class="s2">&quot;584e64f8982fd55332741516&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;appId&quot;</span><span class="p">:</span> <span class="s2">&quot;48f172923acd719b42c73ac3a492cfc8&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;HTTPApp&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;userId&quot;</span><span class="p">:</span> <span class="s2">&quot;5745b2123evlfh062612e3f&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;serverId&quot;</span><span class="p">:</span> <span class="s2">&quot;5745a5e63ef62fs0626ftgeb&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;limits&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;rps&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+      <span class="nt">&quot;store&quot;</span><span class="p">:</span> <span class="mi">10737418240</span><span class="p">,</span>
+      <span class="nt">&quot;pushValue&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;pushUsed&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;developers&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;ws&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+      <span class="nt">&quot;scriptTimeout&quot;</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;schemas&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;devices&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;584e64f8982fd55332741515&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;devices&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;useDocsACL&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;ACL&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;create&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;*&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;read&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;*&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;remove&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;*&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;update&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;*&quot;</span>
+          <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;triggers&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;afterFind&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;afterInsert&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;afterRemove&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;afterUpdate&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;beforeInsert&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;beforeRemove&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;beforeUpdate&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;readACL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;updateACL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;removeACL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;createdAt&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;updatedAt&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;userId&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;deviceId&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;deviceType&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span>
+          <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;indexes&quot;</span><span class="p">:</span> <span class="p">[]</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;584e64f8982fd55332741513&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;roles&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;useDocsACL&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;ACL&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;create&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;*&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;read&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;*&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;remove&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;*&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;update&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;*&quot;</span>
+          <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;triggers&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;afterFind&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;afterInsert&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;afterRemove&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;afterUpdate&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;beforeInsert&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;beforeRemove&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;beforeUpdate&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;readACL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;updateACL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;removeACL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;createdAt&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;updatedAt&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;indexes&quot;</span><span class="p">:</span> <span class="p">[]</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;users&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;584e64f8982fd55332741514&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;users&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;useDocsACL&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;ACL&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;create&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;*&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;read&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;*&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;remove&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;*&quot;</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;update&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;*&quot;</span>
+          <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;triggers&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;afterFind&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;afterInsert&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;afterRemove&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;afterUpdate&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;beforeInsert&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;beforeRemove&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="nt">&quot;beforeUpdate&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;phone&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;readACL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;updateACL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;removeACL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;createdAt&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;updatedAt&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;username&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;password&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Password&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;emailVerified&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Boolean&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;roles&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Array&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;token&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;indexes&quot;</span><span class="p">:</span> <span class="p">[]</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;accessKeys&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;fileKey&quot;</span><span class="p">:</span> <span class="s2">&quot;31adc32bac245299cfad0d7b1912bc2a&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;masterKey&quot;</span><span class="p">:</span> <span class="s2">&quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;messageKey&quot;</span><span class="p">:</span> <span class="s2">&quot;605a1248a2d27424ec43f6bdf435b0a7&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;scriptKey&quot;</span><span class="p">:</span> <span class="s2">&quot;333efb738b82c3096a3fgdbabd27f702&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;websocketKey&quot;</span><span class="p">:</span> <span class="s2">&quot;9627612736b1129d2ea9d615fb482a41&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;clientKeys&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;android&quot;</span><span class="p">:</span> <span class="s2">&quot;db993776551ed6267fbe256ef0296cb8&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;ios&quot;</span><span class="p">:</span> <span class="s2">&quot;840ff61458ec11bf411859dbbf46d46a&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;javascript&quot;</span><span class="p">:</span> <span class="s2">&quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;winphone&quot;</span><span class="p">:</span> <span class="s2">&quot;3fbce82fafba9dccc60036f92b971654&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;ACLPublic&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;create&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;read&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;remove&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;update&quot;</span><span class="p">:</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;emailVerified&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;sessionTimeout&quot;</span><span class="p">:</span> <span class="mi">72</span><span class="p">,</span>
+      <span class="nt">&quot;androidApiKey&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;gcmSenderId&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;mailTemplates&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;forgot&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;subject&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;body&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;reg&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;subject&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;body&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;smtp&quot;</span><span class="p">:</span> <span class="kc">null</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;storage&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;npm&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;dependencies\&quot;:{}}&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;stringId&quot;</span><span class="p">:</span> <span class="s2">&quot;584e64f8982fd55332741516&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
 </pre></div>
 
 
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
-}
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Error</span> <span class="err">code</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Error text&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;
-}&#39; &quot;https://api.scorocode.ru/api/v1/app&quot;
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="retrieve-list-of-collections-and-their-settings">Retrieve list of collections and their settings</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections</strong></p>
 <p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<p><div class="codehilite"><pre><span></span>{
-    &quot;app&quot;         : &quot;&quot;, // application identifier, mandatory
-    &quot;cli&quot;         : &quot;&quot;, // client key, mandatory
-    &quot;acc&quot;         : &quot;&quot;  // access key, mandatory, masterKey only
-}
-</pre></div>
-
-<strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-  &quot;collections&quot;: {
-    &quot;devices&quot;: {
-      &quot;id&quot;: &quot;584e64f8982fd55332741515&quot;,
-      &quot;name&quot;: &quot;devices&quot;,
-      &quot;useDocsACL&quot;: false,
-      &quot;ACL&quot;: {
-        &quot;create&quot;: [
-          &quot;*&quot;
-        ],
-        &quot;read&quot;: [
-          &quot;*&quot;
-        ],
-        &quot;remove&quot;: [
-          &quot;*&quot;
-        ],
-        &quot;update&quot;: [
-          &quot;*&quot;
-        ]
-      },
-      &quot;triggers&quot;: {
-        &quot;afterFind&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        },
-        &quot;afterInsert&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        },
-        &quot;afterRemove&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        },
-        &quot;afterUpdate&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        },
-        &quot;beforeInsert&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        },
-        &quot;beforeRemove&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        },
-        &quot;beforeUpdate&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        }
-      },
-      &quot;fields&quot;: [
-        {
-          &quot;name&quot;: &quot;readACL&quot;,
-          &quot;type&quot;: &quot;ACL&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: false,
-          &quot;required&quot;: false
-        },
-        {
-          &quot;name&quot;: &quot;updateACL&quot;,
-          &quot;type&quot;: &quot;ACL&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: false,
-          &quot;required&quot;: false
-        },
-        {
-          &quot;name&quot;: &quot;removeACL&quot;,
-          &quot;type&quot;: &quot;ACL&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: false,
-          &quot;required&quot;: false
-        },
-        {
-          &quot;name&quot;: &quot;createdAt&quot;,
-          &quot;type&quot;: &quot;Date&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: true,
-          &quot;required&quot;: false
-        },
-        {
-          &quot;name&quot;: &quot;updatedAt&quot;,
-          &quot;type&quot;: &quot;Date&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: true,
-          &quot;required&quot;: false
-        },
-        {
-          &quot;name&quot;: &quot;userId&quot;,
-          &quot;type&quot;: &quot;String&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: false,
-          &quot;required&quot;: false
-        },
-        {
-          &quot;name&quot;: &quot;deviceId&quot;,
-          &quot;type&quot;: &quot;String&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: true,
-          &quot;required&quot;: true
-        },
-        {
-          &quot;name&quot;: &quot;deviceType&quot;,
-          &quot;type&quot;: &quot;String&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: true,
-          &quot;required&quot;: true
-        }
-      ],
-      &quot;system&quot;: true,
-      &quot;indexes&quot;: []
-    },
-    &quot;roles&quot;: {
-      &quot;id&quot;: &quot;584e64f8982fd55332741513&quot;,
-      &quot;name&quot;: &quot;roles&quot;,
-      &quot;useDocsACL&quot;: false,
-      &quot;ACL&quot;: {
-        &quot;create&quot;: [
-          &quot;*&quot;
-        ],
-        &quot;read&quot;: [
-          &quot;*&quot;
-        ],
-        &quot;remove&quot;: [
-          &quot;*&quot;
-        ],
-        &quot;update&quot;: [
-          &quot;*&quot;
-        ]
-      },
-      &quot;triggers&quot;: {
-        &quot;afterFind&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        },
-        &quot;afterInsert&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        },
-        &quot;afterRemove&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        },
-        &quot;afterUpdate&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        },
-        &quot;beforeInsert&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        },
-        &quot;beforeRemove&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        },
-        &quot;beforeUpdate&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        }
-      },
-      &quot;fields&quot;: [
-        {
-          &quot;name&quot;: &quot;name&quot;,
-          &quot;type&quot;: &quot;String&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: false,
-          &quot;required&quot;: true
-        },
-        {
-          &quot;name&quot;: &quot;readACL&quot;,
-          &quot;type&quot;: &quot;ACL&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: false,
-          &quot;required&quot;: false
-        },
-        {
-          &quot;name&quot;: &quot;updateACL&quot;,
-          &quot;type&quot;: &quot;ACL&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: false,
-          &quot;required&quot;: false
-        },
-        {
-          &quot;name&quot;: &quot;removeACL&quot;,
-          &quot;type&quot;: &quot;ACL&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: false,
-          &quot;required&quot;: false
-        },
-        {
-          &quot;name&quot;: &quot;createdAt&quot;,
-          &quot;type&quot;: &quot;Date&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: true,
-          &quot;required&quot;: false
-        },
-        {
-          &quot;name&quot;: &quot;updatedAt&quot;,
-          &quot;type&quot;: &quot;Date&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: true,
-          &quot;required&quot;: false
-        }
-      ],
-      &quot;system&quot;: true,
-      &quot;indexes&quot;: []
-    },
-    &quot;users&quot;: {
-      &quot;id&quot;: &quot;584e64f8982fd55332741514&quot;,
-      &quot;name&quot;: &quot;users&quot;,
-      &quot;useDocsACL&quot;: false,
-      &quot;ACL&quot;: {
-        &quot;create&quot;: [
-          &quot;*&quot;
-        ],
-        &quot;read&quot;: [
-          &quot;*&quot;
-        ],
-        &quot;remove&quot;: [
-          &quot;*&quot;
-        ],
-        &quot;update&quot;: [
-          &quot;*&quot;
-        ]
-      },
-      &quot;triggers&quot;: {
-        &quot;afterFind&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        },
-        &quot;afterInsert&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        },
-        &quot;afterRemove&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        },
-        &quot;afterUpdate&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        },
-        &quot;beforeInsert&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        },
-        &quot;beforeRemove&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        },
-        &quot;beforeUpdate&quot;: {
-          &quot;code&quot;: &quot;&quot;,
-          &quot;isActive&quot;: false
-        }
-      },
-      &quot;fields&quot;: [
-        {
-          &quot;name&quot;: &quot;email&quot;,
-          &quot;type&quot;: &quot;String&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: true,
-          &quot;required&quot;: true
-        },
-        {
-          &quot;name&quot;: &quot;phone&quot;,
-          &quot;type&quot;: &quot;String&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: false,
-          &quot;required&quot;: false
-        },
-        {
-          &quot;name&quot;: &quot;readACL&quot;,
-          &quot;type&quot;: &quot;ACL&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: false,
-          &quot;required&quot;: false
-        },
-        {
-          &quot;name&quot;: &quot;updateACL&quot;,
-          &quot;type&quot;: &quot;ACL&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: false,
-          &quot;required&quot;: false
-        },
-        {
-          &quot;name&quot;: &quot;removeACL&quot;,
-          &quot;type&quot;: &quot;ACL&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: false,
-          &quot;required&quot;: false
-        },
-        {
-          &quot;name&quot;: &quot;createdAt&quot;,
-          &quot;type&quot;: &quot;Date&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: true,
-          &quot;required&quot;: false
-        },
-        {
-          &quot;name&quot;: &quot;updatedAt&quot;,
-          &quot;type&quot;: &quot;Date&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: true,
-          &quot;required&quot;: false
-        },
-        {
-          &quot;name&quot;: &quot;username&quot;,
-          &quot;type&quot;: &quot;String&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: false,
-          &quot;required&quot;: true
-        },
-        {
-          &quot;name&quot;: &quot;password&quot;,
-          &quot;type&quot;: &quot;Password&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: false,
-          &quot;required&quot;: true
-        },
-        {
-          &quot;name&quot;: &quot;emailVerified&quot;,
-          &quot;type&quot;: &quot;Boolean&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: true,
-          &quot;required&quot;: false
-        },
-        {
-          &quot;name&quot;: &quot;roles&quot;,
-          &quot;type&quot;: &quot;Array&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: false,
-          &quot;required&quot;: false
-        },
-        {
-          &quot;name&quot;: &quot;token&quot;,
-          &quot;type&quot;: &quot;String&quot;,
-          &quot;target&quot;: &quot;&quot;,
-          &quot;system&quot;: true,
-          &quot;readonly&quot;: true,
-          &quot;required&quot;: false
-        }
-      ],
-      &quot;system&quot;: true,
-      &quot;indexes&quot;: []
-    }
-  },
-  &quot;error&quot;: false
-}
+<p>Headers: <code>Content-Type: application/json</code></p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">application</span> <span class="err">identifier,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">client</span> <span class="err">key,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span>  <span class="err">//</span> <span class="err">access</span> <span class="err">key</span><span class="p">,</span> <span class="err">mandatory,</span> <span class="err">masterKey</span> <span class="err">only</span>
+<span class="p">}</span>
 </pre></div>
 
 
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
-}
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections&quot;</span>
 </pre></div>
 
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;
-}&#39; &quot;https://api.scorocode.ru/api/v1/app/collections&quot;
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;collections&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;devices&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;584e64f8982fd55332741515&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;devices&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;useDocsACL&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;ACL&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;create&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;*&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;read&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;*&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;remove&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;*&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;update&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;*&quot;</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;triggers&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;afterFind&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;afterInsert&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;afterRemove&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;afterUpdate&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;beforeInsert&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;beforeRemove&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;beforeUpdate&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;readACL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;updateACL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;removeACL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;createdAt&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;updatedAt&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;userId&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;deviceId&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;deviceType&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;indexes&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;584e64f8982fd55332741513&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;roles&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;useDocsACL&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;ACL&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;create&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;*&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;read&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;*&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;remove&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;*&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;update&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;*&quot;</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;triggers&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;afterFind&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;afterInsert&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;afterRemove&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;afterUpdate&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;beforeInsert&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;beforeRemove&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;beforeUpdate&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;readACL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;updateACL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;removeACL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;createdAt&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;updatedAt&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;indexes&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;users&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;584e64f8982fd55332741514&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;users&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;useDocsACL&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nt">&quot;ACL&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;create&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;*&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;read&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;*&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;remove&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;*&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;update&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&quot;*&quot;</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;triggers&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;afterFind&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;afterInsert&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;afterRemove&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;afterUpdate&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;beforeInsert&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;beforeRemove&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;beforeUpdate&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;phone&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;readACL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;updateACL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;removeACL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;createdAt&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;updatedAt&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;username&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;password&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Password&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;emailVerified&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Boolean&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;roles&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Array&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;token&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nt">&quot;indexes&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
 </pre></div>
 
 
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Error</span> <span class="err">code</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Error text&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+</div>
 <hr />
 <h2 id="retrieve-collection-info">Retrieve collection info.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/get</strong></p>
 <p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;         : &quot;&quot;, // application identifier, mandatory
-    &quot;cli&quot;         : &quot;&quot;, // client key, mandatory
-    &quot;acc&quot;         : &quot;&quot;, // access key, mandatory, masterKey only
-    &quot;coll&quot;        : &quot;&quot;  // collection name, mandatory
-}
+<p>Headers: <code>Content-Type: application/json</code></p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">application</span> <span class="err">identifier,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">client</span> <span class="err">key,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">access</span> <span class="err">key,</span> <span class="err">mandatory,</span> <span class="err">masterKey</span> <span class="err">only</span>
+    <span class="nt">&quot;coll&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span>  <span class="err">//</span> <span class="err">collection</span> <span class="err">name</span><span class="p">,</span> <span class="err">mandatory</span>
+<span class="p">}</span>
 </pre></div>
 
 
+<div class="admonition tip">
+<p class="admonition-title">Пример cURL</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
+<span class="s1">        &quot;coll&quot;: &quot;devices&quot;</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections/get&quot;</span>
+</pre></div>
+
+
+</div>
 <p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-  &quot;collection&quot;: {
-    &quot;id&quot;: &quot;584e64f8982fd55332741515&quot;,
-    &quot;name&quot;: &quot;devices&quot;,
-    &quot;useDocsACL&quot;: false,
-    &quot;ACL&quot;: {
-      &quot;create&quot;: [
-        &quot;*&quot;
-      ],
-      &quot;read&quot;: [
-        &quot;*&quot;
-      ],
-      &quot;remove&quot;: [
-        &quot;*&quot;
-      ],
-      &quot;update&quot;: [
-        &quot;*&quot;
-      ]
-    },
-    &quot;triggers&quot;: {
-      &quot;afterFind&quot;: {
-        &quot;code&quot;: &quot;&quot;,
-        &quot;isActive&quot;: false
-      },
-      &quot;afterInsert&quot;: {
-        &quot;code&quot;: &quot;&quot;,
-        &quot;isActive&quot;: false
-      },
-      &quot;afterRemove&quot;: {
-        &quot;code&quot;: &quot;&quot;,
-        &quot;isActive&quot;: false
-      },
-      &quot;afterUpdate&quot;: {
-        &quot;code&quot;: &quot;&quot;,
-        &quot;isActive&quot;: false
-      },
-      &quot;beforeInsert&quot;: {
-        &quot;code&quot;: &quot;&quot;,
-        &quot;isActive&quot;: false
-      },
-      &quot;beforeRemove&quot;: {
-        &quot;code&quot;: &quot;&quot;,
-        &quot;isActive&quot;: false
-      },
-      &quot;beforeUpdate&quot;: {
-        &quot;code&quot;: &quot;&quot;,
-        &quot;isActive&quot;: false
-      }
-    },
-    &quot;fields&quot;: [
-      {
-        &quot;name&quot;: &quot;readACL&quot;,
-        &quot;type&quot;: &quot;ACL&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: false,
-        &quot;required&quot;: false
-      },
-      {
-        &quot;name&quot;: &quot;updateACL&quot;,
-        &quot;type&quot;: &quot;ACL&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: false,
-        &quot;required&quot;: false
-      },
-      {
-        &quot;name&quot;: &quot;removeACL&quot;,
-        &quot;type&quot;: &quot;ACL&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: false,
-        &quot;required&quot;: false
-      },
-      {
-        &quot;name&quot;: &quot;createdAt&quot;,
-        &quot;type&quot;: &quot;Date&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: true,
-        &quot;required&quot;: false
-      },
-      {
-        &quot;name&quot;: &quot;updatedAt&quot;,
-        &quot;type&quot;: &quot;Date&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: true,
-        &quot;required&quot;: false
-      },
-      {
-        &quot;name&quot;: &quot;userId&quot;,
-        &quot;type&quot;: &quot;String&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: false,
-        &quot;required&quot;: false
-      },
-      {
-        &quot;name&quot;: &quot;deviceId&quot;,
-        &quot;type&quot;: &quot;String&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: true,
-        &quot;required&quot;: true
-      },
-      {
-        &quot;name&quot;: &quot;deviceType&quot;,
-        &quot;type&quot;: &quot;String&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: true,
-        &quot;required&quot;: true
-      }
-    ],
-    &quot;system&quot;: true,
-    &quot;indexes&quot;: []
-  },
-  &quot;error&quot;: false
-}
+<div class="admonition success">
+<p class="admonition-title">Выполнено</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;collection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;584e64f8982fd55332741515&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;devices&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;useDocsACL&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">&quot;ACL&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;create&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;*&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;read&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;*&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;remove&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;*&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;update&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;*&quot;</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;triggers&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;afterFind&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;afterInsert&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;afterRemove&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;afterUpdate&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;beforeInsert&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;beforeRemove&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;beforeUpdate&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;isActive&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;readACL&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;updateACL&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;removeACL&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;ACL&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;createdAt&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;updatedAt&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;userId&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;deviceId&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;deviceType&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;target&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;readonly&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;required&quot;</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;system&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;indexes&quot;</span><span class="p">:</span> <span class="p">[]</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
 </pre></div>
 
 
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
-}
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Ошибка</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Error</span> <span class="err">code</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Error text&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-        &quot;coll&quot;: &quot;devices&quot;
-}&#39; &quot;https://api.scorocode.ru/api/v1/app/collections/get&quot;
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="create-new-collection">Create new collection</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/create</strong></p>
 <p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Headers: <code>Content-Type: application/json</code></p>
 <p><div class="codehilite"><pre><span></span>{
     &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
     &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
