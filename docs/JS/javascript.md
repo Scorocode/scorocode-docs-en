@@ -2,7 +2,7 @@ You can download Scorocode JavaScript SDK [here](https://github.com/Scorocode/sc
 
 ## SDK integration
 
-To use SDK on the browser side, download the [lib/browser/scorocode.min.js](https://github.com/Scorocode/scorocode-SDK-JS/blob/master/lib/browser/scorocode.min.js) library and connect it to the project: 
+To use SDK on the browser side, download the [lib/browser/scorocode.min.js](https://github.com/Scorocode/scorocode-SDK-JS/blob/master/lib/browser/scorocode.min.js) library and connect it to your project: 
 
 ```js
 <script src="js/scorocode.min.js"></script>
@@ -13,17 +13,17 @@ To use SDK on the server side (NodeJS), install the SDK module `npm install scor
 ```js
 var Scorocode = require('scorocode');
 ```
-## Быстрый старт
+## Fast Start
 
-Зарегистрируйтесь и создайте приложение с любым именем в [Scorocode](https://scorocode.ru/).
+Register and create an application with any name inside [Scorocode](https://scorocode.ru/).
 
-Для разработки примера мы использовали библиотеку [react](https://facebook.github.io/react/) и утилиту для быстрого создания каркаса приложения [create-react-app](https://github.com/facebookincubator/create-react-app) Требования для установки смотрите по ссылке. Установить утилиту можно из консоли командой:
+For the purpose of showing you an expample development process, we used the [react](https://facebook.github.io/react/) library and the [create-react-app](https://github.com/facebookincubator/create-react-app) utility for fast development of an application template. Installation requirements are avaliable upon the links above. To install the utility you can use the following console command:
 
 ```
 npm install -g create-react-app
 ```
 
-Создайте новое приложение и установите JS SDK последовательностью команд в консоли:
+Create a new application and install JS SDK with the following console commands sequence:
 
 ```
 create-react-app first-scorocode
@@ -31,7 +31,7 @@ cd first-scorocode
 npm install scorocode --save
 ```
 
-Откройте файл `src/index.js` и добавьте в него строки, заменив ключи "xxx" на соответствующие ключи из вашего приложения (раздел Настройки -> Безопасность):
+Open the `src/index.js` file and add the code lines below, replacing "xxx" keys with the appropriate keys from your application security settings:
 
 ```js
 import React from 'react';
@@ -40,11 +40,11 @@ import App from './App';
 import './index.css';
 import Scorocode from 'scorocode' // <- добавить импорт SDK Scorocode
 
-// Добавить инициализацию SDK
+// Initiate SDK
 Scorocode.Init({
-    ApplicationID: "xxx", // <- заменить xxx на ключ appId приложения
-    JavaScriptKey: "xxx", // <- заменить xxx на ключ javascript приложения
-    MasterKey:     "xxx"  // <- заменить xxx на ключ masterKey приложения
+    ApplicationID: "xxx", // <- replace xxx with appId application key
+    JavaScriptKey: "xxx", // <- replace xxx with javascript application key
+    MasterKey:     "xxx"  // <- replace xxx with masterKey application key
 });
 
 ReactDOM.render(
@@ -53,13 +53,13 @@ ReactDOM.render(
 );
 ```
 
-Откройте файл `src/App.js` замените его содержимое на следующий код:
+Open  the `src/App.js` file and replace its contents with the following code:
 
 ```js
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Scorocode from 'scorocode' // <- добавить импорт SDK
+import Scorocode from 'scorocode' // <- add SDK import
 
 
 class App extends Component {
@@ -67,7 +67,7 @@ class App extends Component {
     constructor(props) {
         super(props);
 
-        // Создаем переменные, которые будут хранить результаты запросов
+        // Creating values to store Создаем переменные, которые будут хранить результаты запросов
         this.state = {
             registerResult: "",
             loginResult: ""
