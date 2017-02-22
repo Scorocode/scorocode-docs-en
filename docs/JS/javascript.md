@@ -17,7 +17,7 @@ var Scorocode = require('scorocode');
 
 Register and create an application with any name inside [Scorocode](https://scorocode.ru/).
 
-For the purpose of showing you an expample development process, we used the [react](https://facebook.github.io/react/) library and the [create-react-app](https://github.com/facebookincubator/create-react-app) utility for fast development of an application template. Installation requirements are avaliable upon the links above. To install the utility you can use the following console command:
+For the purpose of showing you an example development process, we are using the [react](https://facebook.github.io/react/) library and the [create-react-app](https://github.com/facebookincubator/create-react-app) utility for fast development of an application template. Installation requirements are available upon the links above. To install the utility you can use the following console command:
 
 ```
 npm install -g create-react-app
@@ -67,33 +67,33 @@ class App extends Component {
     constructor(props) {
         super(props);
 
-        // Creating values to store Создаем переменные, которые будут хранить результаты запросов
+        // Creating variables to store request results  
         this.state = {
             registerResult: "",
             loginResult: ""
         };
     }
 
-    // Заменяем содержимое
-    // Создаем две формы: для регистрации и для авторизации
+    // Changing the content
+    // Let's create two forms: a registration one and an authorization one
     render() {
         return (
             &lt;div&gt;
-                &lt;h2&gt;Регистрация&lt;/h2&gt;
+                &lt;h2&gt;Registration&lt;/h2&gt;
                 &lt;form onSubmit={(event) =&gt; {this.handleRegister(event)}}&gt;
-                    &lt;input type="text" placeholder="имя пользователя"/&gt; {' '}
+                    &lt;input type="text" placeholder="user name"/&gt; {' '}
                     &lt;input type="email" placeholder="email"/&gt; {' '}
                     &lt;input type="password" placeholder="password"/&gt;
-                    &lt;button type="submit"&gt;Зарегистрироваться&lt;/button&gt;
+                    &lt;button type="submit"&gt;Register&lt;/button&gt;
                 &lt;/form&gt;
 
                 &lt;pre&gt;{this.state.registerResult}&lt;/pre&gt;
 
-                &lt;h2&gt;Вход в систему&lt;/h2&gt;
+                &lt;h2&gt;System Login&lt;/h2&gt;
                 &lt;form onSubmit={(event) =&gt; {this.handleLogin(event)}}&gt;
                     &lt;input type="email" placeholder="email"/&gt; {' '}
                     &lt;input type="password" placeholder="password"/&gt;
-                    &lt;button type="submit"&gt;Войти&lt;/button&gt;
+                    &lt;button type="submit"&gt;Login&lt;/button&gt;
                 &lt;/form&gt;
 
                 &lt;pre&gt;{this.state.loginResult}&lt;/pre&gt;
@@ -101,59 +101,59 @@ class App extends Component {
         );
     }
 
-    // Обработчик формы регистрации
+    // Handling the registration form
     handleRegister(event) {
         event.preventDefault()
         const username = event.target.elements[0].value
         const email = event.target.elements[1].value
         const password = event.target.elements[2].value
 
-        // Очищаем переменную результата
+        // Clearing the result variable 
         this.setState({registerResult: ""})
 
-        // Создадим новый экземпляр Scorocode.User
+        // Creating new Scorocode.User sample
         var appUser = new Scorocode.User();
 
-        // Установим данные, необходимые для регистрации пользователя приложения
+        // Setting data needed to register an application user
         appUser
             .set("username", username)
             .set("email", email)
             .set("password", password);
 
-        // Зарегистрируем нового пользователя приложения
+        // Registering a new application user
         appUser.signup()
-            // Обработчик успешного выполнения запроса
+            // Event handler for a successful request run
             .then((data)=>{
-                // Обновляем переменную результата, переводя полученный объект в строку
+                // Updating the result variable by transferring the object in the code line
                 this.setState({registerResult: JSON.stringify(data, null, 2)})
             })
             .catch((err) => {
-                // Обновляем переменную результата, переводя полученный объект в строку
+                // Updating the result variable by transferring the object in the code line
                 this.setState({registerResult: JSON.stringify(err, null, 2)})
             })
     }
 
-    // Обработчик формы авторизации
+    // Handling the authorization form
     handleLogin(event) {
         event.preventDefault()
         const email = event.target.elements[0].value
         const password = event.target.elements[1].value
 
-        // Очищаем переменную результата
+        // Clearing the result variable
         this.setState({loginResult: ""})
 
-        // Создадим новый экземпляр Scorocode.User
+        // Creating new Scorocode.User sample
         var appUser = new Scorocode.User();
 
-        // Аутентифицируем пользователя приложения, используя email и password
+        // Authenticating an application user with their email and password
         appUser.login(email, password)
-            // Обработчик успешного выполнения запроса
+            // Ivent handler for a successful request run
             .then((data)=>{
-                // Обновляем переменную результата, переводя полученный объект в строку
+                // ОUpdating the result variable by transferring the object in the code line
                 this.setState({loginResult: JSON.stringify(data, null, 2)})
             })
             .catch((err) => {
-                // Обновляем переменную результата, переводя полученный объект в строку
+                // Updating the result variable by transferring the object in the code line
                 this.setState({loginResult: JSON.stringify(err, null, 2)})
             })
     }
@@ -162,12 +162,12 @@ class App extends Component {
 export default App;
 ```
 
-Сохраните файл и запустите приложение из консоли командой:
+Save the file and run your application with the console command:
 
 ```
 npm start
 ```
 
-В результате в браузере откроется страница с двумя формами: регистрации и авторизации.
-Поэкспериментируйте с регистрацией пользователей и их авторизацией и посмотрите на ответы от API Scorocode.
-После успешной регистрации вы можете увидеть в коллекции users добавленного пользователя и авторизоваться, используя его email и пароль.
+As a result, a page with two forms will open in your browser: a registration form and an authorization form.
+Experiment with users registration and authorization, and check the Scorocode API responses.
+After a successful registration you can see the added user in the User collection and authorize it using its email and password. 
