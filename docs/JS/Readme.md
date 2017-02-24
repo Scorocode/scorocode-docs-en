@@ -2,7 +2,7 @@
 
 * [Scorocode](Scorocode.md#Scorocode)
     * 
-        * [.Init(opt) Инициализация SDK](Scorocode.md#Scorocode+Init)
+        * [.Init(opt) Initializing the SDK](Scorocode.md#Scorocode+Init)
     * 
         * [.Object](Scorocode.Object.md#Scorocode.Object)
             * [new Object(collName)](Scorocode.Object.md#new_Scorocode.Object_new) ⇒ <code>Scorocode.Object</code>
