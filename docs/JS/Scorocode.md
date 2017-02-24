@@ -1,13 +1,13 @@
 <a name="Scorocode"></a>
 
 * [Scorocode](#Scorocode)
-    * [.Init(opt) - Инициализация SDK](#Scorocode+Init)
+    * [.Init(opt) - Initializing the SDK](#Scorocode+Init)
 
 <a name="Scorocode+Init"></a>
 
 ## .Init(opt) - SDK initialization
 
-| Параметр | Тип | Описание |
+| Parameter | Type | Description |
 | --- | --- | --- |
 | opt | <code>Object</code> | Keys for ititialisation: application identifier, your platform client key and access keys that necessary. |
 
