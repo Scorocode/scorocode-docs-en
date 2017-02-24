@@ -1,6 +1,6 @@
 <a name="sc.System"></a>
 
-Содержание
+Contents
 
 * [.System](#sc.System)
     * [new System()](#new_sc.System)
@@ -17,14 +17,14 @@
 
 ## new System()
 
-Конструктор Scorocode.System.
+Scorocode.System. Designer 
 
 ```js
 var sys = new sc.System();
 ```
 
-!!! Note "Примечание"
-    Для использования системных методов необходима инициализация SDK с указанием MasterKey.
+!!! Note "Note"
+    To use system methods you need to initialize the SDK and indicate a MasterKey.
 
 ------------------------------------------------------------------------
 
@@ -32,11 +32,11 @@ var sys = new sc.System();
 
 ## .getDataStats(callbacks)
 
-Метод для получения статистики приложения.
+A method to get the application stats.
 
-| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| Parameter | Type | 	Properties	| Description |	Variable Example |
 | --- | --- | --- | --- | --- |
-| callbacks | <code>Object</code> | необязательный | Коллбэки success и error для выполняемого запроса. | см. пример ниже |
+| callbacks | <code>Object</code> | optional | success and error callbacks for an executed query | see example below |
 
 ```js
 var sc = require('scorocode');
@@ -58,12 +58,12 @@ sys.getDataStats()
     });
 ```
 
-**Возвращает**: `promise.{dataSize: int, filesSize: int, indexSize: int, store: int}` - Возвращает promise, который возвращает объект со статистикой приложения:
+**Returns**: `promise.{dataSize: int, filesSize: int, indexSize: int, store: int}` - Returns a promise, which returns an object with the application statistics:
 
-* dataSize - объем данных приложения;
-* fileSize - объем данных, занятый файлами приложения;
-* indexSixe - объем данных, занятый индексами приложения;
-* store - объем данных, доступных приложению.
+* dataSize - application data size;
+* fileSize - application files data size;
+* indexSixe - application indexes data size;
+* store - free data available for the application.
 
 ------------------------------------------------------------------------
 
@@ -71,11 +71,11 @@ sys.getDataStats()
 
 ## .getApp(callbacks)
 
-Метод для получения полной информации о приложении.
+A method to get full information about the application.
 
-| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| Parameter | Type | 	Properties	| Description |	Variable Example |
 | --- | --- | --- | --- | --- |
-| callbacks | <code>Object</code> | необязательный | Коллбэки success и error для выполняемого запроса. | см. пример ниже |
+| callbacks | <code>Object</code> | optional | success and error callbacks for an executed query | see example below |
 
 ```js
 var sc = require('scorocode');
@@ -97,7 +97,7 @@ sys.getApp()
     });
 ```
 
-**Возвращает**: `promise.<App>` - Возвращает promise, который возвращает объект `App`.
+**Returns**: `promise.<App>` - Returns a promise, which returns the `App` object.
 
 
 ---------------------------------------------------------------------
@@ -106,11 +106,11 @@ sys.getApp()
 
 ## App.getCollections(callbacks)
 
-Метод для получения списка коллекций приложения.
+A method to get a list of collections.
 
-| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| Parameter | Type | 	Properties	| Description |	Variable Example |
 | --- | --- | --- | --- | --- |
-| callbacks | <code>Object</code> | необязательный | Коллбэки success и error для выполняемого запроса. | см. пример ниже |
+| callbacks | <code>Object</code> | optional | success and error callbacks for an executed query | see example below |
 
 ```js
 var sc = require('scorocode');
@@ -134,19 +134,19 @@ system.getApp()
   });
 ```
 
-**Возвращает**: `promise.[Collection]` - Возвращает promise, который возвращает массив объектов `Collection`.
+**Returns**: `promise.[Collection]` - Returns a promise, which returns an array of `Collection` objects.
 
 ---------------------------------------------------------------------
 <a name="App.getFolderContent"></a>
 
 ## App.getFolderContent(path, callbacks)
 
-Метод для получения папки по указанному пути.
+A method to get a folder at the specified path.
 
-| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| Parameter | Type | 	Properties	| Description |	Variable Example |
 | --- | --- | --- | --- | --- |
-| path | `String` | Обязательный | Путь к папке | "/" | 
-| callbacks | <code>Object</code> | необязательный | Коллбэки success и error для выполняемого запроса. | см. пример ниже |
+| path | `String` | mandatory | specified folder path | "/" | 
+| callbacks | <code>Object</code> | optional | success and error callbacks for an executed query | see example below |
 
 ```js
 var sc = require('scorocode');
@@ -170,7 +170,7 @@ system.getApp()
   });
 ```
 
-**Возвращает**: `promise.[Script, Folder]` - Возвращает promise, который возвращает массив объектов `Script` и `Folder`
+**Returns**: `promise.[Script, Folder]` - Returns a promise, which returns an array of `Script` и `Folder` objects.
 
 ---------------------------------------------------------------------
 
@@ -178,12 +178,12 @@ system.getApp()
 
 ## App.getScript(id, callbacks}
 
-Метод для получения скрипта по его id.
+A method to get a script and its ID.
 
-| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| Parameter | Type | 	Properties	| Description |	Variable Example |
 | --- | --- | --- | --- | --- |
-| id | <code>String</code> | Обязательный | Идентификатор скрипта | "574860d2781267d34f7a2415" | 
-| callbacks | <code>Object</code> | необязательный | Коллбэки success и error для выполняемого запроса. | см. пример ниже |
+| id | <code>String</code> | mandatory | script ID | "574860d2781267d34f7a2415" | 
+| callbacks | <code>Object</code> | optional | success and error callbacks for an executed query | see example below |
 
 ```js
 var sc = require('scorocode');
@@ -207,7 +207,7 @@ system.getApp()
   });
 ```
 
-**Возвращает**: `promise.Script` - Возвращает promise, который возвращает объект `Script`
+**Returns**: `promise.Script` - Returns a promise, which returns the `Script` object.
 
 ---------------------------------------------------------------------
 
@@ -215,13 +215,13 @@ system.getApp()
 
 ## App.getBots(skip, limit, callbacks)
 
-Метод для получения списка ботов.
+A method to get a list of bots.
 
-| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| Parameter | Type | 	Properties	| Description |	Variable Example |
 | --- | --- | --- | --- | --- |
-| skip      | <code>Number</code> | необязательный, по-умолчанию 0  | Количество пропускаемых объектов |1|
-| limit     | <code>Number</code> | необязательный, по-умолчанию 50 | Лимит выборки | 5 |
-| callbacks | <code>Object</code> | необязательный | Коллбэки success и error для выполняемого запроса. | см. пример ниже |
+| skip      | <code>Number</code> | optional, by-default 0  | Number of skipped objects |1|
+| limit     | <code>Number</code> | optional, by-default 50 | Sample limits | 5 |
+| callbacks | <code>Object</code> | optional | success and error callbacks for an executed query | see example below |
 
 ```js
 var sc = require('scorocode');
@@ -245,4 +245,4 @@ system.getApp()
   });
 ```
 
-**Возвращает**: `promise.<Bot>` - Возвращает promise, который возвращает массив объектов `Bot`
+**Returns**: `promise.<Bot>` - Returns a promise, which returns the `Bot` object.
