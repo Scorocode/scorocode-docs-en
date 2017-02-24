@@ -32,11 +32,11 @@ var sys = new sc.System();
 
 ## .getDataStats(callbacks)
 
-A method to get the application stats.
+Method to get the application stats.
 
 | Parameter | Type | 	Properties	| Description |	Variable Example |
 | --- | --- | --- | --- | --- |
-| callbacks | <code>Object</code> | optional | success and error callbacks for an executed query | see example below |
+| callbacks | <code>Object</code> | optional | success and error callbacks for the executed query | see example below |
 
 ```js
 var sc = require('scorocode');
@@ -71,11 +71,11 @@ sys.getDataStats()
 
 ## .getApp(callbacks)
 
-A method to get full information about the application.
+Method to get full information about the application.
 
 | Parameter | Type | 	Properties	| Description |	Variable Example |
 | --- | --- | --- | --- | --- |
-| callbacks | <code>Object</code> | optional | success and error callbacks for an executed query | see example below |
+| callbacks | <code>Object</code> | optional | success and error callbacks for the executed query | see example below |
 
 ```js
 var sc = require('scorocode');
@@ -106,11 +106,11 @@ sys.getApp()
 
 ## App.getCollections(callbacks)
 
-A method to get a list of collections.
+Method to get a list of collections.
 
 | Parameter | Type | 	Properties	| Description |	Variable Example |
 | --- | --- | --- | --- | --- |
-| callbacks | <code>Object</code> | optional | success and error callbacks for an executed query | see example below |
+| callbacks | <code>Object</code> | optional | success and error callbacks for the executed query | see example below |
 
 ```js
 var sc = require('scorocode');
@@ -141,12 +141,12 @@ system.getApp()
 
 ## App.getFolderContent(path, callbacks)
 
-A method to get a folder at the specified path.
+Method to get a folder at the specified path.
 
 | Parameter | Type | 	Properties	| Description |	Variable Example |
 | --- | --- | --- | --- | --- |
 | path | `String` | mandatory | specified folder path | "/" | 
-| callbacks | <code>Object</code> | optional | success and error callbacks for an executed query | see example below |
+| callbacks | <code>Object</code> | optional | success and error callbacks for the executed query | see example below |
 
 ```js
 var sc = require('scorocode');
@@ -178,12 +178,12 @@ system.getApp()
 
 ## App.getScript(id, callbacks}
 
-A method to get a script and its ID.
+Method to get a script and its ID.
 
 | Parameter | Type | 	Properties	| Description |	Variable Example |
 | --- | --- | --- | --- | --- |
 | id | <code>String</code> | mandatory | script ID | "574860d2781267d34f7a2415" | 
-| callbacks | <code>Object</code> | optional | success and error callbacks for an executed query | see example below |
+| callbacks | <code>Object</code> | optional | success and error callbacks for the executed query | see example below |
 
 ```js
 var sc = require('scorocode');
@@ -215,13 +215,13 @@ system.getApp()
 
 ## App.getBots(skip, limit, callbacks)
 
-A method to get a list of bots.
+Method to get a list of bots.
 
 | Parameter | Type | 	Properties	| Description |	Variable Example |
 | --- | --- | --- | --- | --- |
 | skip      | <code>Number</code> | optional, by-default 0  | Number of skipped objects |1|
-| limit     | <code>Number</code> | optional, by-default 50 | Sample limits | 5 |
-| callbacks | <code>Object</code> | optional | success and error callbacks for an executed query | see example below |
+| limit     | <code>Number</code> | optional, by-default 50 | Sampling size limit | 5 |
+| callbacks | <code>Object</code> | optional | success and error callbacks for the executed query | see example below |
 
 ```js
 var sc = require('scorocode');
