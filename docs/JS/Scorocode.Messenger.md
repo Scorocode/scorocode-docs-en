@@ -24,7 +24,7 @@ var Broadcast = new Scorocode.Messenger();
 
 ## .sendPush(options, callbacks)
 
-Push sending method
+Method to send Push notifications
 
 
 | Parameter | Type | Properties |
@@ -60,7 +60,7 @@ Broadcast.sendPush({
         });
 ```
 
-**Returns**: <code>promise.{error: Boolean, count: Number}</code> - Returns promise, which returns the object containing the result of the query execution.
+**Returns**: <code>promise.{error: Boolean, count: Number}</code> - Returns a promise, which returns the object containing the result of the query execution.
 
 - "error" - <code>Boolean</code> - Error flag
 - "count" - <code>Number</code>  - Number of messages sent
@@ -79,7 +79,7 @@ Broadcast.sendPush({
 
 ## .sendSms(options, callbacks)
 
-SMS sending method
+Method to send SMS
 
 | Parameter | Type | Properties |
 | --- | --- | --- |
@@ -112,7 +112,7 @@ Broadcast.sendPush({
         });
 ```
 
-**Возвращает**: <code>{error: Boolean, count: Number}</code> - Returns promise, which returns the object containing the result of the query execution.
+**Returns**: <code>{error: Boolean, count: Number}</code> - Returns a promise, which returns the object containing the result of the query execution.
 
 - "error" - <code>Boolean</code> - Error flag
 - "count" - <code>Number</code>  - Number of messages sent
