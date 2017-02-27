@@ -419,8 +419,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="Быстрый старт" class="md-nav__link">
-    Быстрый старт
+  <a href="#fast-start" title="Fast Start" class="md-nav__link">
+    Fast Start
   </a>
   
 </li>
@@ -911,8 +911,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="Быстрый старт" class="md-nav__link">
-    Быстрый старт
+  <a href="#fast-start" title="Fast Start" class="md-nav__link">
+    Fast Start
   </a>
   
 </li>
@@ -934,7 +934,7 @@
                 
                 <p>You can download Scorocode JavaScript SDK <a href="https://github.com/Scorocode/scorocode-SDK-JS">here</a>.</p>
 <h2 id="sdk-integration">SDK integration</h2>
-<p>To use SDK on the browser side, download the <a href="https://github.com/Scorocode/scorocode-SDK-JS/blob/master/lib/browser/scorocode.min.js">lib/browser/scorocode.min.js</a> library and connect it to the project: </p>
+<p>To use SDK on the browser side, download the <a href="https://github.com/Scorocode/scorocode-SDK-JS/blob/master/lib/browser/scorocode.min.js">lib/browser/scorocode.min.js</a> library and connect it to your project: </p>
 <div class="codehilite"><pre><span></span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;js/scorocode.min.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
 </pre></div>
 
@@ -944,32 +944,32 @@
 </pre></div>
 
 
-<h2 id="_1">Быстрый старт</h2>
-<p>Зарегистрируйтесь и создайте приложение с любым именем в <a href="https://scorocode.ru/">Scorocode</a>.</p>
-<p>Для разработки примера мы использовали библиотеку <a href="https://facebook.github.io/react/">react</a> и утилиту для быстрого создания каркаса приложения <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> Требования для установки смотрите по ссылке. Установить утилиту можно из консоли командой:</p>
+<h2 id="fast-start">Fast Start</h2>
+<p>Register and create an application with any name inside <a href="https://scorocode.ru/">Scorocode</a>.</p>
+<p>For the purpose of showing you an example development process, we are using the <a href="https://facebook.github.io/react/">react</a> library and the <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> utility for fast development of an application template. Installation requirements are available upon the links above. To install the utility you can use the following console command:</p>
 <div class="codehilite"><pre><span></span>npm install -g create-react-app
 </pre></div>
 
 
-<p>Создайте новое приложение и установите JS SDK последовательностью команд в консоли:</p>
+<p>Create a new application and install JS SDK with the following console commands sequence:</p>
 <div class="codehilite"><pre><span></span>create-react-app first-scorocode
 cd first-scorocode
 npm install scorocode --save
 </pre></div>
 
 
-<p>Откройте файл <code>src/index.js</code> и добавьте в него строки, заменив ключи "xxx" на соответствующие ключи из вашего приложения (раздел Настройки -&gt; Безопасность):</p>
+<p>Open the <code>src/index.js</code> file and add the code lines below, replacing "xxx" keys with the appropriate keys from your application security settings:</p>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">ReactDOM</span> <span class="nx">from</span> <span class="s1">&#39;react-dom&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">App</span> <span class="nx">from</span> <span class="s1">&#39;./App&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="s1">&#39;./index.css&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">Scorocode</span> <span class="nx">from</span> <span class="s1">&#39;scorocode&#39;</span> <span class="c1">// &lt;- добавить импорт SDK Scorocode</span>
 
-<span class="c1">// Добавить инициализацию SDK</span>
+<span class="c1">// Initiate SDK</span>
 <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ appId приложения</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ javascript приложения</span>
-    <span class="nx">MasterKey</span><span class="o">:</span>     <span class="s2">&quot;xxx&quot;</span>  <span class="c1">// &lt;- заменить xxx на ключ masterKey приложения</span>
+    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- replace xxx with appId application key</span>
+    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- replace xxx with javascript application key</span>
+    <span class="nx">MasterKey</span><span class="o">:</span>     <span class="s2">&quot;xxx&quot;</span>  <span class="c1">// &lt;- replace xxx with masterKey application key</span>
 <span class="p">});</span>
 
 <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
@@ -979,11 +979,11 @@ npm install scorocode --save
 </pre></div>
 
 
-<p>Откройте файл <code>src/App.js</code> замените его содержимое на следующий код:</p>
+<p>Open  the <code>src/App.js</code> file and replace its contents with the following code:</p>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">logo</span> <span class="nx">from</span> <span class="s1">&#39;./logo.svg&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="s1">&#39;./App.css&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">Scorocode</span> <span class="nx">from</span> <span class="s1">&#39;scorocode&#39;</span> <span class="c1">// &lt;- добавить импорт SDK</span>
+<span class="kr">import</span> <span class="nx">Scorocode</span> <span class="nx">from</span> <span class="s1">&#39;scorocode&#39;</span> <span class="c1">// &lt;- add SDK import</span>
 
 
 <span class="kr">class</span> <span class="nx">App</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
@@ -991,33 +991,33 @@ npm install scorocode --save
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
         <span class="kr">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
 
-        <span class="c1">// Создаем переменные, которые будут хранить результаты запросов</span>
+        <span class="c1">// Creating variables to store request results  </span>
         <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
             <span class="nx">registerResult</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
             <span class="nx">loginResult</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
         <span class="p">};</span>
     <span class="p">}</span>
 
-    <span class="c1">// Заменяем содержимое</span>
-    <span class="c1">// Создаем две формы: для регистрации и для авторизации</span>
+    <span class="c1">// Changing the content</span>
+    <span class="c1">// Let&#39;s create two forms: a registration one and an authorization one</span>
     <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">div</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span>
-                <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">h2</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">Регистрация</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="err">/h2&amp;gt;</span>
+                <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">h2</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">Registration</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="err">/h2&amp;gt;</span>
                 <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleRegister</span><span class="p">(</span><span class="nx">event</span><span class="p">)}}</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span>
-                    <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;имя пользователя&quot;</span><span class="o">/&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="p">{</span><span class="s1">&#39; &#39;</span><span class="p">}</span>
+                    <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;user name&quot;</span><span class="o">/&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="p">{</span><span class="s1">&#39; &#39;</span><span class="p">}</span>
                     <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;email&quot;</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;email&quot;</span><span class="o">/&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="p">{</span><span class="s1">&#39; &#39;</span><span class="p">}</span>
                     <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;password&quot;</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;password&quot;</span><span class="o">/&amp;</span><span class="nx">gt</span><span class="p">;</span>
-                    <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">Зарегистрироваться</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="err">/button&amp;gt;</span>
+                    <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">Register</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="err">/button&amp;gt;</span>
                 <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="err">/form&amp;gt;</span>
 
                 <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">pre</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">registerResult</span><span class="p">}</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="err">/pre&amp;gt;</span>
 
-                <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">h2</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">Вход</span> <span class="nx">в</span> <span class="nx">систему</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="err">/h2&amp;gt;</span>
+                <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">h2</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">System</span> <span class="nx">Login</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="err">/h2&amp;gt;</span>
                 <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleLogin</span><span class="p">(</span><span class="nx">event</span><span class="p">)}}</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span>
                     <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;email&quot;</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;email&quot;</span><span class="o">/&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="p">{</span><span class="s1">&#39; &#39;</span><span class="p">}</span>
                     <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;password&quot;</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;password&quot;</span><span class="o">/&amp;</span><span class="nx">gt</span><span class="p">;</span>
-                    <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">Войти</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="err">/button&amp;gt;</span>
+                    <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">Login</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="err">/button&amp;gt;</span>
                 <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="err">/form&amp;gt;</span>
 
                 <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="nx">pre</span><span class="o">&amp;</span><span class="nx">gt</span><span class="p">;{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">loginResult</span><span class="p">}</span><span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span><span class="err">/pre&amp;gt;</span>
@@ -1025,59 +1025,59 @@ npm install scorocode --save
         <span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="c1">// Обработчик формы регистрации</span>
+    <span class="c1">// Handling the registration form</span>
     <span class="nx">handleRegister</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span>
         <span class="kr">const</span> <span class="nx">username</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">value</span>
         <span class="kr">const</span> <span class="nx">email</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">value</span>
         <span class="kr">const</span> <span class="nx">password</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nx">value</span>
 
-        <span class="c1">// Очищаем переменную результата</span>
+        <span class="c1">// Clearing the result variable </span>
         <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">registerResult</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">})</span>
 
-        <span class="c1">// Создадим новый экземпляр Scorocode.User</span>
+        <span class="c1">// Creating new Scorocode.User sample</span>
         <span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
 
-        <span class="c1">// Установим данные, необходимые для регистрации пользователя приложения</span>
+        <span class="c1">// Setting data needed to register an application user</span>
         <span class="nx">appUser</span>
             <span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="nx">username</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="nx">email</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="nx">password</span><span class="p">);</span>
 
-        <span class="c1">// Зарегистрируем нового пользователя приложения</span>
+        <span class="c1">// Registering a new application user</span>
         <span class="nx">appUser</span><span class="p">.</span><span class="nx">signup</span><span class="p">()</span>
-            <span class="c1">// Обработчик успешного выполнения запроса</span>
+            <span class="c1">// Event handler for a successful request run</span>
             <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-                <span class="c1">// Обновляем переменную результата, переводя полученный объект в строку</span>
+                <span class="c1">// Updating the result variable by transferring the object in the code line</span>
                 <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">registerResult</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">)})</span>
             <span class="p">})</span>
             <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                <span class="c1">// Обновляем переменную результата, переводя полученный объект в строку</span>
+                <span class="c1">// Updating the result variable by transferring the object in the code line</span>
                 <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">registerResult</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">)})</span>
             <span class="p">})</span>
     <span class="p">}</span>
 
-    <span class="c1">// Обработчик формы авторизации</span>
+    <span class="c1">// Handling the authorization form</span>
     <span class="nx">handleLogin</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span>
         <span class="kr">const</span> <span class="nx">email</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">value</span>
         <span class="kr">const</span> <span class="nx">password</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">elements</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">value</span>
 
-        <span class="c1">// Очищаем переменную результата</span>
+        <span class="c1">// Clearing the result variable</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">loginResult</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">})</span>
 
-        <span class="c1">// Создадим новый экземпляр Scorocode.User</span>
+        <span class="c1">// Creating new Scorocode.User sample</span>
         <span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
 
-        <span class="c1">// Аутентифицируем пользователя приложения, используя email и password</span>
+        <span class="c1">// Authenticating an application user with their email and password</span>
         <span class="nx">appUser</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span> <span class="nx">password</span><span class="p">)</span>
-            <span class="c1">// Обработчик успешного выполнения запроса</span>
+            <span class="c1">// Event handler for a successful request run</span>
             <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-                <span class="c1">// Обновляем переменную результата, переводя полученный объект в строку</span>
+                <span class="c1">// ОUpdating the result variable by transferring the object in the code line</span>
                 <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">loginResult</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">)})</span>
             <span class="p">})</span>
             <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                <span class="c1">// Обновляем переменную результата, переводя полученный объект в строку</span>
+                <span class="c1">// Updating the result variable by transferring the object in the code line</span>
                 <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">loginResult</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">)})</span>
             <span class="p">})</span>
     <span class="p">}</span>
@@ -1087,14 +1087,14 @@ npm install scorocode --save
 </pre></div>
 
 
-<p>Сохраните файл и запустите приложение из консоли командой:</p>
+<p>Save the file and run your application with the console command:</p>
 <div class="codehilite"><pre><span></span>npm start
 </pre></div>
 
 
-<p>В результате в браузере откроется страница с двумя формами: регистрации и авторизации.
-Поэкспериментируйте с регистрацией пользователей и их авторизацией и посмотрите на ответы от API Scorocode.
-После успешной регистрации вы можете увидеть в коллекции users добавленного пользователя и авторизоваться, используя его email и пароль.</p>
+<p>As a result, a page with two forms will open in your browser: a registration form and an authorization form.
+Experiment with users registration and authorization, and check the Scorocode API responses.
+After a successful registration you can see the added user in the User collection and authorize it using its email and password. </p>
               
             </article>
           </div>

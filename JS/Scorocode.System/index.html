@@ -1003,7 +1003,7 @@
                   <h1>Scorocode.System</h1>
                 
                 <p><a name="sc.System"></a></p>
-<p>Содержание</p>
+<p>Contents</p>
 <ul>
 <li><a href="#sc.System">.System</a><ul>
 <li><a href="#new_sc.System">new System()</a></li>
@@ -1019,36 +1019,36 @@
 <hr />
 <p><a name="new_sc.System"></a></p>
 <h2 id="new-system">new System()</h2>
-<p>Конструктор Scorocode.System.</p>
+<p>Scorocode.System. Designer </p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sys</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">System</span><span class="p">();</span>
 </pre></div>
 
 
 <div class="admonition note">
-<p class="admonition-title">Примечание</p>
-<p>Для использования системных методов необходима инициализация SDK с указанием MasterKey.</p>
+<p class="admonition-title">Note</p>
+<p>To use system methods you need to initialize the SDK and indicate a MasterKey.</p>
 </div>
 <hr />
 <p><a name="sc.System+getDataStats"></a></p>
 <h2 id="getdatastatscallbacks">.getDataStats(callbacks)</h2>
-<p>Метод для получения статистики приложения.</p>
+<p>Method to get the application stats.</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Variable Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>callbacks</td>
 <td><code>Object</code></td>
-<td>необязательный</td>
-<td>Коллбэки success и error для выполняемого запроса.</td>
-<td>см. пример ниже</td>
+<td>optional</td>
+<td>success and error callbacks for the executed query</td>
+<td>see example below</td>
 </tr>
 </tbody>
 </table>
@@ -1072,34 +1072,34 @@
 </pre></div>
 
 
-<p><strong>Возвращает</strong>: <code>promise.{dataSize: int, filesSize: int, indexSize: int, store: int}</code> - Возвращает promise, который возвращает объект со статистикой приложения:</p>
+<p><strong>Returns</strong>: <code>promise.{dataSize: int, filesSize: int, indexSize: int, store: int}</code> - Returns a promise, which returns an object with the application statistics:</p>
 <ul>
-<li>dataSize - объем данных приложения;</li>
-<li>fileSize - объем данных, занятый файлами приложения;</li>
-<li>indexSixe - объем данных, занятый индексами приложения;</li>
-<li>store - объем данных, доступных приложению.</li>
+<li>dataSize - application data size;</li>
+<li>fileSize - application files data size;</li>
+<li>indexSixe - application indexes data size;</li>
+<li>store - free data available for the application.</li>
 </ul>
 <hr />
 <p><a name="sc.System+getApp"></a></p>
 <h2 id="getappcallbacks">.getApp(callbacks)</h2>
-<p>Метод для получения полной информации о приложении.</p>
+<p>Method to get full information about the application.</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Variable Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>callbacks</td>
 <td><code>Object</code></td>
-<td>необязательный</td>
-<td>Коллбэки success и error для выполняемого запроса.</td>
-<td>см. пример ниже</td>
+<td>optional</td>
+<td>success and error callbacks for the executed query</td>
+<td>see example below</td>
 </tr>
 </tbody>
 </table>
@@ -1123,28 +1123,28 @@
 </pre></div>
 
 
-<p><strong>Возвращает</strong>: <code>promise.&lt;App&gt;</code> - Возвращает promise, который возвращает объект <code>App</code>.</p>
+<p><strong>Returns</strong>: <code>promise.&lt;App&gt;</code> - Returns a promise, which returns the <code>App</code> object.</p>
 <hr />
 <p><a name="App.getCollections"></a></p>
 <h2 id="appgetcollectionscallbacks">App.getCollections(callbacks)</h2>
-<p>Метод для получения списка коллекций приложения.</p>
+<p>Method to get a list of collections.</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Variable Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>callbacks</td>
 <td><code>Object</code></td>
-<td>необязательный</td>
-<td>Коллбэки success и error для выполняемого запроса.</td>
-<td>см. пример ниже</td>
+<td>optional</td>
+<td>success and error callbacks for the executed query</td>
+<td>see example below</td>
 </tr>
 </tbody>
 </table>
@@ -1170,35 +1170,35 @@
 </pre></div>
 
 
-<p><strong>Возвращает</strong>: <code>promise.[Collection]</code> - Возвращает promise, который возвращает массив объектов <code>Collection</code>.</p>
+<p><strong>Returns</strong>: <code>promise.[Collection]</code> - Returns a promise, which returns an array of <code>Collection</code> objects.</p>
 <hr />
 <p><a name="App.getFolderContent"></a></p>
 <h2 id="appgetfoldercontentpath-callbacks">App.getFolderContent(path, callbacks)</h2>
-<p>Метод для получения папки по указанному пути.</p>
+<p>Method to get a folder at the specified path.</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Variable Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>path</td>
 <td><code>String</code></td>
-<td>Обязательный</td>
-<td>Путь к папке</td>
+<td>mandatory</td>
+<td>specified folder path</td>
 <td>"/"</td>
 </tr>
 <tr>
 <td>callbacks</td>
 <td><code>Object</code></td>
-<td>необязательный</td>
-<td>Коллбэки success и error для выполняемого запроса.</td>
-<td>см. пример ниже</td>
+<td>optional</td>
+<td>success and error callbacks for the executed query</td>
+<td>see example below</td>
 </tr>
 </tbody>
 </table>
@@ -1224,35 +1224,35 @@
 </pre></div>
 
 
-<p><strong>Возвращает</strong>: <code>promise.[Script, Folder]</code> - Возвращает promise, который возвращает массив объектов <code>Script</code> и <code>Folder</code></p>
+<p><strong>Returns</strong>: <code>promise.[Script, Folder]</code> - Returns a promise, which returns an array of <code>Script</code> и <code>Folder</code> objects.</p>
 <hr />
 <p><a name="App.getScript"></a></p>
 <h2 id="appgetscriptid-callbacks">App.getScript(id, callbacks}</h2>
-<p>Метод для получения скрипта по его id.</p>
+<p>Method to get a script and its ID.</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Variable Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>id</td>
 <td><code>String</code></td>
-<td>Обязательный</td>
-<td>Идентификатор скрипта</td>
+<td>mandatory</td>
+<td>script ID</td>
 <td>"574860d2781267d34f7a2415"</td>
 </tr>
 <tr>
 <td>callbacks</td>
 <td><code>Object</code></td>
-<td>необязательный</td>
-<td>Коллбэки success и error для выполняемого запроса.</td>
-<td>см. пример ниже</td>
+<td>optional</td>
+<td>success and error callbacks for the executed query</td>
+<td>see example below</td>
 </tr>
 </tbody>
 </table>
@@ -1278,42 +1278,42 @@
 </pre></div>
 
 
-<p><strong>Возвращает</strong>: <code>promise.Script</code> - Возвращает promise, который возвращает объект <code>Script</code></p>
+<p><strong>Returns</strong>: <code>promise.Script</code> - Returns a promise, which returns the <code>Script</code> object.</p>
 <hr />
 <p><a name="App.getBots"></a></p>
 <h2 id="appgetbotsskip-limit-callbacks">App.getBots(skip, limit, callbacks)</h2>
-<p>Метод для получения списка ботов.</p>
+<p>Method to get a list of bots.</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Variable Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>skip</td>
 <td><code>Number</code></td>
-<td>необязательный, по-умолчанию 0</td>
-<td>Количество пропускаемых объектов</td>
+<td>optional, by-default 0</td>
+<td>Number of skipped objects</td>
 <td>1</td>
 </tr>
 <tr>
 <td>limit</td>
 <td><code>Number</code></td>
-<td>необязательный, по-умолчанию 50</td>
-<td>Лимит выборки</td>
+<td>optional, by-default 50</td>
+<td>Sampling size limit</td>
 <td>5</td>
 </tr>
 <tr>
 <td>callbacks</td>
 <td><code>Object</code></td>
-<td>необязательный</td>
-<td>Коллбэки success и error для выполняемого запроса.</td>
-<td>см. пример ниже</td>
+<td>optional</td>
+<td>success and error callbacks for the executed query</td>
+<td>see example below</td>
 </tr>
 </tbody>
 </table>
@@ -1339,7 +1339,7 @@
 </pre></div>
 
 
-<p><strong>Возвращает</strong>: <code>promise.&lt;Bot&gt;</code> - Возвращает promise, который возвращает массив объектов <code>Bot</code></p>
+<p><strong>Returns</strong>: <code>promise.&lt;Bot&gt;</code> - Returns a promise, which returns the <code>Bot</code> object.</p>
               
             </article>
           </div>

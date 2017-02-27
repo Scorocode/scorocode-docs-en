@@ -2128,7 +2128,7 @@
 
 
 <div class="admonition tip">
-<p class="admonition-title">Пример cURL</p>
+<p class="admonition-title">cURL example</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
 <span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
 <span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
@@ -2141,7 +2141,7 @@
 </div>
 <p><strong>Responses:</strong></p>
 <div class="admonition success">
-<p class="admonition-title">Выполнено</p>
+<p class="admonition-title">Success</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;collection&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;584e64f8982fd55332741515&quot;</span><span class="p">,</span>
@@ -2267,7 +2267,7 @@
 
 </div>
 <div class="admonition failure">
-<p class="admonition-title">Ошибка</p>
+<p class="admonition-title">Error</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Error</span> <span class="err">code</span>
@@ -2282,7 +2282,7 @@
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/create</strong></p>
 <p>Method: <code>POST</code></p>
 <p>Headers: <code>Content-Type: application/json</code></p>
-<p><div class="codehilite"><pre><span></span>{
+<div class="codehilite"><pre><span></span>{
     &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
     &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
     &quot;acc&quot;: &quot;&quot;,               // access key, mandatory, masterKey only
@@ -2294,8 +2294,40 @@
 }
 </pre></div>
 
-<strong>Responses:</strong></p>
-<p><em>Success</em></p>
+
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
+<span class="s1">        &quot;collection&quot;: {</span>
+<span class="s1">            &quot;name&quot;: &quot;apicoll&quot;,</span>
+<span class="s1">            &quot;useDocsACL&quot;: false,</span>
+<span class="s1">            &quot;ACL&quot;: {</span>
+<span class="s1">                &quot;create&quot;: [</span>
+<span class="s1">                    &quot;R5VGMes94p&quot;</span>
+<span class="s1">                ],</span>
+<span class="s1">                &quot;read&quot;: [</span>
+<span class="s1">                    &quot;*&quot;,</span>
+<span class="s1">                    &quot;R5VGMes94p&quot;</span>
+<span class="s1">                ],</span>
+<span class="s1">                &quot;remove&quot;: [</span>
+<span class="s1">                    &quot;R5VGMes94p&quot;</span>
+<span class="s1">                ],</span>
+<span class="s1">                &quot;update&quot;: [</span>
+<span class="s1">                    &quot;R5VGMes94p&quot;</span>
+<span class="s1">                ]</span>
+<span class="s1">            }</span>
+<span class="s1">        }</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections/create&quot;</span>
+</pre></div>
+
+
+</div>
+<p><strong>Responses:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
 <div class="codehilite"><pre><span></span>{
   &quot;collection&quot;: {
     &quot;id&quot;: &quot;584e849e7e0b4e222480a282&quot;,
@@ -2392,7 +2424,9 @@
 </pre></div>
 
 
-<p><em>Error</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : true,
     &quot;errCode&quot;     : 4XX/5XX, // Error code
@@ -2401,41 +2435,13 @@
 </pre></div>
 
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-        &quot;collection&quot;: {
-            &quot;name&quot;: &quot;apicoll&quot;,
-            &quot;useDocsACL&quot;: false,
-            &quot;ACL&quot;: {
-                &quot;create&quot;: [
-                    &quot;R5VGMes94p&quot;
-                ],
-                &quot;read&quot;: [
-                    &quot;*&quot;,
-                    &quot;R5VGMes94p&quot;
-                ],
-                &quot;remove&quot;: [
-                    &quot;R5VGMes94p&quot;
-                ],
-                &quot;update&quot;: [
-                    &quot;R5VGMes94p&quot;
-                ]
-            }
-        }
-}&#39; &quot;https://api.scorocode.ru/api/v1/app/collections/create&quot;
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="update-collection-settings">Update collection settings</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/update</strong></p>
 <p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<p><div class="codehilite"><pre><span></span>{
+<p>Headers: <code>Content-Type: application/json</code></p>
+<div class="codehilite"><pre><span></span>{
     &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
     &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
     &quot;acc&quot;: &quot;&quot;,               // access key, mandatory, masterKey only
@@ -2448,8 +2454,26 @@
 }
 </pre></div>
 
-<strong>Responses:</strong></p>
-<p><em>Success</em></p>
+
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
+<span class="s1">        &quot;collection&quot;: {</span>
+<span class="s1">          &quot;id&quot;: &quot;584e852276e5e715e6ec2e8c&quot;,</span>
+<span class="s1">          &quot;useDocsACL&quot;: true,</span>
+<span class="s1">          &quot;ACL&quot;: {}</span>
+<span class="s1">        }</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections/update&quot;</span>
+</pre></div>
+
+
+</div>
+<p><strong>Responses:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
 <div class="codehilite"><pre><span></span>{
   &quot;collection&quot;: {
     &quot;id&quot;: &quot;584e849e7e0b4e222480a282&quot;,
@@ -2546,7 +2570,9 @@
 </pre></div>
 
 
-<p><em>Error</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : true,
     &quot;errCode&quot;     : 4XX/5XX, // Error code
@@ -2555,24 +2581,12 @@
 </pre></div>
 
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-        &quot;collection&quot;: {
-            &quot;id&quot;: &quot;584e849e7e0b4e222480a282&quot;,
-            &quot;useDocsACL&quot;: true
-}&#39; &quot;https://api.scorocode.ru/api/v1/app/collections/create&quot;
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="delete-collection">Delete collection</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/delete</strong></p>
 <p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Headers: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span>{
     &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
     &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
@@ -2584,15 +2598,31 @@
 </pre></div>
 
 
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
+<span class="s1">        &quot;collection&quot;: {</span>
+<span class="s1">            &quot;id&quot;: &quot;584e849e7e0b4e222480a282&quot;,</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections/delete&quot;</span>
+</pre></div>
+
+
+</div>
 <p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
 <div class="codehilite"><pre><span></span>{
   &quot;error&quot;: false
 }
 </pre></div>
 
 
-<p><em>Error</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : true,
     &quot;errCode&quot;     : 4XX/5XX, // Error code
@@ -2601,23 +2631,12 @@
 </pre></div>
 
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-        &quot;collection&quot;: {
-            &quot;id&quot;: &quot;584e849e7e0b4e222480a282&quot;,
-}&#39; &quot;https://api.scorocode.ru/api/v1/app/collections/delete&quot;
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="clone-collection">Clone collection</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/clone</strong></p>
 <p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Headers: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span>{
     &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
     &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
@@ -2630,8 +2649,24 @@
 </pre></div>
 
 
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
+        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
+        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
+        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
+        &quot;collection&quot;: {
+            &quot;id&quot;: &quot;584e91b77e0b4e222480a316&quot;,
+            &quot;name&quot;: &quot;clonedcoll&quot;           
+        }
+}&#39; &quot;https://api.scorocode.ru/api/v1/app/collections/clone&quot;
+</pre></div>
+
+
+</div>
 <p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
 <div class="codehilite"><pre><span></span>{
   &quot;collection&quot;: {
     &quot;id&quot;: &quot;584e91e70c62722cf9fe2191&quot;,
@@ -2714,7 +2749,9 @@
 </pre></div>
 
 
-<p><em>Error</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : true,
     &quot;errCode&quot;     : 4XX/5XX, // Error code
@@ -2723,19 +2760,7 @@
 </pre></div>
 
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-        &quot;collection&quot;: {
-            &quot;id&quot;: &quot;584e91b77e0b4e222480a316&quot;,
-            &quot;name&quot;: &quot;clonedcoll&quot;           
-        }
-}&#39; &quot;https://api.scorocode.ru/api/v1/app/collections/clone&quot;
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="create-new-collections-index">Create new collection's index</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/index/create</strong></p>
