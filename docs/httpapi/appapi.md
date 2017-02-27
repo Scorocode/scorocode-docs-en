@@ -904,7 +904,7 @@ Headers: `Content-Type: application/json`
 ```
 
 
-!!! tip "Пример cURL"
+!!! tip "cURL example"
     ```bash
     curl -X POST -H "Content-Type: application/json" -d '{
             "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
@@ -916,7 +916,7 @@ Headers: `Content-Type: application/json`
 
 **Responses:**
 
-!!! success "Выполнено"
+!!! success "Success"
     ```JSON
     {
       "collection": {
@@ -1040,7 +1040,7 @@ Headers: `Content-Type: application/json`
     }
     ```
 
-!!! failure "Ошибка"
+!!! failure "Error"
     ```JSON
     {
         "error"       : true,
@@ -1071,144 +1071,144 @@ Headers: `Content-Type: application/json`
     }
 }
 ```
+
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+            "collection": {
+                "name": "apicoll",
+                "useDocsACL": false,
+                "ACL": {
+                    "create": [
+                        "R5VGMes94p"
+                    ],
+                    "read": [
+                        "*",
+                        "R5VGMes94p"
+                    ],
+                    "remove": [
+                        "R5VGMes94p"
+                    ],
+                    "update": [
+                        "R5VGMes94p"
+                    ]
+                }
+            }
+    }' "https://api.scorocode.ru/api/v1/app/collections/create"
+    ```
+
 **Responses:**
 
-*Success*
-
-```
-{
-  "collection": {
-    "id": "584e849e7e0b4e222480a282",
-    "name": "apicoll",
-    "useDocsACL": false,
-    "ACL": {
-        "create": [
-            "R5VGMes94p"
+!!! success "Success"
+    ```
+    {
+      "collection": {
+        "id": "584e849e7e0b4e222480a282",
+        "name": "apicoll",
+        "useDocsACL": false,
+        "ACL": {
+            "create": [
+                "R5VGMes94p"
+            ],
+            "read": [
+                "*",
+                "R5VGMes94p"
+            ],
+            "remove": [
+                "R5VGMes94p"
+            ],
+            "update": [
+                "R5VGMes94p"
+            ]
+        },
+        "triggers": {
+          "afterInsert": {
+            "code": "",
+            "isActive": false
+          },
+          "afterRemove": {
+            "code": "",
+            "isActive": false
+          },
+          "afterUpdate": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeInsert": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeRemove": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeUpdate": {
+            "code": "",
+            "isActive": false
+          }
+        },
+        "fields": [
+          {
+            "name": "readACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "updateACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "removeACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "createdAt",
+            "type": "Date",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          },
+          {
+            "name": "updatedAt",
+            "type": "Date",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          }
         ],
-        "read": [
-            "*",
-            "R5VGMes94p"
-        ],
-        "remove": [
-            "R5VGMes94p"
-        ],
-        "update": [
-            "R5VGMes94p"
-        ]
-    },
-    "triggers": {
-      "afterInsert": {
-        "code": "",
-        "isActive": false
+        "system": false,
+        "indexes": []
       },
-      "afterRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "afterUpdate": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeInsert": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeUpdate": {
-        "code": "",
-        "isActive": false
-      }
-    },
-    "fields": [
-      {
-        "name": "readACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "updateACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "removeACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "createdAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "updatedAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      }
-    ],
-    "system": false,
-    "indexes": []
-  },
-  "error": false
-}
-```
+      "error": false
+    }
+    ```
 
-*Error*
+!!! failure "Error"
+    ```
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
 
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-        "app": "48f172923acd719b42c73ac3a492cfc8",
-        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-        "collection": {
-            "name": "apicoll",
-            "useDocsACL": false,
-            "ACL": {
-                "create": [
-                    "R5VGMes94p"
-                ],
-                "read": [
-                    "*",
-                    "R5VGMes94p"
-                ],
-                "remove": [
-                    "R5VGMes94p"
-                ],
-                "update": [
-                    "R5VGMes94p"
-                ]
-            }
-        }
-}' "https://api.scorocode.ru/api/v1/app/collections/create"
-```
 
 -------------------------------------------------------------------------------------
 
@@ -1218,9 +1218,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
-
-`Content-Type: application/json`
+Headers: `Content-Type: application/json`
 
 ```
 {
@@ -1235,128 +1233,128 @@ Headers:
     }
 }
 ```
+
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+            "collection": {
+              "id": "584e852276e5e715e6ec2e8c",
+              "useDocsACL": true,
+              "ACL": {}
+            }
+    }' "https://api.scorocode.ru/api/v1/app/collections/update"
+    ```
+
 **Responses:**
 
-*Success*
-
-```
-{
-  "collection": {
-    "id": "584e849e7e0b4e222480a282",
-    "name": "apicoll",
-    "useDocsACL": true,
-    "ACL": {
-        "create": [
-            "R5VGMes94p"
+!!! success "Success"
+    ```
+    {
+      "collection": {
+        "id": "584e849e7e0b4e222480a282",
+        "name": "apicoll",
+        "useDocsACL": true,
+        "ACL": {
+            "create": [
+                "R5VGMes94p"
+            ],
+            "read": [
+                "*",
+                "R5VGMes94p"
+            ],
+            "remove": [
+                "R5VGMes94p"
+            ],
+            "update": [
+                "R5VGMes94p"
+            ]
+        },
+        "triggers": {
+          "afterInsert": {
+            "code": "",
+            "isActive": false
+          },
+          "afterRemove": {
+            "code": "",
+            "isActive": false
+          },
+          "afterUpdate": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeInsert": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeRemove": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeUpdate": {
+            "code": "",
+            "isActive": false
+          }
+        },
+        "fields": [
+          {
+            "name": "readACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "updateACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "removeACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "createdAt",
+            "type": "Date",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          },
+          {
+            "name": "updatedAt",
+            "type": "Date",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          }
         ],
-        "read": [
-            "*",
-            "R5VGMes94p"
-        ],
-        "remove": [
-            "R5VGMes94p"
-        ],
-        "update": [
-            "R5VGMes94p"
-        ]
-    },
-    "triggers": {
-      "afterInsert": {
-        "code": "",
-        "isActive": false
+        "system": false,
+        "indexes": []
       },
-      "afterRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "afterUpdate": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeInsert": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeUpdate": {
-        "code": "",
-        "isActive": false
-      }
-    },
-    "fields": [
-      {
-        "name": "readACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "updateACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "removeACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "createdAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "updatedAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      }
-    ],
-    "system": false,
-    "indexes": []
-  },
-  "error": false
-}
-```
+      "error": false
+    }
+    ```
 
-*Error*
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-        "app": "48f172923acd719b42c73ac3a492cfc8",
-        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-        "collection": {
-            "id": "584e849e7e0b4e222480a282",
-            "useDocsACL": true
-}' "https://api.scorocode.ru/api/v1/app/collections/create"
-```
+!!! failure "Error"
+    ```
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -1366,9 +1364,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
-
-`Content-Type: application/json`
+Headers: `Content-Type: application/json`
 
 ```
 {
@@ -1381,37 +1377,35 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+            "collection": {
+                "id": "584e849e7e0b4e222480a282",
+    }' "https://api.scorocode.ru/api/v1/app/collections/delete"
+    ```
+
 **Responses:**
 
-*Success*
+!!! success "Success"
+    ```
+    {
+      "error": false
+    }
+    ```
 
-```
-{
-  "error": false
-}
-```
+!!! failure "Error"
+    ```
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
-*Error*
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-        "app": "48f172923acd719b42c73ac3a492cfc8",
-        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-        "collection": {
-            "id": "584e849e7e0b4e222480a282",
-}' "https://api.scorocode.ru/api/v1/app/collections/delete"
-```
 
 -------------------------------------------------------------------------------------
 
@@ -1421,9 +1415,8 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
+Headers: `Content-Type: application/json`
 
-`Content-Type: application/json`
 
 ```
 {
@@ -1437,115 +1430,113 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+            "collection": {
+                "id": "584e91b77e0b4e222480a316",
+                "name": "clonedcoll"           
+            }
+    }' "https://api.scorocode.ru/api/v1/app/collections/clone"
+    ```
+
 **Responses:**
 
-*Success*
+!!! success "Success"
+    ```
+    {
+      "collection": {
+        "id": "584e91e70c62722cf9fe2191",
+        "name": "clonedcoll",
+        "useDocsACL": false,
+        "ACL": {},
+        "triggers": {
+          "afterInsert": {
+            "code": "",
+            "isActive": false
+          },
+          "afterRemove": {
+            "code": "",
+            "isActive": false
+          },
+          "afterUpdate": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeInsert": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeRemove": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeUpdate": {
+            "code": "",
+            "isActive": false
+          }
+        },
+        "fields": [
+          {
+            "name": "readACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "updateACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "removeACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "createdAt",
+            "type": "Date",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          },
+          {
+            "name": "updatedAt",
+            "type": "Date",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          }
+        ],
+        "system": false,
+        "indexes": []
+      },
+      "error": false
+    }
+    ```
 
-```
-{
-  "collection": {
-    "id": "584e91e70c62722cf9fe2191",
-    "name": "clonedcoll",
-    "useDocsACL": false,
-    "ACL": {},
-    "triggers": {
-      "afterInsert": {
-        "code": "",
-        "isActive": false
-      },
-      "afterRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "afterUpdate": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeInsert": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeUpdate": {
-        "code": "",
-        "isActive": false
-      }
-    },
-    "fields": [
-      {
-        "name": "readACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "updateACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "removeACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "createdAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "updatedAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      }
-    ],
-    "system": false,
-    "indexes": []
-  },
-  "error": false
-}
-```
+!!! failure "Error"
+    ```
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
-*Error*
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-        "app": "48f172923acd719b42c73ac3a492cfc8",
-        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-        "collection": {
-            "id": "584e91b77e0b4e222480a316",
-            "name": "clonedcoll"           
-        }
-}' "https://api.scorocode.ru/api/v1/app/collections/clone"
-```
 
 -------------------------------------------------------------------------------------
 
