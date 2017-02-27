@@ -1,28 +1,28 @@
 <a name="Storehouse"></a>
 
-# Приложение "Склад"
+# "Storehouse" Application
 
-Данная документация содержит описание демонстрационного приложения "Склад". Исходный код приложения доступен в репозитории <https://github.com/Scorocode/scorocode-sample-storehouse>.
+This documentation includes description of the "Storehouse" application development process on the Scorocode platform as a demo. The application source code is avaliable in the following repository: <https://github.com/Scorocode/scorocode-sample-storehouse>.
 
-Данное приложение проводит учет мобильных телефонов на складе поставщика и позволяет:
+The application is made to manage mobile phones stock inside a dealer storehouse and allows you to: 
 
-1. Зарегистрировать нового пользователя в БД приложения
-2. Провести аутентификацию пользователя приложения
-3. Провести деаутентификацию пользователя приложения.
-4. Посмотреть доступные модели телефонов на складе
-5. Добавить модель телефона в БД
-6. Удалить модель телефона из БД
-7. Посмотреть подробную информацию о модели телефона
-8. Изменить информацию о модели телефона
-9. Выбрать интересующие модели из списка используя фильтр
-10. Добавить пользователя в лист ожидания данной модели
-11. Отгрузить данную модель телефона пользователю
-12. Оповестить об отгрузке бухгалтерию при помощи email сообщения
-13. Оповестить грузчика при помощи push сообщения.
-14. Оповестить курьера при помощи sms сообщения.
-15. Провести пересчет баланса фирмы с учетом отгруженных к данному моменту моделей.
+1. Register a new user in the application database
+2. Authentificate an application user
+3. Deauthentificate an application user
+4. View avaliable mobile phone models on stock in the storehouse  
+5. Add a mobile phone model in the database
+6. Delete a mobile phone model from the database
+7. View full information about a mobile phone model
+8. Change information about a mobile phone model
+9. Select a certain mobile phone from a list using a filter
+10. Add a user on the waiting list for this phone model
+11. Ship this mobile phone model to the user
+12. Notify the accounting department about the shipment using an email message
+13. Notify a storehouse worker with a push message
+14. Notify a courier with an sms message
+15. Update the company's balance sheet taking into account the recent mobile phone shipment
 
-## Структура данных приложения:
+## Application Data Structure:
 
 Создана коллекция `storehouse` со следующими полями:
 
