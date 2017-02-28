@@ -1546,9 +1546,7 @@ Headers: `Content-Type: application/json`
 
 Method: `POST`
 
-Headers:
-
-`Content-Type: application/json`
+Headers: `Content-Type: application/json`
 
 ```
 {
@@ -1568,45 +1566,44 @@ Headers:
 }
 ```
 
+
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+            "coll": "users",
+            "index": {
+                "name": "emailIndex",                    
+                "fields": [
+                    {
+                        "name": "email",            
+                        "order": 1       
+                    }
+                ]
+            }
+    }' "https://api.scorocode.ru/api/v1/app/collections/index/create"
+    ```
+
 **Responses:**
 
-*Success*
+!!! success "Success"
+    ```
+    {
+      "error": false
+    }
+    ```
 
-```
-{
-  "error": false
-}
-```
+!!! failure "Error"
+    ```
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
-*Error*
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-        "app": "48f172923acd719b42c73ac3a492cfc8",
-        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-        "coll": "users",
-        "index": {
-            "name": "emailIndex",                    
-            "fields": [
-                {
-                    "name": "email",            
-                    "order": 1       
-                }
-            ]
-        }
-}' "https://api.scorocode.ru/api/v1/app/collections/index/create"
-```
 
 -------------------------------------------------------------------------------------
 
@@ -1616,9 +1613,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
-
-`Content-Type: application/json`
+Headers: `Content-Type: application/json`
 
 ```
 {
@@ -1632,39 +1627,37 @@ Headers:
 }
 ```
 
+
+!!! tip "cURL example"
+```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+            "coll": "users",
+            "index": {
+                "name": "emailIndex"                    
+            }
+    }' "https://api.scorocode.ru/api/v1/app/collections/index/delete"
+    ```
+
 **Responses:**
 
-*Success*
+!!! success "Success"
+    ```
+    {
+      "error": false
+    }
+    ```
 
-```
-{
-  "error": false
-}
-```
-
-*Error*
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-        "app": "48f172923acd719b42c73ac3a492cfc8",
-        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-        "coll": "users",
-        "index": {
-            "name": "emailIndex"                    
-        }
-}' "https://api.scorocode.ru/api/v1/app/collections/index/delete"
-```
+!!! failure "Error"
+    ```
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
@@ -1674,9 +1667,9 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
+Headers: `Content-Type: application/json`
 
-`Content-Type: application/json`
+
 
 ```
 {
@@ -1692,49 +1685,48 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "coll": "users",                       
+        "collField": {
+            "name": "pointer",         
+            "type": "Pointer",         
+            "target": "devices"          
+        }
+    }' "https://api.scorocode.ru/api/v1/app/collections/fields/create"
+    ```
+
+
 **Responses:**
 
-*Success*
-
-```
-{
-  "error": false,
-  "field": {
-    "name": "pointer",
-    "type": "Pointer",
-    "target": "devices",
-    "system": false,
-    "readonly": false,
-    "required": false
-  }
-}
-```
-
-*Error*
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "coll": "users",                       
-    "collField": {
-        "name": "pointer",         
-        "type": "Pointer",         
-        "target": "devices"          
+!!! success "Success"
+    ```
+    {
+      "error": false,
+      "field": {
+        "name": "pointer",
+        "type": "Pointer",
+        "target": "devices",
+        "system": false,
+        "readonly": false,
+        "required": false
+      }
     }
-}' "https://api.scorocode.ru/api/v1/app/collections/fields/create"
-```
+    ```
+
+!!! failure "Error"
+    ```
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
+
 
 -------------------------------------------------------------------------------------
 
@@ -2203,36 +2195,36 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+            "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+            "app": "48f172923acd719b42c73ac3a492cfc8",
+            "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+            "coll": "users",
+            "index": {
+                "name": "emailIndex"                    
+            }
+    }' "https://api.scorocode.ru/api/v1/app/collections/index/delete"
+    ```
+
 **Responses:**
 
-*Success*
+!!! success "Success"
+    ```
+    {
+      "error": false
+    }
+    ```
 
-```
-{
-  "error": false
-}
-```
-
-*Error*
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "path": "/folder1/newfolder"
-}' "https://api.scorocode.ru/api/v1/app/scripts/folders/delete"
-```
+!!! failure "Error"
+    ```
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
 -------------------------------------------------------------------------------------
 
