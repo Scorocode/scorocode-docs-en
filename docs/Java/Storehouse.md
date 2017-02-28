@@ -126,7 +126,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 `ScorocodeSdk` initialization is happening in the `onCreate` method with keys `appId`, `clientKey` (android), `fileKey`, `messageKey`, `scriptKey` using the `ScorocodeSdk.initWith(...)` method. These keys can be viewed at the «Security» tab in the project Settings.
 
-On this screen a database user can enter their system login and password. The application will check whether they are correct using the `.login()` method of the `User` class. This method is demonstrated in a listing:
+On this screen, a database user can enter their system login and password. The application will check whether they are correct using the `.login()` method of the `User` class. This method is demonstrated in a listing:
 
 ```Java
 @OnClick(R.id.btnLogin)
@@ -147,11 +147,11 @@ public void onBtnLoginClicked() {
 }
 ```
 
-In this method, we create a new sample of the `User` class and run its `login` method. The information about a user's email and password is taken from the corresponding `EditText`. The `login` method will check that a user with this email and this password exists in the  «users» collection.
+In this method, we create a new sample of the `User` class and run its `login` method. The information about a user's email and password is taken from the corresponding `EditText`. The `login` method will check that a user with this email and this password exists in the «users» collection.
 
-In case such user exists in the  «users» collection, the `onLoginSucceed(...) callback` method will be executed, otherwise it the  `onFoginFailed(...)` method that will be executed. Thus, we can  be sure whether such user exists in our database and act accordingly.
+In case such user exists in the «users» collection, the `onLoginSucceed(...) callback` method will be executed. Otherwise it the `onFoginFailed(...)` method that will be executed. Thus, we can be sure whether such user exists in our database and act accordingly.
 
-On the launch screen (see illustration 1.1) we also have the «Register» button which allows to register a new user in the system (add to the «users» database collection). Let's connect this button to the press handler which opens an Activity with user's data needed for registration:
+On the launch screen (see illustration 1.1) we also have the «Register» button which allows to register a new user in the system (add to the «users» database collection). Let's connect this button to the button click handler which opens an Activity with user's data needed for registration:
 
 ```Java
 @OnClick(R.id.btnRegister)
@@ -160,7 +160,7 @@ public void onBtnRegisterClicked() {
 }
 ``` 
 
-## New User Registration Screen
+## New User Registration Screen.
 
 Let's create an new Activity called `RegisterActivity` and add the following xml code in the layout file of this Activity:
 
@@ -220,7 +220,7 @@ This Activity is a new user registration screen, as shown on illustration 1.2
 
 Illustration 1.2 — a new user registration screen.
 
-На данном экране вводятся все необходимые поля документа (характеризующие пользователя). Добавим обработчик нажатия для кнопки «Зарегистрировать» вызывающий метод `.register` класса `User` для регистрации нового пользователя, показанный ниже:
+All document fields needed for a user registration are listed on this screen. Let's add the button click event handler for the «Register» button which will run the `.register` method of the `User` class, as shown below:
 
 ```Java
 @OnClick(R.id.btnRegister)
@@ -248,17 +248,17 @@ public void onBtnRegisterClicked() {
 }
 ```
 
-В данном методе мы получаем значения введенные в элементы `EditText`, а именно: имя пользователя, его email, пароль и пароль повторно (для проверки).
+In this method, we get values entered in the `EditText` elements, e.g.: a user name, their email, password and repeated password (for a check).
 
-Далее при помощи метода isInputValid мы проверяем, что поля не являются пустыми и что значение, введенное в поля пароля и проверки пароля идентичны, после чего вызываем метод `.register` класса `User`.
+Then using the isInputValid method we check that the fields are not left empty and that the values, entered into the two password fields are identical. Afterwards, we can run the `.register` method of the `User` class.
 
-В случае если регистрация пользователя прошла успешно (т.е если sdk инициализирован, все ключи указаны правильно и нет конфликта с уже существующими пользователями), будет выполнен метод  `onRegisterSucceed(...) callback` интерфейса иначе будет выполнен метод `onRegisterFailed(...)`.
+In case the user registration was a success (i.e. if the SDK is initiated, all keys are correct and there is no conflict with existing users), the interface `onRegisterSucceed(...) callback` method will be executed. Otherwise it is the `onRegisterFailed(...)` method that will be executed.
 
-В данном случае при успешной регистрации пользователя выдается Toast-сообщение с информацией о том, что пользователь успешно зарегистрирован и открывается активность `LoginActivity` чтобы пользователь мог аутентифицироваться и приступить к работе с приложением.
+In this case, if the registration is a success, a Toast message will be shown with a note that the user is registered. Then the `LoginActivity` activity begins so that the user can log in and start working with the application.
 
-## Главный экран приложения.
+## Application Main Screen.
 
-Создадим главный экран приложения с именем `MainActivity` и в layout-файл данной активности добавим следующий xml код:
+Let's create the application main page called `MainActivity` and add the following xml code in the layout file of this Activity:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -280,9 +280,9 @@ public void onBtnRegisterClicked() {
 </RelativeLayout>
 ```
 
-Активность представляет собой `ListView` в который мы передаем информацию о товарах, хранящихся в БД. Кроме того активность содержит иконки `ActionBar` о которых будет сказано подробней.
+This is the `ListView` Activity which we fill with the data about goods stored in the database. In addition, the Activity contains `ActionBar` icons. We will talk about them in some detail later on. 
 
-Для отображения информации создадим адаптер с именем `StoreItemAdapter` код которого показан ниже:
+Let's create an adapter called `StoreItemAdapter` to show us the data with the following code: 
 
 ```Java
 package prof_itgroup.ru.storehouseapp.Objects;
@@ -363,7 +363,7 @@ public class StoredItemsAdapter extends BaseAdapter {
 }
 ```
 
-В качестве элемента списка используем следующий layout-файл:
+We will use the following layout file as a list element:
 
 ```xml
  <?xml version="1.0" encoding="utf-8"?>
@@ -392,7 +392,7 @@ public class StoredItemsAdapter extends BaseAdapter {
 </RelativeLayout>
 ```
 
-Данные о товарах, хранящихся в БД мы будем получать в методе `onResume()` активности `MainActivity`. Для этого в метод `onResume` добавим следующий код:
+We will get the data about stored goods in the `onResume()` method of the `MainActivity`Activity. For this let's add the following code lines in the `onResume` method:
 
 ```Java
 @Override
@@ -414,11 +414,11 @@ protected void onResume() {
 }
 ```
 
-В данном коде мы создаем экземпляр объекта `Query` не задавая параметров (т.е выбираем первые 100 документов из данной коллекции) и далее с помощью метода findDocument получаем документы из нашей коллекции.
+In this code we create a `Query` object sample without setting any parameters (i.e. we choose the first 100 documents from this collection) and then we get the documents from our collection with the `findDocument` method.
 
-В случае если удалось найти документы мы устанавливаем адаптер, иначе выдаем сообщение об ошибке.
+In case we were successful in finding the documents, we install the adapter. Otherwise we transmit the error message.
 
-Так же добавим необходимые иконки в `ActionBar` активности. Для этого создадим `layout` файл `main_activity_menu` и добавим туда следующий xml код:
+Let's also add the icons we need in the `ActionBar` Activity. For this, we will create the `main_activity_menu` layout file and add the following xml code:
 
 ```xml
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
