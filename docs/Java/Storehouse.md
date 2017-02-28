@@ -2,14 +2,14 @@
 
 # "Storehouse" Application
 
-This documentation includes description of the "Storehouse" application development process on the Scorocode platform as a demo. The application source code is avaliable in the following repository: <https://github.com/Scorocode/scorocode-sample-storehouse>.
+This documentation includes description of the "Storehouse" application development process on the Scorocode platform as a demo. The application source code is available  in the following repository: <https://github.com/Scorocode/scorocode-sample-storehouse>.
 
 The application is made to manage mobile phones stock inside a dealer storehouse and allows you to: 
 
 1. Register a new user in the application database
-2. Authentificate an application user
-3. Deauthentificate an application user
-4. View avaliable mobile phone models on stock in the storehouse  
+2. Authenticate an application user
+3. De-authenticate an application user
+4. View available mobile phone models on stock in the storehouse  
 5. Add a mobile phone model in the database
 6. Delete a mobile phone model from the database
 7. View full information about a mobile phone model
@@ -18,13 +18,13 @@ The application is made to manage mobile phones stock inside a dealer storehouse
 10. Add a user on the waiting list for this phone model
 11. Ship this mobile phone model to the user
 12. Notify the accounting department about the shipment using an email message
-13. Notify a storehouse worker with a push message
+13. Notify a storehouse loading worker with a push message
 14. Notify a courier with an sms message
 15. Update the company's balance sheet taking into account the recent mobile phone shipment
 
-## Application Data Structure:
+## Application Data Structure.
 
-Создана коллекция `storehouse` со следующими полями:
+Let's create the `storehouse` collection with the following fields:
 
 1. platform (String)
 2. cameraInfo (String)
@@ -35,15 +35,15 @@ The application is made to manage mobile phones stock inside a dealer storehouse
 7. lastSend (Date)
 8. sendInfo (File)
 
-В системную коллекцию `Roles` добавлены 3 документа со следующими значениями поля `name` соответственно:
+We add 3 documents inside the system collection `Roles` with the following corresponding values for the `name` field:
 
 1. deliveryPerson
 2. accountantPerson
 3. loaderPerson
 
-## Стартовый экран приложения.
+## Application Launch Screen.
 
-Создадим стартовый экран приложения с именем `LoginActivity`. Для этого в Android Studio выберем `File → New → Activity → Empty Activity` и в layout-файл данной активности добавим следующий код:
+Let's create a launch screen for our application and call it `LoginActivity`. To do so we will go `File → New → Activity → Empty Activity` in Android Studio and add the following code in the layout file of the Activity:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -103,13 +103,13 @@ The application is made to manage mobile phones stock inside a dealer storehouse
     </LinearLayout>
 </RelativeLayout>
 ```
-Стартовый экран приложения, соответствующий классу `LoginActivity`, показан на рисунке 1.1. 
+The launch screen of the `LoginActivity` class is shown on the illustration 1.1. 
 
-![Cтартовый экран приложения](img/Storehouse/1.1.png)
+![Application Launch Screen](img/Storehouse/1.1.png)
 
-Рисунок 1.1 – стартовый экран приложения.
+Illustration 1.1 – application launch screen.
 
-В метод `onCreate` класса `LoginActivity` добавим следующий код:
+Let's add the following code lines in the `onCreate` method of the `LoginActivity` class:
 
 ```Java
 @Override
@@ -124,9 +124,9 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-В методе `onCreate` данного класса происходит инициализация `ScorocodeSdk` ключами `appId`, `clientKey` (android), `fileKey`, `messageKey`, `scriptKey` при помощи метода `ScorocodeSdk.initWith(...)`; Посмотреть данные ключи можно на вкладке «Безопасность» настроек проекта.
+`ScorocodeSdk` initialization is happening in the `onCreate` method with keys `appId`, `clientKey` (android), `fileKey`, `messageKey`, `scriptKey` using the `ScorocodeSdk.initWith(...)` method. These keys can be viewed at the «Security» tab in the project Settings.
 
-На данном экране пользователь БД может ввести свой логин и пароль и системе. Приложения проведет проверку правильности введенных данных при помощи метода `.login()` класса `User`. Использование данного метода показано в листинге:
+On this screen a database user can enter their system login and password. The application will check whether they are correct using the `.login()` method of the `User` class. This method is demonstrated in a listing:
 
 ```Java
 @OnClick(R.id.btnLogin)
@@ -147,11 +147,11 @@ public void onBtnLoginClicked() {
 }
 ```
 
-В данном методе мы создаем новый экземпляр класса `User` и вызываем его метод `login` при этом информацию о email и password пользователя мы берем из соответствующих `EditText`. Метод `login` проверит тот факт, что пользователь с таким email и паролем существует в коллекции «users».
+In this method, we create a new sample of the `User` class and run its `login` method. The information about a user's email and password is taken from the corresponding `EditText`. The `login` method will check that a user with this email and this password exists in the  «users» collection.
 
-В случае если в коллекции «users» имеется пользователь с указанными email и password, то будет выполнен метод `onLoginSucceed(...) callback` интерфейса иначе - `onFoginFailed(...)`. Таким образом мы можем удостовериться в наличии пользователя с такими данными в нашей БД и принять дальнейшие действия.
+In case such user exists in the  «users» collection, the `onLoginSucceed(...) callback` method will be executed, otherwise it the  `onFoginFailed(...)` method that will be executed. Thus, we can  be sure whether such user exists in our database and act accordingly.
 
-На стартовом экране (показанном на рисунке 1.1) так же имеется кнопка «Зарегистрировать» позволяющая зарегистрировать нового пользователя в системе (добавить его в коллекцию «users» БД). Привяжем к данной кнопке обработчик нажатия который открывает активность с данными для регистрации пользователя:
+On the launch screen (see illustration 1.1) we also have the «Register» button which allows to register a new user in the system (add to the «users» database collection). Let's connect this button to the press handler which opens an Activity with user's data needed for registration:
 
 ```Java
 @OnClick(R.id.btnRegister)
@@ -160,9 +160,9 @@ public void onBtnRegisterClicked() {
 }
 ``` 
 
-## Экран регистрации нового пользователя
+## New User Registration Screen
 
-Создадим новую активность с именем `RegisterActivity` и добавим в layout-файл данной активности следующий xml код:
+Let's create an new Activity called `RegisterActivity` and add the following xml code in the layout file of this Activity:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -214,11 +214,11 @@ public void onBtnRegisterClicked() {
         android:text="@string/btn_register_text"/>
 </LinearLayout>
 ```
-Данная активность представляет собой экран регистрации нового пользователя, показанный на рисунке 1.2
+This Activity is a new user registration screen, as shown on illustration 1.2
 
-![Экран регистрации нового пользователя](img/Storehouse/1.2.png)
+![A new user registration screen](img/Storehouse/1.2.png)
 
-Рисунок 1.2 — экран регистрации нового пользователя.
+Illustration 1.2 — a new user registration screen.
 
 На данном экране вводятся все необходимые поля документа (характеризующие пользователя). Добавим обработчик нажатия для кнопки «Зарегистрировать» вызывающий метод `.register` класса `User` для регистрации нового пользователя, показанный ниже:
 
