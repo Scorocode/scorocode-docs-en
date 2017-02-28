@@ -377,69 +377,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-new-collections-field" title="Create new collection's field" class="md-nav__link">
-    Create new collection's field
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#delete-collections-field" title="Delete collection's field" class="md-nav__link">
-    Delete collection's field
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-collections-triggers" title="Update collection's triggers" class="md-nav__link">
-    Update collection's triggers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#retreive-folders-and-scripts-list" title="Retreive folders and scripts list" class="md-nav__link">
-    Retreive folders and scripts list
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-new-folder" title="Create new folder" class="md-nav__link">
-    Create new folder
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#delete-folder" title="Delete folder" class="md-nav__link">
-    Delete folder
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#retreive-server-side-script" title="Retreive server-side script" class="md-nav__link">
-    Retreive server-side script
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-new-server-side-script" title="Create new server-side script" class="md-nav__link">
-    Create new server-side script
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-server-side-script" title="Update server-side script" class="md-nav__link">
-    Update server-side script
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#delete-server-side-script" title="Delete server-side script" class="md-nav__link">
     Delete server-side script
   </a>
@@ -1109,69 +1046,6 @@
         <li class="md-nav__item">
   <a href="#delete-collections-index" title="Delete collection's index" class="md-nav__link">
     Delete collection's index
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-new-collections-field" title="Create new collection's field" class="md-nav__link">
-    Create new collection's field
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#delete-collections-field" title="Delete collection's field" class="md-nav__link">
-    Delete collection's field
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-collections-triggers" title="Update collection's triggers" class="md-nav__link">
-    Update collection's triggers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#retreive-folders-and-scripts-list" title="Retreive folders and scripts list" class="md-nav__link">
-    Retreive folders and scripts list
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-new-folder" title="Create new folder" class="md-nav__link">
-    Create new folder
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#delete-folder" title="Delete folder" class="md-nav__link">
-    Delete folder
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#retreive-server-side-script" title="Retreive server-side script" class="md-nav__link">
-    Retreive server-side script
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-new-server-side-script" title="Create new server-side script" class="md-nav__link">
-    Create new server-side script
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-server-side-script" title="Update server-side script" class="md-nav__link">
-    Update server-side script
   </a>
   
 </li>
@@ -2765,8 +2639,7 @@
 <h2 id="create-new-collections-index">Create new collection's index</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/index/create</strong></p>
 <p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Headers: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span>{
     &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
     &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
@@ -2785,15 +2658,39 @@
 </pre></div>
 
 
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
+<span class="s1">        &quot;coll&quot;: &quot;users&quot;,</span>
+<span class="s1">        &quot;index&quot;: {</span>
+<span class="s1">            &quot;name&quot;: &quot;emailIndex&quot;,                    </span>
+<span class="s1">            &quot;fields&quot;: [</span>
+<span class="s1">                {</span>
+<span class="s1">                    &quot;name&quot;: &quot;email&quot;,            </span>
+<span class="s1">                    &quot;order&quot;: 1       </span>
+<span class="s1">                }</span>
+<span class="s1">            ]</span>
+<span class="s1">        }</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections/index/create&quot;</span>
+</pre></div>
+
+
+</div>
 <p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
 <div class="codehilite"><pre><span></span>{
   &quot;error&quot;: false
 }
 </pre></div>
 
 
-<p><em>Error</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : true,
     &quot;errCode&quot;     : 4XX/5XX, // Error code
@@ -2802,31 +2699,12 @@
 </pre></div>
 
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-        &quot;coll&quot;: &quot;users&quot;,
-        &quot;index&quot;: {
-            &quot;name&quot;: &quot;emailIndex&quot;,                    
-            &quot;fields&quot;: [
-                {
-                    &quot;name&quot;: &quot;email&quot;,            
-                    &quot;order&quot;: 1       
-                }
-            ]
-        }
-}&#39; &quot;https://api.scorocode.ru/api/v1/app/collections/index/create&quot;
-</pre></div>
-
-
+</div>
 <hr />
 <h2 id="delete-collections-index">Delete collection's index</h2>
 <p><strong>https://api.scorocode.ru/api/v1/app/collections/index/delete</strong></p>
 <p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Headers: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span>{
     &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
     &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
@@ -2839,1086 +2717,1109 @@
 </pre></div>
 
 
-<p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-  &quot;error&quot;: false
-}
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
+</div>
+<p><div class="codehilite"><pre><span></span>    curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">            &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,</span>
+<span class="s1">            &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,</span>
+<span class="s1">            &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,</span>
+<span class="s1">            &quot;coll&quot;: &quot;users&quot;,</span>
+<span class="s1">            &quot;index&quot;: {</span>
+<span class="s1">                &quot;name&quot;: &quot;emailIndex&quot;                    </span>
+<span class="s1">            }</span>
+<span class="s1">    }&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/app/collections/index/delete&quot;</span>
+    <span class="sb">```</span>
+
+**Responses:**
+
+!!! success <span class="s2">&quot;Success&quot;</span>
+    <span class="sb">```</span>
+    <span class="o">{</span>
+      <span class="s2">&quot;error&quot;</span>: <span class="nb">false</span>
+    <span class="o">}</span>
+    <span class="sb">```</span>
+
+!!! failure <span class="s2">&quot;Error&quot;</span>
+    <span class="sb">```</span>
+    <span class="o">{</span>
+        <span class="s2">&quot;error&quot;</span>       : true,
+        <span class="s2">&quot;errCode&quot;</span>     : 4XX/5XX, // Error code
+        <span class="s2">&quot;errMsg&quot;</span>      : <span class="s2">&quot;Error text&quot;</span>
+    <span class="o">}</span>
+    <span class="sb">```</span>
+
+-------------------------------------------------------------------------------------
+
+<span class="c1">## Create new collection&#39;s field</span>
+
+**https://api.scorocode.ru/api/v1/app/collections/fields/create**
+
+Method: <span class="sb">`</span>POST<span class="sb">`</span>
+
+Headers: <span class="sb">`</span>Content-Type: application/json<span class="sb">`</span>
 </pre></div>
 
-
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
+{
+    "app": "",               // application identifier, mandatory
+    "cli": "",               // client key, mandatory
+    "acc": "",               // access key, mandatory, masterKey only
+    "coll": "",              // collection name, mandatory
+    "collField": {   <br />
+        "name": "",          // field name, mandatory
+        "type": "",          // field data type, mandatory
+        "target": ""         // target collection name, mandatory for Pointer || Relation data type fields
+    }
 }
-</pre></div>
-
-
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
+<div class="codehilite"><pre><span></span>!!! tip &quot;cURL example&quot;
+    ```bash
+    curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
         &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
         &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
         &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-        &quot;coll&quot;: &quot;users&quot;,
-        &quot;index&quot;: {
-            &quot;name&quot;: &quot;emailIndex&quot;                    
+        &quot;coll&quot;: &quot;users&quot;,                       
+        &quot;collField&quot;: {
+            &quot;name&quot;: &quot;pointer&quot;,         
+            &quot;type&quot;: &quot;Pointer&quot;,         
+            &quot;target&quot;: &quot;devices&quot;          
         }
-}&#39; &quot;https://api.scorocode.ru/api/v1/app/collections/index/delete&quot;
+    }&#39; &quot;https://api.scorocode.ru/api/v1/app/collections/fields/create&quot;
+    ```
+
+
+**Responses:**
+
+!!! success &quot;Success&quot;
+    ```
+    {
+      &quot;error&quot;: false,
+      &quot;field&quot;: {
+        &quot;name&quot;: &quot;pointer&quot;,
+        &quot;type&quot;: &quot;Pointer&quot;,
+        &quot;target&quot;: &quot;devices&quot;,
+        &quot;system&quot;: false,
+        &quot;readonly&quot;: false,
+        &quot;required&quot;: false
+      }
+    }
+    ```
+
+!!! failure &quot;Error&quot;
+    ```
+    {
+        &quot;error&quot;       : true,
+        &quot;errCode&quot;     : 4XX/5XX, // Error code
+        &quot;errMsg&quot;      : &quot;Error text&quot;
+    }
+    ```
+
+
+-------------------------------------------------------------------------------------
+
+## Delete collection&#39;s field
+
+**https://api.scorocode.ru/api/v1/app/collections/fields/delete**
+
+Method: `POST`
+
+Headers:
+
+`Content-Type: application/json`
 </pre></div>
 
-
-<hr />
-<h2 id="create-new-collections-field">Create new collection's field</h2>
-<p><strong>https://api.scorocode.ru/api/v1/app/collections/fields/create</strong></p>
-<p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
-    &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
-    &quot;acc&quot;: &quot;&quot;,               // access key, mandatory, masterKey only
-    &quot;coll&quot;: &quot;&quot;,              // collection name, mandatory
-    &quot;collField&quot;: {     
-        &quot;name&quot;: &quot;&quot;,          // field name, mandatory
-        &quot;type&quot;: &quot;&quot;,          // field data type, mandatory
-        &quot;target&quot;: &quot;&quot;         // target collection name, mandatory for Pointer || Relation data type fields
+{
+    "app": "",               // application identifier, mandatory
+    "cli": "",               // client key, mandatory
+    "acc": "",               // access key, mandatory, masterKey only
+    "coll": "",              // collection name, mandatory
+    "collField": { <br />
+        "name": ""           // field name, mandatory
     }
 }
+<div class="codehilite"><pre><span></span>**Responses:**
+
+*Success*
 </pre></div>
 
-
-<p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-  &quot;error&quot;: false,
-  &quot;field&quot;: {
-    &quot;name&quot;: &quot;pointer&quot;,
-    &quot;type&quot;: &quot;Pointer&quot;,
-    &quot;target&quot;: &quot;devices&quot;,
-    &quot;system&quot;: false,
-    &quot;readonly&quot;: false,
-    &quot;required&quot;: false
-  }
-}
-</pre></div>
-
-
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
-}
-</pre></div>
-
-
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-    &quot;coll&quot;: &quot;users&quot;,                       
-    &quot;collField&quot;: {
-        &quot;name&quot;: &quot;pointer&quot;,         
-        &quot;type&quot;: &quot;Pointer&quot;,         
-        &quot;target&quot;: &quot;devices&quot;          
-    }
-}&#39; &quot;https://api.scorocode.ru/api/v1/app/collections/fields/create&quot;
-</pre></div>
-
-
-<hr />
-<h2 id="delete-collections-field">Delete collection's field</h2>
-<p><strong>https://api.scorocode.ru/api/v1/app/collections/fields/delete</strong></p>
-<p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
-    &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
-    &quot;acc&quot;: &quot;&quot;,               // access key, mandatory, masterKey only
-    &quot;coll&quot;: &quot;&quot;,              // collection name, mandatory
-    &quot;collField&quot;: {   
-        &quot;name&quot;: &quot;&quot;           // field name, mandatory
-    }
-}
-</pre></div>
-
-
-<p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-  &quot;collection&quot;: {
-    &quot;id&quot;: &quot;584e64f8982fd55332741514&quot;,
-    &quot;name&quot;: &quot;users&quot;,
-    &quot;useDocsACL&quot;: false,
-    &quot;ACL&quot;: {
-      &quot;create&quot;: [
-        &quot;*&quot;
+{
+  "collection": {
+    "id": "584e64f8982fd55332741514",
+    "name": "users",
+    "useDocsACL": false,
+    "ACL": {
+      "create": [
+        "<em>"
       ],
-      &quot;read&quot;: [
-        &quot;*&quot;
+      "read": [
+        "</em>"
       ],
-      &quot;remove&quot;: [
-        &quot;*&quot;
+      "remove": [
+        "<em>"
       ],
-      &quot;update&quot;: [
-        &quot;*&quot;
+      "update": [
+        "</em>"
       ]
     },
-    &quot;triggers&quot;: {
-      &quot;afterFind&quot;: {
-        &quot;code&quot;: &quot;&quot;,
-        &quot;isActive&quot;: false
+    "triggers": {
+      "afterFind": {
+        "code": "",
+        "isActive": false
       },
-      &quot;afterInsert&quot;: {
-        &quot;code&quot;: &quot;&quot;,
-        &quot;isActive&quot;: false
+      "afterInsert": {
+        "code": "",
+        "isActive": false
       },
-      &quot;afterRemove&quot;: {
-        &quot;code&quot;: &quot;&quot;,
-        &quot;isActive&quot;: false
+      "afterRemove": {
+        "code": "",
+        "isActive": false
       },
-      &quot;afterUpdate&quot;: {
-        &quot;code&quot;: &quot;&quot;,
-        &quot;isActive&quot;: false
+      "afterUpdate": {
+        "code": "",
+        "isActive": false
       },
-      &quot;beforeInsert&quot;: {
-        &quot;code&quot;: &quot;&quot;,
-        &quot;isActive&quot;: false
+      "beforeInsert": {
+        "code": "",
+        "isActive": false
       },
-      &quot;beforeRemove&quot;: {
-        &quot;code&quot;: &quot;&quot;,
-        &quot;isActive&quot;: false
+      "beforeRemove": {
+        "code": "",
+        "isActive": false
       },
-      &quot;beforeUpdate&quot;: {
-        &quot;code&quot;: &quot;&quot;,
-        &quot;isActive&quot;: false
+      "beforeUpdate": {
+        "code": "",
+        "isActive": false
       }
     },
-    &quot;fields&quot;: [
+    "fields": [
       {
-        &quot;name&quot;: &quot;email&quot;,
-        &quot;type&quot;: &quot;String&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: true,
-        &quot;required&quot;: true
+        "name": "email",
+        "type": "String",
+        "target": "",
+        "system": true,
+        "readonly": true,
+        "required": true
       },
       {
-        &quot;name&quot;: &quot;phone&quot;,
-        &quot;type&quot;: &quot;String&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: false,
-        &quot;required&quot;: false
+        "name": "phone",
+        "type": "String",
+        "target": "",
+        "system": true,
+        "readonly": false,
+        "required": false
       },
       {
-        &quot;name&quot;: &quot;readACL&quot;,
-        &quot;type&quot;: &quot;ACL&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: false,
-        &quot;required&quot;: false
+        "name": "readACL",
+        "type": "ACL",
+        "target": "",
+        "system": true,
+        "readonly": false,
+        "required": false
       },
       {
-        &quot;name&quot;: &quot;updateACL&quot;,
-        &quot;type&quot;: &quot;ACL&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: false,
-        &quot;required&quot;: false
+        "name": "updateACL",
+        "type": "ACL",
+        "target": "",
+        "system": true,
+        "readonly": false,
+        "required": false
       },
       {
-        &quot;name&quot;: &quot;removeACL&quot;,
-        &quot;type&quot;: &quot;ACL&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: false,
-        &quot;required&quot;: false
+        "name": "removeACL",
+        "type": "ACL",
+        "target": "",
+        "system": true,
+        "readonly": false,
+        "required": false
       },
       {
-        &quot;name&quot;: &quot;createdAt&quot;,
-        &quot;type&quot;: &quot;Date&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: true,
-        &quot;required&quot;: false
+        "name": "createdAt",
+        "type": "Date",
+        "target": "",
+        "system": true,
+        "readonly": true,
+        "required": false
       },
       {
-        &quot;name&quot;: &quot;updatedAt&quot;,
-        &quot;type&quot;: &quot;Date&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: true,
-        &quot;required&quot;: false
+        "name": "updatedAt",
+        "type": "Date",
+        "target": "",
+        "system": true,
+        "readonly": true,
+        "required": false
       },
       {
-        &quot;name&quot;: &quot;username&quot;,
-        &quot;type&quot;: &quot;String&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: false,
-        &quot;required&quot;: true
+        "name": "username",
+        "type": "String",
+        "target": "",
+        "system": true,
+        "readonly": false,
+        "required": true
       },
       {
-        &quot;name&quot;: &quot;password&quot;,
-        &quot;type&quot;: &quot;Password&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: false,
-        &quot;required&quot;: true
+        "name": "password",
+        "type": "Password",
+        "target": "",
+        "system": true,
+        "readonly": false,
+        "required": true
       },
       {
-        &quot;name&quot;: &quot;emailVerified&quot;,
-        &quot;type&quot;: &quot;Boolean&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: true,
-        &quot;required&quot;: false
+        "name": "emailVerified",
+        "type": "Boolean",
+        "target": "",
+        "system": true,
+        "readonly": true,
+        "required": false
       },
       {
-        &quot;name&quot;: &quot;roles&quot;,
-        &quot;type&quot;: &quot;Array&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: false,
-        &quot;required&quot;: false
+        "name": "roles",
+        "type": "Array",
+        "target": "",
+        "system": true,
+        "readonly": false,
+        "required": false
       },
       {
-        &quot;name&quot;: &quot;token&quot;,
-        &quot;type&quot;: &quot;String&quot;,
-        &quot;target&quot;: &quot;&quot;,
-        &quot;system&quot;: true,
-        &quot;readonly&quot;: true,
-        &quot;required&quot;: false
+        "name": "token",
+        "type": "String",
+        "target": "",
+        "system": true,
+        "readonly": true,
+        "required": false
       }
     ],
-    &quot;system&quot;: true,
-    &quot;indexes&quot;: []
+    "system": true,
+    "indexes": []
   },
-  &quot;error&quot;: false
+  "error": false
 }
+<div class="codehilite"><pre><span></span>*Error*
 </pre></div>
 
-
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
+{
+    "error"       : true,
+    "errCode"     : 4XX/5XX, // Error code
+    "errMsg"      : "Error text"
 }
+<div class="codehilite"><pre><span></span>**cURL example**
 </pre></div>
 
-
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-    &quot;coll&quot;: &quot;users&quot;,                       
-    &quot;collField&quot;: {
-        &quot;name&quot;: &quot;pointer&quot;
+curl -X POST -H "Content-Type: application/json" -d '{
+    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+    "app": "48f172923acd719b42c73ac3a492cfc8",
+    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+    "coll": "users",                     <br />
+    "collField": {
+        "name": "pointer"
     }
-}&#39; &quot;https://api.scorocode.ru/api/v1/app/collections/fields/delete&quot;
+}' "https://api.scorocode.ru/api/v1/app/collections/fields/delete"
+<div class="codehilite"><pre><span></span>-------------------------------------------------------------------------------------
+
+## Update collection&#39;s triggers
+
+**https://api.scorocode.ru/api/v1/app/collections/triggers**
+
+Method: `POST`
+
+Headers:
+
+`Content-Type: application/json`
 </pre></div>
 
-
-<hr />
-<h2 id="update-collections-triggers">Update collection's triggers</h2>
-<p><strong>https://api.scorocode.ru/api/v1/app/collections/triggers</strong></p>
-<p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
-    &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
-    &quot;acc&quot;: &quot;&quot;,               // access key, mandatory, masterKey only
-    &quot;coll&quot;: &quot;&quot;,              // collection name, mandatory
-    &quot;triggers&quot;: {
-        &quot;beforeInsert&quot;: {      
-            &quot;code&quot;: &quot;&quot;,       // trigger code, optional
-            &quot;isActive&quot;: bool  // trigger activation flag, optional
+{
+    "app": "",               // application identifier, mandatory
+    "cli": "",               // client key, mandatory
+    "acc": "",               // access key, mandatory, masterKey only
+    "coll": "",              // collection name, mandatory
+    "triggers": {
+        "beforeInsert": {    <br />
+            "code": "",       // trigger code, optional
+            "isActive": bool  // trigger activation flag, optional
         },
-        &quot;afterInsert&quot;: {
-            &quot;code&quot;: &quot;&quot;,       // trigger code, optional
-            &quot;isActive&quot;: bool  // trigger activation flag, optional
+        "afterInsert": {
+            "code": "",       // trigger code, optional
+            "isActive": bool  // trigger activation flag, optional
         },
-        &quot;beforeUpdate&quot;: {
-            &quot;code&quot;: &quot;&quot;,       // trigger code, optional
-            &quot;isActive&quot;: bool  // trigger activation flag, optional
+        "beforeUpdate": {
+            "code": "",       // trigger code, optional
+            "isActive": bool  // trigger activation flag, optional
         },
-        &quot;afterUpdate&quot;: {
-            &quot;code&quot;: &quot;&quot;,       // trigger code, optional
-            &quot;isActive&quot;: bool  // trigger activation flag, optional
+        "afterUpdate": {
+            "code": "",       // trigger code, optional
+            "isActive": bool  // trigger activation flag, optional
         },
-        &quot;beforeRemove&quot;: {
-            &quot;code&quot;: &quot;&quot;,       // trigger code, optional
-            &quot;isActive&quot;: bool  // trigger activation flag, optional
+        "beforeRemove": {
+            "code": "",       // trigger code, optional
+            "isActive": bool  // trigger activation flag, optional
         },
-        &quot;afterRemove&quot;: {
-            &quot;code&quot;: &quot;&quot;,       // trigger code, optional
-            &quot;isActive&quot;: bool  // trigger activation flag, optional
+        "afterRemove": {
+            "code": "",       // trigger code, optional
+            "isActive": bool  // trigger activation flag, optional
         }
     }
 }
+<div class="codehilite"><pre><span></span>**Responses:**
+
+*Success*
 </pre></div>
 
-
-<p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-  &quot;error&quot;: false,
-  &quot;triggers&quot;: {
-    &quot;afterFind&quot;: {
-      &quot;code&quot;: &quot;&quot;,
-      &quot;isActive&quot;: false
+{
+  "error": false,
+  "triggers": {
+    "afterFind": {
+      "code": "",
+      "isActive": false
     },
-    &quot;afterInsert&quot;: {
-      &quot;code&quot;: &quot;DataManager.Insert({\n  coll:&#39;logs&#39;, \n  doc: {\n    &#39;docId&#39;: pool.newDoc._id,\n    &#39;collection&#39;: &#39;users&#39;,\n    &#39;operation&#39;: &#39;register&#39;,\n    &#39;data&#39;: pool.newDoc\n    }\n  });&quot;,
-      &quot;isActive&quot;: true
+    "afterInsert": {
+      "code": "DataManager.Insert({\n  coll:'logs', \n  doc: {\n    'docId': pool.newDoc._id,\n    'collection': 'users',\n    'operation': 'register',\n    'data': pool.newDoc\n    }\n  });",
+      "isActive": true
     },
-    &quot;afterRemove&quot;: {
-      &quot;code&quot;: &quot;&quot;,
-      &quot;isActive&quot;: false
+    "afterRemove": {
+      "code": "",
+      "isActive": false
     },
-    &quot;afterUpdate&quot;: {
-      &quot;code&quot;: &quot;&quot;,
-      &quot;isActive&quot;: false
+    "afterUpdate": {
+      "code": "",
+      "isActive": false
     },
-    &quot;beforeInsert&quot;: {
-      &quot;code&quot;: &quot;&quot;,
-      &quot;isActive&quot;: false
+    "beforeInsert": {
+      "code": "",
+      "isActive": false
     },
-    &quot;beforeRemove&quot;: {
-      &quot;code&quot;: &quot;&quot;,
-      &quot;isActive&quot;: false
+    "beforeRemove": {
+      "code": "",
+      "isActive": false
     },
-    &quot;beforeUpdate&quot;: {
-      &quot;code&quot;: &quot;&quot;,
-      &quot;isActive&quot;: false
+    "beforeUpdate": {
+      "code": "",
+      "isActive": false
     }
   }
 }
+<div class="codehilite"><pre><span></span>*Error*
 </pre></div>
 
-
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
+{
+    "error"       : true,
+    "errCode"     : 4XX/5XX, // Error code
+    "errMsg"      : "Error text"
 }
+<div class="codehilite"><pre><span></span>**cURL example**
 </pre></div>
 
-
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-    &quot;coll&quot;: &quot;users&quot;,                       
-    &quot;triggers&quot;: {
-         &quot;afterInsert&quot;: {
-            &quot;code&quot;: &quot;DataManager.Insert({\n  coll:&#39;logs&#39;, \n  doc: {\n    &#39;docId&#39;: pool.newDoc._id,\n    &#39;collection&#39;: &#39;users&#39;,\n    &#39;operation&#39;: &#39;register&#39;,\n    &#39;data&#39;: pool.newDoc\n    }\n  });&quot;,       
-            &quot;isActive&quot;: true
+curl -X POST -H "Content-Type: application/json" -d '{
+    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+    "app": "48f172923acd719b42c73ac3a492cfc8",
+    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+    "coll": "users",                     <br />
+    "triggers": {
+         "afterInsert": {
+            "code": "DataManager.Insert({\n  coll:'logs', \n  doc: {\n    'docId': pool.newDoc._id,\n    'collection': 'users',\n    'operation': 'register',\n    'data': pool.newDoc\n    }\n  });",     <br />
+            "isActive": true
         }
     }
 }
-&#39; &quot;https://api.scorocode.ru/api/v1/app/collections/triggers&quot;
+' "https://api.scorocode.ru/api/v1/app/collections/triggers"
+<div class="codehilite"><pre><span></span>-------------------------------------------------------------------------------------
+
+## Retreive folders and scripts list
+
+**https://api.scorocode.ru/api/v1/app/scripts/folders**
+
+Method: `POST`
+
+Headers:
+
+`Content-Type: application/json`
 </pre></div>
 
-
-<hr />
-<h2 id="retreive-folders-and-scripts-list">Retreive folders and scripts list</h2>
-<p><strong>https://api.scorocode.ru/api/v1/app/scripts/folders</strong></p>
-<p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
-    &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
-    &quot;acc&quot;: &quot;&quot;,               // access key, mandatory, masterKey only
-    &quot;path&quot;: &quot;&quot;               // full path to directory, mandatory
+{
+    "app": "",               // application identifier, mandatory
+    "cli": "",               // client key, mandatory
+    "acc": "",               // access key, mandatory, masterKey only
+    "path": ""               // full path to directory, mandatory
 }
+<div class="codehilite"><pre><span></span>**Responses:**
+
+*Success*
 </pre></div>
 
-
-<p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-  &quot;error&quot;: false,
-  &quot;items&quot;: [
+{
+  "error": false,
+  "items": [
     {
-      &quot;_id&quot;: &quot;&quot;,
-      &quot;name&quot;: &quot;folder1&quot;,
-      &quot;path&quot;: &quot;/folder1&quot;,
-      &quot;isScript&quot;: false
+      "_id": "",
+      "name": "folder1",
+      "path": "/folder1",
+      "isScript": false
     },
     {
-      &quot;_id&quot;: &quot;&quot;,
-      &quot;name&quot;: &quot;folder2&quot;,
-      &quot;path&quot;: &quot;/folder2&quot;,
-      &quot;isScript&quot;: false
+      "_id": "",
+      "name": "folder2",
+      "path": "/folder2",
+      "isScript": false
     },
     {
-      &quot;_id&quot;: &quot;584eb26a42d52f1ba275fdb2&quot;,
-      &quot;name&quot;: &quot;somescript.js&quot;,
-      &quot;path&quot;: &quot;/somescript.js&quot;,
-      &quot;isScript&quot;: true
+      "_id": "584eb26a42d52f1ba275fdb2",
+      "name": "somescript.js",
+      "path": "/somescript.js",
+      "isScript": true
     }
   ]
 }
+<div class="codehilite"><pre><span></span>*Error*
 </pre></div>
 
-
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
+{
+    "error"       : true,
+    "errCode"     : 4XX/5XX, // Error code
+    "errMsg"      : "Error text"
 }
+<div class="codehilite"><pre><span></span>**cURL example**
 </pre></div>
 
+curl -X POST -H "Content-Type: application/json" -d '{
+    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+    "app": "48f172923acd719b42c73ac3a492cfc8",
+    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+    "path": "/"
+}' "https://api.scorocode.ru/api/v1/app/scripts/folders"
+<div class="codehilite"><pre><span></span>-------------------------------------------------------------------------------------
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-    &quot;path&quot;: &quot;/&quot;
-}&#39; &quot;https://api.scorocode.ru/api/v1/app/scripts/folders&quot;
+## Create new folder
+
+**https://api.scorocode.ru/api/v1/app/scripts/folders/create**
+
+Method: `POST`
+
+Headers:
+
+`Content-Type: application/json`
 </pre></div>
 
-
-<hr />
-<h2 id="create-new-folder">Create new folder</h2>
-<p><strong>https://api.scorocode.ru/api/v1/app/scripts/folders/create</strong></p>
-<p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
-    &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
-    &quot;acc&quot;: &quot;&quot;,               // access key, mandatory, masterKey only
-    &quot;path&quot;: &quot;&quot;               // full path to directory, mandatory
+{
+    "app": "",               // application identifier, mandatory
+    "cli": "",               // client key, mandatory
+    "acc": "",               // access key, mandatory, masterKey only
+    "path": ""               // full path to directory, mandatory
 }
+<div class="codehilite"><pre><span></span>**Responses:**
+
+*Success*
 </pre></div>
 
-
-<p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-  &quot;error&quot;: false
+{
+  "error": false
 }
+<div class="codehilite"><pre><span></span>*Error*
 </pre></div>
 
-
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
+{
+    "error"       : true,
+    "errCode"     : 4XX/5XX, // Error code
+    "errMsg"      : "Error text"
 }
+<div class="codehilite"><pre><span></span>**cURL example**
 </pre></div>
 
+curl -X POST -H "Content-Type: application/json" -d '{
+    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+    "app": "48f172923acd719b42c73ac3a492cfc8",
+    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+    "path": "/folder1/newfolder"
+}' "https://api.scorocode.ru/api/v1/app/scripts/folders/create"
+<div class="codehilite"><pre><span></span>-------------------------------------------------------------------------------------
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-    &quot;path&quot;: &quot;/folder1/newfolder&quot;
-}&#39; &quot;https://api.scorocode.ru/api/v1/app/scripts/folders/create&quot;
+## Delete folder
+
+**https://api.scorocode.ru/api/v1/app/scripts/folders/delete**
+
+Method: `POST`
+
+Headers:
+
+`Content-Type: application/json`
 </pre></div>
 
-
-<hr />
-<h2 id="delete-folder">Delete folder</h2>
-<p><strong>https://api.scorocode.ru/api/v1/app/scripts/folders/delete</strong></p>
-<p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
-    &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
-    &quot;acc&quot;: &quot;&quot;,               // access key, mandatory, masterKey only
-    &quot;path&quot;: &quot;&quot;               // full path to directory, mandatory
+{
+    "app": "",               // application identifier, mandatory
+    "cli": "",               // client key, mandatory
+    "acc": "",               // access key, mandatory, masterKey only
+    "path": ""               // full path to directory, mandatory
 }
+<div class="codehilite"><pre><span></span>!!! tip &quot;cURL example&quot;
+    ```bash
+    curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
+            &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
+            &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
+            &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
+            &quot;coll&quot;: &quot;users&quot;,
+            &quot;index&quot;: {
+                &quot;name&quot;: &quot;emailIndex&quot;                    
+            }
+    }&#39; &quot;https://api.scorocode.ru/api/v1/app/collections/index/delete&quot;
+    ```
+
+**Responses:**
+
+!!! success &quot;Success&quot;
+    ```
+    {
+      &quot;error&quot;: false
+    }
+    ```
+
+!!! failure &quot;Error&quot;
+    ```
+    {
+        &quot;error&quot;       : true,
+        &quot;errCode&quot;     : 4XX/5XX, // Error code
+        &quot;errMsg&quot;      : &quot;Error text&quot;
+    }
+    ```
+
+-------------------------------------------------------------------------------------
+
+## Retreive server-side script
+
+**https://api.scorocode.ru/api/v1/app/scripts/get**
+
+Method: `POST`
+
+Headers:
+
+`Content-Type: application/json`
 </pre></div>
 
-
-<p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-  &quot;error&quot;: false
+{
+    "app": "",               // application identifier, mandatory
+    "cli": "",               // client key, mandatory
+    "acc": "",               // access key, mandatory, masterKey only
+    "script": ""             // server-side script identifier, mandatory
 }
+<div class="codehilite"><pre><span></span>**Responses:**
+
+*Success*
 </pre></div>
 
-
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
-}
-</pre></div>
-
-
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-    &quot;path&quot;: &quot;/folder1/newfolder&quot;
-}&#39; &quot;https://api.scorocode.ru/api/v1/app/scripts/folders/delete&quot;
-</pre></div>
-
-
-<hr />
-<h2 id="retreive-server-side-script">Retreive server-side script</h2>
-<p><strong>https://api.scorocode.ru/api/v1/app/scripts/get</strong></p>
-<p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
-    &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
-    &quot;acc&quot;: &quot;&quot;,               // access key, mandatory, masterKey only
-    &quot;script&quot;: &quot;&quot;             // server-side script identifier, mandatory
-}
-</pre></div>
-
-
-<p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-  &quot;error&quot;: false,
-  &quot;script&quot;: {
-    &quot;_id&quot;: &quot;584eb54142d52f1ba275fdb3&quot;,
-    &quot;appId&quot;: &quot;584e64f8982fd55332741516&quot;,
-    &quot;name&quot;: &quot;AYBABTU.js&quot;,
-    &quot;path&quot;: &quot;/AYBABTU.js&quot;,
-    &quot;description&quot;: &quot;&quot;,
-    &quot;code&quot;: &quot;console.log(\&quot;QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\&quot;);&quot;,
-    &quot;jobStartAt&quot;: &quot;2016-12-12T17:33:00+03:00&quot;,
-    &quot;isActiveJob&quot;: false,
-    &quot;jobType&quot;: &quot;once&quot;,
-    &quot;repeat&quot;: {
-      &quot;custom&quot;: {
-        &quot;days&quot;: 0,
-        &quot;hours&quot;: 0,
-        &quot;minutes&quot;: 0
+{
+  "error": false,
+  "script": {
+    "_id": "584eb54142d52f1ba275fdb3",
+    "appId": "584e64f8982fd55332741516",
+    "name": "AYBABTU.js",
+    "path": "/AYBABTU.js",
+    "description": "",
+    "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",
+    "jobStartAt": "2016-12-12T17:33:00+03:00",
+    "isActiveJob": false,
+    "jobType": "once",
+    "repeat": {
+      "custom": {
+        "days": 0,
+        "hours": 0,
+        "minutes": 0
       },
-      &quot;daily&quot;: {
-        &quot;on&quot;: [],
-        &quot;hours&quot;: 0,
-        &quot;minutes&quot;: 0
+      "daily": {
+        "on": [],
+        "hours": 0,
+        "minutes": 0
       },
-      &quot;monthly&quot;: {
-        &quot;on&quot;: [],
-        &quot;days&quot;: [],
-        &quot;lastDate&quot;: false,
-        &quot;hours&quot;: 0,
-        &quot;minutes&quot;: 0
+      "monthly": {
+        "on": [],
+        "days": [],
+        "lastDate": false,
+        "hours": 0,
+        "minutes": 0
       }
     },
-    &quot;nextRun&quot;: &quot;2016-12-12T17:33:00+03:00&quot;,
-    &quot;ACL&quot;: [
-      &quot;*&quot;
+    "nextRun": "2016-12-12T17:33:00+03:00",
+    "ACL": [
+      "<em>"
     ]
   }
 }
+<div class="codehilite"><pre><span></span>*Error*
 </pre></div>
 
-
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
+{
+    "error"       : true,
+    "errCode"     : 4XX/5XX, // Error code
+    "errMsg"      : "Error text"
 }
+<div class="codehilite"><pre><span></span>**cURL example**
 </pre></div>
 
+curl -X POST -H "Content-Type: application/json" -d '{
+    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+    "app": "48f172923acd719b42c73ac3a492cfc8",
+    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+    "script": "584eb54142d52f1ba275fdb3"
+}' "https://api.scorocode.ru/api/v1/app/scripts/get"
+<div class="codehilite"><pre><span></span>-------------------------------------------------------------------------------------
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-    &quot;script&quot;: &quot;584eb54142d52f1ba275fdb3&quot;
-}&#39; &quot;https://api.scorocode.ru/api/v1/app/scripts/get&quot;
+## Create new server-side script
+
+**https://api.scorocode.ru/api/v1/app/scripts/create**
+
+Method: `POST`
+
+Headers:
+
+`Content-Type: application/json`
 </pre></div>
 
-
-<hr />
-<h2 id="create-new-server-side-script">Create new server-side script</h2>
-<p><strong>https://api.scorocode.ru/api/v1/app/scripts/create</strong></p>
-<p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
-    &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
-    &quot;acc&quot;: &quot;&quot;,               // access key, mandatory, masterKey only
-    &quot;cloudCode&quot;: {
-        &quot;path&quot;: &quot;&quot;                // full path and script name, mandatory
-        &quot;description&quot;: &quot;&quot;,        // description, optional
-        &quot;code&quot;: &quot;&quot;,               // server-side script code, optional
-        &quot;jobStartAt&quot;: &quot;datetime&quot;, // timer start datetime, optional
-        &quot;isActiveJob&quot;: bool,      // timer activation flag, optional
-        &quot;jobType&quot;: &quot;&quot;,            // timer type, optional, custom || daily || monthly
-        &quot;repeat&quot;: {               // timer repeat settings, optional
-            &quot;custom&quot;: {
-                &quot;days&quot;: int,
-                &quot;hours&quot;: int,
-                &quot;minutes&quot;: int
+{
+    "app": "",               // application identifier, mandatory
+    "cli": "",               // client key, mandatory
+    "acc": "",               // access key, mandatory, masterKey only
+    "cloudCode": {
+        "path": ""                // full path and script name, mandatory
+        "description": "",        // description, optional
+        "code": "",               // server-side script code, optional
+        "jobStartAt": "datetime", // timer start datetime, optional
+        "isActiveJob": bool,      // timer activation flag, optional
+        "jobType": "",            // timer type, optional, custom || daily || monthly
+        "repeat": {               // timer repeat settings, optional
+            "custom": {
+                "days": int,
+                "hours": int,
+                "minutes": int
             },
-            &quot;daily&quot;: {
-                &quot;on&quot;: [int],
-                &quot;hours&quot;: int,
-                &quot;minutes&quot;: int
+            "daily": {
+                "on": [int],
+                "hours": int,
+                "minutes": int
             }
-            &quot;monthly&quot;: {
-                &quot;on&quot;: [int],
-                &quot;days&quot;: [int],
-                &quot;lastDate&quot;: bool,
-                &quot;hours&quot;: int,
-                &quot;minutes&quot;: int
+            "monthly": {
+                "on": [int],
+                "days": [int],
+                "lastDate": bool,
+                "hours": int,
+                "minutes": int
             }
         }
-        &quot;ACL&quot;: []                 // server-side script ACL settings, optional, array of user ids and/or &quot;*&quot; for anonymous access
+        "ACL": []                 // server-side script ACL settings, optional, array of user ids and/or "</em>" for anonymous access
     }
 }
+<div class="codehilite"><pre><span></span>**Responses:**
+
+*Success*
 </pre></div>
 
-
-<p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-  &quot;error&quot;: false,
-  &quot;script&quot;: {
-    &quot;_id&quot;: &quot;584fad1422a5482feb5b31ab&quot;,
-    &quot;appId&quot;: &quot;584e64f8982fd55332741516&quot;,
-    &quot;name&quot;: &quot;AYBABTU.js&quot;,
-    &quot;path&quot;: &quot;/AYBABTU.js&quot;,
-    &quot;description&quot;: &quot;All your base&quot;,
-    &quot;code&quot;: &quot;console.log(\&quot;QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\&quot;);&quot;,
-    &quot;jobStartAt&quot;: &quot;2016-12-13T17:33:00+03:00&quot;,
-    &quot;isActiveJob&quot;: false,
-    &quot;jobType&quot;: &quot;custom&quot;,
-    &quot;repeat&quot;: {
-      &quot;custom&quot;: {
-        &quot;days&quot;: 0,
-        &quot;hours&quot;: 0,
-        &quot;minutes&quot;: 5
+{
+  "error": false,
+  "script": {
+    "_id": "584fad1422a5482feb5b31ab",
+    "appId": "584e64f8982fd55332741516",
+    "name": "AYBABTU.js",
+    "path": "/AYBABTU.js",
+    "description": "All your base",
+    "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",
+    "jobStartAt": "2016-12-13T17:33:00+03:00",
+    "isActiveJob": false,
+    "jobType": "custom",
+    "repeat": {
+      "custom": {
+        "days": 0,
+        "hours": 0,
+        "minutes": 5
       },
-      &quot;daily&quot;: null,
-      &quot;monthly&quot;: null
+      "daily": null,
+      "monthly": null
     },
-    &quot;nextRun&quot;: &quot;0001-01-01T00:00:00Z&quot;,
-    &quot;ACL&quot;: [
-      &quot;*&quot;
+    "nextRun": "0001-01-01T00:00:00Z",
+    "ACL": [
+      "<em>"
     ]
   }
 }
+<div class="codehilite"><pre><span></span>*Error*
 </pre></div>
 
-
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
+{
+    "error"       : true,
+    "errCode"     : 4XX/5XX, // Error code
+    "errMsg"      : "Error text"
 }
+<div class="codehilite"><pre><span></span>**cURL example**
 </pre></div>
 
-
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-    &quot;cloudCode&quot;: {
-        &quot;path&quot;: &quot;/AYBABTU.js&quot;,
-        &quot;description&quot;: &quot;All your base&quot;,      
-        &quot;code&quot;: &quot;console.log(\&quot;QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\&quot;);&quot;,             
-        &quot;jobStartAt&quot;: &quot;2016-12-13T17:33:00+03:00&quot;, 
-        &quot;isActiveJob&quot;: false,    
-        &quot;jobType&quot;: &quot;custom&quot;,           
-        &quot;repeat&quot;: {             
-            &quot;custom&quot;: {
-                &quot;days&quot;: 0,
-                &quot;hours&quot;: 0,
-                &quot;minutes&quot;: 5
+curl -X POST -H "Content-Type: application/json" -d '{
+    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+    "app": "48f172923acd719b42c73ac3a492cfc8",
+    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+    "cloudCode": {
+        "path": "/AYBABTU.js",
+        "description": "All your base",    <br />
+        "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",           <br />
+        "jobStartAt": "2016-12-13T17:33:00+03:00", 
+        "isActiveJob": false,  <br />
+        "jobType": "custom",         <br />
+        "repeat": {           <br />
+            "custom": {
+                "days": 0,
+                "hours": 0,
+                "minutes": 5
             }
         },
-        &quot;ACL&quot;: [&quot;*&quot;]
+        "ACL": ["</em>"]
     }
-}&#39; &quot;https://api.scorocode.ru/api/v1/app/scripts/create&quot;
+}' "https://api.scorocode.ru/api/v1/app/scripts/create"
+<div class="codehilite"><pre><span></span>-------------------------------------------------------------------------------------
+
+## Update server-side script
+
+**https://api.scorocode.ru/api/v1/app/scripts/update**
+
+Method: `POST`
+
+Headers:
+
+`Content-Type: application/json`
 </pre></div>
 
-
-<hr />
-<h2 id="update-server-side-script">Update server-side script</h2>
-<p><strong>https://api.scorocode.ru/api/v1/app/scripts/update</strong></p>
-<p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
+{</p>
 <div class="codehilite"><pre><span></span>{
-
-    {
-    &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
-    &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
-    &quot;acc&quot;: &quot;&quot;,               // access key, mandatory, masterKey only
-    &quot;script&quot;: &quot;&quot;             // server-side script identifier, mandatory
-    &quot;cloudCode&quot;: {
-        &quot;path&quot;: &quot;&quot;                // full path and script name, mandatory
-        &quot;description&quot;: &quot;&quot;,        // description, optional
-        &quot;code&quot;: &quot;&quot;,               // server-side script code, optional
-        &quot;jobStartAt&quot;: &quot;datetime&quot;, // timer start datetime, optional
-        &quot;isActiveJob&quot;: bool,      // timer activation flag, optional
-        &quot;jobType&quot;: &quot;&quot;,            // timer type, optional, custom || daily || monthly
-        &quot;repeat&quot;: {               // timer repeat settings, optional
-            &quot;custom&quot;: {
-                &quot;days&quot;: int,
-                &quot;hours&quot;: int,
-                &quot;minutes&quot;: int
-            },
-            &quot;daily&quot;: {
-                &quot;on&quot;: [int],
-                &quot;hours&quot;: int,
-                &quot;minutes&quot;: int
-            }
-            &quot;monthly&quot;: {
-                &quot;on&quot;: [int],
-                &quot;days&quot;: [int],
-                &quot;lastDate&quot;: bool,
-                &quot;hours&quot;: int,
-                &quot;minutes&quot;: int
-            }
+&quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
+&quot;cli&quot;: &quot;&quot;,               // client key, mandatory
+&quot;acc&quot;: &quot;&quot;,               // access key, mandatory, masterKey only
+&quot;script&quot;: &quot;&quot;             // server-side script identifier, mandatory
+&quot;cloudCode&quot;: {
+    &quot;path&quot;: &quot;&quot;                // full path and script name, mandatory
+    &quot;description&quot;: &quot;&quot;,        // description, optional
+    &quot;code&quot;: &quot;&quot;,               // server-side script code, optional
+    &quot;jobStartAt&quot;: &quot;datetime&quot;, // timer start datetime, optional
+    &quot;isActiveJob&quot;: bool,      // timer activation flag, optional
+    &quot;jobType&quot;: &quot;&quot;,            // timer type, optional, custom || daily || monthly
+    &quot;repeat&quot;: {               // timer repeat settings, optional
+        &quot;custom&quot;: {
+            &quot;days&quot;: int,
+            &quot;hours&quot;: int,
+            &quot;minutes&quot;: int
         },
-        &quot;ACL&quot;: []                 // server-side script ACL settings, optional, array of user ids and/or &quot;*&quot; for anonymous access
-    }
-}
-</pre></div>
-
-
-<p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-  &quot;error&quot;: false,
-  &quot;script&quot;: {
-    &quot;_id&quot;: &quot;584fad1422a5482feb5b31ab&quot;,
-    &quot;appId&quot;: &quot;584e64f8982fd55332741516&quot;,
-    &quot;name&quot;: &quot;AYBABTU.js&quot;,
-    &quot;path&quot;: &quot;/AYBABTU.js&quot;,
-    &quot;description&quot;: &quot;All your base&quot;,
-    &quot;code&quot;: &quot;console.log(\&quot;QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\&quot;);&quot;,
-    &quot;jobStartAt&quot;: &quot;2016-12-13T17:33:00+03:00&quot;,
-    &quot;isActiveJob&quot;: true,
-    &quot;jobType&quot;: &quot;custom&quot;,
-    &quot;repeat&quot;: {
-      &quot;custom&quot;: {
-        &quot;days&quot;: 0,
-        &quot;hours&quot;: 0,
-        &quot;minutes&quot;: 5
-      },
-      &quot;daily&quot;: null,
-      &quot;monthly&quot;: null
+        &quot;daily&quot;: {
+            &quot;on&quot;: [int],
+            &quot;hours&quot;: int,
+            &quot;minutes&quot;: int
+        }
+        &quot;monthly&quot;: {
+            &quot;on&quot;: [int],
+            &quot;days&quot;: [int],
+            &quot;lastDate&quot;: bool,
+            &quot;hours&quot;: int,
+            &quot;minutes&quot;: int
+        }
     },
-    &quot;nextRun&quot;: &quot;0001-01-01T00:00:00Z&quot;,
-    &quot;ACL&quot;: [
-      &quot;*&quot;
+    &quot;ACL&quot;: []                 // server-side script ACL settings, optional, array of user ids and/or &quot;*&quot; for anonymous access
+}
+</pre></div>
+
+
+<p>}
+<code>**Responses:**
+
+*Success*</code>
+{
+  "error": false,
+  "script": {
+    "_id": "584fad1422a5482feb5b31ab",
+    "appId": "584e64f8982fd55332741516",
+    "name": "AYBABTU.js",
+    "path": "/AYBABTU.js",
+    "description": "All your base",
+    "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",
+    "jobStartAt": "2016-12-13T17:33:00+03:00",
+    "isActiveJob": true,
+    "jobType": "custom",
+    "repeat": {
+      "custom": {
+        "days": 0,
+        "hours": 0,
+        "minutes": 5
+      },
+      "daily": null,
+      "monthly": null
+    },
+    "nextRun": "0001-01-01T00:00:00Z",
+    "ACL": [
+      "*"
     ]
   }
 }
-</pre></div>
-
-
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
+<code>*Error*</code>
+{
+    "error"       : true,
+    "errCode"     : 4XX/5XX, // Error code
+    "errMsg"      : "Error text"
 }
-</pre></div>
-
-
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-    &quot;script&quot;: &quot;584fad1422a5482feb5b31ab&quot;,
-    &quot;cloudCode&quot;: {
-        &quot;isActiveJob&quot;: true    
+<code>**cURL example**</code>
+curl -X POST -H "Content-Type: application/json" -d '{
+    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+    "app": "48f172923acd719b42c73ac3a492cfc8",
+    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+    "script": "584fad1422a5482feb5b31ab",
+    "cloudCode": {
+        "isActiveJob": true  <br />
     }
-}&#39; &quot;https://api.scorocode.ru/api/v1/app/scripts/update&quot;
-</pre></div>
-
-
+}' "https://api.scorocode.ru/api/v1/app/scripts/update"
+```</p>
 <hr />
 <h2 id="delete-server-side-script">Delete server-side script</h2>
-<p><strong>https://api.scorocode.ru/api/v1/app/scripts/delete</strong></p>
-<p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
-    &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
-    &quot;acc&quot;: &quot;&quot;,               // access key, mandatory, masterKey only
-    &quot;script&quot;: &quot;&quot;             // server-side script identifier, mandatory
-}
-</pre></div>
+<p><strong>https://api.scorocode.ru/api/v1/app/scripts/delete</strong>
 
+Method: <code>POST</code>
 
-<p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-  &quot;error&quot;: false
-}
-</pre></div>
+Headers:
 
+<code>Content-Type: application/json</code>
 
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
-}
-</pre></div>
+<code>{
+    "app": "",               // application identifier, mandatory
+    "cli": "",               // client key, mandatory
+    "acc": "",               // access key, mandatory, masterKey only
+    "script": ""             // server-side script identifier, mandatory
+}</code>
 
+<strong>Responses:</strong>
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-    &quot;script&quot;: &quot;584fad1422a5482feb5b31ab&quot;
-}&#39; &quot;https://api.scorocode.ru/api/v1/app/scripts/delete&quot;
-</pre></div>
+<em>Success</em>
 
+<code>{
+  "error": false
+}</code>
 
+<em>Error</em>
+
+<code>{
+    "error"       : true,
+    "errCode"     : 4XX/5XX, // Error code
+    "errMsg"      : "Error text"
+}</code>
+
+<strong>cURL example</strong>
+
+<code>curl -X POST -H "Content-Type: application/json" -d '{
+    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+    "app": "48f172923acd719b42c73ac3a492cfc8",
+    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+    "script": "584fad1422a5482feb5b31ab"
+}' "https://api.scorocode.ru/api/v1/app/scripts/delete"</code></p>
 <hr />
 <h2 id="retreive-bots-list">Retreive bots list</h2>
-<p><strong>https://api.scorocode.ru/api/v1/bots</strong></p>
-<p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
-    &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
-    &quot;acc&quot;: &quot;&quot;                // access key, mandatory, masterKey only
-}
-</pre></div>
+<p><strong>https://api.scorocode.ru/api/v1/bots</strong>
 
+Method: <code>POST</code>
 
-<p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-  &quot;error&quot;: false,
-  &quot;items&quot;: [
+Headers:
+
+<code>Content-Type: application/json</code>
+
+<code>{
+    "app": "",               // application identifier, mandatory
+    "cli": "",               // client key, mandatory
+    "acc": ""                // access key, mandatory, masterKey only
+}</code>
+
+<strong>Responses:</strong>
+
+<em>Success</em>
+
+<code>{
+  "error": false,
+  "items": [
     {
-      &quot;_id&quot;: &quot;584fb8710c62722cf9fe2617&quot;,
-      &quot;name&quot;: &quot;botobot&quot;,
-      &quot;botId&quot;: &quot;123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11&quot;,
-      &quot;appId&quot;: &quot;584e64f8982fd55332741516&quot;,
-      &quot;scriptId&quot;: &quot;584fb52f0c62722cf9fe2604&quot;,
-      &quot;isActive&quot;: false
+      "_id": "584fb8710c62722cf9fe2617",
+      "name": "botobot",
+      "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
+      "appId": "584e64f8982fd55332741516",
+      "scriptId": "584fb52f0c62722cf9fe2604",
+      "isActive": false
     }
   ]
-}
-</pre></div>
+}</code>
 
+<em>Error</em>
 
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
-}
-</pre></div>
+<code>{
+    "error"       : true,
+    "errCode"     : 4XX/5XX, // Error code
+    "errMsg"      : "Error text"
+}</code>
 
+<strong>cURL example</strong>
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;
-}&#39; &quot;https://api.scorocode.ru/api/v1/bots&quot;
-</pre></div>
-
-
+<code>curl -X POST -H "Content-Type: application/json" -d '{
+    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+    "app": "48f172923acd719b42c73ac3a492cfc8",
+    "cli": "d6859f41223c9997ff78c6b4vb3a96bb"
+}' "https://api.scorocode.ru/api/v1/bots"</code></p>
 <hr />
 <h2 id="create-new-bot">Create new bot</h2>
-<p><strong>https://api.scorocode.ru/api/v1/bots/create</strong></p>
-<p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
-    &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
-    &quot;acc&quot;: &quot;&quot;,               // access key, mandatory, masterKey only
-    &quot;bot&quot;: {
-        &quot;name&quot;: &quot;&quot;,          // bot name, mandatory
-        &quot;botId&quot;: &quot;&quot;,         // telegram token you received from @BotFather, mandatory 
-        &quot;scriptId&quot;: &quot;&quot;,      // server-side script identifier, mandatory
-        &quot;isActive&quot;: bool     // bot activation flag, optional
+<p><strong>https://api.scorocode.ru/api/v1/bots/create</strong>
+
+Method: <code>POST</code>
+
+Headers:
+
+<code>Content-Type: application/json</code>
+
+<code>{
+    "app": "",               // application identifier, mandatory
+    "cli": "",               // client key, mandatory
+    "acc": "",               // access key, mandatory, masterKey only
+    "bot": {
+        "name": "",          // bot name, mandatory
+        "botId": "",         // telegram token you received from @BotFather, mandatory 
+        "scriptId": "",      // server-side script identifier, mandatory
+        "isActive": bool     // bot activation flag, optional
     }
-}
-</pre></div>
+}</code>
 
+<strong>Responses:</strong>
 
-<p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-  &quot;bot&quot;: {
-    &quot;_id&quot;: &quot;584fb8710c62722cf9fe2617&quot;,
-    &quot;name&quot;: &quot;botobot&quot;,
-    &quot;botId&quot;: &quot;123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11&quot;,
-    &quot;appId&quot;: &quot;584e64f8982fd55332741516&quot;,
-    &quot;scriptId&quot;: &quot;584fb52f0c62722cf9fe2604&quot;,
-    &quot;isActive&quot;: false
+<em>Success</em>
+
+<code>{
+  "bot": {
+    "_id": "584fb8710c62722cf9fe2617",
+    "name": "botobot",
+    "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
+    "appId": "584e64f8982fd55332741516",
+    "scriptId": "584fb52f0c62722cf9fe2604",
+    "isActive": false
   },
-  &quot;error&quot;: false
-}
-</pre></div>
+  "error": false
+}</code>
 
+<em>Error</em>
 
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
-}
-</pre></div>
+<code>{
+    "error"       : true,
+    "errCode"     : 4XX/5XX, // Error code
+    "errMsg"      : "Error text"
+}</code>
 
+<strong>cURL example</strong>
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-    &quot;bot&quot;:{
-        &quot;name&quot;:&quot;botobot&quot;,
-        &quot;isActive&quot;:false,
-        &quot;botId&quot;:&quot;123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11&quot;,
-        &quot;scriptId&quot;:&quot;584fb52f0c62722cf9fe2604&quot;
+<code>curl -X POST -H "Content-Type: application/json" -d '{
+    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+    "app": "48f172923acd719b42c73ac3a492cfc8",
+    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+    "bot":{
+        "name":"botobot",
+        "isActive":false,
+        "botId":"123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
+        "scriptId":"584fb52f0c62722cf9fe2604"
     }
-}&#39; &quot;https://api.scorocode.ru/api/v1/bots/create&quot;
-</pre></div>
-
-
+}' "https://api.scorocode.ru/api/v1/bots/create"</code></p>
 <hr />
 <h2 id="update-bot">Update bot</h2>
-<p><strong>https://api.scorocode.ru/api/v1/bots/update</strong></p>
-<p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
-    &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
-    &quot;acc&quot;: &quot;&quot;,               // access key, mandatory, masterKey only
-    &quot;bot&quot;: {
-        &quot;_id&quot;: &quot;&quot;,           // bot identifier, mandatory
-        &quot;name&quot;: &quot;&quot;,          // bot name, optional
-        &quot;botId&quot;: &quot;&quot;,         // telegram token you received from @BotFather, optional 
-        &quot;scriptId&quot;: &quot;&quot;,      // server-side script identifier, optional
-        &quot;isActive&quot;: bool     // bot activation flag, optional
+<p><strong>https://api.scorocode.ru/api/v1/bots/update</strong>
+
+Method: <code>POST</code>
+
+Headers:
+
+<code>Content-Type: application/json</code>
+
+<code>{
+    "app": "",               // application identifier, mandatory
+    "cli": "",               // client key, mandatory
+    "acc": "",               // access key, mandatory, masterKey only
+    "bot": {
+        "_id": "",           // bot identifier, mandatory
+        "name": "",          // bot name, optional
+        "botId": "",         // telegram token you received from @BotFather, optional 
+        "scriptId": "",      // server-side script identifier, optional
+        "isActive": bool     // bot activation flag, optional
     }
-}
-</pre></div>
+}</code>
 
+<strong>Responses:</strong>
 
-<p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-  &quot;bot&quot;: {
-    &quot;_id&quot;: &quot;584fbd067e0b4e222480a7e4&quot;,
-    &quot;name&quot;: &quot;botobot&quot;,
-    &quot;botId&quot;: &quot;123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew12&quot;,
-    &quot;appId&quot;: &quot;584e64f8982fd55332741516&quot;,
-    &quot;scriptId&quot;: &quot;584fb52f0c62722cf9fe2604&quot;,
-    &quot;isActive&quot;: false
+<em>Success</em>
+
+<code>{
+  "bot": {
+    "_id": "584fbd067e0b4e222480a7e4",
+    "name": "botobot",
+    "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew12",
+    "appId": "584e64f8982fd55332741516",
+    "scriptId": "584fb52f0c62722cf9fe2604",
+    "isActive": false
   },
-  &quot;error&quot;: false
-}
-</pre></div>
+  "error": false
+}</code>
 
+<em>Error</em>
 
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
-}
-</pre></div>
+<code>{
+    "error"       : true,
+    "errCode"     : 4XX/5XX, // Error code
+    "errMsg"      : "Error text"
+}</code>
 
+<strong>cURL example</strong>
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-    &quot;bot&quot;: {
-        &quot;_id&quot;: &quot;584fbd067e0b4e222480a7e4&quot;,
-        &quot;name&quot;: &quot;botobot&quot;,
-        &quot;botId&quot;: &quot;123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew12&quot;,
-        &quot;appId&quot;: &quot;584e64f8982fd55332741516&quot;,
-        &quot;scriptId&quot;: &quot;584fb52f0c62722cf9fe2604&quot;,
-        &quot;isActive&quot;: false
+<code>curl -X POST -H "Content-Type: application/json" -d '{
+    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+    "app": "48f172923acd719b42c73ac3a492cfc8",
+    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+    "bot": {
+        "_id": "584fbd067e0b4e222480a7e4",
+        "name": "botobot",
+        "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew12",
+        "appId": "584e64f8982fd55332741516",
+        "scriptId": "584fb52f0c62722cf9fe2604",
+        "isActive": false
     }
-}&#39; &quot;https://api.scorocode.ru/api/v1/bots/update&quot;
-</pre></div>
-
-
+}' "https://api.scorocode.ru/api/v1/bots/update"</code></p>
 <hr />
 <h2 id="delete-bot">Delete bot</h2>
-<p><strong>https://api.scorocode.ru/api/v1/bots/delete</strong></p>
-<p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;: &quot;&quot;,               // application identifier, mandatory
-    &quot;cli&quot;: &quot;&quot;,               // client key, mandatory
-    &quot;acc&quot;: &quot;&quot;,               // access key, mandatory, masterKey only
-    &quot;bot&quot;: {
-        &quot;_id&quot;: &quot;&quot;            // bot identifier, mandatory
+<p><strong>https://api.scorocode.ru/api/v1/bots/delete</strong>
+
+Method: <code>POST</code>
+
+Headers:
+
+<code>Content-Type: application/json</code>
+
+<code>{
+    "app": "",               // application identifier, mandatory
+    "cli": "",               // client key, mandatory
+    "acc": "",               // access key, mandatory, masterKey only
+    "bot": {
+        "_id": ""            // bot identifier, mandatory
     }
-}
-</pre></div>
+}</code>
 
+<strong>Responses:</strong>
 
-<p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-  &quot;error&quot;: false
-}
-</pre></div>
+<em>Success</em>
 
+<code>{
+  "error": false
+}</code>
 
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
-}
-</pre></div>
+<em>Error</em>
 
+<code>{
+    "error"       : true,
+    "errCode"     : 4XX/5XX, // Error code
+    "errMsg"      : "Error text"
+}</code>
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
-    &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
-    &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
-    &quot;bot&quot;: {
-        &quot;_id&quot;: &quot;584fbd067e0b4e222480a7e4&quot;
+<strong>cURL example</strong>
+
+<code>curl -X POST -H "Content-Type: application/json" -d '{
+    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+    "app": "48f172923acd719b42c73ac3a492cfc8",
+    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+    "bot": {
+        "_id": "584fbd067e0b4e222480a7e4"
     }
-}&#39; &quot;https://api.scorocode.ru/api/v1/bots/delete&quot;
-</pre></div>
+}' "https://api.scorocode.ru/api/v1/bots/delete"</code></p>
               
             </article>
           </div>
