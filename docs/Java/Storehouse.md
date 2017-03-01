@@ -103,11 +103,11 @@ Let's create a launch screen for our application and call it `LoginActivity`. To
     </LinearLayout>
 </RelativeLayout>
 ```
-The launch screen of the `LoginActivity` class is shown on the illustration 1.1. 
+The launch screen of the `LoginActivity` class is shown in Figure 1.1. 
 
 ![Application Launch Screen](img/Storehouse/1.1.png)
 
-Illustration 1.1 – application launch screen.
+Figure 1.1 – application launch screen.
 
 Let's add the following code lines in the `onCreate` method of the `LoginActivity` class:
 
@@ -214,11 +214,11 @@ Let's create an new Activity called `RegisterActivity` and add the following xml
         android:text="@string/btn_register_text"/>
 </LinearLayout>
 ```
-This Activity is a new user registration screen, as shown on illustration 1.2
+This Activity is a new user registration screen, as shown in Figure 1.2
 
 ![A new user registration screen](img/Storehouse/1.2.png)
 
-Illustration 1.2 — a new user registration screen.
+Figure 1.2 — a new user registration screen.
 
 All document fields needed for a user registration are listed on this screen. Let's add the button click event handler for the «Register» button which will run the `.register` method of the `User` class, as shown below:
 
@@ -416,7 +416,7 @@ protected void onResume() {
 
 In this code we create a `Query` object sample without setting any parameters (i.e. we choose the first 100 documents from this collection) and then we get the documents from our collection with the `findDocument` method.
 
-In case we were successful in finding the documents, we install the adapter. Otherwise we transmit the error message.
+In case we were successful in finding the documents, we install the adapter. Otherwise, we transmit the error message.
 
 Let's also add the icons we need in the `ActionBar` Activity. For this, we will create the `main_activity_menu` layout file and add the following xml code:
 
@@ -442,7 +442,7 @@ Let's also add the icons we need in the `ActionBar` Activity. For this, we will 
 </menu>
 ```
 
-Т.е в `ActionBar` мы будем отображать иконки «Добавить элемент в БД», «Установить фильтр» и «Завершить активную сессию пользователя» (logout). На экран активности данные иконки добавим при помощи следующего метода:
+This means that we will show icons "Add an item to the database", "Set a filter" and "Logout" in the  `ActionBar`. We can add these icons to the activity screen with the following code lines:
 
 ```Java
 @Override
@@ -452,7 +452,7 @@ public boolean onCreateOptionsMenu(Menu menu) {
 }
 ```
 
-Обрабатывать нажатия на иконки будем при помощи метода показанного ниже
+We will handle icons clicks with the method described below:
 
 ```Java
 @Override
@@ -479,27 +479,27 @@ public boolean onOptionsItemSelected(MenuItem item) {
 }
 ```
 
-Готовый экран данной активности показан на рисунке 2.1
+The completed screen for this activity is shown in Figure 2.1
 
-![главный экран приложения](img/Storehouse/2.1.png)
+![Main Application Screen](img/Storehouse/2.1.png)
 
-Рисунок 2.1 — главный экран приложения.
+Figure 2.1 — main application screen
 
-На данном экране показаны текущие модели телефонов, присутствующие на складе. В верхнем правом углу экрана показаны следующие иконки:
+On this screen, we can see available mobile phone models which are kept in our storehouse. The following icons are shown in the right upper corner:
 
-![Добавить новую модель в базу данных](img/Storehouse/2.1.1.png) - Добавить новую модель в базу данных.
+![Add a new item to the database](img/Storehouse/2.1.1.png) - Add new item (mobile phone model) to the database.
 
 
-![Применить фильтр к списку устройств](img/Storehouse/2.1.2.png) - Применить фильтр к списку устройств.
+![Apply a filter to the list of items](img/Storehouse/2.1.2.png) - Apply a filter to the list of items.
 
 	   
-![Закончить активную сессию пользователя](img/Storehouse/2.1.3.png) - Закончить активную сессию пользователя (logout).	
+![Logout a user](img/Storehouse/2.1.3.png) - End an active session (logout).	
 
-При нажатии на кнопку ![Добавить новую модель в базу данных](img/Storehouse/2.1.1.png)  пользователь переходит на экран добавления устройства в БД.
+After clicking on the ![Add a new device to the database](img/Storehouse/2.1.1.png) button, a user switches to the item adding screen of the application. 
 
-## Экран добавления устройства
+## Add an Item Screen
 
-Создадим активность с именем `AddItemActivity` и добавим в её layout-файл следующий xml код:
+Let's create an Acitivity called `AddItemActivity` and add the folowing xml code to its layout file:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -519,7 +519,7 @@ public boolean onOptionsItemSelected(MenuItem item) {
 </LinearLayout>
 ```
 
-В свою очередь, включаемый файл item_core.xml представляет собой:
+In turn, the activated item_core.xml file represents of the following lines:
 
 ```xml
 <LinearLayout android:layout_width="match_parent"
@@ -638,14 +638,14 @@ public boolean onOptionsItemSelected(MenuItem item) {
 </LinearLayout>
 ```
 
-Итоговый вид активности показан на рисунке 2.2
+The final activity screen is shown in Fugure 2.2
 
-![Экран добавления нового устройства в БД](img/Storehouse/2.2.png)
+![Add an Item Screen](img/Storehouse/2.2.png)
 
-Рисунок 2.2 — Экран добавления нового устройства в БД.
+Figure 2.2 — Add an Item screen.
 
 
-На этом экране пользователь вводит всю необходиму информацию о устройстве и нажимает кнопку «ДОБАВИТЬ». При этом программа создает новый документ, заполняет его поля и сохраняет на сервере.  Добавим данные действия: зададим обработчик нажатия кнопки «Добавить» который будет вызывать метод показанный ниже:
+On this screen, a user enters all necessary information about the device (item) and presses on the «ADD» button. With this, the program creates a new document, fills its fields and saves on a server. Let's add the following activities: defining a click handler for the «ADD» button which will run the method described below:
 
 ```Java
 @OnClick(R.id.btnAddItem)
@@ -675,29 +675,29 @@ public void onBtnAddItemClicked() {
 }
 ```
 
-В данном методе мы создаем экземпляр класса `Document`, проверяем заполнил ли пользователь всю информацию в соответствующих `EditText` и устанавливаем поля документа при помощи метода `setField(…)` после чего сохраняем документ. Поскольку документ создан без ассоциации с реальным документом из БД (т.е без использования метода `getDocumentById()`, то новый документ с указанными полями будет загружен на сервер.
+In this method we create a sample of the `Document` class, check whether a user has provided all necessary information in the corresponding `EditText` fields and set the document fields with the `setField(…)` method. Then we save the document. Since the document was created without a connection with a real document form the database (i.e. without using the `getDocumentById()` method), the new created document with the set fields will be uploaded to a server.
 
-Документы хранятся в БД Scorocode в виде показанном на рисунке 2.3
+Documents are stored in the Scorocode database as shown on Figure 2.3
 
-![храниение документов в коллекции БД Scorocode](img/Storehouse/2.3.png)
+![Storing documents in the Scorocode database](img/Storehouse/2.3.png)
 
-Рисунок 2.3 — храниение документов в коллекции БД Scorocode.
+Figure 2.3 — storing documents in the Scorocode database.
 
-Каждый документ содержит системные и пользовательские поля.
-Системными являются:
+Each document contains system and user's fields.
+System fields are:
 
-1. id — уникальный идентификатор документа в коллекции
-2. readACL — права на чтения данного документа.
-3. updateACL — права на обновление данного документа.
-4. removeACL — права на удаление данного документа.
-5. createdAt — время создания документа.
-6. updatedAt - время последнего обновления документа.
+1. id — unique document ID in the collection.
+2. readACL — permission to read this document.
+3. updateACL — permission to update this document.
+4. removeACL — permission to delete this document.
+5. createdAt — time of the document creation.
+6. updatedAt - time of the document last update.
 
-Пользователь может добавлять другие поля по своему усмотрению используя кнопку «Добавить поле» на верхней панели. Пользователь так же может добавить документ нажав кнопку «Добавить документ» на верхней панели и введя значения полей вручную. Более подробно о функциональности верхней панели БД см.документацию Scorocode.
+A user can add other fields at their discretion with the «Add a field» button in the upper panel. They can also add a document with the «Add a document» button in the upper panel and enter data in the fields manually. For more information on the database upper panel features, please, see Scorocode documentation.
 
-При нажатии на кнопку ![Применить фильтр к списку устройств](img/Storehouse/2.1.2.png) пользователь попадает в диалоговое окно фильтра.
+When clicking on the ![Apply a filter to the list of items](img/Storehouse/2.1.2.png) button a user enter the filter dialog screen.
 
-Создадим данное диалоговое окно. Для этого создадим класс `FilterDialog` код которого показан ниже:
+Let's create this filter dialog screen. For this, we need to create the `FilterDialog` class using the following code:
 
 ```Java
 package prof_itgroup.ru.storehouseapp.Objects;
@@ -793,7 +793,7 @@ public class FilterDialog {
 }
 ```
 
-В методе `showFilterDialog` мы создаем `AlertDialog` и задаем ему `View` из следующего layout-файла:
+In the `showFilterDialog` method we create `AlertDialog` and set its `View` from the following layout file:
 
 ```xml
  <?xml version="1.0" encoding="utf-8"?>
@@ -830,7 +830,7 @@ public class FilterDialog {
 </LinearLayout>
 ```
 
-Включаемые layout-файлы `price_filter_layout` и `platform_filter` показаны ниже:
+The layout files `price_filter_layout` and `platform_filter` are shown below:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -935,20 +935,20 @@ public class FilterDialog {
 </LinearLayout>
 ```
 
-Диалоговое окно фильтра показано на рисунке 2.4
+The filter dialog screen is shown in Figure 2.4
 
-![Диалоговое окно фильтра](img/Storehouse/2.4.png)
+![Filter Dialog Screen](img/Storehouse/2.4.png)
 
-Рисунок 2.4 — диалоговое окно фильтра.
+Figure 2.4 — filter dialog screen.
 
-В данном диалоговом окне пользователь может задать условия выборки из БД по определенным критериям, а именно:
-* Цена устройства
-* Платформа устройства (Android или iOS, а так же номер версии ОС).
-* Доступные в наличии цвета.
+On this dialog screen, a user can specify database sample criteria as follows:
+* Device price
+* Device platform (Android or iOS, plus operation system version number).
+* Available colours.
 
-При нажатии на кнопку «Продолжить» мы проверяем выбраны ли элементы CheckBox и если да — ставим соответствующий фильтр.
+When pressing the «Continue» button, we check whether the CheckBox elements were chosen and, if yes, we set the corresponding filter.
 
-Листинг кода для задания фильтра:  
+Code listing for setting a filter:  
 
 ```Java
 public void showFilterDialog(final CallbackFilterDialog callbackFilterDialog) {
