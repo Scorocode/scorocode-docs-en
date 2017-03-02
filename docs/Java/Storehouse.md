@@ -1012,23 +1012,23 @@ private void setPriceFilter(View view, Query query) {
 }
 ```
 
-Фильтр задается следующим образом: мы создаем объект `Query`, выборку мы ведем из нашей коллекции. Далее: если выбран фильтр цены (установлена соответствующая галочка), то мы выбираем из БД только устройства для которых цена попадает в пределы указанных границ.
+A filter can be set as follows: we create a `Query` object, taking samples from our collection. If the price filter is applied (it is ticked off), then we choose only the devices within the set price range in our database.
 
-Границы цен задаются при помощи следующих методов:
-* greaterThan задает нижнюю границу цены (не включая указанную цену).
-* lessThan задает верхнюю границу цены (не включая указанную цену).
-* greaterThanOrEqualTo задает нижнюю границу цены включая указанную цену.
-* lessThanOrEqualTo задает верхнюю границу цены включая указанную цену.
+The price range is set with the following methods:
+* greaterThan sets the lower price limit (excluding the quoted price number).
+* lessThan sets the upper price limit (excluding the quoted price number).
+* greaterThanOrEqualTo sets the lower price limit including the quoted price number. 
+* lessThanOrEqualTo sets the upper price limit including the quoted price number.
 
-Поиск по платформе задается при помощи метода `equalTo(field, value)` класса `Query` который указывает экземпляру данного класса оставить в выборке только документы у которых значение поля указанного в параметре `field` совпадает с `value`. В нашем случае мы можем например найти все Android 7.0 девайсы, указав `query.equalTo(«platform», «Android 7.0»);`
+Platform search is set using the `equalTo(field, value)` method of the `Query` class which tells to an instance of the class to leave inside the sample only the documents whose field value in the `field` parameter corresponds to the `value`. As an example in our case, we can find all Android 7.0 devices by setting `query.equalTo(«platform», «Android 7.0»);`.
 
-Поиск по доступным цветам задается при помощи метода `containedIn` класса `Query` который оставляет в выборке только те документы для которых поле (типа массив) содержит все элементы заданного массива.
+Colour search is set using the `containedIn` method of the `Query` class which leaves leave inside the sample only the documents  whose fields (array) contains all elements of the given array.
 
-Таким образом мы формируем запрос (query) для указанной коллекции БД и получаем экземпляры класса `DocumentInfo` характеризующие документы, удовлетворяющие данному запросу. Эту информацию мы передаем в активность при помощи callback и обновляем информацию.
+With this we form a query for the given database collection and receive copies of the `DocumentInfo` class which characterize the documents appropriate for this query. We pass this information in the Activity using a callback and them we update the information.
 
-При нажатии на кнопку ![Закончить активную сессию пользователя](img/Storehouse/2.1.3.png) происходит завершение активной сессии пользователя (logout) и пользователь попадает обратно на стартовый экран приложения.
+When pressing the ![Logout a user](img/Storehouse/2.1.3.png) button we end the user active session (logout) so the user is back at the Launch Screen.
 
-Для осуществления данной функциональности нужно задать обработчик нажатия для данной кнопки, вызывающий метод  `logout` класса `User` для завершения активной сессии пользователя:
+To achieve this we need to set a click event handler for this button, it will run `logout` of the `User` class to end the active session:
 
 ```Java
 public static void logout(final Context context) {
@@ -1046,15 +1046,15 @@ public static void logout(final Context context) {
     });
 }
 ```
-В данном методе сначала удаляется файл с информацией о пользователе (данный файл хранится локально и используется для проверки того факта, что пользователь прошел идентификацию в приложении) затем используется метод `logout(…)` класса `User`, который завершает активную сессию пользователя.
+In this method, as our first step we need to take is to delete the user data file (the file is stored locally and is used to check whether the user was identified). Then we use the `logout(…)` method of the `User` class which ends the user active session.
 
-В случае успешного завершения активной сессии пользователя будет вызван метод `onLogoutSucceed(...) callback` интерфейса, иначе будет вызван метод `onLogoutFailed(...)`.
+In case the session was ended successfully the `onLogoutSucceed(...) callback` iterface method will be executed. Otherwise, it is the  `onLogoutFailed(...)` method that will be executed.
 
-## Экран подробной информации о устройстве.
+## Device Details Information Screen.
 
-При нажатии на любой из элементов списка устройств главного экрана приложения пользователь попадает на экран подробной информации об устройстве.
+When pressing on any element of the device list on the application main screen, a user moves to the screen with detailed information about the chosen device.
 
-Создадим активность с именем `ItemDetailsInfo` и в layout-файл данной активности добавим следующий xml код:
+Let's create an Activity called `ItemDetailsInfo` and add the following xml code to its layout file:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -1074,11 +1074,11 @@ public static void logout(final Context context) {
 </LinearLayout>
 ```
 
-Как видно layout-файл активности переиспользует xml код экрана добавления элемента в БД, но на данном экране так же присутствует возможность перейти в режим редактирования, т.е актививровать скрытые `View` экрана.
+As you can see, the Activity layout file re-uses xml code of the Add an Item screen yet this screen also presents a possibility to switch to the Edit mode, i.e. to activate hidden `View` of the screen.
 
-В `ActionBar` данного экрана так же добавим иконки для редактирования записи об устройстве (документа), удаления записи об устройстве (документа) и перехода на экран информации об отгрузке.
+In `ActionBar` of the screen we will also add icons to edit a device entry (document), to remove a device entry (document) and to proceed to the delivery information screen.
 
-Для задания иконок в `ActionBar` создадим layout-файл с именем `detailed_info_menu` и добавим в него следующий код:
+To set the icons in `ActionBar` let's create a layout file called `detailed_info_menu` and add to it the following code lines:
 
 ```xml
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1103,7 +1103,7 @@ public static void logout(final Context context) {
 </menu>
 ```
 
-В самой активности добавим метод:
+Inside the Activity let's add the following method:
 
 ```Java
 @Override
@@ -1113,7 +1113,7 @@ public boolean onCreateOptionsMenu(Menu menu) {
 }
 ```
 
-который установит иконки в `ActionBar`.
+which will install icons into `ActionBar`.
 
 Обрабатывать нажатие на иконки мы будем при помощи метода указанного ниже:
 
