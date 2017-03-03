@@ -878,35 +878,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#new-user-registration-screen" title="New User Registration Screen" class="md-nav__link">
-    New User Registration Screen
+  <a href="#new-user-registration-screen" title="New User Registration Screen." class="md-nav__link">
+    New User Registration Screen.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="Главный экран приложения." class="md-nav__link">
-    Главный экран приложения.
+  <a href="#application-main-screen" title="Application Main Screen." class="md-nav__link">
+    Application Main Screen.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="Экран добавления устройства" class="md-nav__link">
-    Экран добавления устройства
+  <a href="#add-an-item-screen" title="Add an Item Screen" class="md-nav__link">
+    Add an Item Screen
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="Экран подробной информации о устройстве." class="md-nav__link">
-    Экран подробной информации о устройстве.
+  <a href="#device-details-information-screen" title="Device Details Information Screen." class="md-nav__link">
+    Device Details Information Screen.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="Экран информации об отгрузке товара." class="md-nav__link">
+  <a href="#_1" title="Экран информации об отгрузке товара." class="md-nav__link">
     Экран информации об отгрузке товара.
   </a>
   
@@ -959,35 +959,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#new-user-registration-screen" title="New User Registration Screen" class="md-nav__link">
-    New User Registration Screen
+  <a href="#new-user-registration-screen" title="New User Registration Screen." class="md-nav__link">
+    New User Registration Screen.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="Главный экран приложения." class="md-nav__link">
-    Главный экран приложения.
+  <a href="#application-main-screen" title="Application Main Screen." class="md-nav__link">
+    Application Main Screen.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="Экран добавления устройства" class="md-nav__link">
-    Экран добавления устройства
+  <a href="#add-an-item-screen" title="Add an Item Screen" class="md-nav__link">
+    Add an Item Screen
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="Экран подробной информации о устройстве." class="md-nav__link">
-    Экран подробной информации о устройстве.
+  <a href="#device-details-information-screen" title="Device Details Information Screen." class="md-nav__link">
+    Device Details Information Screen.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="Экран информации об отгрузке товара." class="md-nav__link">
+  <a href="#_1" title="Экран информации об отгрузке товара." class="md-nav__link">
     Экран информации об отгрузке товара.
   </a>
   
@@ -1105,9 +1105,9 @@
 <span class="nt">&lt;/RelativeLayout&gt;</span>
 </pre></div>
 
-The launch screen of the <code>LoginActivity</code> class is shown on the illustration 1.1. </p>
+The launch screen of the <code>LoginActivity</code> class is shown in Figure 1.1. </p>
 <p><img alt="Application Launch Screen" src="../img/Storehouse/1.1.png" /></p>
-<p>Illustration 1.1 – application launch screen.</p>
+<p>Figure 1.1 – application launch screen.</p>
 <p>Let's add the following code lines in the <code>onCreate</code> method of the <code>LoginActivity</code> class:</p>
 <div class="codehilite"><pre><span></span><span class="nd">@Override</span>
 <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
@@ -1123,7 +1123,7 @@ The launch screen of the <code>LoginActivity</code> class is shown on the illust
 
 
 <p><code>ScorocodeSdk</code> initialization is happening in the <code>onCreate</code> method with keys <code>appId</code>, <code>clientKey</code> (android), <code>fileKey</code>, <code>messageKey</code>, <code>scriptKey</code> using the <code>ScorocodeSdk.initWith(...)</code> method. These keys can be viewed at the «Security» tab in the project Settings.</p>
-<p>On this screen a database user can enter their system login and password. The application will check whether they are correct using the <code>.login()</code> method of the <code>User</code> class. This method is demonstrated in a listing:</p>
+<p>On this screen, a database user can enter their system login and password. The application will check whether they are correct using the <code>.login()</code> method of the <code>User</code> class. This method is demonstrated in a listing:</p>
 <div class="codehilite"><pre><span></span><span class="nd">@OnClick</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">btnLogin</span><span class="o">)</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onBtnLoginClicked</span><span class="o">()</span> <span class="o">{</span>
     <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">();</span>
@@ -1143,9 +1143,9 @@ The launch screen of the <code>LoginActivity</code> class is shown on the illust
 </pre></div>
 
 
-<p>In this method, we create a new sample of the <code>User</code> class and run its <code>login</code> method. The information about a user's email and password is taken from the corresponding <code>EditText</code>. The <code>login</code> method will check that a user with this email and this password exists in the  «users» collection.</p>
-<p>In case such user exists in the  «users» collection, the <code>onLoginSucceed(...) callback</code> method will be executed, otherwise it the  <code>onFoginFailed(...)</code> method that will be executed. Thus, we can  be sure whether such user exists in our database and act accordingly.</p>
-<p>On the launch screen (see illustration 1.1) we also have the «Register» button which allows to register a new user in the system (add to the «users» database collection). Let's connect this button to the press handler which opens an Activity with user's data needed for registration:</p>
+<p>In this method, we create a new sample of the <code>User</code> class and run its <code>login</code> method. The information about a user's email and password is taken from the corresponding <code>EditText</code>. The <code>login</code> method will check that a user with this email and this password exists in the «users» collection.</p>
+<p>In case such user exists in the «users» collection, the <code>onLoginSucceed(...) callback</code> method will be executed. Otherwise it the <code>onFoginFailed(...)</code> method that will be executed. Thus, we can be sure whether such user exists in our database and act accordingly.</p>
+<p>On the launch screen (see illustration 1.1) we also have the «Register» button which allows to register a new user in the system (add to the «users» database collection). Let's connect this button to the button click handler which opens an Activity with user's data needed for registration:</p>
 <div class="codehilite"><pre><span></span><span class="nd">@OnClick</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">btnRegister</span><span class="o">)</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onBtnRegisterClicked</span><span class="o">()</span> <span class="o">{</span>
     <span class="n">RegisterActivity</span><span class="o">.</span><span class="na">display</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
@@ -1153,7 +1153,7 @@ The launch screen of the <code>LoginActivity</code> class is shown on the illust
 </pre></div>
 
 
-<h2 id="new-user-registration-screen">New User Registration Screen</h2>
+<h2 id="new-user-registration-screen">New User Registration Screen.</h2>
 <p>Let's create an new Activity called <code>RegisterActivity</code> and add the following xml code in the layout file of this Activity:</p>
 <p><div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
@@ -1205,10 +1205,10 @@ The launch screen of the <code>LoginActivity</code> class is shown on the illust
 <span class="nt">&lt;/LinearLayout&gt;</span>
 </pre></div>
 
-This Activity is a new user registration screen, as shown on illustration 1.2</p>
+This Activity is a new user registration screen, as shown in Figure 1.2</p>
 <p><img alt="A new user registration screen" src="../img/Storehouse/1.2.png" /></p>
-<p>Illustration 1.2 — a new user registration screen.</p>
-<p>На данном экране вводятся все необходимые поля документа (характеризующие пользователя). Добавим обработчик нажатия для кнопки «Зарегистрировать» вызывающий метод <code>.register</code> класса <code>User</code> для регистрации нового пользователя, показанный ниже:</p>
+<p>Figure 1.2 — a new user registration screen.</p>
+<p>All document fields needed for a user registration are listed on this screen. Let's add the button click event handler for the «Register» button which will run the <code>.register</code> method of the <code>User</code> class, as shown below:</p>
 <div class="codehilite"><pre><span></span><span class="nd">@OnClick</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">btnRegister</span><span class="o">)</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onBtnRegisterClicked</span><span class="o">()</span> <span class="o">{</span>
     <span class="n">String</span> <span class="n">userName</span> <span class="o">=</span> <span class="n">etUsername</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
@@ -1235,12 +1235,12 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 </pre></div>
 
 
-<p>В данном методе мы получаем значения введенные в элементы <code>EditText</code>, а именно: имя пользователя, его email, пароль и пароль повторно (для проверки).</p>
-<p>Далее при помощи метода isInputValid мы проверяем, что поля не являются пустыми и что значение, введенное в поля пароля и проверки пароля идентичны, после чего вызываем метод <code>.register</code> класса <code>User</code>.</p>
-<p>В случае если регистрация пользователя прошла успешно (т.е если sdk инициализирован, все ключи указаны правильно и нет конфликта с уже существующими пользователями), будет выполнен метод  <code>onRegisterSucceed(...) callback</code> интерфейса иначе будет выполнен метод <code>onRegisterFailed(...)</code>.</p>
-<p>В данном случае при успешной регистрации пользователя выдается Toast-сообщение с информацией о том, что пользователь успешно зарегистрирован и открывается активность <code>LoginActivity</code> чтобы пользователь мог аутентифицироваться и приступить к работе с приложением.</p>
-<h2 id="_1">Главный экран приложения.</h2>
-<p>Создадим главный экран приложения с именем <code>MainActivity</code> и в layout-файл данной активности добавим следующий xml код:</p>
+<p>In this method, we get values entered in the <code>EditText</code> elements, e.g.: a user name, their email, password and repeated password (for a check).</p>
+<p>Then using the isInputValid method we check that the fields are not left empty and that the values, entered into the two password fields are identical. Afterwards, we can run the <code>.register</code> method of the <code>User</code> class.</p>
+<p>In case the user registration was a success (i.e. if the SDK is initiated, all keys are correct and there is no conflict with existing users), the interface <code>onRegisterSucceed(...) callback</code> method will be executed. Otherwise it is the <code>onRegisterFailed(...)</code> method that will be executed.</p>
+<p>In this case, if the registration is a success, a Toast message will be shown with a note that the user is registered. Then the <code>LoginActivity</code> activity begins so that the user can log in and start working with the application.</p>
+<h2 id="application-main-screen">Application Main Screen.</h2>
+<p>Let's create the application main page called <code>MainActivity</code> and add the following xml code in the layout file of this Activity:</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;RelativeLayout</span>
     <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
@@ -1261,8 +1261,8 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 </pre></div>
 
 
-<p>Активность представляет собой <code>ListView</code> в который мы передаем информацию о товарах, хранящихся в БД. Кроме того активность содержит иконки <code>ActionBar</code> о которых будет сказано подробней.</p>
-<p>Для отображения информации создадим адаптер с именем <code>StoreItemAdapter</code> код которого показан ниже:</p>
+<p>This is the <code>ListView</code> Activity which we fill with the data about goods stored in the database. In addition, the Activity contains <code>ActionBar</code> icons. We will talk about them in some detail later on. </p>
+<p>Let's create an adapter called <code>StoreItemAdapter</code> to show us the data with the following code: </p>
 <div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nn">prof_itgroup.ru.storehouseapp.Objects</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">android.support.annotation.NonNull</span><span class="o">;</span>
@@ -1342,7 +1342,7 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 </pre></div>
 
 
-<p>В качестве элемента списка используем следующий layout-файл:</p>
+<p>We will use the following layout file as a list element:</p>
 <div class="codehilite"><pre><span></span> <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;RelativeLayout</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
     <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
@@ -1370,7 +1370,7 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 </pre></div>
 
 
-<p>Данные о товарах, хранящихся в БД мы будем получать в методе <code>onResume()</code> активности <code>MainActivity</code>. Для этого в метод <code>onResume</code> добавим следующий код:</p>
+<p>We will get the data about stored goods in the <code>onResume()</code> method of the <code>MainActivity</code>Activity. For this let's add the following code lines in the <code>onResume</code> method:</p>
 <div class="codehilite"><pre><span></span><span class="nd">@Override</span>
 <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="o">()</span> <span class="o">{</span>
     <span class="kd">super</span><span class="o">.</span><span class="na">onResume</span><span class="o">();</span>
@@ -1391,9 +1391,9 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 </pre></div>
 
 
-<p>В данном коде мы создаем экземпляр объекта <code>Query</code> не задавая параметров (т.е выбираем первые 100 документов из данной коллекции) и далее с помощью метода findDocument получаем документы из нашей коллекции.</p>
-<p>В случае если удалось найти документы мы устанавливаем адаптер, иначе выдаем сообщение об ошибке.</p>
-<p>Так же добавим необходимые иконки в <code>ActionBar</code> активности. Для этого создадим <code>layout</code> файл <code>main_activity_menu</code> и добавим туда следующий xml код:</p>
+<p>In this code we create a <code>Query</code> object sample without setting any parameters (i.e. we choose the first 100 documents from this collection) and then we get the documents from our collection with the <code>findDocument</code> method.</p>
+<p>In case we were successful in finding the documents, we install the adapter. Otherwise, we transmit the error message.</p>
+<p>Let's also add the icons we need in the <code>ActionBar</code> Activity. For this, we will create the <code>main_activity_menu</code> layout file and add the following xml code:</p>
 <div class="codehilite"><pre><span></span><span class="nt">&lt;menu</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
     <span class="na">xmlns:app=</span><span class="s">&quot;http://schemas.android.com/apk/res-auto&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span>
@@ -1416,7 +1416,7 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 </pre></div>
 
 
-<p>Т.е в <code>ActionBar</code> мы будем отображать иконки «Добавить элемент в БД», «Установить фильтр» и «Завершить активную сессию пользователя» (logout). На экран активности данные иконки добавим при помощи следующего метода:</p>
+<p>This means that we will show icons "Add an item to the database", "Set a filter" and "Logout" in the  <code>ActionBar</code>. We can add these icons to the activity screen with the following code lines:</p>
 <div class="codehilite"><pre><span></span><span class="nd">@Override</span>
 <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onCreateOptionsMenu</span><span class="o">(</span><span class="n">Menu</span> <span class="n">menu</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">getMenuInflater</span><span class="o">().</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">menu</span><span class="o">.</span><span class="na">main_activity_menu</span><span class="o">,</span> <span class="n">menu</span><span class="o">);</span>
@@ -1425,7 +1425,7 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 </pre></div>
 
 
-<p>Обрабатывать нажатия на иконки будем при помощи метода показанного ниже</p>
+<p>We will handle icons clicks with the method described below:</p>
 <div class="codehilite"><pre><span></span><span class="nd">@Override</span>
 <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onOptionsItemSelected</span><span class="o">(</span><span class="n">MenuItem</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">switch</span> <span class="o">(</span><span class="n">item</span><span class="o">.</span><span class="na">getItemId</span><span class="o">())</span> <span class="o">{</span>
@@ -1451,16 +1451,16 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 </pre></div>
 
 
-<p>Готовый экран данной активности показан на рисунке 2.1</p>
-<p><img alt="главный экран приложения" src="../img/Storehouse/2.1.png" /></p>
-<p>Рисунок 2.1 — главный экран приложения.</p>
-<p>На данном экране показаны текущие модели телефонов, присутствующие на складе. В верхнем правом углу экрана показаны следующие иконки:</p>
-<p><img alt="Добавить новую модель в базу данных" src="../img/Storehouse/2.1.1.png" /> - Добавить новую модель в базу данных.</p>
-<p><img alt="Применить фильтр к списку устройств" src="../img/Storehouse/2.1.2.png" /> - Применить фильтр к списку устройств.</p>
-<p><img alt="Закончить активную сессию пользователя" src="../img/Storehouse/2.1.3.png" /> - Закончить активную сессию пользователя (logout).  </p>
-<p>При нажатии на кнопку <img alt="Добавить новую модель в базу данных" src="../img/Storehouse/2.1.1.png" />  пользователь переходит на экран добавления устройства в БД.</p>
-<h2 id="_2">Экран добавления устройства</h2>
-<p>Создадим активность с именем <code>AddItemActivity</code> и добавим в её layout-файл следующий xml код:</p>
+<p>The completed screen for this activity is shown in Figure 2.1</p>
+<p><img alt="Main Application Screen" src="../img/Storehouse/2.1.png" /></p>
+<p>Figure 2.1 — main application screen</p>
+<p>On this screen, we can see available mobile phone models which are kept in our storehouse. The following icons are shown in the right upper corner:</p>
+<p><img alt="Add a new item to the database" src="../img/Storehouse/2.1.1.png" /> - Add new item (mobile phone model) to the database.</p>
+<p><img alt="Apply a filter to the list of items" src="../img/Storehouse/2.1.2.png" /> - Apply a filter to the list of items.</p>
+<p><img alt="Logout a user" src="../img/Storehouse/2.1.3.png" /> - End an active session (logout).    </p>
+<p>After clicking on the <img alt="Add a new device to the database" src="../img/Storehouse/2.1.1.png" /> button, a user switches to the item adding screen of the application. </p>
+<h2 id="add-an-item-screen">Add an Item Screen</h2>
+<p>Let's create an Acitivity called <code>AddItemActivity</code> and add the folowing xml code to its layout file:</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
     <span class="na">xmlns:tools=</span><span class="s">&quot;http://schemas.android.com/tools&quot;</span>
@@ -1479,7 +1479,7 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 </pre></div>
 
 
-<p>В свою очередь, включаемый файл item_core.xml представляет собой:</p>
+<p>In turn, the activated item_core.xml file represents of the following lines:</p>
 <div class="codehilite"><pre><span></span><span class="nt">&lt;LinearLayout</span> <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
     <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
     <span class="na">android:orientation=</span><span class="s">&quot;vertical&quot;</span>
@@ -1597,10 +1597,10 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 </pre></div>
 
 
-<p>Итоговый вид активности показан на рисунке 2.2</p>
-<p><img alt="Экран добавления нового устройства в БД" src="../img/Storehouse/2.2.png" /></p>
-<p>Рисунок 2.2 — Экран добавления нового устройства в БД.</p>
-<p>На этом экране пользователь вводит всю необходиму информацию о устройстве и нажимает кнопку «ДОБАВИТЬ». При этом программа создает новый документ, заполняет его поля и сохраняет на сервере.  Добавим данные действия: зададим обработчик нажатия кнопки «Добавить» который будет вызывать метод показанный ниже:</p>
+<p>The final activity screen is shown in Fugure 2.2</p>
+<p><img alt="Add an Item Screen" src="../img/Storehouse/2.2.png" /></p>
+<p>Figure 2.2 — Add an Item screen.</p>
+<p>On this screen, a user enters all necessary information about the device (item) and presses on the «ADD» button. With this, the program creates a new document, fills its fields and saves on a server. Let's add the following activities: defining a click handler for the «ADD» button which will run the method described below:</p>
 <div class="codehilite"><pre><span></span><span class="nd">@OnClick</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">btnAddItem</span><span class="o">)</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onBtnAddItemClicked</span><span class="o">()</span> <span class="o">{</span>
     <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">COLLECTION_NAME</span><span class="o">);</span>
@@ -1629,23 +1629,23 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 </pre></div>
 
 
-<p>В данном методе мы создаем экземпляр класса <code>Document</code>, проверяем заполнил ли пользователь всю информацию в соответствующих <code>EditText</code> и устанавливаем поля документа при помощи метода <code>setField(…)</code> после чего сохраняем документ. Поскольку документ создан без ассоциации с реальным документом из БД (т.е без использования метода <code>getDocumentById()</code>, то новый документ с указанными полями будет загружен на сервер.</p>
-<p>Документы хранятся в БД Scorocode в виде показанном на рисунке 2.3</p>
-<p><img alt="храниение документов в коллекции БД Scorocode" src="../img/Storehouse/2.3.png" /></p>
-<p>Рисунок 2.3 — храниение документов в коллекции БД Scorocode.</p>
-<p>Каждый документ содержит системные и пользовательские поля.
-Системными являются:</p>
+<p>In this method we create a sample of the <code>Document</code> class, check whether a user has provided all necessary information in the corresponding <code>EditText</code> fields and set the document fields with the <code>setField(…)</code> method. Then we save the document. Since the document was created without a connection with a real document form the database (i.e. without using the <code>getDocumentById()</code> method), the new created document with the set fields will be uploaded to a server.</p>
+<p>Documents are stored in the Scorocode database as shown on Figure 2.3</p>
+<p><img alt="Storing documents in the Scorocode database" src="../img/Storehouse/2.3.png" /></p>
+<p>Figure 2.3 — storing documents in the Scorocode database.</p>
+<p>Each document contains system and user's fields.
+System fields are:</p>
 <ol>
-<li>id — уникальный идентификатор документа в коллекции</li>
-<li>readACL — права на чтения данного документа.</li>
-<li>updateACL — права на обновление данного документа.</li>
-<li>removeACL — права на удаление данного документа.</li>
-<li>createdAt — время создания документа.</li>
-<li>updatedAt - время последнего обновления документа.</li>
+<li>id — unique document ID in the collection.</li>
+<li>readACL — permission to read this document.</li>
+<li>updateACL — permission to update this document.</li>
+<li>removeACL — permission to delete this document.</li>
+<li>createdAt — time of the document creation.</li>
+<li>updatedAt - time of the document last update.</li>
 </ol>
-<p>Пользователь может добавлять другие поля по своему усмотрению используя кнопку «Добавить поле» на верхней панели. Пользователь так же может добавить документ нажав кнопку «Добавить документ» на верхней панели и введя значения полей вручную. Более подробно о функциональности верхней панели БД см.документацию Scorocode.</p>
-<p>При нажатии на кнопку <img alt="Применить фильтр к списку устройств" src="../img/Storehouse/2.1.2.png" /> пользователь попадает в диалоговое окно фильтра.</p>
-<p>Создадим данное диалоговое окно. Для этого создадим класс <code>FilterDialog</code> код которого показан ниже:</p>
+<p>A user can add other fields at their discretion with the «Add a field» button in the upper panel. They can also add a document with the «Add a document» button in the upper panel and enter data in the fields manually. For more information on the database upper panel features, please, see Scorocode documentation.</p>
+<p>When clicking on the <img alt="Apply a filter to the list of items" src="../img/Storehouse/2.1.2.png" /> button a user enter the filter dialog screen.</p>
+<p>Let's create this filter dialog screen. For this, we need to create the <code>FilterDialog</code> class using the following code:</p>
 <div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nn">prof_itgroup.ru.storehouseapp.Objects</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">android.content.DialogInterface</span><span class="o">;</span>
@@ -1740,7 +1740,7 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 </pre></div>
 
 
-<p>В методе <code>showFilterDialog</code> мы создаем <code>AlertDialog</code> и задаем ему <code>View</code> из следующего layout-файла:</p>
+<p>In the <code>showFilterDialog</code> method we create <code>AlertDialog</code> and set its <code>View</code> from the following layout file:</p>
 <div class="codehilite"><pre><span></span> <span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
     <span class="na">android:orientation=</span><span class="s">&quot;vertical&quot;</span>
@@ -1776,7 +1776,7 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 </pre></div>
 
 
-<p>Включаемые layout-файлы <code>price_filter_layout</code> и <code>platform_filter</code> показаны ниже:</p>
+<p>The layout files <code>price_filter_layout</code> and <code>platform_filter</code> are shown below:</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
     <span class="na">xmlns:tools=</span><span class="s">&quot;http://schemas.android.com/tools&quot;</span>
@@ -1880,15 +1880,15 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 </pre></div>
 
 
-<p>Диалоговое окно фильтра показано на рисунке 2.4</p>
-<p><img alt="Диалоговое окно фильтра" src="../img/Storehouse/2.4.png" /></p>
-<p>Рисунок 2.4 — диалоговое окно фильтра.</p>
-<p>В данном диалоговом окне пользователь может задать условия выборки из БД по определенным критериям, а именно:
-<em> Цена устройства
-</em> Платформа устройства (Android или iOS, а так же номер версии ОС).
-* Доступные в наличии цвета.</p>
-<p>При нажатии на кнопку «Продолжить» мы проверяем выбраны ли элементы CheckBox и если да — ставим соответствующий фильтр.</p>
-<p>Листинг кода для задания фильтра:  </p>
+<p>The filter dialog screen is shown in Figure 2.4</p>
+<p><img alt="Filter Dialog Screen" src="../img/Storehouse/2.4.png" /></p>
+<p>Figure 2.4 — filter dialog screen.</p>
+<p>On this dialog screen, a user can specify database sample criteria as follows:
+<em> Device price
+</em> Device platform (Android or iOS, plus operation system version number).
+* Available colours.</p>
+<p>When pressing the «Continue» button, we check whether the CheckBox elements were chosen and, if yes, we set the corresponding filter.</p>
+<p>Code listing for setting a filter:  </p>
 <div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">showFilterDialog</span><span class="o">(</span><span class="kd">final</span> <span class="n">CallbackFilterDialog</span> <span class="n">callbackFilterDialog</span><span class="o">)</span> <span class="o">{</span>
     <span class="kd">final</span> <span class="n">View</span> <span class="n">v</span> <span class="o">=</span> <span class="n">LayoutInflater</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">filter_layout</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
     <span class="kd">final</span> <span class="n">CheckBox</span> <span class="n">cbPriceFilter</span> <span class="o">=</span> <span class="n">ButterKnife</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">v</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">cbPriceFilter</span><span class="o">);</span>
@@ -1951,17 +1951,17 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 </pre></div>
 
 
-<p>Фильтр задается следующим образом: мы создаем объект <code>Query</code>, выборку мы ведем из нашей коллекции. Далее: если выбран фильтр цены (установлена соответствующая галочка), то мы выбираем из БД только устройства для которых цена попадает в пределы указанных границ.</p>
-<p>Границы цен задаются при помощи следующих методов:
-<em> greaterThan задает нижнюю границу цены (не включая указанную цену).
-</em> lessThan задает верхнюю границу цены (не включая указанную цену).
-<em> greaterThanOrEqualTo задает нижнюю границу цены включая указанную цену.
-</em> lessThanOrEqualTo задает верхнюю границу цены включая указанную цену.</p>
-<p>Поиск по платформе задается при помощи метода <code>equalTo(field, value)</code> класса <code>Query</code> который указывает экземпляру данного класса оставить в выборке только документы у которых значение поля указанного в параметре <code>field</code> совпадает с <code>value</code>. В нашем случае мы можем например найти все Android 7.0 девайсы, указав <code>query.equalTo(«platform», «Android 7.0»);</code></p>
-<p>Поиск по доступным цветам задается при помощи метода <code>containedIn</code> класса <code>Query</code> который оставляет в выборке только те документы для которых поле (типа массив) содержит все элементы заданного массива.</p>
-<p>Таким образом мы формируем запрос (query) для указанной коллекции БД и получаем экземпляры класса <code>DocumentInfo</code> характеризующие документы, удовлетворяющие данному запросу. Эту информацию мы передаем в активность при помощи callback и обновляем информацию.</p>
-<p>При нажатии на кнопку <img alt="Закончить активную сессию пользователя" src="../img/Storehouse/2.1.3.png" /> происходит завершение активной сессии пользователя (logout) и пользователь попадает обратно на стартовый экран приложения.</p>
-<p>Для осуществления данной функциональности нужно задать обработчик нажатия для данной кнопки, вызывающий метод  <code>logout</code> класса <code>User</code> для завершения активной сессии пользователя:</p>
+<p>A filter can be set as follows: we create a <code>Query</code> object, taking samples from our collection. If the price filter is applied (it is ticked off), then we choose only the devices within the set price range in our database.</p>
+<p>The price range is set with the following methods:
+<em> greaterThan sets the lower price limit (excluding the quoted price number).
+</em> lessThan sets the upper price limit (excluding the quoted price number).
+<em> greaterThanOrEqualTo sets the lower price limit including the quoted price number. 
+</em> lessThanOrEqualTo sets the upper price limit including the quoted price number.</p>
+<p>Platform search is set using the <code>equalTo(field, value)</code> method of the <code>Query</code> class which tells to an instance of the class to leave inside the sample only the documents whose field value in the <code>field</code> parameter corresponds to the <code>value</code>. As an example in our case, we can find all Android 7.0 devices by setting <code>query.equalTo(«platform», «Android 7.0»);</code>.</p>
+<p>Colour search is set using the <code>containedIn</code> method of the <code>Query</code> class which leaves leave inside the sample only the documents  whose fields (array) contains all elements of the given array.</p>
+<p>With this we form a query for the given database collection and receive copies of the <code>DocumentInfo</code> class which characterize the documents appropriate for this query. We pass this information in the Activity using a callback and them we update the information.</p>
+<p>When pressing the <img alt="Logout a user" src="../img/Storehouse/2.1.3.png" /> button we end the user active session (logout) so the user is back at the Launch Screen.</p>
+<p>To achieve this we need to set a click event handler for this button, it will run <code>logout</code> of the <code>User</code> class to end the active session:</p>
 <p><div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">logout</span><span class="o">(</span><span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">LocalPersistence</span><span class="o">.</span><span class="na">writeObjectToFile</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="n">LocalPersistence</span><span class="o">.</span><span class="na">FILE_USER_INFO</span><span class="o">);</span>
     <span class="k">new</span> <span class="n">User</span><span class="o">().</span><span class="na">logout</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackLogoutUser</span><span class="o">()</span> <span class="o">{</span>
@@ -1978,11 +1978,11 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 <span class="o">}</span>
 </pre></div>
 
-В данном методе сначала удаляется файл с информацией о пользователе (данный файл хранится локально и используется для проверки того факта, что пользователь прошел идентификацию в приложении) затем используется метод <code>logout(…)</code> класса <code>User</code>, который завершает активную сессию пользователя.</p>
-<p>В случае успешного завершения активной сессии пользователя будет вызван метод <code>onLogoutSucceed(...) callback</code> интерфейса, иначе будет вызван метод <code>onLogoutFailed(...)</code>.</p>
-<h2 id="_3">Экран подробной информации о устройстве.</h2>
-<p>При нажатии на любой из элементов списка устройств главного экрана приложения пользователь попадает на экран подробной информации об устройстве.</p>
-<p>Создадим активность с именем <code>ItemDetailsInfo</code> и в layout-файл данной активности добавим следующий xml код:</p>
+In this method, as our first step we need to take is to delete the user data file (the file is stored locally and is used to check whether the user was identified). Then we use the <code>logout(…)</code> method of the <code>User</code> class which ends the user active session.</p>
+<p>In case the session was ended successfully the <code>onLogoutSucceed(...) callback</code> iterface method will be executed. Otherwise, it is the  <code>onLogoutFailed(...)</code> method that will be executed.</p>
+<h2 id="device-details-information-screen">Device Details Information Screen.</h2>
+<p>When pressing on any element of the device list on the application main screen, a user moves to the screen with detailed information about the chosen device.</p>
+<p>Let's create an Activity called <code>ItemDetailsInfo</code> and add the following xml code to its layout file:</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
     <span class="na">xmlns:tools=</span><span class="s">&quot;http://schemas.android.com/tools&quot;</span>
@@ -2001,9 +2001,9 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 </pre></div>
 
 
-<p>Как видно layout-файл активности переиспользует xml код экрана добавления элемента в БД, но на данном экране так же присутствует возможность перейти в режим редактирования, т.е актививровать скрытые <code>View</code> экрана.</p>
-<p>В <code>ActionBar</code> данного экрана так же добавим иконки для редактирования записи об устройстве (документа), удаления записи об устройстве (документа) и перехода на экран информации об отгрузке.</p>
-<p>Для задания иконок в <code>ActionBar</code> создадим layout-файл с именем <code>detailed_info_menu</code> и добавим в него следующий код:</p>
+<p>As you can see, the Activity layout file re-uses xml code of the Add an Item screen yet this screen also presents a possibility to switch to the Edit mode, i.e. to activate hidden <code>View</code> of the screen.</p>
+<p>In <code>ActionBar</code> of the screen we will also add icons to edit a device entry (document), to remove a device entry (document) and to proceed to the delivery information screen.</p>
+<p>To set the icons in <code>ActionBar</code> let's create a layout file called <code>detailed_info_menu</code> and add to it the following code lines:</p>
 <div class="codehilite"><pre><span></span><span class="nt">&lt;menu</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
     <span class="na">xmlns:app=</span><span class="s">&quot;http://schemas.android.com/apk/res-auto&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span>
@@ -2027,7 +2027,7 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 </pre></div>
 
 
-<p>В самой активности добавим метод:</p>
+<p>Inside the Activity let's add the following method:</p>
 <div class="codehilite"><pre><span></span><span class="nd">@Override</span>
 <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onCreateOptionsMenu</span><span class="o">(</span><span class="n">Menu</span> <span class="n">menu</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">getMenuInflater</span><span class="o">().</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">menu</span><span class="o">.</span><span class="na">detailed_info_menu</span><span class="o">,</span> <span class="n">menu</span><span class="o">);</span>
@@ -2036,7 +2036,7 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 </pre></div>
 
 
-<p>который установит иконки в <code>ActionBar</code>.</p>
+<p>which will install icons into <code>ActionBar</code>.</p>
 <p>Обрабатывать нажатие на иконки мы будем при помощи метода указанного ниже:</p>
 <div class="codehilite"><pre><span></span><span class="nd">@Override</span>
 <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onOptionsItemSelected</span><span class="o">(</span><span class="n">MenuItem</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
@@ -2165,7 +2165,7 @@ This Activity is a new user registration screen, as shown on illustration 1.2</p
 Сначала мы используем метод <code>.getDocumentById(...)</code> класса <code>Document</code> для того чтобы удостовериться, что такой документ существует и провести ассоциацию данного документа с созданным нами экземпляром класса <code>Document</code>.</p>
 <p>После того как мы удостоверились в наличии данного документа мы вызываем метод <code>.removeDocument()</code> класса <code>Document</code> который удаляет документ из БД.</p>
 <p>Рассмотрим действие кнопки <img alt="Перейти к информации об отгрузке данного товара." src="../img/Storehouse/3.1.3.png" />. При нажатии на эту кнопку мы переходим к экрану с информацией об отгрузке товара. </p>
-<h2 id="_4">Экран информации об отгрузке товара.</h2>
+<h2 id="_1">Экран информации об отгрузке товара.</h2>
 <p>Создадим новую активность с именем <code>SendItemActivity</code> и добавим в layout-файл данной активности следующий xml код:</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>

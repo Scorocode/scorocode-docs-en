@@ -365,8 +365,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sms" title="Отправка sms на номера пользователей." class="md-nav__link">
-    Отправка sms на номера пользователей.
+  <a href="#sending-sms-to-users" title="Sending SMS to users." class="md-nav__link">
+    Sending SMS to users.
   </a>
   
 </li>
@@ -911,8 +911,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sms" title="Отправка sms на номера пользователей." class="md-nav__link">
-    Отправка sms на номера пользователей.
+  <a href="#sending-sms-to-users" title="Sending SMS to users." class="md-nav__link">
+    Sending SMS to users.
   </a>
   
 </li>
@@ -935,8 +935,7 @@
                 <h2 id="sending-push-notifications-to-devices">Sending push notifications to devices.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/sendpush</strong></p>
 <p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Headers: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span>{
     &quot;app&quot;         : &quot;&quot;,     // application identifier, mandatory
     &quot;cli&quot;         : &quot;&quot;,     // client key, mandatory
@@ -945,23 +944,98 @@
     &quot;coll&quot;        : &quot;&quot;,     // collection name, mandatory, &quot;users&quot;, &quot;roles&quot; or &quot;devices&quot;
     &quot;query&quot;       : {},     // devices collection query for sampling addressees with field_name/operator:value pairs, optional
     &quot;msg&quot;         : {
-        &quot;text&quot;        : &quot;&quot;, // Email text
-        &quot;data&quot;        : { } // object with transferred data
+        &quot;data&quot;    : {
+            &quot;gcm&quot;: {        // data for Android devices, optional
+                &quot;protocol&quot;: &quot;http&quot;,   // protocol to be used: &#39;http&#39; || &#39;xmpp&#39;, optional
+                &quot;notification&quot;: {
+                    &quot;body&quot; : &quot;great match!&quot;,
+                    &quot;title&quot; : &quot;Portugal vs. Denmark&quot;,
+                    &quot;icon&quot; : &quot;myicon&quot;
+                },
+                &quot;data&quot;: {
+                    &quot;key&quot;: &quot;value&quot;
+                }
+            },
+            &quot;apns&quot;: {       // data for iOs devices, optional
+                &quot;id&quot;: &quot;123e4567-e89b-12d3-a456-42665544000&quot;, // apns-id, optional
+                &quot;topic&quot;: &quot;com.sideshow.Apns2&quot;,               // apns-topic, optional
+                &quot;collapseId&quot;: &quot;my_collapse&quot;,                 // apns-collapse-id, optional
+                &quot;expiration&quot;: &quot;2006-01-02T15:04:05Z07:00&quot;,   // apns-expiration, optional
+                &quot;priority&quot;:5,                                // apns-priority, optional
+                &quot;aps&quot; : {
+                    &quot;alert&quot; : {
+                        &quot;title&quot; : &quot;Portugal vs. Denmark&quot;,
+                        &quot;body&quot; : &quot;great match!&quot;,
+                        &quot;action-loc-key&quot; : &quot;Watch&quot;
+                    },
+                    &quot;badge&quot; : 5
+                },
+                &quot;acme1&quot; : &quot;bar&quot;,
+                &quot;acme2&quot; : [ &quot;bang&quot;,  &quot;whiz&quot; ]
+            }
+        }
     }
+}
 }
 </pre></div>
 
 
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
+<p>```bash
+curl -X POST -H "Content-Type: application/json" -d '{
+    "app": "db8a1b41b8543397a798a181d9891b4c",
+    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+    "acc": "fb33e473e08515ff6b57ef6f59392e5d",
+    "sess": "rYgRe6xL2y8VccMJ",
+    "coll": "devices",
+    "query": {
+        "userId": {
+            "$exists": true
+        }
+    },
+    "msg": {
+         "data": {
+          "gcm": {
+                "protocol": "http",
+                "notification": {
+                    "body" : "great match!",
+                    "title" : "Portugal vs. Denmark",
+                    "icon" : "myicon"
+                },
+                "data": {
+                    "key": "value"
+                }
+            },
+            "apns": {
+                "aps" : {
+                    "alert" : {
+                        "title" : "Portugal vs. Denmark",
+                        "body" : "great match!",
+                        "action-loc-key" : "Watch"
+                    },
+                    "badge" : 5
+                },
+                "acme1" : "bar",
+                "acme2" : [ "bang",  "whiz" ]
+            }
+        }
+    }
+}' "https://api.scorocode.ru/api/v1/sendpush"</p>
+</div>
 <p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
 <div class="codehilite"><pre><span></span>{
-    &quot;count&quot;       : int       //Количество отправленных сообщений 
+    &quot;count&quot;       : int,       
     &quot;error&quot;       : false
 }
 </pre></div>
 
 
-<p><em>Error</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : true,
     &quot;errCode&quot;     : 4XX/5XX, // Error code
@@ -970,30 +1044,11 @@
 </pre></div>
 
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
-    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
-    &quot;acc&quot;: &quot;fb33e473e08515ff6b57ef6f59392e5d&quot;,
-    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,
-    &quot;coll&quot;: &quot;devices&quot;,
-    &quot;query&quot;: {
-        &quot;userId&quot;: {
-            &quot;$exists&quot;: true
-        }
-    },
-    &quot;msg&quot;: {
-        &quot;text&quot;: &quot;PUSH text&quot;
-    }
-}&#39; &quot;https://api.scorocode.ru/api/v1/sendpush&quot;
-</pre></div>
-
-
-<h2 id="sms">Отправка sms на номера пользователей.</h2>
+</div>
+<h2 id="sending-sms-to-users">Sending SMS to users.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/sendsms</strong></p>
 <p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Headers: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span>{
     &quot;app&quot;         : &quot;&quot;,     // application identifier, mandatory
     &quot;cli&quot;         : &quot;&quot;,     // client key, mandatory
@@ -1002,31 +1057,14 @@
     &quot;coll&quot;        : &quot;&quot;,     // collection name, mandatory, &quot;users&quot; or &quot;roles&quot;
     &quot;query&quot;       : {},     // users collection query for sampling the addressees with field_name/operator:value pairs, optional
     &quot;msg&quot;         : {
-        &quot;text&quot;        : &quot;&quot;, // sms text
+        &quot;text&quot;        : &quot;&quot; // sms text
     }
 }
 </pre></div>
 
 
-<p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;count&quot;       : int      
-    &quot;error&quot;       : false
-}
-</pre></div>
-
-
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
-}
-</pre></div>
-
-
-<p><strong>cURL example</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
     &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
     &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
@@ -1043,6 +1081,31 @@
     }
 }&#39; &quot;https://api.scorocode.ru/api/v1/sendsms&quot;
 </pre></div>
+
+
+</div>
+<p><strong>Responses:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<div class="codehilite"><pre><span></span>{
+    &quot;count&quot;       : int      
+    &quot;error&quot;       : false
+}
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
+<div class="codehilite"><pre><span></span>{
+    &quot;error&quot;       : true,
+    &quot;errCode&quot;     : 4XX/5XX, // Error code
+    &quot;errMsg&quot;      : &quot;Error text&quot;
+}
+</pre></div>
+
+
+</div>
               
             </article>
           </div>

@@ -336,42 +336,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="Создание нового документа в коллекции." class="md-nav__link">
-    Создание нового документа в коллекции.
+  <a href="#create-new-document" title="Create new document" class="md-nav__link">
+    Create new document
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="Удаление документа из коллекции." class="md-nav__link">
+  <a href="#_1" title="Удаление документа из коллекции." class="md-nav__link">
     Удаление документа из коллекции.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="Изменение документов в коллекции." class="md-nav__link">
+  <a href="#_2" title="Изменение документов в коллекции." class="md-nav__link">
     Изменение документов в коллекции.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="Изменение одного документа в коллекции по идентификатору." class="md-nav__link">
+  <a href="#_3" title="Изменение одного документа в коллекции по идентификатору." class="md-nav__link">
     Изменение одного документа в коллекции по идентификатору.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="Запрос документов из коллекции." class="md-nav__link">
+  <a href="#_4" title="Запрос документов из коллекции." class="md-nav__link">
     Запрос документов из коллекции.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" title="Запрос количества документов из коллекции." class="md-nav__link">
+  <a href="#_5" title="Запрос количества документов из коллекции." class="md-nav__link">
     Запрос количества документов из коллекции.
   </a>
   
@@ -932,42 +932,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="Создание нового документа в коллекции." class="md-nav__link">
-    Создание нового документа в коллекции.
+  <a href="#create-new-document" title="Create new document" class="md-nav__link">
+    Create new document
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="Удаление документа из коллекции." class="md-nav__link">
+  <a href="#_1" title="Удаление документа из коллекции." class="md-nav__link">
     Удаление документа из коллекции.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="Изменение документов в коллекции." class="md-nav__link">
+  <a href="#_2" title="Изменение документов в коллекции." class="md-nav__link">
     Изменение документов в коллекции.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="Изменение одного документа в коллекции по идентификатору." class="md-nav__link">
+  <a href="#_3" title="Изменение одного документа в коллекции по идентификатору." class="md-nav__link">
     Изменение одного документа в коллекции по идентификатору.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="Запрос документов из коллекции." class="md-nav__link">
+  <a href="#_4" title="Запрос документов из коллекции." class="md-nav__link">
     Запрос документов из коллекции.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" title="Запрос количества документов из коллекции." class="md-nav__link">
+  <a href="#_5" title="Запрос количества документов из коллекции." class="md-nav__link">
     Запрос количества документов из коллекции.
   </a>
   
@@ -988,32 +988,35 @@
                 
                   <h1>Data</h1>
                 
-                <h2 id="_1">Создание нового документа в коллекции.</h2>
+                <h2 id="create-new-document">Create new document</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/insert</strong></p>
 <p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Headers: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span>{
-    &quot;app&quot;         : &quot;&quot;, // идентификатор приложения, обязательный
-    &quot;cli&quot;         : &quot;&quot;, // клиентский ключ, обязательный
-    &quot;acc&quot;         : &quot;&quot;, // ключ доступа, необязательный, для полного доступа masterKey
-    &quot;sess&quot;        : &quot;&quot;, // ID сессии, обязательный, если ACLPublic приложения на операцию == false и acc != masterKey
-    &quot;coll&quot;        : &quot;&quot;, // имя коллекции, обязательный
-    &quot;doc&quot;         : {}, // документ с парами имя_поля:значение, необязательный
+    &quot;app&quot;         : &quot;&quot;, // application identifier, mandatory
+    &quot;cli&quot;         : &quot;&quot;, // client key, mandatory
+    &quot;acc&quot;         : &quot;&quot;, // access key, mandatory, fileKey or masterKey for full access
+    &quot;sess&quot;        : &quot;&quot;, // session ID, mandatory, if acc != masterKey
+    &quot;coll&quot;        : &quot;&quot;, // collection name, mandatory
+    &quot;doc&quot;         : {}, // docume с парами имя_поля:значение, необязательный
 }
 </pre></div>
 
 
 <p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
 <div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : false
+    &quot;error&quot;       : false,
     &quot;result&quot;      : {} // созданный документ
 }
 </pre></div>
 
 
-<p><em>Error</em></p>
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
+</div>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : true,
     &quot;errCode&quot;     : 4XX/5XX, // Error code
@@ -1022,7 +1025,9 @@
 </pre></div>
 
 
-<p><strong>cURL example</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
+</div>
 <div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
     &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
     &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
@@ -1037,7 +1042,7 @@
 </pre></div>
 
 
-<h2 id="_2">Удаление документа из коллекции.</h2>
+<h2 id="_1">Удаление документа из коллекции.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/remove</strong></p>
 <p>Method: <code>POST</code></p>
 <p>Headers:</p>
@@ -1058,8 +1063,9 @@
 <p class="admonition-title">Ограничения</p>
 <p>Удаляет не более 1000 документов</p>
 </div>
-<p><strong>Responses:</strong>
-<em>Success</em></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+</div>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : false
     &quot;result&quot;      : {
@@ -1070,7 +1076,9 @@
 </pre></div>
 
 
-<p><em>Error</em></p>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
+</div>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : true,
     &quot;errCode&quot;     : 4XX/5XX, // Error code
@@ -1079,7 +1087,9 @@
 </pre></div>
 
 
-<p><strong>cURL example</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
+</div>
 <div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
     &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
     &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
@@ -1095,7 +1105,7 @@
 </pre></div>
 
 
-<h2 id="_3">Изменение документов в коллекции.</h2>
+<h2 id="_2">Изменение документов в коллекции.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/update</strong></p>
 <p>Method: <code>POST</code></p>
 <p>Headers:</p>
@@ -1118,7 +1128,9 @@
 <p>Изменяет не более 1000 документов</p>
 </div>
 <p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+</div>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : false
     &quot;result&quot;      : {
@@ -1129,7 +1141,9 @@
 </pre></div>
 
 
-<p><em>Error</em></p>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
+</div>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : true,
     &quot;errCode&quot;     : 4XX/5XX, // Error code
@@ -1138,7 +1152,9 @@
 </pre></div>
 
 
-<p><strong>cURL example</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
+</div>
 <div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
     &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
     &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
@@ -1160,7 +1176,7 @@
 </pre></div>
 
 
-<h2 id="_4">Изменение одного документа в коллекции по идентификатору.</h2>
+<h2 id="_3">Изменение одного документа в коллекции по идентификатору.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/updatebyid</strong></p>
 <p>Method: <code>POST</code></p>
 <p>Headers:</p>
@@ -1178,7 +1194,9 @@
 
 
 <p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+</div>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : false
     &quot;result&quot;      : {} // обновленный документ
@@ -1186,7 +1204,9 @@
 </pre></div>
 
 
-<p><em>Error</em></p>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
+</div>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : true,
     &quot;errCode&quot;     : 4XX/5XX, // Error code
@@ -1195,7 +1215,9 @@
 </pre></div>
 
 
-<p><strong>cURL example</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
+</div>
 <div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
     &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
     &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
@@ -1214,7 +1236,7 @@
 </pre></div>
 
 
-<h2 id="_5">Запрос документов из коллекции.</h2>
+<h2 id="_4">Запрос документов из коллекции.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/find</strong></p>
 <p>Method: <code>POST</code></p>
 <p>Headers:</p>
@@ -1228,7 +1250,9 @@
 <p>Для повышения производительности сервиса результат выборки метода <strong>find</strong> возвращается в формате <a href="https://ru.wikipedia.org/wiki/BSON">bson</a>. Все SDK самостоятельно реализуют декодирование bson в json.</p>
 </div>
 <p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+</div>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : false
     &quot;result&quot;      : string // bson результат запроса, закодированный в base64
@@ -1236,7 +1260,9 @@
 </pre></div>
 
 
-<p><em>Error</em></p>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
+</div>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : true,
     &quot;errCode&quot;     : 4XX/5XX, // Error code
@@ -1245,7 +1271,9 @@
 </pre></div>
 
 
-<p><strong>cURL example</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
+</div>
 <div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
     &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
     &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
@@ -1267,7 +1295,7 @@
 </pre></div>
 
 
-<h2 id="_6">Запрос количества документов из коллекции.</h2>
+<h2 id="_5">Запрос количества документов из коллекции.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/count</strong></p>
 <p>Method: <code>POST</code></p>
 <p>Headers:</p>
@@ -1284,7 +1312,9 @@
 
 
 <p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+</div>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : false
     &quot;result&quot;      : int // количество документов
@@ -1292,7 +1322,9 @@
 </pre></div>
 
 
-<p><em>Error</em></p>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
+</div>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : true,
     &quot;errCode&quot;     : 4XX/5XX, // Error code
@@ -1301,7 +1333,9 @@
 </pre></div>
 
 
-<p><strong>cURL example</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
+</div>
 <div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
     &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
     &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,

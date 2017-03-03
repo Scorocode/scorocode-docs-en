@@ -376,41 +376,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#delete-server-side-script" title="Delete server-side script" class="md-nav__link">
-    Delete server-side script
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#retreive-bots-list" title="Retreive bots list" class="md-nav__link">
-    Retreive bots list
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-new-bot" title="Create new bot" class="md-nav__link">
-    Create new bot
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-bot" title="Update bot" class="md-nav__link">
-    Update bot
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#delete-bot" title="Delete bot" class="md-nav__link">
-    Delete bot
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1050,41 +1015,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#delete-server-side-script" title="Delete server-side script" class="md-nav__link">
-    Delete server-side script
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#retreive-bots-list" title="Retreive bots list" class="md-nav__link">
-    Retreive bots list
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-new-bot" title="Create new bot" class="md-nav__link">
-    Create new bot
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-bot" title="Update bot" class="md-nav__link">
-    Update bot
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#delete-bot" title="Delete bot" class="md-nav__link">
-    Delete bot
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1124,7 +1054,9 @@
 
 </div>
 <p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+</div>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
 <div class="codehilite"><pre><span></span><span class="p">{</span>
@@ -2838,7 +2770,7 @@ Headers:
 }
 <div class="codehilite"><pre><span></span>**Responses:**
 
-*Success*
+!!! success &quot;Success&quot;
 </pre></div>
 
 {
@@ -2993,7 +2925,7 @@ Headers:
   },
   "error": false
 }
-<div class="codehilite"><pre><span></span>*Error*
+<div class="codehilite"><pre><span></span>!!! success &quot;Success&quot;
 </pre></div>
 
 {
@@ -3001,7 +2933,7 @@ Headers:
     "errCode"     : 4XX/5XX, // Error code
     "errMsg"      : "Error text"
 }
-<div class="codehilite"><pre><span></span>**cURL example**
+<div class="codehilite"><pre><span></span>!!! tip &quot;cURL example&quot;
 </pre></div>
 
 curl -X POST -H "Content-Type: application/json" -d '{
@@ -3060,7 +2992,7 @@ Headers:
 }
 <div class="codehilite"><pre><span></span>**Responses:**
 
-*Success*
+!!! success &quot;Success&quot;
 </pre></div>
 
 {
@@ -3096,7 +3028,7 @@ Headers:
     }
   }
 }
-<div class="codehilite"><pre><span></span>*Error*
+<div class="codehilite"><pre><span></span>!!! success &quot;Success&quot;
 </pre></div>
 
 {
@@ -3141,7 +3073,7 @@ Headers:
 }
 <div class="codehilite"><pre><span></span>**Responses:**
 
-*Success*
+!!! success &quot;Success&quot;
 </pre></div>
 
 {
@@ -3167,7 +3099,7 @@ Headers:
     }
   ]
 }
-<div class="codehilite"><pre><span></span>*Error*
+<div class="codehilite"><pre><span></span>!!! success &quot;Success&quot;
 </pre></div>
 
 {
@@ -3205,13 +3137,13 @@ Headers:
 }
 <div class="codehilite"><pre><span></span>**Responses:**
 
-*Success*
+!!! success &quot;Success&quot;
 </pre></div>
 
 {
   "error": false
 }
-<div class="codehilite"><pre><span></span>*Error*
+<div class="codehilite"><pre><span></span>!!! success &quot;Success&quot;
 </pre></div>
 
 {
@@ -3299,7 +3231,7 @@ Headers:
 }
 <div class="codehilite"><pre><span></span>**Responses:**
 
-*Success*
+!!! success &quot;Success&quot;
 </pre></div>
 
 {
@@ -3339,7 +3271,7 @@ Headers:
     ]
   }
 }
-<div class="codehilite"><pre><span></span>*Error*
+<div class="codehilite"><pre><span></span>!!! success &quot;Success&quot;
 </pre></div>
 
 {
@@ -3404,7 +3336,7 @@ Headers:
 }
 <div class="codehilite"><pre><span></span>**Responses:**
 
-*Success*
+!!! success &quot;Success&quot;
 </pre></div>
 
 {
@@ -3434,7 +3366,7 @@ Headers:
     ]
   }
 }
-<div class="codehilite"><pre><span></span>*Error*
+<div class="codehilite"><pre><span></span>!!! success &quot;Success&quot;
 </pre></div>
 
 {
@@ -3516,295 +3448,43 @@ Headers:
 </pre></div>
 
 
-<p>}
-<code>**Responses:**
-
-*Success*</code>
-{
-  "error": false,
-  "script": {
-    "_id": "584fad1422a5482feb5b31ab",
-    "appId": "584e64f8982fd55332741516",
-    "name": "AYBABTU.js",
-    "path": "/AYBABTU.js",
-    "description": "All your base",
-    "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",
-    "jobStartAt": "2016-12-13T17:33:00+03:00",
-    "isActiveJob": true,
-    "jobType": "custom",
-    "repeat": {
-      "custom": {
-        "days": 0,
-        "hours": 0,
-        "minutes": 5
-      },
-      "daily": null,
-      "monthly": null
-    },
-    "nextRun": "0001-01-01T00:00:00Z",
-    "ACL": [
-      "*"
-    ]
-  }
-}
-<code>*Error*</code>
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-<code>**cURL example**</code>
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "script": "584fad1422a5482feb5b31ab",
-    "cloudCode": {
-        "isActiveJob": true  <br />
-    }
-}' "https://api.scorocode.ru/api/v1/app/scripts/update"
-```</p>
-<hr />
-<h2 id="delete-server-side-script">Delete server-side script</h2>
-<p><strong>https://api.scorocode.ru/api/v1/app/scripts/delete</strong>
-
-Method: <code>POST</code>
-
-Headers:
-
-<code>Content-Type: application/json</code>
-
-<code>{
-    "app": "",               // application identifier, mandatory
-    "cli": "",               // client key, mandatory
-    "acc": "",               // access key, mandatory, masterKey only
-    "script": ""             // server-side script identifier, mandatory
-}</code>
-
-<strong>Responses:</strong>
-
-<em>Success</em>
-
-<code>{
-  "error": false
-}</code>
-
-<em>Error</em>
-
-<code>{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}</code>
-
-<strong>cURL example</strong>
-
-<code>curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "script": "584fad1422a5482feb5b31ab"
-}' "https://api.scorocode.ru/api/v1/app/scripts/delete"</code></p>
-<hr />
-<h2 id="retreive-bots-list">Retreive bots list</h2>
-<p><strong>https://api.scorocode.ru/api/v1/bots</strong>
-
-Method: <code>POST</code>
-
-Headers:
-
-<code>Content-Type: application/json</code>
-
-<code>{
-    "app": "",               // application identifier, mandatory
-    "cli": "",               // client key, mandatory
-    "acc": ""                // access key, mandatory, masterKey only
-}</code>
-
-<strong>Responses:</strong>
-
-<em>Success</em>
-
-<code>{
-  "error": false,
-  "items": [
-    {
-      "_id": "584fb8710c62722cf9fe2617",
-      "name": "botobot",
-      "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
-      "appId": "584e64f8982fd55332741516",
-      "scriptId": "584fb52f0c62722cf9fe2604",
-      "isActive": false
-    }
-  ]
-}</code>
-
-<em>Error</em>
-
-<code>{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}</code>
-
-<strong>cURL example</strong>
-
-<code>curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb"
-}' "https://api.scorocode.ru/api/v1/bots"</code></p>
-<hr />
-<h2 id="create-new-bot">Create new bot</h2>
-<p><strong>https://api.scorocode.ru/api/v1/bots/create</strong>
-
-Method: <code>POST</code>
-
-Headers:
-
-<code>Content-Type: application/json</code>
-
-<code>{
-    "app": "",               // application identifier, mandatory
-    "cli": "",               // client key, mandatory
-    "acc": "",               // access key, mandatory, masterKey only
-    "bot": {
-        "name": "",          // bot name, mandatory
-        "botId": "",         // telegram token you received from @BotFather, mandatory 
-        "scriptId": "",      // server-side script identifier, mandatory
-        "isActive": bool     // bot activation flag, optional
-    }
-}</code>
-
-<strong>Responses:</strong>
-
-<em>Success</em>
-
-<code>{
-  "bot": {
-    "_id": "584fb8710c62722cf9fe2617",
-    "name": "botobot",
-    "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
-    "appId": "584e64f8982fd55332741516",
-    "scriptId": "584fb52f0c62722cf9fe2604",
-    "isActive": false
-  },
-  "error": false
-}</code>
-
-<em>Error</em>
-
-<code>{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}</code>
-
-<strong>cURL example</strong>
-
-<code>curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "bot":{
-        "name":"botobot",
-        "isActive":false,
-        "botId":"123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
-        "scriptId":"584fb52f0c62722cf9fe2604"
-    }
-}' "https://api.scorocode.ru/api/v1/bots/create"</code></p>
-<hr />
-<h2 id="update-bot">Update bot</h2>
-<p><strong>https://api.scorocode.ru/api/v1/bots/update</strong>
-
-Method: <code>POST</code>
-
-Headers:
-
-<code>Content-Type: application/json</code>
-
-<code>{
-    "app": "",               // application identifier, mandatory
-    "cli": "",               // client key, mandatory
-    "acc": "",               // access key, mandatory, masterKey only
-    "bot": {
-        "_id": "",           // bot identifier, mandatory
-        "name": "",          // bot name, optional
-        "botId": "",         // telegram token you received from @BotFather, optional 
-        "scriptId": "",      // server-side script identifier, optional
-        "isActive": bool     // bot activation flag, optional
-    }
-}</code>
-
-<strong>Responses:</strong>
-
-<em>Success</em>
-
-<code>{
-  "bot": {
-    "_id": "584fbd067e0b4e222480a7e4",
-    "name": "botobot",
-    "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew12",
-    "appId": "584e64f8982fd55332741516",
-    "scriptId": "584fb52f0c62722cf9fe2604",
-    "isActive": false
-  },
-  "error": false
-}</code>
-
-<em>Error</em>
-
-<code>{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}</code>
-
-<strong>cURL example</strong>
-
-<code>curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "bot": {
-        "_id": "584fbd067e0b4e222480a7e4",
-        "name": "botobot",
-        "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew12",
-        "appId": "584e64f8982fd55332741516",
-        "scriptId": "584fb52f0c62722cf9fe2604",
-        "isActive": false
-    }
-}' "https://api.scorocode.ru/api/v1/bots/update"</code></p>
-<hr />
-<h2 id="delete-bot">Delete bot</h2>
-<p><strong>https://api.scorocode.ru/api/v1/bots/delete</strong>
-
-Method: <code>POST</code>
-
-Headers:
-
-<code>Content-Type: application/json</code>
-
-<code>{
-    "app": "",               // application identifier, mandatory
-    "cli": "",               // client key, mandatory
-    "acc": "",               // access key, mandatory, masterKey only
-    "bot": {
-        "_id": ""            // bot identifier, mandatory
-    }
-}</code>
-
-<strong>Responses:</strong>
-
-<em>Success</em>
-
-<code>{
-  "error": false
-}</code>
-
-<em>Error</em>
-
-<code>{
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+</div>
+<p><code>{
     "error"       : true,
     "errCode"     : 4XX/5XX, // Error code
     "errMsg"      : "Error text"

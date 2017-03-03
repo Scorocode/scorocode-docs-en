@@ -949,8 +949,7 @@
                 <h2 id="uploading-a-file-to-storage">Uploading a file to storage.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/upload</strong></p>
 <p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Headers: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span>{
     &quot;app&quot;         : &quot;&quot;, // application identifier, mandatory
     &quot;cli&quot;         : &quot;&quot;, // client key, mandatory
@@ -965,38 +964,44 @@
 </pre></div>
 
 
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
+<span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
+<span class="s1">    &quot;acc&quot;: &quot;8c23d74f447f63ce495cc8fd9ee4d543&quot;,</span>
+<span class="s1">    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,</span>
+<span class="s1">    &quot;coll&quot;: &quot;items&quot;,</span>
+<span class="s1">    &quot;docId&quot;: &quot;Y3bET236FX&quot;,</span>
+<span class="s1">    &quot;field&quot;: &quot;attachment&quot;,</span>
+<span class="s1">    &quot;file&quot;: &quot;file.txt&quot;,</span>
+<span class="s1">    &quot;content&quot;: &quot;VEhJUyBJUyBGSUxFLUUtRS1FLUUtRS1FIQ==&quot;</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/upload&quot;</span>
+</pre></div>
+
+
+</div>
 <p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : false
-}
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
 </pre></div>
 
 
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
-}
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Error</span> <span class="err">code</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Error text&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
-    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
-    &quot;acc&quot;: &quot;8c23d74f447f63ce495cc8fd9ee4d543&quot;,
-    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,
-    &quot;coll&quot;: &quot;items&quot;,
-    &quot;docId&quot;: &quot;Y3bET236FX&quot;,
-    &quot;field&quot;: &quot;attachment&quot;,
-    &quot;file&quot;: &quot;file.txt&quot;,
-    &quot;content&quot;: &quot;VEhJUyBJUyBGSUxFLUUtRS1FLUUtRS1FIQ==&quot;
-}&#39; &quot;https://api.scorocode.ru/api/v1/upload&quot;
-</pre></div>
-
-
+</div>
 <h2 id="retrieve-file">Retrieve file.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/getfile/{app}/{coll}/{field}/{docId}/{file}</strong></p>
 <p>Method: <code>GET</code></p>
@@ -1014,13 +1019,23 @@
 </pre></div>
 
 
-<p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>    Status: 302 (Redirect to file)
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
+<div class="codehilite"><pre><span></span>curl -X GET -H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/getfile/db8a1b41b8543397a798a181d9891b4c/items/attachment/Y3bET236FX/file.txt&quot;</span>
 </pre></div>
 
 
-<p><em>Error</em></p>
+</div>
+<p><strong>Responses:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<div class="codehilite"><pre><span></span>    File content
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : true,
     &quot;errCode&quot;     : 4XX/5XX, // Error code
@@ -1029,16 +1044,11 @@
 </pre></div>
 
 
-<p><strong>cURL example</strong></p>
-<div class="codehilite"><pre><span></span>curl -X GET -H &quot;Content-Type: application/json&quot; &quot;https://api.scorocode.ru/api/v1/getfile/db8a1b41b8543397a798a181d9891b4c/items/attachment/Y3bET236FX/file.txt&quot;
-</pre></div>
-
-
+</div>
 <h2 id="file-removal">File removal.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/deletefile</strong></p>
 <p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Headers: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span>{
     &quot;app&quot;         : &quot;&quot;, // application identifier, mandatory
     &quot;cli&quot;         : &quot;&quot;, // client key, mandatory
@@ -1052,24 +1062,8 @@
 </pre></div>
 
 
-<p><strong>Responses:</strong></p>
-<p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : false
-}
-</pre></div>
-
-
-<p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
-}
-</pre></div>
-
-
-<p><strong>cURL example</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">cURL example</p>
 <div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
     &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
     &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
@@ -1081,6 +1075,30 @@
     &quot;file&quot;: &quot;file.txt&quot;
 }&#39; &quot;https://api.scorocode.ru/api/v1/deletefile&quot;
 </pre></div>
+
+
+</div>
+<p><strong>Responses:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<div class="codehilite"><pre><span></span>{
+    &quot;error&quot;       : false
+}
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
+<div class="codehilite"><pre><span></span>{
+    &quot;error&quot;       : true,
+    &quot;errCode&quot;     : 4XX/5XX, // Error code
+    &quot;errMsg&quot;      : &quot;Error text&quot;
+}
+</pre></div>
+
+
+</div>
               
             </article>
           </div>
