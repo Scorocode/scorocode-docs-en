@@ -21,7 +21,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -29,7 +29,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! failure "Error"
 
 ```
 {
@@ -39,7 +39,7 @@ Headers:
 }
 ```
 
-**cURL example**
+!!! tip "cURL example"
 
 ```
 curl -X POST -H "Content-Type: application/json" -d '{

@@ -1,36 +1,33 @@
-## Создание нового документа в коллекции.
+## Create new document
 
 **https://api.scorocode.ru/api/v1/data/insert**
 
 Method: `POST`
 
-Headers:
-
-`Content-Type: application/json`
+Headers: `Content-Type: application/json`
 
 ```
 {
-    "app"         : "", // идентификатор приложения, обязательный
-    "cli"         : "", // клиентский ключ, обязательный
-    "acc"         : "", // ключ доступа, необязательный, для полного доступа masterKey
-    "sess"        : "", // ID сессии, обязательный, если ACLPublic приложения на операцию == false и acc != masterKey
-    "coll"        : "", // имя коллекции, обязательный
-    "doc"         : {}, // документ с парами имя_поля:значение, необязательный
+    "app"         : "", // application identifier, mandatory
+    "cli"         : "", // client key, mandatory
+    "acc"         : "", // access key, mandatory, fileKey or masterKey for full access
+    "sess"        : "", // session ID, mandatory, if acc != masterKey
+    "coll"        : "", // collection name, mandatory
+    "doc"         : {}, // docume с парами имя_поля:значение, необязательный
 }
 ```
 
 **Responses:**
 
-*Success*
+!!! success "Success"
+    ```
+    {
+        "error"       : false,
+        "result"      : {} // созданный документ
+    }
+    ```
 
-```
-{
-    "error"       : false
-    "result"      : {} // созданный документ
-}
-```
-
-*Error*
+!!! failure "Error"
 
 ```
 {
@@ -40,7 +37,7 @@ Headers:
 }
 ```
 
-**cURL example**
+!!! tip "cURL example"
 
 ```
 curl -X POST -H "Content-Type: application/json" -d '{
@@ -83,7 +80,7 @@ Headers:
 
 
 **Responses:**
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -95,7 +92,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! failure "Error"
 
 ```
 {
@@ -105,7 +102,7 @@ Headers:
 }
 ```
 
-**cURL example**
+!!! tip "cURL example"
 
 ```
 curl -X POST -H "Content-Type: application/json" -d '{
@@ -150,7 +147,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -163,7 +160,7 @@ Headers:
 
 ```
 
-*Error*
+!!! failure "Error"
 
 ```
 {
@@ -173,7 +170,7 @@ Headers:
 }
 ```
 
-**cURL example**
+!!! tip "cURL example"
 
 ```
 curl -X POST -H "Content-Type: application/json" -d '{
@@ -220,7 +217,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -229,7 +226,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! failure "Error"
 
 ```
 {
@@ -239,7 +236,7 @@ Headers:
 }
 ```
 
-**cURL example**
+!!! tip "cURL example"
 
 ```
 curl -X POST -H "Content-Type: application/json" -d '{
@@ -292,7 +289,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -301,7 +298,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! failure "Error"
 
 ```
 {
@@ -311,7 +308,7 @@ Headers:
 }
 ```
 
-**cURL example**
+!!! tip "cURL example"
 
 ```
 curl -X POST -H "Content-Type: application/json" -d '{
@@ -356,7 +353,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -365,7 +362,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! failure "Error"
 
 ```
 {
@@ -375,7 +372,7 @@ Headers:
 }
 ```
 
-**cURL example**
+!!! tip "cURL example"
 
 ```
 curl -X POST -H "Content-Type: application/json" -d '{

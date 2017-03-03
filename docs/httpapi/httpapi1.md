@@ -39,7 +39,7 @@ Headers:
 }
 ```
 
-**cURL example**
+!!! tip "cURL example"
 
 ```
 curl -X POST -H "Content-Type: application/json" -d '{
@@ -99,7 +99,7 @@ Headers:
 }
 ```
 
-**cURL example**
+!!! tip "cURL example"
 
 ```
 curl -X POST -H "Content-Type: application/json" -d '{
@@ -148,7 +148,7 @@ Headers:
 }
 ```
 
-**cURL example**
+!!! tip "cURL example"
 
 ```
 curl -X POST -H "Content-Type: application/json" -d '{

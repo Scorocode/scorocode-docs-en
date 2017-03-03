@@ -249,10 +249,10 @@ var questItem = new Scorocode.Object("items");
 questItem.set("name", "Water chip").set("relatedquests", ["huNr3L7QDh"]); 
 questItem.save()
     .then((saved) => {
-         console.log("saved);
+         console.log("saved");
      })
     .catch((error) => {
-         console.log(error)
+         console.log(error);
     });
 ```
 

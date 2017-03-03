@@ -4,9 +4,7 @@
 
 Method: `POST`
 
-Headers:
-
-`Content-Type: application/json`
+Headers: `Content-Type: application/json`
 
 ```
 {
@@ -22,41 +20,40 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "acc": "8c23d74f447f63ce495cc8fd9ee4d543",
+        "sess": "rYgRe6xL2y8VccMJ",
+        "coll": "items",
+        "docId": "Y3bET236FX",
+        "field": "attachment",
+        "file": "file.txt",
+        "content": "VEhJUyBJUyBGSUxFLUUtRS1FLUUtRS1FIQ=="
+    }' "https://api.scorocode.ru/api/v1/upload"
+    ```
+
+
 **Responses:**
 
-*Success*
+!!! success "Success"
+    ```JSON
+    {
+        "error"       : false
+    }
+    ```
 
-```
-{
-    "error"       : false
-}
-```
+!!! failure "Error"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
-*Error*
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "8c23d74f447f63ce495cc8fd9ee4d543",
-    "sess": "rYgRe6xL2y8VccMJ",
-    "coll": "items",
-    "docId": "Y3bET236FX",
-    "field": "attachment",
-    "file": "file.txt",
-    "content": "VEhJUyBJUyBGSUxFLUUtRS1FLUUtRS1FIQ=="
-}' "https://api.scorocode.ru/api/v1/upload"
-```
 
 ## Retrieve file.
 
@@ -80,29 +77,29 @@ https://api.scorocode.ru/api/v1/getfile/{app}/{coll}/{field}/{docId}/{file}
     {file}    - file name, mandatory
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X GET -H "Content-Type: application/json" "https://api.scorocode.ru/api/v1/getfile/db8a1b41b8543397a798a181d9891b4c/items/attachment/Y3bET236FX/file.txt"
+    ```
+
+
 **Responses:**
 
-*Success*
+!!! success "Success"
+    ```
+        File content
+    ```
 
-```
-    Status: 302 (Redirect to file)
-```
 
-*Error*
+!!! failure "Error"
+    ```
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X GET -H "Content-Type: application/json" "https://api.scorocode.ru/api/v1/getfile/db8a1b41b8543397a798a181d9891b4c/items/attachment/Y3bET236FX/file.txt"
-```
 
 ## File removal.
 
@@ -110,9 +107,7 @@ curl -X GET -H "Content-Type: application/json" "https://api.scorocode.ru/api/v1
 
 Method: `POST`
 
-Headers:
-
-`Content-Type: application/json`
+Headers: `Content-Type: application/json`
 
 ```
 {
@@ -127,37 +122,34 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "acc": "8c23d74f447f63ce495cc8fd9ee4d543",
+        "sess": "rYgRe6xL2y8VccMJ",
+        "coll": "items",
+        "docId": "Y3bET236FX",
+        "field": "attachment",
+        "file": "file.txt"
+    }' "https://api.scorocode.ru/api/v1/deletefile"
+    ```
+
 **Responses:**
 
-*Success*
+!!! success "Success"
+    ```
+    {
+        "error"       : false
+    }
+    ```
 
-```
-{
-    "error"       : false
-}
-```
-
-*Error*
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "8c23d74f447f63ce495cc8fd9ee4d543",
-    "sess": "rYgRe6xL2y8VccMJ",
-    "coll": "items",
-    "docId": "Y3bET236FX",
-    "field": "attachment",
-    "file": "file.txt"
-}' "https://api.scorocode.ru/api/v1/deletefile"
-```
+!!! failure "Error"
+    ```
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```

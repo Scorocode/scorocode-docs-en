@@ -25,7 +25,7 @@ Headers: `Content-Type: application/json`
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 !!! success "Success"
     ```JSON
@@ -1754,7 +1754,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -1911,7 +1911,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! success "Success"
 
 ```
 {
@@ -1921,8 +1921,7 @@ Headers:
 }
 ```
 
-**cURL example**
-
+!!! tip "cURL example"
 ```
 curl -X POST -H "Content-Type: application/json" -d '{
     "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
@@ -1984,7 +1983,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -2022,7 +2021,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! success "Success"
 
 ```
 {
@@ -2073,7 +2072,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -2101,7 +2100,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! success "Success"
 
 ```
 {
@@ -2145,7 +2144,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -2153,7 +2152,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! success "Success"
 
 ```
 {
@@ -2249,7 +2248,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -2291,7 +2290,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! success "Success"
 
 ```
 {
@@ -2362,7 +2361,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -2394,7 +2393,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! success "Success"
 
 ```
 {
@@ -2483,7 +2482,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -2515,7 +2514,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! success "Success"
 
 ```
 {
@@ -2562,7 +2561,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -2570,7 +2569,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! success "Success"
 
 ```
 {
@@ -2613,7 +2612,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -2631,7 +2630,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! success "Success"
 
 ```
 {
@@ -2679,7 +2678,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -2695,7 +2694,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! success "Success"
 
 ```
 {
@@ -2750,7 +2749,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -2766,7 +2765,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! success "Success"
 
 ```
 {
@@ -2819,7 +2818,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -2827,7 +2826,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! success "Success"
 
 ```
 {
