@@ -995,39 +995,16 @@
 <div class="codehilite"><pre><span></span>{
     &quot;app&quot;         : &quot;&quot;, // application identifier, mandatory
     &quot;cli&quot;         : &quot;&quot;, // client key, mandatory
-    &quot;acc&quot;         : &quot;&quot;, // access key, mandatory, fileKey or masterKey for full access
-    &quot;sess&quot;        : &quot;&quot;, // session ID, mandatory, if acc != masterKey
+    &quot;acc&quot;         : &quot;&quot;, // access key, optional, masterKey for full access
+    &quot;sess&quot;        : &quot;&quot;, // session ID, mandatory if acc != masterKey and app security settings do not allow anonymous access for this operation
     &quot;coll&quot;        : &quot;&quot;, // collection name, mandatory
-    &quot;doc&quot;         : {}, // docume с парами имя_поля:значение, необязательный
-}
-</pre></div>
-
-
-<p><strong>Responses:</strong></p>
-<div class="admonition success">
-<p class="admonition-title">Success</p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : false,
-    &quot;result&quot;      : {} // созданный документ
-}
-</pre></div>
-
-
-</div>
-<div class="admonition failure">
-<p class="admonition-title">Error</p>
-</div>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
+    &quot;doc&quot;         : {}, // document with field_name:value pairs
 }
 </pre></div>
 
 
 <div class="admonition tip">
 <p class="admonition-title">cURL example</p>
-</div>
 <div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
     &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
     &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
@@ -1035,50 +1012,27 @@
     &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,
     &quot;coll&quot;: &quot;items&quot;,
     &quot;doc&quot;: {
-        &quot;exampleField&quot;: &quot;Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!&quot;,
-        &quot;anotherExampleField&quot;: &quot;Не знаю, что и сказать. Когда-то я хотел быть астрофизиком. К сожалению, это правда.&quot;
+        &quot;exampleField&quot;: &quot;We are here to laugh at the odds and live our lives so well that Death will tremble to take us.&quot;,
+        &quot;anotherExampleField&quot;: &quot;The free soul is rare, but you know it when you see it - basically because you feel good, very good, when you are near or with them.&quot;
     }
 }&#39; &quot;https://api.scorocode.ru/api/v1/data/insert&quot;
 </pre></div>
 
 
-<h2 id="_1">Удаление документа из коллекции.</h2>
-<p><strong>https://api.scorocode.ru/api/v1/data/remove</strong></p>
-<p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;         : &quot;&quot;, // идентификатор приложения, обязательный
-    &quot;cli&quot;         : &quot;&quot;, // клиентский ключ, обязательный
-    &quot;acc&quot;         : &quot;&quot;, // ключ доступа, необязательный, для полного доступа masterKey
-    &quot;sess&quot;        : &quot;&quot;, // ID сессии, обязательный, если ACLPublic приложения на операцию == false и acc != masterKey
-    &quot;coll&quot;        : &quot;&quot;, // имя коллекции, обязательный
-    &quot;query&quot;       : {}, // запрос с парами имя_поля/оператор:значение, необязательный
-    &quot;limit&quot;       : int // лимит количества удаляемых документов, необязательный, если не указан, то удалятся первые 1000 документов
-}
-</pre></div>
-
-
-<div class="admonition warning">
-<p class="admonition-title">Ограничения</p>
-<p>Удаляет не более 1000 документов</p>
 </div>
+<p><strong>Responses:</strong></p>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-</div>
 <div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : false
-    &quot;result&quot;      : {
-        &quot;count&quot;       : int, // количество удаленных документов
-        &quot;docs&quot;        : [] // массив ID удаленных документов
-    }
+    &quot;error&quot;       : false,
+    &quot;result&quot;      : {}        // document with field_name:value pairs
 }
 </pre></div>
 
 
+</div>
 <div class="admonition failure">
 <p class="admonition-title">Error</p>
-</div>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : true,
     &quot;errCode&quot;     : 4XX/5XX, // Error code
@@ -1087,9 +1041,29 @@
 </pre></div>
 
 
+</div>
+<h2 id="_1">Удаление документа из коллекции.</h2>
+<p><strong>https://api.scorocode.ru/api/v1/data/remove</strong></p>
+<p>Method: <code>POST</code></p>
+<p>Headers: <code>Content-Type: application/json</code></p>
+<div class="codehilite"><pre><span></span>{
+    &quot;app&quot;         : &quot;&quot;, // application identifier, mandatory
+    &quot;cli&quot;         : &quot;&quot;, // client key, mandatory
+    &quot;acc&quot;         : &quot;&quot;, // access key, optional, masterKey for full access
+    &quot;sess&quot;        : &quot;&quot;, // session ID, mandatory if acc != masterKey and app security settings do not allow anonymous access for this operation
+    &quot;coll&quot;        : &quot;&quot;, // collection name, mandatory
+    &quot;query&quot;       : {}, // запрос с парами имя_поля/оператор:значение, необязательный
+    &quot;limit&quot;       : int // лимит количества удаляемых документов, необязательный, если не указан, то удалятся первые 1000 документов
+}
+</pre></div>
+
+
+<div class="admonition warning">
+<p class="admonition-title">Limitations</p>
+<p>Deletes 1000 documents at max</p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">cURL example</p>
-</div>
 <div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
     &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
     &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
@@ -1098,24 +1072,48 @@
     &quot;coll&quot;: &quot;items&quot;,
     &quot;query&quot;: {
         &quot;exampleField&quot;: { 
-            &quot;$eq&quot;: &quot;Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!&quot;
+            &quot;$eq&quot;: &quot;We are here to laugh at the odds and live our lives so well that Death will tremble to take us.&quot;
         }
     }
 }&#39; &quot;https://api.scorocode.ru/api/v1/data/remove&quot;
 </pre></div>
 
 
+</div>
+<p><strong>Responses:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<div class="codehilite"><pre><span></span>{
+    &quot;error&quot;       : false,
+    &quot;result&quot;      : {
+        &quot;count&quot;       : int, // Amount of deleted documents
+        &quot;docs&quot;        : [] // Array of deleted documents _id&#39;s
+}
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
+<div class="codehilite"><pre><span></span>{
+    &quot;error&quot;       : true,
+    &quot;errCode&quot;     : 4XX/5XX, // Error code
+    &quot;errMsg&quot;      : &quot;Error text&quot;
+}
+</pre></div>
+
+
+</div>
 <h2 id="_2">Изменение документов в коллекции.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/update</strong></p>
 <p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Headers: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span>{
-    &quot;app&quot;         : &quot;&quot;, // идентификатор приложения, обязательный
-    &quot;cli&quot;         : &quot;&quot;, // клиентский ключ, обязательный
-    &quot;acc&quot;         : &quot;&quot;, // ключ доступа, необязательный, для полного доступа masterKey
-    &quot;sess&quot;        : &quot;&quot;, // ID сессии, обязательный, если ACLPublic приложения на операцию == false и acc != masterKey
-    &quot;coll&quot;        : &quot;&quot;, // имя коллекции, обязательный
+    &quot;app&quot;         : &quot;&quot;, // application identifier, mandatory
+    &quot;cli&quot;         : &quot;&quot;, // client key, mandatory
+    &quot;acc&quot;         : &quot;&quot;, // access key, mandatory or masterKey for full access
+    &quot;sess&quot;        : &quot;&quot;, // session ID, mandatory if acc != masterKey and app security settings do not allow anonymous access for this operation
+    &quot;coll&quot;        : &quot;&quot;, // collection name, mandatory
     &quot;query&quot;       : {}, // запрос с парами имя_поля/оператор:значение, необязательный
     &quot;doc&quot;         : {}, // документ с парами оператор:значение, обязательный
     &quot;limit&quot;       : int // лимит количества обновляемых документов, необязательный, если не указан, то обновятся первые 1000 документов
@@ -1124,26 +1122,25 @@
 
 
 <div class="admonition warning">
-<p class="admonition-title">Ограничения</p>
-<p>Изменяет не более 1000 документов</p>
+<p class="admonition-title">Limitations</p>
+<p>Updates 1000 documents at max</p>
 </div>
 <p><strong>Responses:</strong></p>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-</div>
 <div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : false
+    &quot;error&quot;       : false,
     &quot;result&quot;      : {
-        &quot;count&quot;       : int, // количество измененных документов
-        &quot;docs&quot;        : [] // массив ID измененных документов
+        &quot;count&quot;       : int, // Amount of modified documents
+        &quot;docs&quot;        : [] // Array of modified documents _id&#39;s
     }
 }
 </pre></div>
 
 
+</div>
 <div class="admonition failure">
 <p class="admonition-title">Error</p>
-</div>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : true,
     &quot;errCode&quot;     : 4XX/5XX, // Error code
@@ -1152,9 +1149,9 @@
 </pre></div>
 
 
+</div>
 <div class="admonition tip">
 <p class="admonition-title">cURL example</p>
-</div>
 <div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
     &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
     &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
@@ -1163,12 +1160,12 @@
     &quot;coll&quot;: &quot;items&quot;,
     &quot;query&quot;: {
         &quot;exampleField&quot;: { 
-            &quot;$eq&quot;: &quot;Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!&quot;
+            &quot;$eq&quot;: &quot;We are here to laugh at the odds and live our lives so well that Death will tremble to take us.&quot;
         }
     },
      &quot;doc&quot;: {
         &quot;$set&quot;: {
-            &quot;exampleField&quot;: &quot;Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 21. С днём рождения, Мюриэл!&quot;
+            &quot;exampleField&quot;: &quot;being alone never felt right. sometimes it felt good, but it never felt right.&quot;
         }
     },
     &quot;limit&quot;: 1
@@ -1176,48 +1173,25 @@
 </pre></div>
 
 
+</div>
 <h2 id="_3">Изменение одного документа в коллекции по идентификатору.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/updatebyid</strong></p>
 <p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Headers: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span>{
-    &quot;app&quot;         : &quot;&quot;, // идентификатор приложения, обязательный
-    &quot;cli&quot;         : &quot;&quot;, // клиентский ключ, обязательный
-    &quot;acc&quot;         : &quot;&quot;, // ключ доступа, необязательный, для полного доступа masterKey
-    &quot;sess&quot;        : &quot;&quot;, // ID сессии, обязательный, если ACLPublic приложения на операцию == false и acc != masterKey
-    &quot;coll&quot;        : &quot;&quot;, // имя коллекции, обязательный
+    &quot;app&quot;         : &quot;&quot;, // application identifier, mandatory
+    &quot;cli&quot;         : &quot;&quot;, // client key, mandatory
+    &quot;acc&quot;         : &quot;&quot;, // access key, mandatory or masterKey for full access
+    &quot;sess&quot;        : &quot;&quot;, // session ID, mandatory if acc != masterKey and app security settings do not allow anonymous access for this operation
+    &quot;coll&quot;        : &quot;&quot;, // collection name, mandatory
     &quot;query&quot;       : {}, // запрос в формате &quot;_id&quot; : &quot;&amp;ltидентификатор документа&amp;gt&quot;, обязательный
     &quot;doc&quot;         : {}, // документ с парами оператор:значение, обязательный
 }
 </pre></div>
 
 
-<p><strong>Responses:</strong></p>
-<div class="admonition success">
-<p class="admonition-title">Success</p>
-</div>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : false
-    &quot;result&quot;      : {} // обновленный документ
-}
-</pre></div>
-
-
-<div class="admonition failure">
-<p class="admonition-title">Error</p>
-</div>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
-}
-</pre></div>
-
-
 <div class="admonition tip">
 <p class="admonition-title">cURL example</p>
-</div>
 <div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
     &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
     &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
@@ -1229,40 +1203,27 @@
     },
      &quot;doc&quot;: {
         &quot;$set&quot;: {
-            &quot;exampleField&quot;: &quot;Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 21. С днём рождения, Мюриэл!&quot;
+            &quot;exampleField&quot;: &quot;being alone never felt right. sometimes it felt good, but it never felt right.&quot;
         }
     }
 }&#39; &quot;https://api.scorocode.ru/api/v1/data/updatebyid&quot;
 </pre></div>
 
 
-<h2 id="_4">Запрос документов из коллекции.</h2>
-<p><strong>https://api.scorocode.ru/api/v1/data/find</strong></p>
-<p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
-<div class="admonition warning">
-<p class="admonition-title">Ограничения</p>
-<p>Возвращает не более 100 документов</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">BSON</p>
-<p>Для повышения производительности сервиса результат выборки метода <strong>find</strong> возвращается в формате <a href="https://ru.wikipedia.org/wiki/BSON">bson</a>. Все SDK самостоятельно реализуют декодирование bson в json.</p>
 </div>
 <p><strong>Responses:</strong></p>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-</div>
 <div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : false
-    &quot;result&quot;      : string // bson результат запроса, закодированный в base64
+    &quot;error&quot;       : false,
+    &quot;result&quot;      : {} // обновленный документ
 }
 </pre></div>
 
 
+</div>
 <div class="admonition failure">
 <p class="admonition-title">Error</p>
-</div>
 <div class="codehilite"><pre><span></span>{
     &quot;error&quot;       : true,
     &quot;errCode&quot;     : 4XX/5XX, // Error code
@@ -1271,9 +1232,21 @@
 </pre></div>
 
 
+</div>
+<h2 id="_4">Запрос документов из коллекции.</h2>
+<p><strong>https://api.scorocode.ru/api/v1/data/find</strong></p>
+<p>Method: <code>POST</code></p>
+<p>Headers: <code>Content-Type: application/json</code></p>
+<div class="admonition warning">
+<p class="admonition-title">Limitations</p>
+<p>Returns 100 documents at max</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">BSON</p>
+<p>Для повышения производительности сервиса результат выборки метода <strong>find</strong> возвращается в формате <a href="https://ru.wikipedia.org/wiki/BSON">bson</a>. Все SDK самостоятельно реализуют декодирование bson в json.</p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">cURL example</p>
-</div>
 <div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
     &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
     &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
@@ -1282,7 +1255,7 @@
     &quot;coll&quot;: &quot;items&quot;,
     &quot;query&quot;: {
         &quot;exampleField&quot;: { 
-            &quot;$eq&quot;: &quot;Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!&quot;
+            &quot;$eq&quot;: &quot;being alone never felt right. sometimes it felt good, but it never felt right.&quot;
         }
     },
     &quot;sort&quot;: {
@@ -1295,11 +1268,33 @@
 </pre></div>
 
 
+</div>
+<p><strong>Responses:</strong></p>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<div class="codehilite"><pre><span></span>{
+    &quot;error&quot;       : false
+    &quot;result&quot;      : string // base64 encoded string with BSON formatted data  
+}
+</pre></div>
+
+
+</div>
+<div class="admonition failure">
+<p class="admonition-title">Error</p>
+<div class="codehilite"><pre><span></span>{
+    &quot;error&quot;       : true,
+    &quot;errCode&quot;     : 4XX/5XX, // Error code
+    &quot;errMsg&quot;      : &quot;Error text&quot;
+}
+</pre></div>
+
+
+</div>
 <h2 id="_5">Запрос количества документов из коллекции.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/data/count</strong></p>
 <p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Headers: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span>{
     &quot;app&quot;         : &quot;&quot;, // идентификатор приложения, обязательный
     &quot;cli&quot;         : &quot;&quot;, // клиентский ключ, обязательный
@@ -1344,7 +1339,7 @@
     &quot;coll&quot;: &quot;items&quot;,
     &quot;query&quot;: {
         &quot;exampleField&quot;: { 
-            &quot;$eq&quot;: &quot;Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!&quot;
+            &quot;$eq&quot;: &quot;being alone never felt right. sometimes it felt good, but it never felt right.&quot;
         }
     }
 }&#39; &quot;https://api.scorocode.ru/api/v1/data/count&quot;

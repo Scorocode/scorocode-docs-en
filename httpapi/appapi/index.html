@@ -2754,9 +2754,7 @@ Headers: <span class="sb">`</span>Content-Type: application/json<span class="sb"
 
 Method: `POST`
 
-Headers:
-
-`Content-Type: application/json`
+Headers: `Content-Type: application/json`
 </pre></div>
 
 {
@@ -2768,184 +2766,189 @@ Headers:
         "name": ""           // field name, mandatory
     }
 }
-<div class="codehilite"><pre><span></span>**Responses:**
+<div class="codehilite"><pre><span></span>!!! tip &quot;cURL example&quot;
+    ```
+    curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
+        &quot;acc&quot;: &quot;ffe86fefg25fbklacsdee8cd4c59644a&quot;,
+        &quot;app&quot;: &quot;48f172923acd719b42c73ac3a492cfc8&quot;,
+        &quot;cli&quot;: &quot;d6859f41223c9997ff78c6b4vb3a96bb&quot;,
+        &quot;coll&quot;: &quot;users&quot;,                       
+        &quot;collField&quot;: {
+            &quot;name&quot;: &quot;pointer&quot;
+        }
+    }&#39; &quot;https://api.scorocode.ru/api/v1/app/collections/fields/delete&quot;
+    ```
+
+
+**Responses:**
 
 !!! success &quot;Success&quot;
-</pre></div>
-
-{
-  "collection": {
-    "id": "584e64f8982fd55332741514",
-    "name": "users",
-    "useDocsACL": false,
-    "ACL": {
-      "create": [
-        "<em>"
-      ],
-      "read": [
-        "</em>"
-      ],
-      "remove": [
-        "<em>"
-      ],
-      "update": [
-        "</em>"
-      ]
-    },
-    "triggers": {
-      "afterFind": {
-        "code": "",
-        "isActive": false
+    ```
+    {
+      &quot;collection&quot;: {
+        &quot;id&quot;: &quot;584e64f8982fd55332741514&quot;,
+        &quot;name&quot;: &quot;users&quot;,
+        &quot;useDocsACL&quot;: false,
+        &quot;ACL&quot;: {
+          &quot;create&quot;: [
+            &quot;*&quot;
+          ],
+          &quot;read&quot;: [
+            &quot;*&quot;
+          ],
+          &quot;remove&quot;: [
+            &quot;*&quot;
+          ],
+          &quot;update&quot;: [
+            &quot;*&quot;
+          ]
+        },
+        &quot;triggers&quot;: {
+          &quot;afterFind&quot;: {
+            &quot;code&quot;: &quot;&quot;,
+            &quot;isActive&quot;: false
+          },
+          &quot;afterInsert&quot;: {
+            &quot;code&quot;: &quot;&quot;,
+            &quot;isActive&quot;: false
+          },
+          &quot;afterRemove&quot;: {
+            &quot;code&quot;: &quot;&quot;,
+            &quot;isActive&quot;: false
+          },
+          &quot;afterUpdate&quot;: {
+            &quot;code&quot;: &quot;&quot;,
+            &quot;isActive&quot;: false
+          },
+          &quot;beforeInsert&quot;: {
+            &quot;code&quot;: &quot;&quot;,
+            &quot;isActive&quot;: false
+          },
+          &quot;beforeRemove&quot;: {
+            &quot;code&quot;: &quot;&quot;,
+            &quot;isActive&quot;: false
+          },
+          &quot;beforeUpdate&quot;: {
+            &quot;code&quot;: &quot;&quot;,
+            &quot;isActive&quot;: false
+          }
+        },
+        &quot;fields&quot;: [
+          {
+            &quot;name&quot;: &quot;email&quot;,
+            &quot;type&quot;: &quot;String&quot;,
+            &quot;target&quot;: &quot;&quot;,
+            &quot;system&quot;: true,
+            &quot;readonly&quot;: true,
+            &quot;required&quot;: true
+          },
+          {
+            &quot;name&quot;: &quot;phone&quot;,
+            &quot;type&quot;: &quot;String&quot;,
+            &quot;target&quot;: &quot;&quot;,
+            &quot;system&quot;: true,
+            &quot;readonly&quot;: false,
+            &quot;required&quot;: false
+          },
+          {
+            &quot;name&quot;: &quot;readACL&quot;,
+            &quot;type&quot;: &quot;ACL&quot;,
+            &quot;target&quot;: &quot;&quot;,
+            &quot;system&quot;: true,
+            &quot;readonly&quot;: false,
+            &quot;required&quot;: false
+          },
+          {
+            &quot;name&quot;: &quot;updateACL&quot;,
+            &quot;type&quot;: &quot;ACL&quot;,
+            &quot;target&quot;: &quot;&quot;,
+            &quot;system&quot;: true,
+            &quot;readonly&quot;: false,
+            &quot;required&quot;: false
+          },
+          {
+            &quot;name&quot;: &quot;removeACL&quot;,
+            &quot;type&quot;: &quot;ACL&quot;,
+            &quot;target&quot;: &quot;&quot;,
+            &quot;system&quot;: true,
+            &quot;readonly&quot;: false,
+            &quot;required&quot;: false
+          },
+          {
+            &quot;name&quot;: &quot;createdAt&quot;,
+            &quot;type&quot;: &quot;Date&quot;,
+            &quot;target&quot;: &quot;&quot;,
+            &quot;system&quot;: true,
+            &quot;readonly&quot;: true,
+            &quot;required&quot;: false
+          },
+          {
+            &quot;name&quot;: &quot;updatedAt&quot;,
+            &quot;type&quot;: &quot;Date&quot;,
+            &quot;target&quot;: &quot;&quot;,
+            &quot;system&quot;: true,
+            &quot;readonly&quot;: true,
+            &quot;required&quot;: false
+          },
+          {
+            &quot;name&quot;: &quot;username&quot;,
+            &quot;type&quot;: &quot;String&quot;,
+            &quot;target&quot;: &quot;&quot;,
+            &quot;system&quot;: true,
+            &quot;readonly&quot;: false,
+            &quot;required&quot;: true
+          },
+          {
+            &quot;name&quot;: &quot;password&quot;,
+            &quot;type&quot;: &quot;Password&quot;,
+            &quot;target&quot;: &quot;&quot;,
+            &quot;system&quot;: true,
+            &quot;readonly&quot;: false,
+            &quot;required&quot;: true
+          },
+          {
+            &quot;name&quot;: &quot;emailVerified&quot;,
+            &quot;type&quot;: &quot;Boolean&quot;,
+            &quot;target&quot;: &quot;&quot;,
+            &quot;system&quot;: true,
+            &quot;readonly&quot;: true,
+            &quot;required&quot;: false
+          },
+          {
+            &quot;name&quot;: &quot;roles&quot;,
+            &quot;type&quot;: &quot;Array&quot;,
+            &quot;target&quot;: &quot;&quot;,
+            &quot;system&quot;: true,
+            &quot;readonly&quot;: false,
+            &quot;required&quot;: false
+          },
+          {
+            &quot;name&quot;: &quot;token&quot;,
+            &quot;type&quot;: &quot;String&quot;,
+            &quot;target&quot;: &quot;&quot;,
+            &quot;system&quot;: true,
+            &quot;readonly&quot;: true,
+            &quot;required&quot;: false
+          }
+        ],
+        &quot;system&quot;: true,
+        &quot;indexes&quot;: []
       },
-      "afterInsert": {
-        "code": "",
-        "isActive": false
-      },
-      "afterRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "afterUpdate": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeInsert": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeUpdate": {
-        "code": "",
-        "isActive": false
-      }
-    },
-    "fields": [
-      {
-        "name": "email",
-        "type": "String",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": true
-      },
-      {
-        "name": "phone",
-        "type": "String",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "readACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "updateACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "removeACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "createdAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "updatedAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "username",
-        "type": "String",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": true
-      },
-      {
-        "name": "password",
-        "type": "Password",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": true
-      },
-      {
-        "name": "emailVerified",
-        "type": "Boolean",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "roles",
-        "type": "Array",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "token",
-        "type": "String",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      }
-    ],
-    "system": true,
-    "indexes": []
-  },
-  "error": false
-}
-<div class="codehilite"><pre><span></span>!!! success &quot;Success&quot;
-</pre></div>
-
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-<div class="codehilite"><pre><span></span>!!! tip &quot;cURL example&quot;
-</pre></div>
-
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "coll": "users",                     <br />
-    "collField": {
-        "name": "pointer"
+      &quot;error&quot;: false
     }
-}' "https://api.scorocode.ru/api/v1/app/collections/fields/delete"
-<div class="codehilite"><pre><span></span>-------------------------------------------------------------------------------------
+    ```
+
+!!! success &quot;Success&quot;
+    ```
+    {
+        &quot;error&quot;       : true,
+        &quot;errCode&quot;     : 4XX/5XX, // Error code
+        &quot;errMsg&quot;      : &quot;Error text&quot;
+    }
+    ```
+
+
+-------------------------------------------------------------------------------------
 
 ## Update collection&#39;s triggers
 
@@ -2953,9 +2956,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
-
-`Content-Type: application/json`
+Headers: `Content-Type: application/json`
 </pre></div>
 
 {

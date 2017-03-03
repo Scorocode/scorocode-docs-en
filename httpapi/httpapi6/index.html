@@ -921,8 +921,7 @@
                 <h2 id="application-statistics-retrieval">Application statistics retrieval.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/stat</strong></p>
 <p>Method: <code>POST</code></p>
-<p>Headers:</p>
-<p><code>Content-Type: application/json</code></p>
+<p>Headers: <code>Content-Type: application/json</code></p>
 <div class="codehilite"><pre><span></span>{
     &quot;app&quot;         : &quot;&quot;, // application identifier, mandatory
     &quot;cli&quot;         : &quot;&quot;, // client key, mandatory
@@ -946,7 +945,7 @@
 <div class="admonition success">
 <p class="admonition-title">Success</p>
 <div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : false
+    &quot;error&quot;       : false,
     &quot;results&quot;     : {
         &quot;dataSize&quot;    : int, // Application data size, bytes
         &quot;indexSize&quot;   : int, // &quot;Size&quot; of application indexes, bytes
