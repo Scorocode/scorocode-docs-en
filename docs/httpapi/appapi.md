@@ -1736,9 +1736,7 @@ Headers: `Content-Type: application/json`
 
 Method: `POST`
 
-Headers:
-
-`Content-Type: application/json`
+Headers: `Content-Type: application/json`
 
 ```
 {
@@ -1752,187 +1750,187 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "coll": "users",                       
+        "collField": {
+            "name": "pointer"
+        }
+    }' "https://api.scorocode.ru/api/v1/app/collections/fields/delete"
+    ```
+
+
 **Responses:**
 
 !!! success "Success"
-
-```
-{
-  "collection": {
-    "id": "584e64f8982fd55332741514",
-    "name": "users",
-    "useDocsACL": false,
-    "ACL": {
-      "create": [
-        "*"
-      ],
-      "read": [
-        "*"
-      ],
-      "remove": [
-        "*"
-      ],
-      "update": [
-        "*"
-      ]
-    },
-    "triggers": {
-      "afterFind": {
-        "code": "",
-        "isActive": false
-      },
-      "afterInsert": {
-        "code": "",
-        "isActive": false
-      },
-      "afterRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "afterUpdate": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeInsert": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeRemove": {
-        "code": "",
-        "isActive": false
-      },
-      "beforeUpdate": {
-        "code": "",
-        "isActive": false
-      }
-    },
-    "fields": [
-      {
-        "name": "email",
-        "type": "String",
-        "target": "",
+    ```
+    {
+      "collection": {
+        "id": "584e64f8982fd55332741514",
+        "name": "users",
+        "useDocsACL": false,
+        "ACL": {
+          "create": [
+            "*"
+          ],
+          "read": [
+            "*"
+          ],
+          "remove": [
+            "*"
+          ],
+          "update": [
+            "*"
+          ]
+        },
+        "triggers": {
+          "afterFind": {
+            "code": "",
+            "isActive": false
+          },
+          "afterInsert": {
+            "code": "",
+            "isActive": false
+          },
+          "afterRemove": {
+            "code": "",
+            "isActive": false
+          },
+          "afterUpdate": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeInsert": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeRemove": {
+            "code": "",
+            "isActive": false
+          },
+          "beforeUpdate": {
+            "code": "",
+            "isActive": false
+          }
+        },
+        "fields": [
+          {
+            "name": "email",
+            "type": "String",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": true
+          },
+          {
+            "name": "phone",
+            "type": "String",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "readACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "updateACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "removeACL",
+            "type": "ACL",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "createdAt",
+            "type": "Date",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          },
+          {
+            "name": "updatedAt",
+            "type": "Date",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          },
+          {
+            "name": "username",
+            "type": "String",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": true
+          },
+          {
+            "name": "password",
+            "type": "Password",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": true
+          },
+          {
+            "name": "emailVerified",
+            "type": "Boolean",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          },
+          {
+            "name": "roles",
+            "type": "Array",
+            "target": "",
+            "system": true,
+            "readonly": false,
+            "required": false
+          },
+          {
+            "name": "token",
+            "type": "String",
+            "target": "",
+            "system": true,
+            "readonly": true,
+            "required": false
+          }
+        ],
         "system": true,
-        "readonly": true,
-        "required": true
+        "indexes": []
       },
-      {
-        "name": "phone",
-        "type": "String",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "readACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "updateACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "removeACL",
-        "type": "ACL",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "createdAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "updatedAt",
-        "type": "Date",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "username",
-        "type": "String",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": true
-      },
-      {
-        "name": "password",
-        "type": "Password",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": true
-      },
-      {
-        "name": "emailVerified",
-        "type": "Boolean",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      },
-      {
-        "name": "roles",
-        "type": "Array",
-        "target": "",
-        "system": true,
-        "readonly": false,
-        "required": false
-      },
-      {
-        "name": "token",
-        "type": "String",
-        "target": "",
-        "system": true,
-        "readonly": true,
-        "required": false
-      }
-    ],
-    "system": true,
-    "indexes": []
-  },
-  "error": false
-}
-```
+      "error": false
+    }
+    ```
 
 !!! success "Success"
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-!!! tip "cURL example"
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "coll": "users",                       
-    "collField": {
-        "name": "pointer"
+    ```
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
     }
-}' "https://api.scorocode.ru/api/v1/app/collections/fields/delete"
-```
+    ```
+
 
 -------------------------------------------------------------------------------------
 
@@ -1942,9 +1940,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
-
-`Content-Type: application/json`
+Headers: `Content-Type: application/json`
 
 ```
 {

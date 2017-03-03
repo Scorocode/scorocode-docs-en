@@ -21,7 +21,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -29,7 +29,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! failure "Error"
 
 ```
 {
@@ -77,7 +77,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -89,7 +89,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! failure "Error"
 
 ```
 {
@@ -130,7 +130,7 @@ Headers:
 
 **Responses:**
 
-*Success*
+!!! success "Success"
 
 ```
 {
@@ -138,7 +138,7 @@ Headers:
 }
 ```
 
-*Error*
+!!! failure "Error"
 
 ```
 {

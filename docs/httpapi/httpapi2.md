@@ -10,12 +10,28 @@ Headers: `Content-Type: application/json`
 {
     "app"         : "", // application identifier, mandatory
     "cli"         : "", // client key, mandatory
-    "acc"         : "", // access key, mandatory, fileKey or masterKey for full access
-    "sess"        : "", // session ID, mandatory, if acc != masterKey
+    "acc"         : "", // access key, optional, masterKey for full access
+    "sess"        : "", // session ID, mandatory if acc != masterKey and app security settings do not allow anonymous access for this operation
     "coll"        : "", // collection name, mandatory
-    "doc"         : {}, // docume с парами имя_поля:значение, необязательный
+    "doc"         : {}, // document with field_name:value pairs
 }
 ```
+
+!!! tip "cURL example"
+    ```
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "acc": "",
+        "sess": "rYgRe6xL2y8VccMJ",
+        "coll": "items",
+        "doc": {
+            "exampleField": "We are here to laugh at the odds and live our lives so well that Death will tremble to take us.",
+            "anotherExampleField": "The free soul is rare, but you know it when you see it - basically because you feel good, very good, when you are near or with them."
+        }
+    }' "https://api.scorocode.ru/api/v1/data/insert"
+    ```
+
 
 **Responses:**
 
@@ -23,35 +39,19 @@ Headers: `Content-Type: application/json`
     ```
     {
         "error"       : false,
-        "result"      : {} // созданный документ
+        "result"      : {}        // document with field_name:value pairs
     }
     ```
 
 !!! failure "Error"
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-!!! tip "cURL example"
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "",
-    "sess": "rYgRe6xL2y8VccMJ",
-    "coll": "items",
-    "doc": {
-        "exampleField": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!",
-        "anotherExampleField": "Не знаю, что и сказать. Когда-то я хотел быть астрофизиком. К сожалению, это правда."
+    ```
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
     }
-}' "https://api.scorocode.ru/api/v1/data/insert"
-```
+    ```
+
 
 ## Удаление документа из коллекции.
 
@@ -59,65 +59,61 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
-
-`Content-Type: application/json`
+Headers: `Content-Type: application/json`
 
 ```
 {
-    "app"         : "", // идентификатор приложения, обязательный
-    "cli"         : "", // клиентский ключ, обязательный
-    "acc"         : "", // ключ доступа, необязательный, для полного доступа masterKey
-    "sess"        : "", // ID сессии, обязательный, если ACLPublic приложения на операцию == false и acc != masterKey
-    "coll"        : "", // имя коллекции, обязательный
+    "app"         : "", // application identifier, mandatory
+    "cli"         : "", // client key, mandatory
+    "acc"         : "", // access key, optional, masterKey for full access
+    "sess"        : "", // session ID, mandatory if acc != masterKey and app security settings do not allow anonymous access for this operation
+    "coll"        : "", // collection name, mandatory
     "query"       : {}, // запрос с парами имя_поля/оператор:значение, необязательный
     "limit"       : int // лимит количества удаляемых документов, необязательный, если не указан, то удалятся первые 1000 документов
 }
 ```
 
-!!! warning "Ограничения" 
-    Удаляет не более 1000 документов
+!!! warning "Limitations" 
+    Deletes 1000 documents at max
+
+!!! tip "cURL example"
+    ```
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "acc": "",
+        "sess": "rYgRe6xL2y8VccMJ",
+        "coll": "items",
+        "query": {
+            "exampleField": { 
+                "$eq": "We are here to laugh at the odds and live our lives so well that Death will tremble to take us."
+            }
+        }
+    }' "https://api.scorocode.ru/api/v1/data/remove"
+    ```
+
 
 
 **Responses:**
-!!! success "Success"
 
-```
-{
-    "error"       : false
-    "result"      : {
-        "count"       : int, // количество удаленных документов
-        "docs"        : [] // массив ID удаленных документов
+!!! success "Success"
+    ```
+    {
+        "error"       : false,
+        "result"      : {
+            "count"       : int, // Amount of deleted documents
+            "docs"        : [] // Array of deleted documents _id's
     }
-}
-```
+    ```
 
 !!! failure "Error"
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-!!! tip "cURL example"
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "",
-    "sess": "rYgRe6xL2y8VccMJ",
-    "coll": "items",
-    "query": {
-        "exampleField": { 
-            "$eq": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!"
-        }
+    ```
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
     }
-}' "https://api.scorocode.ru/api/v1/data/remove"
-```
+    ```
 
 ## Изменение документов в коллекции.
 
@@ -125,73 +121,67 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
-
-`Content-Type: application/json`
+Headers: `Content-Type: application/json`
 
 ```
 {
-    "app"         : "", // идентификатор приложения, обязательный
-    "cli"         : "", // клиентский ключ, обязательный
-    "acc"         : "", // ключ доступа, необязательный, для полного доступа masterKey
-    "sess"        : "", // ID сессии, обязательный, если ACLPublic приложения на операцию == false и acc != masterKey
-    "coll"        : "", // имя коллекции, обязательный
+    "app"         : "", // application identifier, mandatory
+    "cli"         : "", // client key, mandatory
+    "acc"         : "", // access key, mandatory or masterKey for full access
+    "sess"        : "", // session ID, mandatory if acc != masterKey and app security settings do not allow anonymous access for this operation
+    "coll"        : "", // collection name, mandatory
     "query"       : {}, // запрос с парами имя_поля/оператор:значение, необязательный
     "doc"         : {}, // документ с парами оператор:значение, обязательный
     "limit"       : int // лимит количества обновляемых документов, необязательный, если не указан, то обновятся первые 1000 документов
 }
 ```
 
-!!! warning "Ограничения" 
-    Изменяет не более 1000 документов
+!!! warning "Limitations" 
+    Updates 1000 documents at max
 
 **Responses:**
 
 !!! success "Success"
-
-```
-{
-    "error"       : false
-    "result"      : {
-        "count"       : int, // количество измененных документов
-        "docs"        : [] // массив ID измененных документов
+    ```
+    {
+        "error"       : false,
+        "result"      : {
+            "count"       : int, // Amount of modified documents
+            "docs"        : [] // Array of modified documents _id's
+        }
     }
-}
-
-```
+    ```
 
 !!! failure "Error"
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
+    ```
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
 !!! tip "cURL example"
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "",
-    "sess": "rYgRe6xL2y8VccMJ",
-    "coll": "items",
-    "query": {
-        "exampleField": { 
-            "$eq": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!"
-        }
-    },
-     "doc": {
-        "$set": {
-            "exampleField": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 21. С днём рождения, Мюриэл!"
-        }
-    },
-    "limit": 1
-}' "https://api.scorocode.ru/api/v1/data/update"
-```
+    ```
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "acc": "",
+        "sess": "rYgRe6xL2y8VccMJ",
+        "coll": "items",
+        "query": {
+            "exampleField": { 
+                "$eq": "We are here to laugh at the odds and live our lives so well that Death will tremble to take us."
+            }
+        },
+         "doc": {
+            "$set": {
+                "exampleField": "being alone never felt right. sometimes it felt good, but it never felt right."
+            }
+        },
+        "limit": 1
+    }' "https://api.scorocode.ru/api/v1/data/update"
+    ```
 
 ##  Изменение одного документа в коллекции по идентификатору.
 
@@ -199,63 +189,59 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
-
-`Content-Type: application/json`
+Headers: `Content-Type: application/json`
 
 ```
 {
-    "app"         : "", // идентификатор приложения, обязательный
-    "cli"         : "", // клиентский ключ, обязательный
-    "acc"         : "", // ключ доступа, необязательный, для полного доступа masterKey
-    "sess"        : "", // ID сессии, обязательный, если ACLPublic приложения на операцию == false и acc != masterKey
-    "coll"        : "", // имя коллекции, обязательный
+    "app"         : "", // application identifier, mandatory
+    "cli"         : "", // client key, mandatory
+    "acc"         : "", // access key, mandatory or masterKey for full access
+    "sess"        : "", // session ID, mandatory if acc != masterKey and app security settings do not allow anonymous access for this operation
+    "coll"        : "", // collection name, mandatory
     "query"       : {}, // запрос в формате "_id" : "&ltидентификатор документа&gt", обязательный
     "doc"         : {}, // документ с парами оператор:значение, обязательный
 }
 ```
 
+!!! tip "cURL example"
+    ```
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "acc": "",
+        "sess": "rYgRe6xL2y8VccMJ",
+        "coll": "items",
+        "query": {
+            "_id" : "jQ4ZwEbBUj"
+        },
+         "doc": {
+            "$set": {
+                "exampleField": "being alone never felt right. sometimes it felt good, but it never felt right."
+            }
+        }
+    }' "https://api.scorocode.ru/api/v1/data/updatebyid"
+    ```
+
+
 **Responses:**
 
 !!! success "Success"
-
-```
-{
-    "error"       : false
-    "result"      : {} // обновленный документ
-}
-```
+    ```
+    {
+        "error"       : false,
+        "result"      : {} // обновленный документ
+    }
+    ```
 
 !!! failure "Error"
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-!!! tip "cURL example"
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "",
-    "sess": "rYgRe6xL2y8VccMJ",
-    "coll": "items",
-    "query": {
-        "_id" : "jQ4ZwEbBUj"
-    },
-     "doc": {
-        "$set": {
-            "exampleField": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 21. С днём рождения, Мюриэл!"
-        }
+    ```
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
     }
-}' "https://api.scorocode.ru/api/v1/data/updatebyid"
+    ```
 
-```
 
 ## Запрос документов из коллекции.
 
@@ -263,9 +249,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
-
-`Content-Type: application/json`
+Headers: `Content-Type: application/json`
 
 ```
 {
@@ -281,64 +265,62 @@ Headers:
     "skip"        : int,// количество документов, которое нужно пропустить в выборке
 }
 ```
-!!! warning "Ограничения" 
-    Возвращает не более 100 документов
+!!! warning "Limitations" 
+    Returns 100 documents at max
 
 !!! warning "BSON" 
     Для повышения производительности сервиса результат выборки метода **find** возвращается в формате [bson](https://ru.wikipedia.org/wiki/BSON). Все SDK самостоятельно реализуют декодирование bson в json.
 
+!!! tip "cURL example"
+    ```
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "acc": "",
+        "sess": "rYgRe6xL2y8VccMJ",
+        "coll": "items",
+        "query": {
+            "exampleField": { 
+                "$eq": "being alone never felt right. sometimes it felt good, but it never felt right."
+            }
+        },
+        "sort": {
+            "updatedAt": 1
+        }, 
+        "fields": ["updatedAt", "exampleField", "anotherExampleField"],
+        "limit": 10,
+        "skip": 20
+    }' "https://api.scorocode.ru/api/v1/data/find"
+    ```
+
 **Responses:**
 
 !!! success "Success"
-
-```
-{
-    "error"       : false
-    "result"      : string // bson результат запроса, закодированный в base64
-}
-```
+    ```
+    {
+        "error"       : false
+        "result"      : string // base64 encoded string with BSON formatted data  
+    }
+    ```
 
 !!! failure "Error"
+    ```
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
 
-!!! tip "cURL example"
 
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "",
-    "sess": "rYgRe6xL2y8VccMJ",
-    "coll": "items",
-    "query": {
-        "exampleField": { 
-            "$eq": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!"
-        }
-    },
-    "sort": {
-        "updatedAt": 1
-    }, 
-    "fields": ["updatedAt", "exampleField", "anotherExampleField"],
-    "limit": 10,
-    "skip": 20
-}' "https://api.scorocode.ru/api/v1/data/find"
-```
 ## Запрос количества документов из коллекции.
 
 **https://api.scorocode.ru/api/v1/data/count**
 
 Method: `POST`
 
-Headers:
-
-`Content-Type: application/json`
+Headers: `Content-Type: application/json`
 
 ```
 {
@@ -383,7 +365,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
     "coll": "items",
     "query": {
         "exampleField": { 
-            "$eq": "Сегодня 18 июня, и это день рождения Мюриэл! Мюриэл сейчас 20. С днём рождения, Мюриэл!"
+            "$eq": "being alone never felt right. sometimes it felt good, but it never felt right."
         }
     }
 }' "https://api.scorocode.ru/api/v1/data/count"

@@ -4,9 +4,7 @@
 
 Method: `POST`
 
-Headers:
-
-`Content-Type: application/json`
+Headers: `Content-Type: application/json`
 
 ```
 {
@@ -30,7 +28,7 @@ Headers:
 !!! success "Success"
     ```
     {
-        "error"       : false
+        "error"       : false,
         "results"     : {
             "dataSize"    : int, // Application data size, bytes
             "indexSize"   : int, // "Size" of application indexes, bytes
