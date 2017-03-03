@@ -103,11 +103,11 @@ Let's create a launch screen for our application and call it `LoginActivity`. To
     </LinearLayout>
 </RelativeLayout>
 ```
-The launch screen of the `LoginActivity` class is shown on the illustration 1.1. 
+The launch screen of the `LoginActivity` class is shown in Figure 1.1. 
 
 ![Application Launch Screen](img/Storehouse/1.1.png)
 
-Illustration 1.1 – application launch screen.
+Figure 1.1 – application launch screen.
 
 Let's add the following code lines in the `onCreate` method of the `LoginActivity` class:
 
@@ -126,7 +126,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 `ScorocodeSdk` initialization is happening in the `onCreate` method with keys `appId`, `clientKey` (android), `fileKey`, `messageKey`, `scriptKey` using the `ScorocodeSdk.initWith(...)` method. These keys can be viewed at the «Security» tab in the project Settings.
 
-On this screen a database user can enter their system login and password. The application will check whether they are correct using the `.login()` method of the `User` class. This method is demonstrated in a listing:
+On this screen, a database user can enter their system login and password. The application will check whether they are correct using the `.login()` method of the `User` class. This method is demonstrated in a listing:
 
 ```Java
 @OnClick(R.id.btnLogin)
@@ -147,11 +147,11 @@ public void onBtnLoginClicked() {
 }
 ```
 
-In this method, we create a new sample of the `User` class and run its `login` method. The information about a user's email and password is taken from the corresponding `EditText`. The `login` method will check that a user with this email and this password exists in the  «users» collection.
+In this method, we create a new sample of the `User` class and run its `login` method. The information about a user's email and password is taken from the corresponding `EditText`. The `login` method will check that a user with this email and this password exists in the «users» collection.
 
-In case such user exists in the  «users» collection, the `onLoginSucceed(...) callback` method will be executed, otherwise it the  `onFoginFailed(...)` method that will be executed. Thus, we can  be sure whether such user exists in our database and act accordingly.
+In case such user exists in the «users» collection, the `onLoginSucceed(...) callback` method will be executed. Otherwise it the `onFoginFailed(...)` method that will be executed. Thus, we can be sure whether such user exists in our database and act accordingly.
 
-On the launch screen (see illustration 1.1) we also have the «Register» button which allows to register a new user in the system (add to the «users» database collection). Let's connect this button to the press handler which opens an Activity with user's data needed for registration:
+On the launch screen (see illustration 1.1) we also have the «Register» button which allows to register a new user in the system (add to the «users» database collection). Let's connect this button to the button click handler which opens an Activity with user's data needed for registration:
 
 ```Java
 @OnClick(R.id.btnRegister)
@@ -160,7 +160,7 @@ public void onBtnRegisterClicked() {
 }
 ``` 
 
-## New User Registration Screen
+## New User Registration Screen.
 
 Let's create an new Activity called `RegisterActivity` and add the following xml code in the layout file of this Activity:
 
@@ -214,13 +214,13 @@ Let's create an new Activity called `RegisterActivity` and add the following xml
         android:text="@string/btn_register_text"/>
 </LinearLayout>
 ```
-This Activity is a new user registration screen, as shown on illustration 1.2
+This Activity is a new user registration screen, as shown in Figure 1.2
 
 ![A new user registration screen](img/Storehouse/1.2.png)
 
-Illustration 1.2 — a new user registration screen.
+Figure 1.2 — a new user registration screen.
 
-На данном экране вводятся все необходимые поля документа (характеризующие пользователя). Добавим обработчик нажатия для кнопки «Зарегистрировать» вызывающий метод `.register` класса `User` для регистрации нового пользователя, показанный ниже:
+All document fields needed for a user registration are listed on this screen. Let's add the button click event handler for the «Register» button which will run the `.register` method of the `User` class, as shown below:
 
 ```Java
 @OnClick(R.id.btnRegister)
@@ -248,17 +248,17 @@ public void onBtnRegisterClicked() {
 }
 ```
 
-В данном методе мы получаем значения введенные в элементы `EditText`, а именно: имя пользователя, его email, пароль и пароль повторно (для проверки).
+In this method, we get values entered in the `EditText` elements, e.g.: a user name, their email, password and repeated password (for a check).
 
-Далее при помощи метода isInputValid мы проверяем, что поля не являются пустыми и что значение, введенное в поля пароля и проверки пароля идентичны, после чего вызываем метод `.register` класса `User`.
+Then using the isInputValid method we check that the fields are not left empty and that the values, entered into the two password fields are identical. Afterwards, we can run the `.register` method of the `User` class.
 
-В случае если регистрация пользователя прошла успешно (т.е если sdk инициализирован, все ключи указаны правильно и нет конфликта с уже существующими пользователями), будет выполнен метод  `onRegisterSucceed(...) callback` интерфейса иначе будет выполнен метод `onRegisterFailed(...)`.
+In case the user registration was a success (i.e. if the SDK is initiated, all keys are correct and there is no conflict with existing users), the interface `onRegisterSucceed(...) callback` method will be executed. Otherwise it is the `onRegisterFailed(...)` method that will be executed.
 
-В данном случае при успешной регистрации пользователя выдается Toast-сообщение с информацией о том, что пользователь успешно зарегистрирован и открывается активность `LoginActivity` чтобы пользователь мог аутентифицироваться и приступить к работе с приложением.
+In this case, if the registration is a success, a Toast message will be shown with a note that the user is registered. Then the `LoginActivity` activity begins so that the user can log in and start working with the application.
 
-## Главный экран приложения.
+## Application Main Screen.
 
-Создадим главный экран приложения с именем `MainActivity` и в layout-файл данной активности добавим следующий xml код:
+Let's create the application main page called `MainActivity` and add the following xml code in the layout file of this Activity:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -280,9 +280,9 @@ public void onBtnRegisterClicked() {
 </RelativeLayout>
 ```
 
-Активность представляет собой `ListView` в который мы передаем информацию о товарах, хранящихся в БД. Кроме того активность содержит иконки `ActionBar` о которых будет сказано подробней.
+This is the `ListView` Activity which we fill with the data about goods stored in the database. In addition, the Activity contains `ActionBar` icons. We will talk about them in some detail later on. 
 
-Для отображения информации создадим адаптер с именем `StoreItemAdapter` код которого показан ниже:
+Let's create an adapter called `StoreItemAdapter` to show us the data with the following code: 
 
 ```Java
 package prof_itgroup.ru.storehouseapp.Objects;
@@ -363,7 +363,7 @@ public class StoredItemsAdapter extends BaseAdapter {
 }
 ```
 
-В качестве элемента списка используем следующий layout-файл:
+We will use the following layout file as a list element:
 
 ```xml
  <?xml version="1.0" encoding="utf-8"?>
@@ -392,7 +392,7 @@ public class StoredItemsAdapter extends BaseAdapter {
 </RelativeLayout>
 ```
 
-Данные о товарах, хранящихся в БД мы будем получать в методе `onResume()` активности `MainActivity`. Для этого в метод `onResume` добавим следующий код:
+We will get the data about stored goods in the `onResume()` method of the `MainActivity`Activity. For this let's add the following code lines in the `onResume` method:
 
 ```Java
 @Override
@@ -414,11 +414,11 @@ protected void onResume() {
 }
 ```
 
-В данном коде мы создаем экземпляр объекта `Query` не задавая параметров (т.е выбираем первые 100 документов из данной коллекции) и далее с помощью метода findDocument получаем документы из нашей коллекции.
+In this code we create a `Query` object sample without setting any parameters (i.e. we choose the first 100 documents from this collection) and then we get the documents from our collection with the `findDocument` method.
 
-В случае если удалось найти документы мы устанавливаем адаптер, иначе выдаем сообщение об ошибке.
+In case we were successful in finding the documents, we install the adapter. Otherwise, we transmit the error message.
 
-Так же добавим необходимые иконки в `ActionBar` активности. Для этого создадим `layout` файл `main_activity_menu` и добавим туда следующий xml код:
+Let's also add the icons we need in the `ActionBar` Activity. For this, we will create the `main_activity_menu` layout file and add the following xml code:
 
 ```xml
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
@@ -442,7 +442,7 @@ protected void onResume() {
 </menu>
 ```
 
-Т.е в `ActionBar` мы будем отображать иконки «Добавить элемент в БД», «Установить фильтр» и «Завершить активную сессию пользователя» (logout). На экран активности данные иконки добавим при помощи следующего метода:
+This means that we will show icons "Add an item to the database", "Set a filter" and "Logout" in the  `ActionBar`. We can add these icons to the activity screen with the following code lines:
 
 ```Java
 @Override
@@ -452,7 +452,7 @@ public boolean onCreateOptionsMenu(Menu menu) {
 }
 ```
 
-Обрабатывать нажатия на иконки будем при помощи метода показанного ниже
+We will handle icons clicks with the method described below:
 
 ```Java
 @Override
@@ -479,27 +479,27 @@ public boolean onOptionsItemSelected(MenuItem item) {
 }
 ```
 
-Готовый экран данной активности показан на рисунке 2.1
+The completed screen for this activity is shown in Figure 2.1
 
-![главный экран приложения](img/Storehouse/2.1.png)
+![Main Application Screen](img/Storehouse/2.1.png)
 
-Рисунок 2.1 — главный экран приложения.
+Figure 2.1 — main application screen
 
-На данном экране показаны текущие модели телефонов, присутствующие на складе. В верхнем правом углу экрана показаны следующие иконки:
+On this screen, we can see available mobile phone models which are kept in our storehouse. The following icons are shown in the right upper corner:
 
-![Добавить новую модель в базу данных](img/Storehouse/2.1.1.png) - Добавить новую модель в базу данных.
+![Add a new item to the database](img/Storehouse/2.1.1.png) - Add new item (mobile phone model) to the database.
 
 
-![Применить фильтр к списку устройств](img/Storehouse/2.1.2.png) - Применить фильтр к списку устройств.
+![Apply a filter to the list of items](img/Storehouse/2.1.2.png) - Apply a filter to the list of items.
 
 	   
-![Закончить активную сессию пользователя](img/Storehouse/2.1.3.png) - Закончить активную сессию пользователя (logout).	
+![Logout a user](img/Storehouse/2.1.3.png) - End an active session (logout).	
 
-При нажатии на кнопку ![Добавить новую модель в базу данных](img/Storehouse/2.1.1.png)  пользователь переходит на экран добавления устройства в БД.
+After clicking on the ![Add a new device to the database](img/Storehouse/2.1.1.png) button, a user switches to the item adding screen of the application. 
 
-## Экран добавления устройства
+## Add an Item Screen
 
-Создадим активность с именем `AddItemActivity` и добавим в её layout-файл следующий xml код:
+Let's create an Acitivity called `AddItemActivity` and add the folowing xml code to its layout file:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -519,7 +519,7 @@ public boolean onOptionsItemSelected(MenuItem item) {
 </LinearLayout>
 ```
 
-В свою очередь, включаемый файл item_core.xml представляет собой:
+In turn, the activated item_core.xml file represents of the following lines:
 
 ```xml
 <LinearLayout android:layout_width="match_parent"
@@ -638,14 +638,14 @@ public boolean onOptionsItemSelected(MenuItem item) {
 </LinearLayout>
 ```
 
-Итоговый вид активности показан на рисунке 2.2
+The final activity screen is shown in Fugure 2.2
 
-![Экран добавления нового устройства в БД](img/Storehouse/2.2.png)
+![Add an Item Screen](img/Storehouse/2.2.png)
 
-Рисунок 2.2 — Экран добавления нового устройства в БД.
+Figure 2.2 — Add an Item screen.
 
 
-На этом экране пользователь вводит всю необходиму информацию о устройстве и нажимает кнопку «ДОБАВИТЬ». При этом программа создает новый документ, заполняет его поля и сохраняет на сервере.  Добавим данные действия: зададим обработчик нажатия кнопки «Добавить» который будет вызывать метод показанный ниже:
+On this screen, a user enters all necessary information about the device (item) and presses on the «ADD» button. With this, the program creates a new document, fills its fields and saves on a server. Let's add the following activities: defining a click handler for the «ADD» button which will run the method described below:
 
 ```Java
 @OnClick(R.id.btnAddItem)
@@ -675,29 +675,29 @@ public void onBtnAddItemClicked() {
 }
 ```
 
-В данном методе мы создаем экземпляр класса `Document`, проверяем заполнил ли пользователь всю информацию в соответствующих `EditText` и устанавливаем поля документа при помощи метода `setField(…)` после чего сохраняем документ. Поскольку документ создан без ассоциации с реальным документом из БД (т.е без использования метода `getDocumentById()`, то новый документ с указанными полями будет загружен на сервер.
+In this method we create a sample of the `Document` class, check whether a user has provided all necessary information in the corresponding `EditText` fields and set the document fields with the `setField(…)` method. Then we save the document. Since the document was created without a connection with a real document form the database (i.e. without using the `getDocumentById()` method), the new created document with the set fields will be uploaded to a server.
 
-Документы хранятся в БД Scorocode в виде показанном на рисунке 2.3
+Documents are stored in the Scorocode database as shown on Figure 2.3
 
-![храниение документов в коллекции БД Scorocode](img/Storehouse/2.3.png)
+![Storing documents in the Scorocode database](img/Storehouse/2.3.png)
 
-Рисунок 2.3 — храниение документов в коллекции БД Scorocode.
+Figure 2.3 — storing documents in the Scorocode database.
 
-Каждый документ содержит системные и пользовательские поля.
-Системными являются:
+Each document contains system and user's fields.
+System fields are:
 
-1. id — уникальный идентификатор документа в коллекции
-2. readACL — права на чтения данного документа.
-3. updateACL — права на обновление данного документа.
-4. removeACL — права на удаление данного документа.
-5. createdAt — время создания документа.
-6. updatedAt - время последнего обновления документа.
+1. id — unique document ID in the collection.
+2. readACL — permission to read this document.
+3. updateACL — permission to update this document.
+4. removeACL — permission to delete this document.
+5. createdAt — time of the document creation.
+6. updatedAt - time of the document last update.
 
-Пользователь может добавлять другие поля по своему усмотрению используя кнопку «Добавить поле» на верхней панели. Пользователь так же может добавить документ нажав кнопку «Добавить документ» на верхней панели и введя значения полей вручную. Более подробно о функциональности верхней панели БД см.документацию Scorocode.
+A user can add other fields at their discretion with the «Add a field» button in the upper panel. They can also add a document with the «Add a document» button in the upper panel and enter data in the fields manually. For more information on the database upper panel features, please, see Scorocode documentation.
 
-При нажатии на кнопку ![Применить фильтр к списку устройств](img/Storehouse/2.1.2.png) пользователь попадает в диалоговое окно фильтра.
+When clicking on the ![Apply a filter to the list of items](img/Storehouse/2.1.2.png) button a user enter the filter dialog screen.
 
-Создадим данное диалоговое окно. Для этого создадим класс `FilterDialog` код которого показан ниже:
+Let's create this filter dialog screen. For this, we need to create the `FilterDialog` class using the following code:
 
 ```Java
 package prof_itgroup.ru.storehouseapp.Objects;
@@ -793,7 +793,7 @@ public class FilterDialog {
 }
 ```
 
-В методе `showFilterDialog` мы создаем `AlertDialog` и задаем ему `View` из следующего layout-файла:
+In the `showFilterDialog` method we create `AlertDialog` and set its `View` from the following layout file:
 
 ```xml
  <?xml version="1.0" encoding="utf-8"?>
@@ -830,7 +830,7 @@ public class FilterDialog {
 </LinearLayout>
 ```
 
-Включаемые layout-файлы `price_filter_layout` и `platform_filter` показаны ниже:
+The layout files `price_filter_layout` and `platform_filter` are shown below:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -935,20 +935,20 @@ public class FilterDialog {
 </LinearLayout>
 ```
 
-Диалоговое окно фильтра показано на рисунке 2.4
+The filter dialog screen is shown in Figure 2.4
 
-![Диалоговое окно фильтра](img/Storehouse/2.4.png)
+![Filter Dialog Screen](img/Storehouse/2.4.png)
 
-Рисунок 2.4 — диалоговое окно фильтра.
+Figure 2.4 — filter dialog screen.
 
-В данном диалоговом окне пользователь может задать условия выборки из БД по определенным критериям, а именно:
-* Цена устройства
-* Платформа устройства (Android или iOS, а так же номер версии ОС).
-* Доступные в наличии цвета.
+On this dialog screen, a user can specify database sample criteria as follows:
+* Device price
+* Device platform (Android or iOS, plus operation system version number).
+* Available colours.
 
-При нажатии на кнопку «Продолжить» мы проверяем выбраны ли элементы CheckBox и если да — ставим соответствующий фильтр.
+When pressing the «Continue» button, we check whether the CheckBox elements were chosen and, if yes, we set the corresponding filter.
 
-Листинг кода для задания фильтра:  
+Code listing for setting a filter:  
 
 ```Java
 public void showFilterDialog(final CallbackFilterDialog callbackFilterDialog) {
@@ -1012,23 +1012,23 @@ private void setPriceFilter(View view, Query query) {
 }
 ```
 
-Фильтр задается следующим образом: мы создаем объект `Query`, выборку мы ведем из нашей коллекции. Далее: если выбран фильтр цены (установлена соответствующая галочка), то мы выбираем из БД только устройства для которых цена попадает в пределы указанных границ.
+A filter can be set as follows: we create a `Query` object, taking samples from our collection. If the price filter is applied (it is ticked off), then we choose only the devices within the set price range in our database.
 
-Границы цен задаются при помощи следующих методов:
-* greaterThan задает нижнюю границу цены (не включая указанную цену).
-* lessThan задает верхнюю границу цены (не включая указанную цену).
-* greaterThanOrEqualTo задает нижнюю границу цены включая указанную цену.
-* lessThanOrEqualTo задает верхнюю границу цены включая указанную цену.
+The price range is set with the following methods:
+* greaterThan sets the lower price limit (excluding the quoted price number).
+* lessThan sets the upper price limit (excluding the quoted price number).
+* greaterThanOrEqualTo sets the lower price limit including the quoted price number. 
+* lessThanOrEqualTo sets the upper price limit including the quoted price number.
 
-Поиск по платформе задается при помощи метода `equalTo(field, value)` класса `Query` который указывает экземпляру данного класса оставить в выборке только документы у которых значение поля указанного в параметре `field` совпадает с `value`. В нашем случае мы можем например найти все Android 7.0 девайсы, указав `query.equalTo(«platform», «Android 7.0»);`
+Platform search is set using the `equalTo(field, value)` method of the `Query` class which tells to an instance of the class to leave inside the sample only the documents whose field value in the `field` parameter corresponds to the `value`. As an example in our case, we can find all Android 7.0 devices by setting `query.equalTo(«platform», «Android 7.0»);`.
 
-Поиск по доступным цветам задается при помощи метода `containedIn` класса `Query` который оставляет в выборке только те документы для которых поле (типа массив) содержит все элементы заданного массива.
+Colour search is set using the `containedIn` method of the `Query` class which leaves leave inside the sample only the documents  whose fields (array) contains all elements of the given array.
 
-Таким образом мы формируем запрос (query) для указанной коллекции БД и получаем экземпляры класса `DocumentInfo` характеризующие документы, удовлетворяющие данному запросу. Эту информацию мы передаем в активность при помощи callback и обновляем информацию.
+With this we form a query for the given database collection and receive copies of the `DocumentInfo` class which characterize the documents appropriate for this query. We pass this information in the Activity using a callback and them we update the information.
 
-При нажатии на кнопку ![Закончить активную сессию пользователя](img/Storehouse/2.1.3.png) происходит завершение активной сессии пользователя (logout) и пользователь попадает обратно на стартовый экран приложения.
+When pressing the ![Logout a user](img/Storehouse/2.1.3.png) button we end the user active session (logout) so the user is back at the Launch Screen.
 
-Для осуществления данной функциональности нужно задать обработчик нажатия для данной кнопки, вызывающий метод  `logout` класса `User` для завершения активной сессии пользователя:
+To achieve this we need to set a click event handler for this button, it will run `logout` of the `User` class to end the active session:
 
 ```Java
 public static void logout(final Context context) {
@@ -1046,15 +1046,15 @@ public static void logout(final Context context) {
     });
 }
 ```
-В данном методе сначала удаляется файл с информацией о пользователе (данный файл хранится локально и используется для проверки того факта, что пользователь прошел идентификацию в приложении) затем используется метод `logout(…)` класса `User`, который завершает активную сессию пользователя.
+In this method, as our first step we need to take is to delete the user data file (the file is stored locally and is used to check whether the user was identified). Then we use the `logout(…)` method of the `User` class which ends the user active session.
 
-В случае успешного завершения активной сессии пользователя будет вызван метод `onLogoutSucceed(...) callback` интерфейса, иначе будет вызван метод `onLogoutFailed(...)`.
+In case the session was ended successfully the `onLogoutSucceed(...) callback` iterface method will be executed. Otherwise, it is the  `onLogoutFailed(...)` method that will be executed.
 
-## Экран подробной информации о устройстве.
+## Device Details Information Screen.
 
-При нажатии на любой из элементов списка устройств главного экрана приложения пользователь попадает на экран подробной информации об устройстве.
+When pressing on any element of the device list on the application main screen, a user moves to the screen with detailed information about the chosen device.
 
-Создадим активность с именем `ItemDetailsInfo` и в layout-файл данной активности добавим следующий xml код:
+Let's create an Activity called `ItemDetailsInfo` and add the following xml code to its layout file:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -1074,11 +1074,11 @@ public static void logout(final Context context) {
 </LinearLayout>
 ```
 
-Как видно layout-файл активности переиспользует xml код экрана добавления элемента в БД, но на данном экране так же присутствует возможность перейти в режим редактирования, т.е актививровать скрытые `View` экрана.
+As you can see, the Activity layout file re-uses xml code of the Add an Item screen yet this screen also presents a possibility to switch to the Edit mode, i.e. to activate hidden `View` of the screen.
 
-В `ActionBar` данного экрана так же добавим иконки для редактирования записи об устройстве (документа), удаления записи об устройстве (документа) и перехода на экран информации об отгрузке.
+In `ActionBar` of the screen we will also add icons to edit a device entry (document), to remove a device entry (document) and to proceed to the delivery information screen.
 
-Для задания иконок в `ActionBar` создадим layout-файл с именем `detailed_info_menu` и добавим в него следующий код:
+To set the icons in `ActionBar` let's create a layout file called `detailed_info_menu` and add to it the following code lines:
 
 ```xml
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1103,7 +1103,7 @@ public static void logout(final Context context) {
 </menu>
 ```
 
-В самой активности добавим метод:
+Inside the Activity let's add the following method:
 
 ```Java
 @Override
@@ -1113,7 +1113,7 @@ public boolean onCreateOptionsMenu(Menu menu) {
 }
 ```
 
-который установит иконки в `ActionBar`.
+which will install icons into `ActionBar`.
 
 Обрабатывать нажатие на иконки мы будем при помощи метода указанного ниже:
 
