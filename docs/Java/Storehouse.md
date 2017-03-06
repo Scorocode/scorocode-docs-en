@@ -1050,7 +1050,7 @@ In this method, as our first step we need to take is to delete the user data fil
 
 In case the session was ended successfully the `onLogoutSucceed(...) callback` iterface method will be executed. Otherwise, it is the  `onLogoutFailed(...)` method that will be executed.
 
-## Device Details Information Screen.
+## Device Details Screen.
 
 When pressing on any element of the device list on the application main screen, a user moves to the screen with detailed information about the chosen device.
 
@@ -1115,7 +1115,7 @@ public boolean onCreateOptionsMenu(Menu menu) {
 
 which will install icons into `ActionBar`.
 
-Обрабатывать нажатие на иконки мы будем при помощи метода указанного ниже:
+We will handle clicks on buttons with the method described below: 
 
 ```Java
 @Override
@@ -1138,30 +1138,30 @@ public boolean onOptionsItemSelected(MenuItem item) {
 }
 ``` 
 
-В результате получим экран показанный на рисунке 3.1
+As a result we should get the screen shown in Figure 3.1
 
-![экран подробной информации об устройстве](img/Storehouse/3.1.png)
+![Device Details Screen](img/Storehouse/3.1.png)
 
-Рисунок 3.1 — экран подробной информации об устройстве.
+Figure 3.1 — device details screen.
 
-В верхней правой части экрана присутствуют следующие иконки:
+The following icons are located in the right upper side of the screen:
 
-![Редактировать информацию о устройстве](img/Storehouse/3.1.1.png) Редактировать информацию о устройстве
-
-
-![Удалить данное устройство из БД](img/Storehouse/3.1.2.png) Удалить данное устройство из БД
+![Edit device info](img/Storehouse/3.1.1.png) Edit device info
 
 
-![Перейти к информации об отгрузке данного товара.](img/Storehouse/3.1.3.png) Перейти к информации об отгрузке данного товара.
+![Remove this device from the database](img/Storehouse/3.1.2.png) Remove this device from the database
 
 
-При нажатии на кнопку ![Редактировать информацию о устройстве](img/Storehouse/3.1.1.png) экран переключается в режим редактирования. Для этого сделаем видимыми кнопки «Добавить цвет», «Удалить цвет», «Увеличить цену на складе», «Уменьшить цену на складе». Экран подробной информации о устройстве в режиме редактирования показан на рисунке 3.2
+![Switch to the device shipping info](img/Storehouse/3.1.3.png) Switch to the device shipping info.
 
-![Экран подробной информации об устройстве в режиме редактирования](img/Storehouse/3.2.png)
 
-Рисунок 3.2 — Экран подробной информации об устройстве в режиме редактирования
+When a user presses the ![Edit device info](img/Storehouse/3.1.1.png) button, the sreen switches to the edit mode. To do so let's make these buttons visible: "Add colour", "Remove colour", "Increase store price", "Lower store price". Device details screen in the edit mode is shown in Figure 3.2. 
 
-Зададим обработчик нажатия кнопки «Изменить запись», который будет вызывать следующий метод:
+![Device details screen in the edit mode](img/Storehouse/3.2.png)
+
+Figure 3.2 — Device details screen in the edit mode
+
+Let's define the click event handler for the «Change Item» button which will execute the following code:
 
 ```Java
 private void updateItemDocument() {
