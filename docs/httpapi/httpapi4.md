@@ -6,7 +6,7 @@ Method: `POST`
 
 Headers: `Content-Type: application/json`
 
-```
+```JSON
 {
     "app"         : "",     // application identifier, mandatory
     "cli"         : "",     // client key, mandatory
@@ -96,7 +96,7 @@ Headers: `Content-Type: application/json`
 **Responses:**
 
 !!! success "Success"
-    ```
+    ```JSON
     {
         "count"       : int,       
         "error"       : false
@@ -104,7 +104,7 @@ Headers: `Content-Type: application/json`
     ```
 
 !!! failure "Error"
-    ```
+    ```JSON
     {
         "error"       : true,
         "errCode"     : 4XX/5XX, // Error code
@@ -112,6 +112,7 @@ Headers: `Content-Type: application/json`
     }
     ```
 
+----------------------------------------------------------
 
 ## Sending SMS to users.
 
@@ -121,7 +122,7 @@ Method: `POST`
 
 Headers: `Content-Type: application/json`
 
-```
+```JSON
 {
     "app"         : "",     // application identifier, mandatory
     "cli"         : "",     // client key, mandatory
@@ -136,7 +137,7 @@ Headers: `Content-Type: application/json`
 ```
 
 !!! tip "cURL example"
-    ```
+    ```bash
     curl -X POST -H "Content-Type: application/json" -d '{
         "app": "db8a1b41b8543397a798a181d9891b4c",
         "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
@@ -157,7 +158,7 @@ Headers: `Content-Type: application/json`
 **Responses:**
 
 !!! success "Success"
-    ```
+    ```JSON
     {
         "count"       : int      
         "error"       : false
@@ -165,7 +166,7 @@ Headers: `Content-Type: application/json`
     ```
 
 !!! failure "Error"
-    ```
+    ```JSON
     {
         "error"       : true,
         "errCode"     : 4XX/5XX, // Error code
