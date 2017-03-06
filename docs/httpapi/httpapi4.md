@@ -91,7 +91,7 @@ Headers: `Content-Type: application/json`
             }
         }
     }' "https://api.scorocode.ru/api/v1/sendpush"
-
+    ```
 
 **Responses:**
 
@@ -173,4 +173,3 @@ Headers: `Content-Type: application/json`
         "errMsg"      : "Error text"
     }
     ```
-
