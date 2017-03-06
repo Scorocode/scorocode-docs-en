@@ -32,7 +32,6 @@ Headers: `Content-Type: application/json`
     }' "https://api.scorocode.ru/api/v1/data/insert"
     ```
 
-
 **Responses:**
 
 !!! success "Success"
@@ -51,6 +50,8 @@ Headers: `Content-Type: application/json`
         "errMsg"      : "Error text"
     }
     ```
+
+----------------------------------------------------------------------------------------------
 
 
 ## Delete collection documents.
@@ -112,6 +113,9 @@ Headers: `Content-Type: application/json`
         "errMsg"      : "Error text"
     }
     ```
+
+----------------------------------------------------------------------------------------------
+
 
 ## Update collection documents.
 
@@ -181,6 +185,9 @@ Headers: `Content-Type: application/json`
     }
     ```
 
+----------------------------------------------------------------------------------------------
+
+
 ##  Update document by _id.
 
 **https://api.scorocode.ru/api/v1/data/updatebyid**
@@ -239,6 +246,8 @@ Headers: `Content-Type: application/json`
         "errMsg"      : "Error text"
     }
     ```
+
+----------------------------------------------------------------------------------------------
 
 
 ## Retrieve collection documents.
@@ -310,6 +319,7 @@ Headers: `Content-Type: application/json`
     }
     ```
 
+----------------------------------------------------------------------------------------------
 
 
 ## Count collection documents.
