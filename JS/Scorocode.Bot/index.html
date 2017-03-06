@@ -507,8 +507,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sendpool-callbacks" title=".send(pool, callbacks)" class="md-nav__link">
-    .send(pool, callbacks)
+  <a href="#senddata" title=".send(data)" class="md-nav__link">
+    .send(data)
   </a>
   
 </li>
@@ -911,8 +911,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sendpool-callbacks" title=".send(pool, callbacks)" class="md-nav__link">
-    .send(pool, callbacks)
+  <a href="#senddata" title=".send(data)" class="md-nav__link">
+    .send(data)
   </a>
   
 </li>
@@ -944,7 +944,7 @@
 <hr />
 <p><a name="new_sc.Bot"></a></p>
 <h2 id="new-botbotid">new Bot(botId)</h2>
-<p>Конструктор sc.Bot</p>
+<p>Constructor sc.Bot</p>
 <p><strong>Возвращает</strong>: <code><a href="#sc.Bot">sc.Bot</a></code> - Возвращает новый экземпляр sc.Bot</p>
 <table>
 <thead>
@@ -952,7 +952,6 @@
 <th>Параметр</th>
 <th>Тип</th>
 <th>Описание</th>
-<th></th>
 </tr>
 </thead>
 <tbody>
@@ -960,11 +959,10 @@
 <td>botId</td>
 <td><code>String</code></td>
 <td>Telegram id бота, полученный от <code>@BotFather</code></td>
-<td></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>
+<p><strong>Пример</strong></p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
@@ -982,11 +980,12 @@
     <span class="p">}};</span>
 <span class="nx">bot</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
 </pre></div>
-</p>
+
+
 <hr />
 <p><a name="sc.Bot+send"></a></p>
-<h2 id="sendpool-callbacks">.send(pool, callbacks)</h2>
-<p>Метод для запуска серверного кода</p>
+<h2 id="senddata">.send(data)</h2>
+<p>Making request to Telegram Bot API</p>
 <table>
 <thead>
 <tr>
