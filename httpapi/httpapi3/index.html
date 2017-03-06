@@ -950,17 +950,17 @@
 <p><strong>https://api.scorocode.ru/api/v1/upload</strong></p>
 <p>Method: <code>POST</code></p>
 <p>Headers: <code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;         : &quot;&quot;, // application identifier, mandatory
-    &quot;cli&quot;         : &quot;&quot;, // client key, mandatory
-    &quot;acc&quot;         : &quot;&quot;, // access key, mandatory, fileKey or masterKey for full access
-    &quot;sess&quot;        : &quot;&quot;, // session ID, mandatory, if acc != masterKey
-    &quot;coll&quot;        : &quot;&quot;, // collection name, mandatory
-    &quot;docId&quot;       : &quot;&quot;, // document ID, mandatory
-    &quot;field&quot;       : &quot;&quot;, // field name, mandatory
-    &quot;file&quot;        : &quot;&quot;, // file name, mandatory
-    &quot;content&quot;     : &quot;&quot;  // file body, base64 encoding, mandatory
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">application</span> <span class="err">identifier,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">client</span> <span class="err">key,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">access</span> <span class="err">key,</span> <span class="err">mandatory,</span> <span class="err">fileKey</span> <span class="err">or</span> <span class="err">masterKey</span> <span class="err">for</span> <span class="err">full</span> <span class="err">access</span>
+    <span class="nt">&quot;sess&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">session</span> <span class="err">ID,</span> <span class="err">mandatory,</span> <span class="err">if</span> <span class="err">acc</span> <span class="err">!=</span> <span class="err">masterKey</span>
+    <span class="nt">&quot;coll&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">collection</span> <span class="err">name,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;docId&quot;</span>       <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">document</span> <span class="err">ID,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;field&quot;</span>       <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">field</span> <span class="err">name,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;file&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">file</span> <span class="err">name,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;content&quot;</span>     <span class="p">:</span> <span class="s2">&quot;&quot;</span>  <span class="err">//</span> <span class="err">file</span> <span class="err">body</span><span class="p">,</span> <span class="err">base64</span> <span class="err">encoding,</span> <span class="err">mandatory</span>
+<span class="p">}</span>
 </pre></div>
 
 
@@ -1002,6 +1002,7 @@
 
 
 </div>
+<hr />
 <h2 id="retrieve-file">Retrieve file.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/getfile/{app}/{coll}/{field}/{docId}/{file}</strong></p>
 <p>Method: <code>GET</code></p>
@@ -1036,44 +1037,45 @@
 </div>
 <div class="admonition failure">
 <p class="admonition-title">Error</p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Error</span> <span class="err">code</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Error text&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 
 </div>
+<hr />
 <h2 id="file-removal">File removal.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/deletefile</strong></p>
 <p>Method: <code>POST</code></p>
 <p>Headers: <code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;         : &quot;&quot;, // application identifier, mandatory
-    &quot;cli&quot;         : &quot;&quot;, // client key, mandatory
-    &quot;acc&quot;         : &quot;&quot;, // access key, mandatory, fileKey or masterKey for full access
-    &quot;sess&quot;        : &quot;&quot;, // session ID, mandatory, if acc != masterKey
-    &quot;coll&quot;        : &quot;&quot;, // collection name, mandatory
-    &quot;docId&quot;       : &quot;&quot;, // document ID, mandatory
-    &quot;field&quot;       : &quot;&quot;, // field name, mandatory
-    &quot;file&quot;        : &quot;&quot;  // file name, mandatory
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">application</span> <span class="err">identifier,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">client</span> <span class="err">key,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">access</span> <span class="err">key,</span> <span class="err">mandatory,</span> <span class="err">fileKey</span> <span class="err">or</span> <span class="err">masterKey</span> <span class="err">for</span> <span class="err">full</span> <span class="err">access</span>
+    <span class="nt">&quot;sess&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">session</span> <span class="err">ID,</span> <span class="err">mandatory,</span> <span class="err">if</span> <span class="err">acc</span> <span class="err">!=</span> <span class="err">masterKey</span>
+    <span class="nt">&quot;coll&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">collection</span> <span class="err">name,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;docId&quot;</span>       <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">document</span> <span class="err">ID,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;field&quot;</span>       <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">field</span> <span class="err">name,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;file&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span>  <span class="err">//</span> <span class="err">file</span> <span class="err">name</span><span class="p">,</span> <span class="err">mandatory</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <div class="admonition tip">
 <p class="admonition-title">cURL example</p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
-    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
-    &quot;acc&quot;: &quot;8c23d74f447f63ce495cc8fd9ee4d543&quot;,
-    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,git
-    &quot;coll&quot;: &quot;items&quot;,
-    &quot;docId&quot;: &quot;Y3bET236FX&quot;,
-    &quot;field&quot;: &quot;attachment&quot;,
-    &quot;file&quot;: &quot;file.txt&quot;
-}&#39; &quot;https://api.scorocode.ru/api/v1/deletefile&quot;
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
+<span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
+<span class="s1">    &quot;acc&quot;: &quot;8c23d74f447f63ce495cc8fd9ee4d543&quot;,</span>
+<span class="s1">    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,git</span>
+<span class="s1">    &quot;coll&quot;: &quot;items&quot;,</span>
+<span class="s1">    &quot;docId&quot;: &quot;Y3bET236FX&quot;,</span>
+<span class="s1">    &quot;field&quot;: &quot;attachment&quot;,</span>
+<span class="s1">    &quot;file&quot;: &quot;file.txt&quot;</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/deletefile&quot;</span>
 </pre></div>
 
 
@@ -1081,20 +1083,20 @@
 <p><strong>Responses:</strong></p>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : false
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
 </pre></div>
 
 
 </div>
 <div class="admonition failure">
 <p class="admonition-title">Error</p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Error</span> <span class="err">code</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Error text&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 
