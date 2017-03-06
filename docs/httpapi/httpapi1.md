@@ -4,57 +4,55 @@
 
 Method: `POST`
 
-Headers:
+Headers: `Content-Type: application/json`
 
-`Content-Type: application/json`
-
-```
+```JSON
 {
     "app"         : "", // application identifier, mandatory
     "cli"         : "", // client key, mandatory
-    "username"    : "", // username, mandatory, 5 characters minimum
+    "username"    : "", // username, mandatory
     "email"       : "", // email, mandatory
-    "password"    : "", // password, mandatory, 6 characters minimum
+    "password"    : "", // password, mandatory
     "doc"         : { } // user field values in the "users" collection, optional
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "username": "username",
+        "email": "useremail@domain.zone",
+        "password": "CorrectHorseStapleButton",
+        "doc": {
+            "exampleField": "Today is June, 18. It's Muriel's birthday! Muriel is now 20 years old. Happy Birthday, Muriel!",
+            "anotherExampleField": "I don't know what to say. I used to want to be an astrophysicist. Unfortunately, this is true."
+        }
+    }
+    ' "https://api.scorocode.ru/api/v1/register"
+    ```
+
 **Responses:**
 
 !!! success "Success"
-
-```
-{
-    "error"       : false
-}
-```
+    ```JSON
+    {
+        "error"       : false
+    }
+    ```
 
 !!! failure "Error"
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-!!! tip "cURL example"
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "username": "username",
-    "email": "useremail@domain.zone",
-    "password": "CorrectHorseStapleButton",
-    "doc": {
-        "exampleField": "Today is June, 18. It's Muriel's birthday! Muriel is now 20 years old. Happy Birthday, Muriel!",
-        "anotherExampleField": "I don't know what to say. I used to want to be an astrophysicist. Unfortunately, this is true."
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
     }
-}
-' "https://api.scorocode.ru/api/v1/register"
-```
+    ```
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## User authentication
 
@@ -62,11 +60,9 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
+Headers: `Content-Type: application/json`
 
-`Content-Type: application/json`
-
-```
+```JSON
 {
     "app"         : "", // application identifier, mandatory
     "cli"         : "", // client key, mandatory
@@ -75,40 +71,41 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "email": "useremail@domain.zone",
+        "password": "CorrectHorseStapleButton"
+    }' "https://api.scorocode.ru/api/v1/login"
+    ```
+
+
 **Responses:**
 
 !!! success "Success"
-
-```
-{
-    "error"       : false,
-    "result"      : {
-        "sessionId"     : "", // session ID
-        "user"          : {}  // Document containing the user
+    ```JSON
+    {
+        "error"       : false,
+        "result"      : {
+            "sessionId"     : "", // session ID
+            "user"          : {}  // Document containing the user information
+        }
     }
-}
-```
+    ```
 
 !!! failure "Error"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-!!! tip "cURL example"
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "email": "useremail@domain.zone",
-    "password": "CorrectHorseStapleButton"
-}' "https://api.scorocode.ru/api/v1/login"
-```
 
 ## User deauthentication
 
@@ -116,11 +113,9 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
+Headers: `Content-Type: application/json`
 
-`Content-Type: application/json`
-
-```
+```JSON
 {
     "app"         : "", // application identifier, mandatory
     "cli"         : "", // client key, mandatory
@@ -128,32 +123,30 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "app": "db8a1b41b8543397a798a181d9891b4c",
+        "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
+        "sess": "6rnbKKGvLLdU9Sl9"
+    }' "https://api.scorocode.ru/api/v1/logout"
+    ```
+
 **Responses:**
 
 !!! success "Success"
-
-```
-{
-    "error"       : false
-}
-```
+    ```JSON
+    {
+        "error"       : false
+    }
+    ```
 
 !!! failure "Error"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-!!! tip "cURL example"
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "sess": "6rnbKKGvLLdU9Sl9"
-}' "https://api.scorocode.ru/api/v1/logout"
-```
