@@ -982,46 +982,48 @@
 
 <div class="admonition tip">
 <p class="admonition-title">cURL example</p>
-<p>```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "app": "db8a1b41b8543397a798a181d9891b4c",
-    "cli": "ad6a8fe72ef7dfb9c46958aacb15196a",
-    "acc": "fb33e473e08515ff6b57ef6f59392e5d",
-    "sess": "rYgRe6xL2y8VccMJ",
-    "coll": "devices",
-    "query": {
-        "userId": {
-            "$exists": true
-        }
-    },
-    "msg": {
-         "data": {
-          "gcm": {
-                "protocol": "http",
-                "notification": {
-                    "body" : "great match!",
-                    "title" : "Portugal vs. Denmark",
-                    "icon" : "myicon"
-                },
-                "data": {
-                    "key": "value"
-                }
-            },
-            "apns": {
-                "aps" : {
-                    "alert" : {
-                        "title" : "Portugal vs. Denmark",
-                        "body" : "great match!",
-                        "action-loc-key" : "Watch"
-                    },
-                    "badge" : 5
-                },
-                "acme1" : "bar",
-                "acme2" : [ "bang",  "whiz" ]
-            }
-        }
-    }
-}' "https://api.scorocode.ru/api/v1/sendpush"</p>
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
+<span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
+<span class="s1">    &quot;acc&quot;: &quot;fb33e473e08515ff6b57ef6f59392e5d&quot;,</span>
+<span class="s1">    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,</span>
+<span class="s1">    &quot;coll&quot;: &quot;devices&quot;,</span>
+<span class="s1">    &quot;query&quot;: {</span>
+<span class="s1">        &quot;userId&quot;: {</span>
+<span class="s1">            &quot;$exists&quot;: true</span>
+<span class="s1">        }</span>
+<span class="s1">    },</span>
+<span class="s1">    &quot;msg&quot;: {</span>
+<span class="s1">         &quot;data&quot;: {</span>
+<span class="s1">          &quot;gcm&quot;: {</span>
+<span class="s1">                &quot;protocol&quot;: &quot;http&quot;,</span>
+<span class="s1">                &quot;notification&quot;: {</span>
+<span class="s1">                    &quot;body&quot; : &quot;great match!&quot;,</span>
+<span class="s1">                    &quot;title&quot; : &quot;Portugal vs. Denmark&quot;,</span>
+<span class="s1">                    &quot;icon&quot; : &quot;myicon&quot;</span>
+<span class="s1">                },</span>
+<span class="s1">                &quot;data&quot;: {</span>
+<span class="s1">                    &quot;key&quot;: &quot;value&quot;</span>
+<span class="s1">                }</span>
+<span class="s1">            },</span>
+<span class="s1">            &quot;apns&quot;: {</span>
+<span class="s1">                &quot;aps&quot; : {</span>
+<span class="s1">                    &quot;alert&quot; : {</span>
+<span class="s1">                        &quot;title&quot; : &quot;Portugal vs. Denmark&quot;,</span>
+<span class="s1">                        &quot;body&quot; : &quot;great match!&quot;,</span>
+<span class="s1">                        &quot;action-loc-key&quot; : &quot;Watch&quot;</span>
+<span class="s1">                    },</span>
+<span class="s1">                    &quot;badge&quot; : 5</span>
+<span class="s1">                },</span>
+<span class="s1">                &quot;acme1&quot; : &quot;bar&quot;,</span>
+<span class="s1">                &quot;acme2&quot; : [ &quot;bang&quot;,  &quot;whiz&quot; ]</span>
+<span class="s1">            }</span>
+<span class="s1">        }</span>
+<span class="s1">    }</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/sendpush&quot;</span>
+</pre></div>
+
+
 </div>
 <p><strong>Responses:</strong></p>
 <div class="admonition success">
