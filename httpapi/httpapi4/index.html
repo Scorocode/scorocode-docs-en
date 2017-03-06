@@ -936,47 +936,47 @@
 <p><strong>https://api.scorocode.ru/api/v1/sendpush</strong></p>
 <p>Method: <code>POST</code></p>
 <p>Headers: <code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;         : &quot;&quot;,     // application identifier, mandatory
-    &quot;cli&quot;         : &quot;&quot;,     // client key, mandatory
-    &quot;acc&quot;         : &quot;&quot;,     // access key, mandatory, messageKey or masterKey for full access
-    &quot;sess&quot;        : &quot;&quot;,     // session ID, mandatory, if acc != masterKey
-    &quot;coll&quot;        : &quot;&quot;,     // collection name, mandatory, &quot;users&quot;, &quot;roles&quot; or &quot;devices&quot;
-    &quot;query&quot;       : {},     // devices collection query for sampling addressees with field_name/operator:value pairs, optional
-    &quot;msg&quot;         : {
-        &quot;data&quot;    : {
-            &quot;gcm&quot;: {        // data for Android devices, optional
-                &quot;protocol&quot;: &quot;http&quot;,   // protocol to be used: &#39;http&#39; || &#39;xmpp&#39;, optional
-                &quot;notification&quot;: {
-                    &quot;body&quot; : &quot;great match!&quot;,
-                    &quot;title&quot; : &quot;Portugal vs. Denmark&quot;,
-                    &quot;icon&quot; : &quot;myicon&quot;
-                },
-                &quot;data&quot;: {
-                    &quot;key&quot;: &quot;value&quot;
-                }
-            },
-            &quot;apns&quot;: {       // data for iOs devices, optional
-                &quot;id&quot;: &quot;123e4567-e89b-12d3-a456-42665544000&quot;, // apns-id, optional
-                &quot;topic&quot;: &quot;com.sideshow.Apns2&quot;,               // apns-topic, optional
-                &quot;collapseId&quot;: &quot;my_collapse&quot;,                 // apns-collapse-id, optional
-                &quot;expiration&quot;: &quot;2006-01-02T15:04:05Z07:00&quot;,   // apns-expiration, optional
-                &quot;priority&quot;:5,                                // apns-priority, optional
-                &quot;aps&quot; : {
-                    &quot;alert&quot; : {
-                        &quot;title&quot; : &quot;Portugal vs. Denmark&quot;,
-                        &quot;body&quot; : &quot;great match!&quot;,
-                        &quot;action-loc-key&quot; : &quot;Watch&quot;
-                    },
-                    &quot;badge&quot; : 5
-                },
-                &quot;acme1&quot; : &quot;bar&quot;,
-                &quot;acme2&quot; : [ &quot;bang&quot;,  &quot;whiz&quot; ]
-            }
-        }
-    }
-}
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="err">//</span> <span class="err">application</span> <span class="err">identifier,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="err">//</span> <span class="err">client</span> <span class="err">key,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="err">//</span> <span class="err">access</span> <span class="err">key,</span> <span class="err">mandatory,</span> <span class="err">messageKey</span> <span class="err">or</span> <span class="err">masterKey</span> <span class="err">for</span> <span class="err">full</span> <span class="err">access</span>
+    <span class="nt">&quot;sess&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="err">//</span> <span class="err">session</span> <span class="err">ID,</span> <span class="err">mandatory,</span> <span class="err">if</span> <span class="err">acc</span> <span class="err">!=</span> <span class="err">masterKey</span>
+    <span class="nt">&quot;coll&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="err">//</span> <span class="err">collection</span> <span class="err">name,</span> <span class="err">mandatory,</span> <span class="nt">&quot;users&quot;</span><span class="p">,</span> <span class="nt">&quot;roles&quot;</span> <span class="err">or</span> <span class="s2">&quot;devices&quot;</span>
+    <span class="s2">&quot;query&quot;</span>       <span class="p">:</span> <span class="p">{},</span>     <span class="err">//</span> <span class="err">devices</span> <span class="err">collection</span> <span class="err">query</span> <span class="err">for</span> <span class="err">sampling</span> <span class="err">addressees</span> <span class="err">with</span> <span class="err">field_name/operator:value</span> <span class="err">pairs,</span> <span class="err">optional</span>
+    <span class="nt">&quot;msg&quot;</span>         <span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;data&quot;</span>    <span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;gcm&quot;</span><span class="p">:</span> <span class="p">{</span>        <span class="err">//</span> <span class="err">data</span> <span class="err">for</span> <span class="err">Android</span> <span class="err">devices,</span> <span class="err">optional</span>
+                <span class="nt">&quot;protocol&quot;</span><span class="p">:</span> <span class="s2">&quot;http&quot;</span><span class="p">,</span>   <span class="err">//</span> <span class="err">protocol</span> <span class="err">to</span> <span class="err">be</span> <span class="err">used:</span> <span class="err">&#39;http&#39;</span> <span class="err">||</span> <span class="err">&#39;xmpp&#39;,</span> <span class="err">optional</span>
+                <span class="nt">&quot;notification&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;body&quot;</span> <span class="p">:</span> <span class="s2">&quot;great match!&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Portugal vs. Denmark&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;icon&quot;</span> <span class="p">:</span> <span class="s2">&quot;myicon&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;apns&quot;</span><span class="p">:</span> <span class="p">{</span>       <span class="err">//</span> <span class="err">data</span> <span class="err">for</span> <span class="err">iOs</span> <span class="err">devices,</span> <span class="err">optional</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;123e4567-e89b-12d3-a456-42665544000&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">apns-id,</span> <span class="err">optional</span>
+                <span class="nt">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;com.sideshow.Apns2&quot;</span><span class="p">,</span>               <span class="err">//</span> <span class="err">apns-topic,</span> <span class="err">optional</span>
+                <span class="nt">&quot;collapseId&quot;</span><span class="p">:</span> <span class="s2">&quot;my_collapse&quot;</span><span class="p">,</span>                 <span class="err">//</span> <span class="err">apns-collapse-id,</span> <span class="err">optional</span>
+                <span class="nt">&quot;expiration&quot;</span><span class="p">:</span> <span class="s2">&quot;2006-01-02T15:04:05Z07:00&quot;</span><span class="p">,</span>   <span class="err">//</span> <span class="err">apns-expiration,</span> <span class="err">optional</span>
+                <span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>                                <span class="err">//</span> <span class="err">apns-priority,</span> <span class="err">optional</span>
+                <span class="nt">&quot;aps&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;alert&quot;</span> <span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;title&quot;</span> <span class="p">:</span> <span class="s2">&quot;Portugal vs. Denmark&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;body&quot;</span> <span class="p">:</span> <span class="s2">&quot;great match!&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;action-loc-key&quot;</span> <span class="p">:</span> <span class="s2">&quot;Watch&quot;</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;badge&quot;</span> <span class="p">:</span> <span class="mi">5</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;acme1&quot;</span> <span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;acme2&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;bang&quot;</span><span class="p">,</span>  <span class="s2">&quot;whiz&quot;</span> <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="err">}</span>
 </pre></div>
 
 
@@ -1026,60 +1026,61 @@ curl -X POST -H "Content-Type: application/json" -d '{
 <p><strong>Responses:</strong></p>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-<div class="codehilite"><pre><span></span>{
-    &quot;count&quot;       : int,       
-    &quot;error&quot;       : false
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;count&quot;</span>       <span class="p">:</span> <span class="err">int</span><span class="p">,</span>       
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
 </pre></div>
 
 
 </div>
 <div class="admonition failure">
 <p class="admonition-title">Error</p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Error</span> <span class="err">code</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Error text&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 
 </div>
+<hr />
 <h2 id="sending-sms-to-users">Sending SMS to users.</h2>
 <p><strong>https://api.scorocode.ru/api/v1/sendsms</strong></p>
 <p>Method: <code>POST</code></p>
 <p>Headers: <code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
-    &quot;app&quot;         : &quot;&quot;,     // application identifier, mandatory
-    &quot;cli&quot;         : &quot;&quot;,     // client key, mandatory
-    &quot;acc&quot;         : &quot;&quot;,     // access key, mandatory, messageKey or masterKey for full access
-    &quot;sess&quot;        : &quot;&quot;,     // session ID, mandatory, if acc != masterKey
-    &quot;coll&quot;        : &quot;&quot;,     // collection name, mandatory, &quot;users&quot; or &quot;roles&quot;
-    &quot;query&quot;       : {},     // users collection query for sampling the addressees with field_name/operator:value pairs, optional
-    &quot;msg&quot;         : {
-        &quot;text&quot;        : &quot;&quot; // sms text
-    }
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="err">//</span> <span class="err">application</span> <span class="err">identifier,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="err">//</span> <span class="err">client</span> <span class="err">key,</span> <span class="err">mandatory</span>
+    <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="err">//</span> <span class="err">access</span> <span class="err">key,</span> <span class="err">mandatory,</span> <span class="err">messageKey</span> <span class="err">or</span> <span class="err">masterKey</span> <span class="err">for</span> <span class="err">full</span> <span class="err">access</span>
+    <span class="nt">&quot;sess&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="err">//</span> <span class="err">session</span> <span class="err">ID,</span> <span class="err">mandatory,</span> <span class="err">if</span> <span class="err">acc</span> <span class="err">!=</span> <span class="err">masterKey</span>
+    <span class="nt">&quot;coll&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="err">//</span> <span class="err">collection</span> <span class="err">name,</span> <span class="err">mandatory,</span> <span class="nt">&quot;users&quot;</span> <span class="err">or</span> <span class="s2">&quot;roles&quot;</span>
+    <span class="s2">&quot;query&quot;</span>       <span class="p">:</span> <span class="p">{},</span>     <span class="err">//</span> <span class="err">users</span> <span class="err">collection</span> <span class="err">query</span> <span class="err">for</span> <span class="err">sampling</span> <span class="err">the</span> <span class="err">addressees</span> <span class="err">with</span> <span class="err">field_name/operator:value</span> <span class="err">pairs,</span> <span class="err">optional</span>
+    <span class="nt">&quot;msg&quot;</span>         <span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;text&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span> <span class="err">//</span> <span class="err">sms</span> <span class="err">text</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <div class="admonition tip">
 <p class="admonition-title">cURL example</p>
-<div class="codehilite"><pre><span></span>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
-    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
-    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
-    &quot;acc&quot;: &quot;fb33e473e08515ff6b57ef6f59392e5d&quot;,
-    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,
-    &quot;coll&quot;: &quot;users&quot;,
-    &quot;query&quot;: {
-        &quot;phone&quot;: {
-            &quot;$exists&quot;: true
-        }
-    },
-    &quot;msg&quot;: {
-        &quot;text&quot;: &quot;SMS text&quot;
-    }
-}&#39; &quot;https://api.scorocode.ru/api/v1/sendsms&quot;
+<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
+<span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
+<span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
+<span class="s1">    &quot;acc&quot;: &quot;fb33e473e08515ff6b57ef6f59392e5d&quot;,</span>
+<span class="s1">    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,</span>
+<span class="s1">    &quot;coll&quot;: &quot;users&quot;,</span>
+<span class="s1">    &quot;query&quot;: {</span>
+<span class="s1">        &quot;phone&quot;: {</span>
+<span class="s1">            &quot;$exists&quot;: true</span>
+<span class="s1">        }</span>
+<span class="s1">    },</span>
+<span class="s1">    &quot;msg&quot;: {</span>
+<span class="s1">        &quot;text&quot;: &quot;SMS text&quot;</span>
+<span class="s1">    }</span>
+<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/sendsms&quot;</span>
 </pre></div>
 
 
@@ -1087,21 +1088,21 @@ curl -X POST -H "Content-Type: application/json" -d '{
 <p><strong>Responses:</strong></p>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-<div class="codehilite"><pre><span></span>{
-    &quot;count&quot;       : int      
-    &quot;error&quot;       : false
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;count&quot;</span>       <span class="p">:</span> <span class="err">int</span>      
+    <span class="s2">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
 </pre></div>
 
 
 </div>
 <div class="admonition failure">
 <p class="admonition-title">Error</p>
-<div class="codehilite"><pre><span></span>{
-    &quot;error&quot;       : true,
-    &quot;errCode&quot;     : 4XX/5XX, // Error code
-    &quot;errMsg&quot;      : &quot;Error text&quot;
-}
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Error</span> <span class="err">code</span>
+    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Error text&quot;</span>
+<span class="p">}</span>
 </pre></div>
 
 
