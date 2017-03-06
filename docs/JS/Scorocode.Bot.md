@@ -12,15 +12,16 @@
 
 ## new Bot(botId)
 
-Конструктор sc.Bot
+Constructor sc.Bot
 
 **Возвращает**: <code>[sc.Bot](#sc.Bot)</code> - Возвращает новый экземпляр sc.Bot
 
 | Параметр | Тип | Описание |
-| --- | --- | --- |пше ыефегы
+| --- | --- | --- |
 | botId | <code>String</code> | Telegram id бота, полученный от `@BotFather` |
 
 **Пример**
+
 ```js
 var sc = require('scorocode');
 
@@ -39,13 +40,14 @@ var data = {
     }};
 bot.send(data)
 ```
+
 --------------------------------------------------------------------------
 
 <a name="sc.Bot+send"></a>
 
-## .send(pool, callbacks) 
+## .send(data) 
 
-Метод для запуска серверного кода
+Making request to Telegram Bot API
 
 | Параметр | Тип | Описание |
 | --- | --- | --- |

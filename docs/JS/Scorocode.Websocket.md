@@ -73,6 +73,7 @@ WS.on("message", onMessage(data) {
 var data = "Wello Horld";
 WS.send(data);
 ```
+
 ----------------------------------------------------------------------------------------------
 
 <a name="Scorocode.WebSocket+send"></a>
