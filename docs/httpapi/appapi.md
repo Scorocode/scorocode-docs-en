@@ -26,8 +26,6 @@ Headers: `Content-Type: application/json`
 **Responses:**
 
 !!! success "Success"
-
-!!! success "Success"
     ```JSON
     {
       "app": {
@@ -1200,7 +1198,7 @@ Headers: `Content-Type: application/json`
     ```
 
 !!! failure "Error"
-    ```
+    ```JSON
     {
         "error"       : true,
         "errCode"     : 4XX/5XX, // Error code
@@ -1220,7 +1218,7 @@ Method: `POST`
 
 Headers: `Content-Type: application/json`
 
-```
+```JSON
 {
     "app": "",               // application identifier, mandatory
     "cli": "",               // client key, mandatory
@@ -1251,7 +1249,7 @@ Headers: `Content-Type: application/json`
 **Responses:**
 
 !!! success "Success"
-    ```
+    ```JSON
     {
       "collection": {
         "id": "584e849e7e0b4e222480a282",
@@ -1348,7 +1346,7 @@ Headers: `Content-Type: application/json`
     ```
 
 !!! failure "Error"
-    ```
+    ```JSON
     {
         "error"       : true,
         "errCode"     : 4XX/5XX, // Error code
@@ -1366,7 +1364,7 @@ Method: `POST`
 
 Headers: `Content-Type: application/json`
 
-```
+```JSON
 {
     "app": "",               // application identifier, mandatory
     "cli": "",               // client key, mandatory
@@ -1391,14 +1389,14 @@ Headers: `Content-Type: application/json`
 **Responses:**
 
 !!! success "Success"
-    ```
+    ```JSON
     {
       "error": false
     }
     ```
 
 !!! failure "Error"
-    ```
+    ```JSON
     {
         "error"       : true,
         "errCode"     : 4XX/5XX, // Error code
@@ -1418,7 +1416,7 @@ Method: `POST`
 Headers: `Content-Type: application/json`
 
 
-```
+```JSON
 {
     "app": "",               // application identifier, mandatory
     "cli": "",               // client key, mandatory
@@ -1431,7 +1429,7 @@ Headers: `Content-Type: application/json`
 ```
 
 !!! tip "cURL example"
-    ```
+    ```bash
     curl -X POST -H "Content-Type: application/json" -d '{
             "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
             "app": "48f172923acd719b42c73ac3a492cfc8",
@@ -1446,7 +1444,7 @@ Headers: `Content-Type: application/json`
 **Responses:**
 
 !!! success "Success"
-    ```
+    ```JSON
     {
       "collection": {
         "id": "584e91e70c62722cf9fe2191",
@@ -1529,7 +1527,7 @@ Headers: `Content-Type: application/json`
     ```
 
 !!! failure "Error"
-    ```
+    ```JSON
     {
         "error"       : true,
         "errCode"     : 4XX/5XX, // Error code
@@ -1548,7 +1546,7 @@ Method: `POST`
 
 Headers: `Content-Type: application/json`
 
-```
+```JSON
 {
     "app": "",               // application identifier, mandatory
     "cli": "",               // client key, mandatory
@@ -1589,14 +1587,14 @@ Headers: `Content-Type: application/json`
 **Responses:**
 
 !!! success "Success"
-    ```
+    ```JSON
     {
       "error": false
     }
     ```
 
 !!! failure "Error"
-    ```
+    ```JSON
     {
         "error"       : true,
         "errCode"     : 4XX/5XX, // Error code
@@ -1615,7 +1613,7 @@ Method: `POST`
 
 Headers: `Content-Type: application/json`
 
-```
+```JSON
 {
     "app": "",               // application identifier, mandatory
     "cli": "",               // client key, mandatory
@@ -1629,7 +1627,7 @@ Headers: `Content-Type: application/json`
 
 
 !!! tip "cURL example"
-```bash
+    ```bash
     curl -X POST -H "Content-Type: application/json" -d '{
             "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
             "app": "48f172923acd719b42c73ac3a492cfc8",
@@ -1644,14 +1642,14 @@ Headers: `Content-Type: application/json`
 **Responses:**
 
 !!! success "Success"
-    ```
+    ```JSON
     {
       "error": false
     }
     ```
 
 !!! failure "Error"
-    ```
+    ```JSON
     {
         "error"       : true,
         "errCode"     : 4XX/5XX, // Error code
@@ -1669,9 +1667,7 @@ Method: `POST`
 
 Headers: `Content-Type: application/json`
 
-
-
-```
+```JSON
 {
     "app": "",               // application identifier, mandatory
     "cli": "",               // client key, mandatory
@@ -1704,7 +1700,7 @@ Headers: `Content-Type: application/json`
 **Responses:**
 
 !!! success "Success"
-    ```
+    ```JSON
     {
       "error": false,
       "field": {
@@ -1719,7 +1715,7 @@ Headers: `Content-Type: application/json`
     ```
 
 !!! failure "Error"
-    ```
+    ```JSON
     {
         "error"       : true,
         "errCode"     : 4XX/5XX, // Error code
@@ -1738,7 +1734,7 @@ Method: `POST`
 
 Headers: `Content-Type: application/json`
 
-```
+```JSON
 {
     "app": "",               // application identifier, mandatory
     "cli": "",               // client key, mandatory
@@ -1751,7 +1747,7 @@ Headers: `Content-Type: application/json`
 ```
 
 !!! tip "cURL example"
-    ```
+    ```bash
     curl -X POST -H "Content-Type: application/json" -d '{
         "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
         "app": "48f172923acd719b42c73ac3a492cfc8",
@@ -1767,7 +1763,7 @@ Headers: `Content-Type: application/json`
 **Responses:**
 
 !!! success "Success"
-    ```
+    ```JSON
     {
       "collection": {
         "id": "584e64f8982fd55332741514",
@@ -1922,8 +1918,8 @@ Headers: `Content-Type: application/json`
     }
     ```
 
-!!! success "Success"
-    ```
+!!! failure "Error"
+    ```JSON
     {
         "error"       : true,
         "errCode"     : 4XX/5XX, // Error code
@@ -1942,7 +1938,7 @@ Method: `POST`
 
 Headers: `Content-Type: application/json`
 
-```
+```JSON
 {
     "app": "",               // application identifier, mandatory
     "cli": "",               // client key, mandatory
@@ -1977,73 +1973,71 @@ Headers: `Content-Type: application/json`
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "coll": "users",                       
+        "triggers": {
+             "afterInsert": {
+                "code": "DataManager.Insert({\n  coll:'logs', \n  doc: {\n    'docId': pool.newDoc._id,\n    'collection': 'users',\n    'operation': 'register',\n    'data': pool.newDoc\n    }\n  });",       
+                "isActive": true
+            }
+        }
+    }
+    ' "https://api.scorocode.ru/api/v1/app/collections/triggers"
+    ```
+
 **Responses:**
 
 !!! success "Success"
-
-```
-{
-  "error": false,
-  "triggers": {
-    "afterFind": {
-      "code": "",
-      "isActive": false
-    },
-    "afterInsert": {
-      "code": "DataManager.Insert({\n  coll:'logs', \n  doc: {\n    'docId': pool.newDoc._id,\n    'collection': 'users',\n    'operation': 'register',\n    'data': pool.newDoc\n    }\n  });",
-      "isActive": true
-    },
-    "afterRemove": {
-      "code": "",
-      "isActive": false
-    },
-    "afterUpdate": {
-      "code": "",
-      "isActive": false
-    },
-    "beforeInsert": {
-      "code": "",
-      "isActive": false
-    },
-    "beforeRemove": {
-      "code": "",
-      "isActive": false
-    },
-    "beforeUpdate": {
-      "code": "",
-      "isActive": false
-    }
-  }
-}
-```
-
-!!! success "Success"
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "coll": "users",                       
-    "triggers": {
-         "afterInsert": {
-            "code": "DataManager.Insert({\n  coll:'logs', \n  doc: {\n    'docId': pool.newDoc._id,\n    'collection': 'users',\n    'operation': 'register',\n    'data': pool.newDoc\n    }\n  });",       
-            "isActive": true
+    ```JSON
+    {
+      "error": false,
+      "triggers": {
+        "afterFind": {
+          "code": "",
+          "isActive": false
+        },
+        "afterInsert": {
+          "code": "DataManager.Insert({\n  coll:'logs', \n  doc: {\n    'docId': pool.newDoc._id,\n    'collection': 'users',\n    'operation': 'register',\n    'data': pool.newDoc\n    }\n  });",
+          "isActive": true
+        },
+        "afterRemove": {
+          "code": "",
+          "isActive": false
+        },
+        "afterUpdate": {
+          "code": "",
+          "isActive": false
+        },
+        "beforeInsert": {
+          "code": "",
+          "isActive": false
+        },
+        "beforeRemove": {
+          "code": "",
+          "isActive": false
+        },
+        "beforeUpdate": {
+          "code": "",
+          "isActive": false
         }
+      }
     }
-}
-' "https://api.scorocode.ru/api/v1/app/collections/triggers"
-```
+    ```
+
+!!! failure "Error"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
+
 
 -------------------------------------------------------------------------------------
 
@@ -2057,7 +2051,7 @@ Headers:
 
 `Content-Type: application/json`
 
-```
+```JSON
 {
     "app": "",               // application identifier, mandatory
     "cli": "",               // client key, mandatory
@@ -2066,56 +2060,55 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "path": "/"
+    }' "https://api.scorocode.ru/api/v1/app/scripts/folders"
+    ```
+
 **Responses:**
 
 !!! success "Success"
-
-```
-{
-  "error": false,
-  "items": [
+    ```JSON
     {
-      "_id": "",
-      "name": "folder1",
-      "path": "/folder1",
-      "isScript": false
-    },
-    {
-      "_id": "",
-      "name": "folder2",
-      "path": "/folder2",
-      "isScript": false
-    },
-    {
-      "_id": "584eb26a42d52f1ba275fdb2",
-      "name": "somescript.js",
-      "path": "/somescript.js",
-      "isScript": true
+      "error": false,
+      "items": [
+        {
+          "_id": "",
+          "name": "folder1",
+          "path": "/folder1",
+          "isScript": false
+        },
+        {
+          "_id": "",
+          "name": "folder2",
+          "path": "/folder2",
+          "isScript": false
+        },
+        {
+          "_id": "584eb26a42d52f1ba275fdb2",
+          "name": "somescript.js",
+          "path": "/somescript.js",
+          "isScript": true
+        }
+      ]
     }
-  ]
-}
-```
+    ```
 
-!!! success "Success"
+!!! failure "Error"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
 
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "path": "/"
-}' "https://api.scorocode.ru/api/v1/app/scripts/folders"
-```
 
 -------------------------------------------------------------------------------------
 
@@ -2129,7 +2122,7 @@ Headers:
 
 `Content-Type: application/json`
 
-```
+```JSON
 {
     "app": "",               // application identifier, mandatory
     "cli": "",               // client key, mandatory
@@ -2138,36 +2131,34 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "path": "/folder1/newfolder"
+    }' "https://api.scorocode.ru/api/v1/app/scripts/folders/create"
+    ```
 **Responses:**
 
 !!! success "Success"
+    ```JSON
+    {
+      "error": false
+    }
+    ```
 
-```
-{
-  "error": false
-}
-```
+!!! failure "Error"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
-!!! success "Success"
 
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "path": "/folder1/newfolder"
-}' "https://api.scorocode.ru/api/v1/app/scripts/folders/create"
-```
 
 -------------------------------------------------------------------------------------
 
@@ -2177,11 +2168,9 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
+Headers: `Content-Type: application/json`
 
-`Content-Type: application/json`
-
-```
+```JSON
 {
     "app": "",               // application identifier, mandatory
     "cli": "",               // client key, mandatory
@@ -2206,14 +2195,14 @@ Headers:
 **Responses:**
 
 !!! success "Success"
-    ```
+    ```JSON
     {
       "error": false
     }
     ```
 
 !!! failure "Error"
-    ```
+    ```JSON
     {
         "error"       : true,
         "errCode"     : 4XX/5XX, // Error code
@@ -2229,11 +2218,9 @@ Headers:
 
 Method: `POST`
 
-Headers:
+Headers: `Content-Type: application/json`
 
-`Content-Type: application/json`
-
-```
+```JSON
 {
     "app": "",               // application identifier, mandatory
     "cli": "",               // client key, mandatory
@@ -2242,70 +2229,69 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "script": "584eb54142d52f1ba275fdb3"
+    }' "https://api.scorocode.ru/api/v1/app/scripts/get"
+    ```
+
 **Responses:**
 
 !!! success "Success"
-
-```
-{
-  "error": false,
-  "script": {
-    "_id": "584eb54142d52f1ba275fdb3",
-    "appId": "584e64f8982fd55332741516",
-    "name": "AYBABTU.js",
-    "path": "/AYBABTU.js",
-    "description": "",
-    "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",
-    "jobStartAt": "2016-12-12T17:33:00+03:00",
-    "isActiveJob": false,
-    "jobType": "once",
-    "repeat": {
-      "custom": {
-        "days": 0,
-        "hours": 0,
-        "minutes": 0
-      },
-      "daily": {
-        "on": [],
-        "hours": 0,
-        "minutes": 0
-      },
-      "monthly": {
-        "on": [],
-        "days": [],
-        "lastDate": false,
-        "hours": 0,
-        "minutes": 0
+    ```JSON
+    {
+      "error": false,
+      "script": {
+        "_id": "584eb54142d52f1ba275fdb3",
+        "appId": "584e64f8982fd55332741516",
+        "name": "AYBABTU.js",
+        "path": "/AYBABTU.js",
+        "description": "",
+        "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",
+        "jobStartAt": "2016-12-12T17:33:00+03:00",
+        "isActiveJob": false,
+        "jobType": "once",
+        "repeat": {
+          "custom": {
+            "days": 0,
+            "hours": 0,
+            "minutes": 0
+          },
+          "daily": {
+            "on": [],
+            "hours": 0,
+            "minutes": 0
+          },
+          "monthly": {
+            "on": [],
+            "days": [],
+            "lastDate": false,
+            "hours": 0,
+            "minutes": 0
+          }
+        },
+        "nextRun": "2016-12-12T17:33:00+03:00",
+        "ACL": [
+          "*"
+        ]
       }
-    },
-    "nextRun": "2016-12-12T17:33:00+03:00",
-    "ACL": [
-      "*"
-    ]
-  }
-}
-```
+    }
+    ```
 
-!!! success "Success"
+!!! failure "Error"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
 
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "script": "584eb54142d52f1ba275fdb3"
-}' "https://api.scorocode.ru/api/v1/app/scripts/get"
-```
 
 -------------------------------------------------------------------------------------
 
@@ -2315,11 +2301,9 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
+Headers: `Content-Type: application/json`
 
-`Content-Type: application/json`
-
-```
+```JSON
 {
     "app": "",               // application identifier, mandatory
     "cli": "",               // client key, mandatory
@@ -2355,75 +2339,74 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "cloudCode": {
+            "path": "/AYBABTU.js",
+            "description": "All your base",      
+            "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",             
+            "jobStartAt": "2016-12-13T17:33:00+03:00", 
+            "isActiveJob": false,    
+            "jobType": "custom",           
+            "repeat": {             
+                "custom": {
+                    "days": 0,
+                    "hours": 0,
+                    "minutes": 5
+                }
+            },
+            "ACL": ["*"]
+        }
+    }' "https://api.scorocode.ru/api/v1/app/scripts/create"
+    ```
+
 **Responses:**
 
 !!! success "Success"
-
-```
-{
-  "error": false,
-  "script": {
-    "_id": "584fad1422a5482feb5b31ab",
-    "appId": "584e64f8982fd55332741516",
-    "name": "AYBABTU.js",
-    "path": "/AYBABTU.js",
-    "description": "All your base",
-    "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",
-    "jobStartAt": "2016-12-13T17:33:00+03:00",
-    "isActiveJob": false,
-    "jobType": "custom",
-    "repeat": {
-      "custom": {
-        "days": 0,
-        "hours": 0,
-        "minutes": 5
-      },
-      "daily": null,
-      "monthly": null
-    },
-    "nextRun": "0001-01-01T00:00:00Z",
-    "ACL": [
-      "*"
-    ]
-  }
-}
-```
-
-!!! success "Success"
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "cloudCode": {
+    ```JSON
+    {
+      "error": false,
+      "script": {
+        "_id": "584fad1422a5482feb5b31ab",
+        "appId": "584e64f8982fd55332741516",
+        "name": "AYBABTU.js",
         "path": "/AYBABTU.js",
-        "description": "All your base",      
-        "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",             
-        "jobStartAt": "2016-12-13T17:33:00+03:00", 
-        "isActiveJob": false,    
-        "jobType": "custom",           
-        "repeat": {             
-            "custom": {
-                "days": 0,
-                "hours": 0,
-                "minutes": 5
-            }
+        "description": "All your base",
+        "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",
+        "jobStartAt": "2016-12-13T17:33:00+03:00",
+        "isActiveJob": false,
+        "jobType": "custom",
+        "repeat": {
+          "custom": {
+            "days": 0,
+            "hours": 0,
+            "minutes": 5
+          },
+          "daily": null,
+          "monthly": null
         },
-        "ACL": ["*"]
+        "nextRun": "0001-01-01T00:00:00Z",
+        "ACL": [
+          "*"
+        ]
+      }
     }
-}' "https://api.scorocode.ru/api/v1/app/scripts/create"
-```
+    ```
+
+!!! failure "Error"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
+
+
 
 -------------------------------------------------------------------------------------
 
@@ -2433,11 +2416,9 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
+Headers: `Content-Type: application/json`
 
-`Content-Type: application/json`
-
-```
+```JSON
 {
 
     {
@@ -2476,63 +2457,62 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "script": "584fad1422a5482feb5b31ab",
+        "cloudCode": {
+            "isActiveJob": true    
+        }
+    }' "https://api.scorocode.ru/api/v1/app/scripts/update"
+    ```
+
 **Responses:**
 
 !!! success "Success"
-
-```
-{
-  "error": false,
-  "script": {
-    "_id": "584fad1422a5482feb5b31ab",
-    "appId": "584e64f8982fd55332741516",
-    "name": "AYBABTU.js",
-    "path": "/AYBABTU.js",
-    "description": "All your base",
-    "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",
-    "jobStartAt": "2016-12-13T17:33:00+03:00",
-    "isActiveJob": true,
-    "jobType": "custom",
-    "repeat": {
-      "custom": {
-        "days": 0,
-        "hours": 0,
-        "minutes": 5
-      },
-      "daily": null,
-      "monthly": null
-    },
-    "nextRun": "0001-01-01T00:00:00Z",
-    "ACL": [
-      "*"
-    ]
-  }
-}
-```
-
-!!! success "Success"
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "script": "584fad1422a5482feb5b31ab",
-    "cloudCode": {
-        "isActiveJob": true    
+    ```JSON
+    {
+      "error": false,
+      "script": {
+        "_id": "584fad1422a5482feb5b31ab",
+        "appId": "584e64f8982fd55332741516",
+        "name": "AYBABTU.js",
+        "path": "/AYBABTU.js",
+        "description": "All your base",
+        "code": "console.log(\"QWxsIHlvdXIgYmFzZSBhcmUgYmVsb25nIHRvIHVz\");",
+        "jobStartAt": "2016-12-13T17:33:00+03:00",
+        "isActiveJob": true,
+        "jobType": "custom",
+        "repeat": {
+          "custom": {
+            "days": 0,
+            "hours": 0,
+            "minutes": 5
+          },
+          "daily": null,
+          "monthly": null
+        },
+        "nextRun": "0001-01-01T00:00:00Z",
+        "ACL": [
+          "*"
+        ]
+      }
     }
-}' "https://api.scorocode.ru/api/v1/app/scripts/update"
-```
+    ```
+
+!!! failure "Error"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
+
+
 
 -------------------------------------------------------------------------------------
 
@@ -2546,7 +2526,7 @@ Headers:
 
 `Content-Type: application/json`
 
-```
+```JSON
 {
     "app": "",               // application identifier, mandatory
     "cli": "",               // client key, mandatory
@@ -2555,36 +2535,35 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "script": "584fad1422a5482feb5b31ab"
+    }' "https://api.scorocode.ru/api/v1/app/scripts/delete"
+    ```
+
 **Responses:**
 
 !!! success "Success"
+    ```JSON
+    {
+      "error": false
+    }
+    ```
 
-```
-{
-  "error": false
-}
-```
+!!! failure "Error"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
-!!! success "Success"
 
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "script": "584fad1422a5482feb5b31ab"
-}' "https://api.scorocode.ru/api/v1/app/scripts/delete"
-```
 
 -------------------------------------------------------------------------------------
 
@@ -2594,11 +2573,9 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
+Headers: `Content-Type: application/json`
 
-`Content-Type: application/json`
-
-```
+```JSON
 {
     "app": "",               // application identifier, mandatory
     "cli": "",               // client key, mandatory
@@ -2606,45 +2583,44 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb"
+    }' "https://api.scorocode.ru/api/v1/bots"
+    ```
+
 **Responses:**
 
 !!! success "Success"
-
-```
-{
-  "error": false,
-  "items": [
+    ```JSON
     {
-      "_id": "584fb8710c62722cf9fe2617",
-      "name": "botobot",
-      "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
-      "appId": "584e64f8982fd55332741516",
-      "scriptId": "584fb52f0c62722cf9fe2604",
-      "isActive": false
+      "error": false,
+      "items": [
+        {
+          "_id": "584fb8710c62722cf9fe2617",
+          "name": "botobot",
+          "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
+          "appId": "584e64f8982fd55332741516",
+          "scriptId": "584fb52f0c62722cf9fe2604",
+          "isActive": false
+        }
+      ]
     }
-  ]
-}
-```
+    ```
 
-!!! success "Success"
+!!! failure "Error"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
 
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
 
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb"
-}' "https://api.scorocode.ru/api/v1/bots"
-```
 
 -------------------------------------------------------------------------------------
 
@@ -2654,11 +2630,9 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
+Headers: `Content-Type: application/json`
 
-`Content-Type: application/json`
-
-```
+```JSON
 {
     "app": "",               // application identifier, mandatory
     "cli": "",               // client key, mandatory
@@ -2672,49 +2646,48 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "bot":{
+            "name":"botobot",
+            "isActive":false,
+            "botId":"123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
+            "scriptId":"584fb52f0c62722cf9fe2604"
+        }
+    }' "https://api.scorocode.ru/api/v1/bots/create"
+    ```
+
+
 **Responses:**
 
 !!! success "Success"
-
-```
-{
-  "bot": {
-    "_id": "584fb8710c62722cf9fe2617",
-    "name": "botobot",
-    "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
-    "appId": "584e64f8982fd55332741516",
-    "scriptId": "584fb52f0c62722cf9fe2604",
-    "isActive": false
-  },
-  "error": false
-}
-```
-
-!!! success "Success"
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "bot":{
-        "name":"botobot",
-        "isActive":false,
-        "botId":"123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
-        "scriptId":"584fb52f0c62722cf9fe2604"
+    ```JSON
+    {
+      "bot": {
+        "_id": "584fb8710c62722cf9fe2617",
+        "name": "botobot",
+        "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11",
+        "appId": "584e64f8982fd55332741516",
+        "scriptId": "584fb52f0c62722cf9fe2604",
+        "isActive": false
+      },
+      "error": false
     }
-}' "https://api.scorocode.ru/api/v1/bots/create"
-```
+    ```
+
+!!! failure "Error"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
+
 
 -------------------------------------------------------------------------------------
 
@@ -2724,11 +2697,9 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Method: `POST`
 
-Headers:
+Headers: `Content-Type: application/json`
 
-`Content-Type: application/json`
-
-```
+```JSON
 {
     "app": "",               // application identifier, mandatory
     "cli": "",               // client key, mandatory
@@ -2743,51 +2714,50 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "bot": {
+            "_id": "584fbd067e0b4e222480a7e4",
+            "name": "botobot",
+            "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew12",
+            "appId": "584e64f8982fd55332741516",
+            "scriptId": "584fb52f0c62722cf9fe2604",
+            "isActive": false
+        }
+    }' "https://api.scorocode.ru/api/v1/bots/update"
+    ```
+
+
 **Responses:**
 
 !!! success "Success"
-
-```
-{
-  "bot": {
-    "_id": "584fbd067e0b4e222480a7e4",
-    "name": "botobot",
-    "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew12",
-    "appId": "584e64f8982fd55332741516",
-    "scriptId": "584fb52f0c62722cf9fe2604",
-    "isActive": false
-  },
-  "error": false
-}
-```
-
-!!! success "Success"
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "bot": {
+    ```JSON
+    {
+      "bot": {
         "_id": "584fbd067e0b4e222480a7e4",
         "name": "botobot",
         "botId": "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew12",
         "appId": "584e64f8982fd55332741516",
         "scriptId": "584fb52f0c62722cf9fe2604",
         "isActive": false
+      },
+      "error": false
     }
-}' "https://api.scorocode.ru/api/v1/bots/update"
-```
+    ```
+
+!!! failure "Error"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
+
 
 -------------------------------------------------------------------------------------
 
@@ -2812,35 +2782,33 @@ Headers:
 }
 ```
 
+!!! tip "cURL example"
+    ```bash
+    curl -X POST -H "Content-Type: application/json" -d '{
+        "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
+        "app": "48f172923acd719b42c73ac3a492cfc8",
+        "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
+        "bot": {
+            "_id": "584fbd067e0b4e222480a7e4"
+        }
+    }' "https://api.scorocode.ru/api/v1/bots/delete"
+    ```
+
 **Responses:**
 
 !!! success "Success"
-
-```
-{
-  "error": false
-}
-```
-
-!!! success "Success"
-
-```
-{
-    "error"       : true,
-    "errCode"     : 4XX/5XX, // Error code
-    "errMsg"      : "Error text"
-}
-```
-
-**cURL example**
-
-```
-curl -X POST -H "Content-Type: application/json" -d '{
-    "acc": "ffe86fefg25fbklacsdee8cd4c59644a",
-    "app": "48f172923acd719b42c73ac3a492cfc8",
-    "cli": "d6859f41223c9997ff78c6b4vb3a96bb",
-    "bot": {
-        "_id": "584fbd067e0b4e222480a7e4"
+    ```JSON
+    {
+      "error": false
     }
-}' "https://api.scorocode.ru/api/v1/bots/delete"
-```
+    ```
+
+!!! failure "Error"
+    ```JSON
+    {
+        "error"       : true,
+        "errCode"     : 4XX/5XX, // Error code
+        "errMsg"      : "Error text"
+    }
+    ```
+
