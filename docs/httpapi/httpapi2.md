@@ -305,7 +305,7 @@ Headers: `Content-Type: application/json`
 !!! success "Success"
     ```JSON
     {
-        "error"       : false
+        "error"       : false,
         "result"      : string // base64 encoded string with BSON formatted data  
     }
     ```
@@ -361,7 +361,7 @@ Headers: `Content-Type: application/json`
 !!! success "Success"
     ```JSON
     {
-        "error"       : false
+        "error"       : false,
         "result"      : int // Returns the count of documents that would match a query
     }
     ```

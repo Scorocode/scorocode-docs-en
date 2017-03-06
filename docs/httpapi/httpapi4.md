@@ -160,7 +160,7 @@ Headers: `Content-Type: application/json`
 !!! success "Success"
     ```JSON
     {
-        "count"       : int      
+        "count"       : int,      
         "error"       : false
     }
     ```
