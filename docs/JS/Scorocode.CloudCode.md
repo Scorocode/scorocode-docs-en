@@ -84,11 +84,9 @@ Prompt.get(['email', 'password', 'username'], function (err, result) {
 
 ## Debug
 
-При использовании JavaScript SDK возможна отладка серверных скриптов. Для этого при инициализации библиотеки с помощью
-<code>Scorocode.Init({})</code> необходимо передать еще два ключа: <code>MasterKey</code> и <code>WebSocketKey</code>. Это связано с тем, что
-консольный вывод выполняемого на сервере скрипта перенаправляется через websockets на вызывающего клиента.
+When you use JavaScript SDK it can be possible to debug server-side scripts. To access debug mode you need to initialise sdk <code>Scorocode.Init({})</code> with MasterKey and WebsocketKey. 
 
-Для включения режима отладки также необходимо создать объект <code>Logger</code>.
+You need to create <code>Logger</code> object to activate debug mode.
 
 **Example**
 

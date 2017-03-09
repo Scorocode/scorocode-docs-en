@@ -59,7 +59,7 @@ See.
 
 - <code>Error</code> "Invalid collection name" 
 
-```
+```object
 { 
     errCode: 404,
     errMsg: 'Invalid collection: \'items\'',
@@ -107,7 +107,7 @@ getItem.getById("NseSaqqd5v")
 
 **Returns**: <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code> -  Returns promise that returns the requested object.
 
-```
+```object
 {
     _id: 'NseSaqqd5v',
     name: 'Water chip',
@@ -116,7 +116,7 @@ getItem.getById("NseSaqqd5v")
     updatedAt: Mon May 23 2016 19:37:04 GMT+0300 (RTZ 2 (зима)),
     readACL: [],
     updateACL: [],
-    removeACL: [] 
+    removeACL: []
 }
 ```
 
@@ -263,15 +263,17 @@ questItem.save()
 
 **Returns**: <code>[Promise.&lt;Scorocode.Object&gt;](#Scorocode.Object)</code> - Returns promise that returns the saved object.
 
-```
- { _id: 'NseSaqqd5v',
-  name: 'Water chip',
-  relatedquests: [ 'huNr3L7QDh' ],
-  createdAt: Mon May 23 2016 19:37:04 GMT+0300 (RTZ 2 (зима)),
-  updatedAt: Mon May 23 2016 19:37:04 GMT+0300 (RTZ 2 (зима)),
-  readACL: [],
-  updateACL: [],
-  removeACL: [] }
+```object
+ { 
+    _id: 'NseSaqqd5v',
+    name: 'Water chip',
+    relatedquests: [ 'huNr3L7QDh' ],
+    createdAt: Mon May 23 2016 19:37:04 GMT+0300 (RTZ 2 (зима)),
+    updatedAt: Mon May 23 2016 19:37:04 GMT+0300 (RTZ 2 (зима)),
+    readACL: [],
+    updateACL: [],
+    removeACL: [] 
+}
 ```
 
 ----------------------------------------------------------------------------------------------

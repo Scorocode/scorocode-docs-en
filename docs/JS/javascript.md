@@ -38,7 +38,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
-import Scorocode from 'scorocode' // <- добавить импорт SDK Scorocode
+import Scorocode from 'scorocode' 
 
 // Initiate SDK
 Scorocode.Init({
