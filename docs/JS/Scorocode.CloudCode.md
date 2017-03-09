@@ -24,6 +24,7 @@ Creates a new subclass of Scorocode.CloudCode() for the given script identifier
 | id | <code>String</code> | Server-side script identifier |
 | logger | <code>Object</code> | Logger object for debugging |
 
+
 ----------------------------------------------------------------------------------------------
 
 <a name="Scorocode.CloudCode+run"></a>
@@ -104,20 +105,14 @@ var Prompt = require('prompt');
 Prompt.start();
 Prompt.get(['email', 'password', 'username'], function (err, result) {
 
-// Создадим новый экземпляр запроса к серверному скрипту "574860d2781267d34f7a2415".
-// Вторым параметром передаем вновь созданный объект Logger
 var newUserRegistration = new Scorocode.CloudCode("574860d2781267d34f7a2415", {logger: new Scorocode.Logger()});
 
-// Определим данные, которые будут переданы скрипту при запуске
 var pool = {
     "email":result.email,
     "password":result.password,
     "username":result.username
 };
 
-// Запустим выполнение серверного кода
-// Вторым параметром передаем true - включаем режим отладки
-// Теперь если в скрипте написать console.log("Hello, Scorocode!"), это выведется в вашу консоль
 newUserRegistration.run(pool, true)
     .then((success)=>{
         console.log(success);

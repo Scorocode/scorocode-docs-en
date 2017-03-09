@@ -17,9 +17,6 @@
 | --- | --- | --- |
 | ApplicationID | <code>String</code> | Application identifier |
 | JavaScriptKey | <code>String</code> | Client key for JavaScript platform |
-| AndroidKey | <code>String</code> | Client key for Android platform |
-| iOsKey | <code>String</code> | Client key for iOs platform |
-| WinPhoneKey | <code>String</code> | Client key for Windows Phone platform |
 | FileKey | <code>String</code> | File access key  |
 | ScriptKey | <code>String</code> | Server-side scripts access key  |
 | MessageKey | <code>String</code> | Messages access key  |

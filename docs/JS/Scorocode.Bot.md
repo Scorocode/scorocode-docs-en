@@ -1,6 +1,5 @@
 <a name="sc.Bot"></a>
 
-Содержание
 
 * [.Bot](#sc.Bot)
     * [new Bot(botId)](#new_sc.Bot)
@@ -14,29 +13,29 @@
 
 Constructor sc.Bot
 
-**Возвращает**: <code>[sc.Bot](#sc.Bot)</code> - Возвращает новый экземпляр sc.Bot
+**Returns**: <code>[sc.Bot](#sc.Bot)</code> - returns the `sc.Bot`
 
-| Параметр | Тип | Описание |
+| Parameter | Type | Description |
 | --- | --- | --- |
-| botId | <code>String</code> | Telegram id бота, полученный от `@BotFather` |
+| botId | <code>String</code> | Telegram Bot identifier `@BotFather` |
 
-**Пример**
+**Example**
 
 ```js
 var sc = require('scorocode');
 
 sc.Init({
-    ApplicationID: "xxx", // <- заменить xxx на ключ appId приложения
-    JavaScriptKey: "xxx", // <- заменить xxx на ключ javascript приложения
-    MasterKey: "xxx" // <- заменить xxx на ключ masterKey приложения
+    ApplicationID: "xxx", // <- replace xxx with ApplicationID  key
+    JavaScriptKey: "xxx", // <- replace xxx with JavaScriptKey  key
+    MasterKey: "xxx" // <- replace xxx with MasterKey
 });
 
 var bot = new sc.Bot("321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg");
 
 var data = {
-    "method": "methodname", //название метода Telegram bot API 
+    "method": "methodname", // Telegram bot API method name 
     "method_params": {
-        // параметры метода Telegram Bot API
+        // Telegram Bot API method params
     }};
 bot.send(data)
 ```
@@ -49,34 +48,34 @@ bot.send(data)
 
 Making request to Telegram Bot API
 
-| Параметр | Тип | Описание |
+| Parameter | Type | Description |
 | --- | --- | --- |
-| data | <code>Object</code> | Объект, содержащий данные для передачи Telegram Bot API |
+| data | <code>Object</code> | Object, containing data to request Telegram Bot API |
 
-Свойства параметра `data`
+`data` object properties.
 
-| Имя | Тип | Описание |
+| Name | Type | Description |
 | --- | --- | --- |
-| method | <code>String</code> | Название метода Telegram bot API  |
-| method_params | <code>Object</code> | Объект с параметрами для указанного метода |
+| method | <code>String</code> |  Telegram bot API method name   |
+| method_params | <code>Object</code> |  Telegram Bot API method params |
 
-**Пример**
+**Example**
 
 ```js
 var sc = require('scorocode');
 
 sc.Init({
-    ApplicationID: "xxx", // <- заменить xxx на ключ appId приложения
-    JavaScriptKey: "xxx", // <- заменить xxx на ключ javascript приложения
-    MasterKey: "xxx" // <- заменить xxx на ключ masterKey приложения
+    ApplicationID: "xxx", // <- replace xxx with ApplicationID  key
+    JavaScriptKey: "xxx", // <- replace xxx with JavaScriptKey  key
+    MasterKey: "xxx" // <- replace xxx with MasterKey
 });
 
 var bot = new sc.Bot("321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg");
 
 var data = {
-    "method": "methodname", //название метода Telegram bot API 
+    "method": "methodname", // Telegram bot API method name 
     "method_params": {
-        // параметры метода Telegram Bot API
+        // Telegram Bot API method params
     }};
 
 bot.send(data);

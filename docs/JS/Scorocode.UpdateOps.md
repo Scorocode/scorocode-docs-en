@@ -42,7 +42,7 @@ Items.notEqualTo("price", 42)
             console.log(updated);
         }) 
         .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
+            console.log("Something went wrong: \n", error)
         });
 ```
 
@@ -158,14 +158,14 @@ var updateItems = new Scorocode.UpdateOps("items");
 Items.exists("arrayField")
     .find()
         .then((result) => {
-            updateItems.pull("arrayField", {"Удалить этот объект": true});
+            updateItems.pull("arrayField", {"remove": true});
             return Items.update(updateItems)
         })
         .then((updated) => {
             console.log(updated);
         }) 
         .catch((error) => {
-            console.log("Что-то пошло не так: \n", error)
+            console.log("Something went wrong \n", error)
         });
 ```
 
@@ -246,7 +246,7 @@ var updateItems = new Scorocode.UpdateOps("items");
 Items.exists("arrayField")
     .find()
         .then((result) => {
-        	updateItems.addToSet("arrayField", ["First element of new element", {"isSecond": true}]);
+        	updateItems.addToSet("arrayField", ["First element of new element", {"second": true}]);
             return Items.update(updateItems)
         })
         .then((updated) => {

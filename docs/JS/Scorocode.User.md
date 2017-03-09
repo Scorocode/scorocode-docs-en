@@ -46,6 +46,7 @@ Method for application user registration.
 
 
 **Example**
+
 ```js
 var Scorocode = require('scorocode');
 Scorocode.Init({
@@ -79,7 +80,7 @@ Method for application user authentication and user session retrieval.
 | --- | --- | --- | --- | --- |
 | email    | <code>String</code>| Mandatory  | User email                                   | "user@domain.zone"          | 
 | password | <code>String</code>| Mandatory  | User password                                | "CorrectHorseBatteryStaple" |
-| callback | <code>Object</code>|            | Success and error callbacks for the executed query. |                             |
+| callback | <code>Object</code>| Optional | Success and error callbacks for the executed query. |                             |
 
 **Example**
 

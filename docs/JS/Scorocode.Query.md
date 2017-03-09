@@ -106,6 +106,7 @@ data.find()
 - "skip" - <code>Number</code>  - How many documents were skipped during the sampling
 - "result" - <code>Array</code>  - Obtained data array
 
+
 ```
 { 
     error: false,
@@ -220,6 +221,7 @@ Items.notEqualTo("price", 42)
     - "count" - <code>Number</code>  - Number of modified objects
     - "docs" - <code>Array</code>  - _id array of modified objects
 
+
 ```
 { error: false,
   result:
@@ -237,6 +239,7 @@ Items.notEqualTo("price", 42)
     } 
 }
 ```
+
 ----------------------------------------------------------------------------------------------
 
 <a name="Scorocode.Query+remove"></a>
@@ -790,7 +793,7 @@ Scorocode.Init({
 });
 
 var getItems = new Scorocode.Query("items");
-getItems.endsWith("name", "чип");
+getItems.endsWith("name", "waterchip");
     .find()
         .then((result) => {
             console.log(result) 

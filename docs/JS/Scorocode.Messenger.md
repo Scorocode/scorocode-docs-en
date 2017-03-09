@@ -15,7 +15,7 @@ Class for message sending
 
 **Example**
 ```js
-var Broadcast = new Scorocode.Messenger();
+var broadcast = new Scorocode.Messenger();
 ```
 
 ----------------------------------------------------------------------------------------------
@@ -42,10 +42,10 @@ Scorocode.Init({
     MessageKey: "messageKey"
 });
 
-var Devices = new Scorocode.Query("devices");
-var Broadcast = new Scorocode.Messenger();
+var devices = new Scorocode.Query("devices");
+var broadcast = new Scorocode.Messenger();
 Broadcast.sendPush({
-        where: Devices,
+        where: devices,
         data: {
             "data": {
                 "message": "PUSH text!",
@@ -97,8 +97,8 @@ Scorocode.Init({
 });
 
 var findUsers = new Scorocode.Query("users");
-var Broadcast = new Scorocode.Messenger();
-Broadcast.sendPush({
+var broadcast = new Scorocode.Messenger();
+broadcast.sendPush({
         where: findUsers,
         data: {
             "text": "SMS text"     
