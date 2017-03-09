@@ -1113,7 +1113,7 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">updated</span><span class="p">);</span>
         <span class="p">})</span> 
         <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Something went wrong: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
 
@@ -1257,14 +1257,14 @@
 <span class="nx">Items</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
         <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">updateItems</span><span class="p">.</span><span class="nx">pull</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;Удалить этот объект&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
+            <span class="nx">updateItems</span><span class="p">.</span><span class="nx">pull</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;remove&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
             <span class="k">return</span> <span class="nx">Items</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">updateItems</span><span class="p">)</span>
         <span class="p">})</span>
         <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">updated</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">updated</span><span class="p">);</span>
         <span class="p">})</span> 
         <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Что-то пошло не так: \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Something went wrong \n&quot;</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
 
@@ -1368,7 +1368,7 @@
 <span class="nx">Items</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
         <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">updateItems</span><span class="p">.</span><span class="nx">addToSet</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;First element of new element&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;isSecond&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">}]);</span>
+            <span class="nx">updateItems</span><span class="p">.</span><span class="nx">addToSet</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;First element of new element&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;second&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">}]);</span>
             <span class="k">return</span> <span class="nx">Items</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">updateItems</span><span class="p">)</span>
         <span class="p">})</span>
         <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">updated</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>

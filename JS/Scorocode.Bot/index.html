@@ -933,7 +933,6 @@
                   <h1>Scorocode.Bot</h1>
                 
                 <p><a name="sc.Bot"></a></p>
-<p>Содержание</p>
 <ul>
 <li><a href="#sc.Bot">.Bot</a><ul>
 <li><a href="#new_sc.Bot">new Bot(botId)</a></li>
@@ -945,38 +944,38 @@
 <p><a name="new_sc.Bot"></a></p>
 <h2 id="new-botbotid">new Bot(botId)</h2>
 <p>Constructor sc.Bot</p>
-<p><strong>Возвращает</strong>: <code><a href="#sc.Bot">sc.Bot</a></code> - Возвращает новый экземпляр sc.Bot</p>
+<p><strong>Returns</strong>: <code><a href="#sc.Bot">sc.Bot</a></code> - returns the <code>sc.Bot</code></p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Описание</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>botId</td>
 <td><code>String</code></td>
-<td>Telegram id бота, полученный от <code>@BotFather</code></td>
+<td>Telegram Bot identifier <code>@BotFather</code></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ appId приложения</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ javascript приложения</span>
-    <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span> <span class="c1">// &lt;- заменить xxx на ключ masterKey приложения</span>
+    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- replace xxx with ApplicationID  key</span>
+    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- replace xxx with JavaScriptKey  key</span>
+    <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span> <span class="c1">// &lt;- replace xxx with MasterKey</span>
 <span class="p">});</span>
 
 <span class="kd">var</span> <span class="nx">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Bot</span><span class="p">(</span><span class="s2">&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;method&quot;</span><span class="o">:</span> <span class="s2">&quot;methodname&quot;</span><span class="p">,</span> <span class="c1">//название метода Telegram bot API </span>
+    <span class="s2">&quot;method&quot;</span><span class="o">:</span> <span class="s2">&quot;methodname&quot;</span><span class="p">,</span> <span class="c1">// Telegram bot API method name </span>
     <span class="s2">&quot;method_params&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="c1">// параметры метода Telegram Bot API</span>
+        <span class="c1">// Telegram Bot API method params</span>
     <span class="p">}};</span>
 <span class="nx">bot</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
 </pre></div>
@@ -989,56 +988,56 @@
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Описание</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>data</td>
 <td><code>Object</code></td>
-<td>Объект, содержащий данные для передачи Telegram Bot API</td>
+<td>Object, containing data to request Telegram Bot API</td>
 </tr>
 </tbody>
 </table>
-<p>Свойства параметра <code>data</code></p>
+<p><code>data</code> object properties.</p>
 <table>
 <thead>
 <tr>
-<th>Имя</th>
-<th>Тип</th>
-<th>Описание</th>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>method</td>
 <td><code>String</code></td>
-<td>Название метода Telegram bot API</td>
+<td>Telegram bot API method name</td>
 </tr>
 <tr>
 <td>method_params</td>
 <td><code>Object</code></td>
-<td>Объект с параметрами для указанного метода</td>
+<td>Telegram Bot API method params</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 
 <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ appId приложения</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- заменить xxx на ключ javascript приложения</span>
-    <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span> <span class="c1">// &lt;- заменить xxx на ключ masterKey приложения</span>
+    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- replace xxx with ApplicationID  key</span>
+    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- replace xxx with JavaScriptKey  key</span>
+    <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span> <span class="c1">// &lt;- replace xxx with MasterKey</span>
 <span class="p">});</span>
 
 <span class="kd">var</span> <span class="nx">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Bot</span><span class="p">(</span><span class="s2">&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;method&quot;</span><span class="o">:</span> <span class="s2">&quot;methodname&quot;</span><span class="p">,</span> <span class="c1">//название метода Telegram bot API </span>
+    <span class="s2">&quot;method&quot;</span><span class="o">:</span> <span class="s2">&quot;methodname&quot;</span><span class="p">,</span> <span class="c1">// Telegram bot API method name </span>
     <span class="s2">&quot;method_params&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="c1">// параметры метода Telegram Bot API</span>
+        <span class="c1">// Telegram Bot API method params</span>
     <span class="p">}};</span>
 
 <span class="nx">bot</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>

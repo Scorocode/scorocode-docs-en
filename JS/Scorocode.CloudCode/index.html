@@ -1070,20 +1070,14 @@
 <span class="nx">Prompt</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 <span class="nx">Prompt</span><span class="p">.</span><span class="nx">get</span><span class="p">([</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;username&#39;</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
 
-<span class="c1">// Создадим новый экземпляр запроса к серверному скрипту &quot;574860d2781267d34f7a2415&quot;.</span>
-<span class="c1">// Вторым параметром передаем вновь созданный объект Logger</span>
 <span class="kd">var</span> <span class="nx">newUserRegistration</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">CloudCode</span><span class="p">(</span><span class="s2">&quot;574860d2781267d34f7a2415&quot;</span><span class="p">,</span> <span class="p">{</span><span class="nx">logger</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Logger</span><span class="p">()});</span>
 
-<span class="c1">// Определим данные, которые будут переданы скрипту при запуске</span>
 <span class="kd">var</span> <span class="nx">pool</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;email&quot;</span><span class="o">:</span><span class="nx">result</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span>
     <span class="s2">&quot;password&quot;</span><span class="o">:</span><span class="nx">result</span><span class="p">.</span><span class="nx">password</span><span class="p">,</span>
     <span class="s2">&quot;username&quot;</span><span class="o">:</span><span class="nx">result</span><span class="p">.</span><span class="nx">username</span>
 <span class="p">};</span>
 
-<span class="c1">// Запустим выполнение серверного кода</span>
-<span class="c1">// Вторым параметром передаем true - включаем режим отладки</span>
-<span class="c1">// Теперь если в скрипте написать console.log(&quot;Hello, Scorocode!&quot;), это выведется в вашу консоль</span>
 <span class="nx">newUserRegistration</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="nx">pool</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>

@@ -960,7 +960,7 @@
 <h2 id="new-messenger">new Messenger()</h2>
 <p>Class for message sending</p>
 <p><strong>Example</strong>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
 </pre></div>
 </p>
 <hr />
@@ -996,10 +996,10 @@
     <span class="nx">MessageKey</span><span class="o">:</span> <span class="s2">&quot;messageKey&quot;</span>
 <span class="p">});</span>
 
-<span class="kd">var</span> <span class="nx">Devices</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;devices&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">Broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">devices</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;devices&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
 <span class="nx">Broadcast</span><span class="p">.</span><span class="nx">sendPush</span><span class="p">({</span>
-        <span class="nx">where</span><span class="o">:</span> <span class="nx">Devices</span><span class="p">,</span>
+        <span class="nx">where</span><span class="o">:</span> <span class="nx">devices</span><span class="p">,</span>
         <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
             <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">{</span>
                 <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;PUSH text!&quot;</span><span class="p">,</span>
@@ -1061,8 +1061,8 @@
 <span class="p">});</span>
 
 <span class="kd">var</span> <span class="nx">findUsers</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;users&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">Broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
-<span class="nx">Broadcast</span><span class="p">.</span><span class="nx">sendPush</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
+<span class="nx">broadcast</span><span class="p">.</span><span class="nx">sendPush</span><span class="p">({</span>
         <span class="nx">where</span><span class="o">:</span> <span class="nx">findUsers</span><span class="p">,</span>
         <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
             <span class="s2">&quot;text&quot;</span><span class="o">:</span> <span class="s2">&quot;SMS text&quot;</span>     
