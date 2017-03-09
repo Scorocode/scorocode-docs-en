@@ -899,8 +899,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#device-details-information-screen" title="Device Details Information Screen." class="md-nav__link">
-    Device Details Information Screen.
+  <a href="#device-details-screen" title="Device Details Screen." class="md-nav__link">
+    Device Details Screen.
   </a>
   
 </li>
@@ -980,8 +980,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#device-details-information-screen" title="Device Details Information Screen." class="md-nav__link">
-    Device Details Information Screen.
+  <a href="#device-details-screen" title="Device Details Screen." class="md-nav__link">
+    Device Details Screen.
   </a>
   
 </li>
@@ -1980,7 +1980,7 @@ System fields are:</p>
 
 In this method, as our first step we need to take is to delete the user data file (the file is stored locally and is used to check whether the user was identified). Then we use the <code>logout(…)</code> method of the <code>User</code> class which ends the user active session.</p>
 <p>In case the session was ended successfully the <code>onLogoutSucceed(...) callback</code> iterface method will be executed. Otherwise, it is the  <code>onLogoutFailed(...)</code> method that will be executed.</p>
-<h2 id="device-details-information-screen">Device Details Information Screen.</h2>
+<h2 id="device-details-screen">Device Details Screen.</h2>
 <p>When pressing on any element of the device list on the application main screen, a user moves to the screen with detailed information about the chosen device.</p>
 <p>Let's create an Activity called <code>ItemDetailsInfo</code> and add the following xml code to its layout file:</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
@@ -2037,7 +2037,7 @@ In this method, as our first step we need to take is to delete the user data fil
 
 
 <p>which will install icons into <code>ActionBar</code>.</p>
-<p>Обрабатывать нажатие на иконки мы будем при помощи метода указанного ниже:</p>
+<p>We will handle clicks on buttons with the method described below: </p>
 <div class="codehilite"><pre><span></span><span class="nd">@Override</span>
 <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onOptionsItemSelected</span><span class="o">(</span><span class="n">MenuItem</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">switch</span> <span class="o">(</span><span class="n">item</span><span class="o">.</span><span class="na">getItemId</span><span class="o">())</span> <span class="o">{</span>
@@ -2059,17 +2059,17 @@ In this method, as our first step we need to take is to delete the user data fil
 </pre></div>
 
 
-<p>В результате получим экран показанный на рисунке 3.1</p>
-<p><img alt="экран подробной информации об устройстве" src="../img/Storehouse/3.1.png" /></p>
-<p>Рисунок 3.1 — экран подробной информации об устройстве.</p>
-<p>В верхней правой части экрана присутствуют следующие иконки:</p>
-<p><img alt="Редактировать информацию о устройстве" src="../img/Storehouse/3.1.1.png" /> Редактировать информацию о устройстве</p>
-<p><img alt="Удалить данное устройство из БД" src="../img/Storehouse/3.1.2.png" /> Удалить данное устройство из БД</p>
-<p><img alt="Перейти к информации об отгрузке данного товара." src="../img/Storehouse/3.1.3.png" /> Перейти к информации об отгрузке данного товара.</p>
-<p>При нажатии на кнопку <img alt="Редактировать информацию о устройстве" src="../img/Storehouse/3.1.1.png" /> экран переключается в режим редактирования. Для этого сделаем видимыми кнопки «Добавить цвет», «Удалить цвет», «Увеличить цену на складе», «Уменьшить цену на складе». Экран подробной информации о устройстве в режиме редактирования показан на рисунке 3.2</p>
-<p><img alt="Экран подробной информации об устройстве в режиме редактирования" src="../img/Storehouse/3.2.png" /></p>
-<p>Рисунок 3.2 — Экран подробной информации об устройстве в режиме редактирования</p>
-<p>Зададим обработчик нажатия кнопки «Изменить запись», который будет вызывать следующий метод:</p>
+<p>As a result we should get the screen shown in Figure 3.1</p>
+<p><img alt="Device Details Screen" src="../img/Storehouse/3.1.png" /></p>
+<p>Figure 3.1 — device details screen.</p>
+<p>The following icons are located in the right upper side of the screen:</p>
+<p><img alt="Edit device info" src="../img/Storehouse/3.1.1.png" /> Edit device info</p>
+<p><img alt="Remove this device from the database" src="../img/Storehouse/3.1.2.png" /> Remove this device from the database</p>
+<p><img alt="Switch to the device shipping info" src="../img/Storehouse/3.1.3.png" /> Switch to the device shipping info.</p>
+<p>When a user presses the <img alt="Edit device info" src="../img/Storehouse/3.1.1.png" /> button, the sreen switches to the edit mode. To do so let's make these buttons visible: "Add colour", "Remove colour", "Increase store price", "Lower store price". Device details screen in the edit mode is shown in Figure 3.2. </p>
+<p><img alt="Device details screen in the edit mode" src="../img/Storehouse/3.2.png" /></p>
+<p>Figure 3.2 — Device details screen in the edit mode</p>
+<p>Let's define the click event handler for the «Change Item» button which will execute the following code:</p>
 <div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="kt">void</span> <span class="nf">updateItemDocument</span><span class="o">()</span> <span class="o">{</span>
     <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="n">getDocumentInfo</span><span class="o">().</span><span class="na">getId</span><span class="o">(),</span> <span class="k">new</span> <span class="n">CallbackGetDocumentById</span><span class="o">()</span> <span class="o">{</span>
         <span class="nd">@Override</span>

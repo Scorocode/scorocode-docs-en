@@ -494,13 +494,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#var-scorocode-requirescorocode-scorocodeinit-applicationid-applicationid-javascriptkey-javascriptkey-var-getitems-new-scorocodequeryitems-getitemsequaltoprice-42-find-thenresult-consolelogresult-catcherror-getitemsreset-consolelogerror" title="var Scorocode = require(&#39;scorocode&#39;);" class="md-nav__link">
-    var Scorocode = require(&#39;scorocode&#39;);
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#equaltofield-value" title=".equalTo(field, value)" class="md-nav__link">
     .equalTo(field, value)
   </a>
@@ -1156,13 +1149,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#var-scorocode-requirescorocode-scorocodeinit-applicationid-applicationid-javascriptkey-javascriptkey-var-getitems-new-scorocodequeryitems-getitemsequaltoprice-42-find-thenresult-consolelogresult-catcherror-getitemsreset-consolelogerror" title="var Scorocode = require(&#39;scorocode&#39;);" class="md-nav__link">
-    var Scorocode = require(&#39;scorocode&#39;);
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#equaltofield-value" title=".equalTo(field, value)" class="md-nav__link">
     .equalTo(field, value)
   </a>
@@ -1393,7 +1379,7 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<p><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<p><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
@@ -1509,7 +1495,7 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<p><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
@@ -1526,7 +1512,8 @@
         <span class="p">});</span>
 </pre></div>
 
-<strong>Returns</strong>: <code>promise.{error: Boolean, result: Number}</code> -  Returns promise, which returns the object containing the result of the query execution.</p>
+
+<p><strong>Returns</strong>: <code>promise.{error: Boolean, result: Number}</code> -  Returns promise, which returns the object containing the result of the query execution.</p>
 <ul>
 <li>"error" - <code>Boolean</code> - Error flag</li>
 <li>"result" - <code>Number</code>  - Number of objects that meet the sampling condition.</li>
@@ -1672,7 +1659,7 @@
 <h2 id="reset">.reset()</h2>
 <p>Method for resetting the sampling conditions</p>
 <p><strong>Example</strong>  </p>
-<h2 id="var-scorocode-requirescorocode-scorocodeinit-applicationid-applicationid-javascriptkey-javascriptkey-var-getitems-new-scorocodequeryitems-getitemsequaltoprice-42-find-thenresult-consolelogresult-catcherror-getitemsreset-consolelogerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
@@ -1689,7 +1676,9 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-</h2>
+
+
+<hr />
 <p><a name="Scorocode.Query+equalTo"></a></p>
 <h2 id="equaltofield-value">.equalTo(field, value)</h2>
 <p>Method for retrieving all objects with the field value indicated in the condition.</p>
@@ -1990,7 +1979,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Example</strong><br />
+<p><strong>Example</strong>  </p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
@@ -2007,7 +1996,8 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-</p>
+
+
 <hr />
 <p><a name="Scorocode.Query+lessThan"></a></p>
 <h2 id="lessthanfield-value">.lessThan(field, value)</h2>
@@ -2503,7 +2493,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Example</strong><br />
+<p><strong>Example</strong>  </p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
@@ -2520,7 +2510,8 @@
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
         <span class="p">});</span>
 </pre></div>
-</p>
+
+
 <hr />
 <p><a name="Scorocode.Query+or"></a></p>
 <h2 id="orquery">.or(query)</h2>
@@ -2662,7 +2653,6 @@
     <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
     <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
 <span class="p">});</span>
-
 
 <span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
 <span class="nx">query</span><span class="p">.</span><span class="nx">raw</span><span class="p">(</span><span class="s2">&quot;{ \&quot;fieldString\&quot; : \&quot;String\&quot; }&quot;</span><span class="p">);</span>
