@@ -34,6 +34,7 @@
 <a name="new_Scorocode.Query_new"></a>
 
 ## new Query(collName)
+
 Instance of a collection data query
 
 
@@ -44,7 +45,7 @@ Instance of a collection data query
 **Example**
 
 ```js
-var Scorocode = require('scorocode');
+var sc = require('scorocode');
 Scorocode.Init({
     ApplicationID: "applicationId",
     JavaScriptKey: "javascriptKey"
@@ -165,6 +166,7 @@ countItems.exists("price")
             console.log(error)
         });
 ```
+
 **Returns**: <code>promise.{error: Boolean, result: Number}</code> -  Returns promise, which returns the object containing the result of the query execution.
 
 - "error" - <code>Boolean</code> - Error flag
@@ -297,7 +299,6 @@ Items.exists("arrayField")
 
 Method for resetting the sampling conditions
 
-
 **Example**  
 
 ```js
@@ -318,6 +319,7 @@ getItems.equalTo("price", 42)
             console.log(error)
         });
 ```
+
 ----------------------------------------------------------------------------------------------
 
 <a name="Scorocode.Query+equalTo"></a>
@@ -357,6 +359,7 @@ getItems.equalTo("price", 42)
 <a name="Scorocode.Query+notEqualTo"></a>
 
 ## .notEqualTo(field, value)
+
 Method for retrieving all objects except for objects with the field value indicated in the condition.
 
 | Parameter | Type | Description |
@@ -389,6 +392,7 @@ getItems.notEqualTo("price", 42)
 <a name="Scorocode.Query+containedIn"></a>
 
 ## .containedIn(field, value)
+
 Method for retrieving all objects whose field value contains the array elements specified in the query.
 
 | Parameter | Type | Description |
@@ -425,6 +429,7 @@ getItems.containedIn("price",[-42, 41.999, 42])
 <a name="Scorocode.Query+containsAll"></a>
 
 ## .containsAll(field, value)
+
 Method for retrieving all objects whose field value contains all array elements specified in the query.
 
 | Parameter | Type | Description |
@@ -459,6 +464,7 @@ getItems.containsAll("arrayField",[4, 8, 15, 16, 23, 42])
 <a name="Scorocode.Query+notContainedIn"></a>
 
 ## .notContainedIn(field, value)
+
 Method for retrieving all objects whose field value does not contain the array elements specified in the query.
 
 | Parameter | Type | Description |
@@ -495,6 +501,7 @@ getItems.notContainedIn("price",[41.999, 42])
 <a name="Scorocode.Query+greaterThan"></a>
 
 ## .greaterThan(field, value)
+
 Method for retrieving all objects whose field value is greater than the number specified in the query.
 
 | Parameter | Type | Description |
@@ -527,6 +534,7 @@ getItems.greaterThan("createdAt", "2016-05-19T15:35:16.000Z")
 <a name="Scorocode.Query+greaterThanOrEqualTo"></a>
 
 ## .greaterThanOrEqualTo(field, value)
+
 Method for retrieving all objects whose field value is no less than the number specified in the query.
 
 | Parameter | Type | Description |
@@ -535,6 +543,7 @@ Method for retrieving all objects whose field value is no less than the number s
 | value | <code>Number / Date</code> | Condition value |
 
 **Example**  
+
 ```js
 var Scorocode = require('scorocode');
 Scorocode.Init({
@@ -591,6 +600,7 @@ getItems.lessThan("price", 41)
 <a name="Scorocode.Query+lessThanOrEqualTo"></a>
 
 ## .lessThanOrEqualTo(field, value) 
+
 Method for retrieving all objects whose field value is no greater than the number specified in the query.
 
 | Parameter | Type | Description |
@@ -623,6 +633,7 @@ getItems.lessThanOrEqualTo("updatedAt", "2016-05-19T15:35:16.000Z")
 <a name="Scorocode.Query+exists"></a>
 
 ## .exists(field)
+
 Method for retrieving all objects with an existing value of a defined field
 
 | Parameter | Type | Description |
@@ -653,6 +664,7 @@ Items.exists("price")
 <a name="Scorocode.Query+doesNotExist"></a>
 
 ## .doesNotExist(field)
+
 Method for retrieving all objects with a missing value in a defined field.
 
 
@@ -677,13 +689,16 @@ Items.doesNotExist("price")
         .catch((error) => {
             console.log(error)
         });
-```  
+```
+
 
 ----------------------------------------------------------------------------------------------
+
 
 <a name="Scorocode.Query+contains"></a>
 
 ## .contains(field, value)
+
 Method for retrieving all objects with a value of a defined field that matches a defined regular expression.
 
 
@@ -721,6 +736,7 @@ getItems.contains("someString","[0-9]")
 <a name="Scorocode.Query+startsWith"></a>
 
 ## .startsWith(field, value) 
+
 Method for retrieving all objects with a value of a defined field starting from a specified string.
 
 | Parameter | Type | Description |
@@ -757,6 +773,7 @@ getItems.startsWith("name", "ite");
 <a name="Scorocode.Query+endsWith"></a>
 
 ## .endsWith(field, value)
+
 Method for retrieving all objects with a value of a defined field ending with a specified string.
 
 
@@ -792,6 +809,7 @@ getItems.endsWith("name", "чип");
 <a name="Scorocode.Query+limit"></a>
 
 ## .limit(limit) 
+
 Method for specifying a limit for the number of sampling objects
 
 | Parameter | Type | Description |
@@ -827,6 +845,7 @@ getItems.limit(1000).contains("someString","[a-zA-Z-0-9]")
 <a name="Scorocode.Query+skip"></a>
 
 ## .skip(skip)
+
 Method for skipping some objects before sampling.
 
 | Parameter | Type | Description |
@@ -862,6 +881,7 @@ getItems.limit(1000).skip(1000).contains("someString","[a-zA-Z-0-9]")
 <a name="Scorocode.Query+page"></a>
 
 ## .page(page)
+
 Method for sampling results page by page
 
 | Parameter | Type | Description |
@@ -897,6 +917,7 @@ getItems.limit(30).page(2).contains("someString","[a-zA-Z-0-9]")
 <a name="Scorocode.Query+ascending"></a>
 
 ## .ascending(field)
+
 Method for sorting a specified field data in ascending order before sampling.
 
 
@@ -929,6 +950,7 @@ getItems.limit(30).ascending("updatedAt").page(1).contains("someString","[a-zA-Z
 <a name="Scorocode.Query+descending"></a>
 
 ## .descending(field)
+
 Method for sorting a specified field data in descending order before sampling.
 
 
@@ -937,6 +959,7 @@ Method for sorting a specified field data in descending order before sampling.
 | field | <code>String</code> | Field name |
 
 **Example**  
+
 ```js
 var Scorocode = require('scorocode');
 Scorocode.Init({
@@ -1002,6 +1025,7 @@ getItems.or(range1).or(range2)
 <a name="Scorocode.Query+and"></a>
 
 ## .and(query) 
+
 Method for logical multiplication of several samplings conditions
 
 | Parameter | Type | Description |
@@ -1039,6 +1063,7 @@ getItems.and(range).and(price)
 <a name="Scorocode.Query+select"></a>
 
 ## .select() 
+
 Method for specifying a list of returned fields.
 
 **Example**  
@@ -1079,7 +1104,6 @@ Scorocode.Init({
     ApplicationID: "applicationId",
     JavaScriptKey: "javascriptKey"
 });
-
 
 var query = Scorocode.Query("items");
 query.raw("{ \"fieldString\" : \"String\" }");

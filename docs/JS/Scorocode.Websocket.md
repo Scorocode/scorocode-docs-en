@@ -3,7 +3,7 @@
 Class for WebSocket connection handling.
 
 
-An example of implementing a chat application using Scorocode.WebSocket – [Scorochat](https://niksmith.github.io/). The application's source code is published on GitHub in the following repository:[NikSmith/niksmith.github.io](https://github.com/NikSmith/niksmith.github.io)
+An example of implementing a chat application using Scorocode.WebSocket – [Scorochat](https://niksmith.github.io/). The application's source code is published on GitHub in the following repository: [NikSmith/niksmith.github.io](https://github.com/NikSmith/niksmith.github.io)
 
 
 * [.WebSocket](#Scorocode.WebSocket)
@@ -68,7 +68,6 @@ WS.on("error", onError () {});
 WS.on("message", onMessage(data) {
     console.log(data)
     });
-
 
 var data = "Wello Horld";
 WS.send(data);
