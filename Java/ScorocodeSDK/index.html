@@ -696,8 +696,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scorocodesdkinitwithappid-clientkey-masterkey-filekey-messagekey" title="ScorocodeSDK.initWith(appId, clientKey, masterKey, fileKey, messageKey)" class="md-nav__link">
-    ScorocodeSDK.initWith(appId, clientKey, masterKey, fileKey, messageKey)
+  <a href="#scorocodesdkinitwithapplicationid-clientkey-masterkey-filekey-messagekey-scriptkey-websocketkey" title="ScorocodeSDK.initWith(applicationId, clientKey, masterKey, fileKey, messageKey, scriptKey, websocketKey)" class="md-nav__link">
+    ScorocodeSDK.initWith(applicationId, clientKey, masterKey, fileKey, messageKey, scriptKey, websocketKey)
   </a>
   
 </li>
@@ -897,8 +897,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scorocodesdkinitwithappid-clientkey-masterkey-filekey-messagekey" title="ScorocodeSDK.initWith(appId, clientKey, masterKey, fileKey, messageKey)" class="md-nav__link">
-    ScorocodeSDK.initWith(appId, clientKey, masterKey, fileKey, messageKey)
+  <a href="#scorocodesdkinitwithapplicationid-clientkey-masterkey-filekey-messagekey-scriptkey-websocketkey" title="ScorocodeSDK.initWith(applicationId, clientKey, masterKey, fileKey, messageKey, scriptKey, websocketKey)" class="md-nav__link">
+    ScorocodeSDK.initWith(applicationId, clientKey, masterKey, fileKey, messageKey, scriptKey, websocketKey)
   </a>
   
 </li>
@@ -921,13 +921,13 @@
                 <p><a name="ScorocodeSDK"></a></p>
 <ul>
 <li><a href="#ScorocodeSDK">ScorocodeSDK</a><ul>
-<li><a href="#ScorocodeSDK+init">.initWith(appId, clientKey, masterKey, fileKey, messageKey, scriptKey, websocketKey)</a></li>
+<li><a href="#ScorocodeSDK+init">.initWith(applicationId, clientKey, masterKey, fileKey, messageKey, scriptKey, websocketKey)</a></li>
 </ul>
 </li>
 </ul>
 <hr />
 <p><a name="ScorocodeSDK+initWith"></a></p>
-<h3 id="scorocodesdkinitwithappid-clientkey-masterkey-filekey-messagekey">ScorocodeSDK.initWith(appId, clientKey, masterKey, fileKey, messageKey)</h3>
+<h3 id="scorocodesdkinitwithapplicationid-clientkey-masterkey-filekey-messagekey-scriptkey-websocketkey">ScorocodeSDK.initWith(applicationId, clientKey, masterKey, fileKey, messageKey, scriptKey, websocketKey)</h3>
 <p>SDK initialisation. </p>
 <table>
 <thead>
@@ -955,44 +955,44 @@
 <td>"563452bbc611d8106d5da767365897de"</td>
 </tr>
 <tr>
-<td>accessKey</td>
+<td>masterKey</td>
 <td><code>String</code></td>
-<td>Mandatory</td>
-<td>Authentication key (master key, script key)</td>
+<td>Optional</td>
+<td>MasterKey</td>
 <td>"28f06b89b62165c33de55265166d8781"</td>
 </tr>
 <tr>
 <td>fileKey</td>
 <td><code>String</code></td>
-<td></td>
+<td>Optional</td>
 <td>Authentication keys for access to files</td>
 <td>"6305ee7ac8023191a333d9267f1a07e8"</td>
 </tr>
 <tr>
 <td>messageKey</td>
 <td><code>String</code></td>
-<td></td>
+<td>Optional</td>
 <td>Authentication key for sending messages</td>
 <td>"9d774f6fa704f192e6aef53933f44e4f"</td>
 </tr>
 <tr>
 <td>scriptKey</td>
 <td><code>String</code></td>
-<td></td>
+<td>Optional</td>
 <td>Server-side scripts access key</td>
 <td>"054bcf2ktyj9369dab1c32343f1776ae"</td>
 </tr>
 <tr>
 <td>websocketKey</td>
 <td><code>String</code></td>
-<td></td>
+<td>Optional</td>
 <td>WebSocket access key</td>
 <td>"694bcf2ffd29369dab1c3d0e3f1776ae"</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
-<p class="admonition-title">Примечания</p>
+<p class="admonition-title">SDK initialisation</p>
 <ul>
 <li>Sdk must be initialised before you use other SDK methods;</li>
 </ul>
