@@ -1054,10 +1054,8 @@
 </ul>
 <hr />
 <h2 id="debug">Debug</h2>
-<p>При использовании JavaScript SDK возможна отладка серверных скриптов. Для этого при инициализации библиотеки с помощью
-<code>Scorocode.Init({})</code> необходимо передать еще два ключа: <code>MasterKey</code> и <code>WebSocketKey</code>. Это связано с тем, что
-консольный вывод выполняемого на сервере скрипта перенаправляется через websockets на вызывающего клиента.</p>
-<p>Для включения режима отладки также необходимо создать объект <code>Logger</code>.</p>
+<p>When you use JavaScript SDK it can be possible to debug server-side scripts. To access debug mode you need to initialise sdk <code>Scorocode.Init({})</code> with MasterKey and WebsocketKey. </p>
+<p>You need to create <code>Logger</code> object to activate debug mode.</p>
 <p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
 <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
