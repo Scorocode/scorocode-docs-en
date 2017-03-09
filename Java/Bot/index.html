@@ -990,7 +990,7 @@
 <hr />
 <p><a name="Bot_new"></a></p>
 <h2 id="new-bot">new Bot()</h2>
-<p>Конструктор Bot</p>
+<p>Constructor Bot</p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">Bot</span> <span class="n">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bot</span><span class="o">();</span>
@@ -998,34 +998,34 @@
 
 
 <div class="admonition note">
-<p class="admonition-title">Примечание</p>
-<p>Для использования методов класса Bot необходима инициализация SDK с указанием MasterKey.</p>
+<p class="admonition-title">MasterKey</p>
+<p>You should initialise SDK with MasterKey to use ApplicationInfo methods.</p>
 </div>
 <hr />
 <p><a name="Bot+getBotsList"></a></p>
 <h2 id="getbotslistcallback">.getBotsList(callback)</h2>
-<p>Метод для получения списка всех ботов приложения.</p>
+<p>Retrieve application bots list.</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>callback</td>
 <td><code>CallbackGetBotList</code></td>
-<td>Обязательный</td>
-<td>Callback, который будет вызван после выполнения запроса.</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Callback for the request being executed</td>
+<td>See the example below</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">Bot</span> <span class="n">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bot</span><span class="o">();</span>
@@ -1046,35 +1046,35 @@
 <hr />
 <p><a name="Bot+createBot"></a></p>
 <h2 id="createbotbotinfo-callback">.createBot(botInfo, callback)</h2>
-<p>Метод для создания нового бота.</p>
+<p>Method for create a new bot.</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>botInfo</td>
 <td><code>ScorocodeBot</code></td>
-<td>Обязательный</td>
-<td>Класс, содержащий информацию о создаваемом боте</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Class that contains bot information</td>
+<td>See the example below</td>
 </tr>
 <tr>
 <td>callback</td>
-<td><code>CallbackGetBotList</code></td>
-<td>Обязательный</td>
-<td>Callback, который будет вызван после выполнения запроса.</td>
-<td>см. пример ниже</td>
+<td><code>CallbackCreateBot</code></td>
+<td>Mandatory</td>
+<td>Callback for the request being executed</td>
+<td>See the example below</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>
+<p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">String</span> <span class="n">botName</span> <span class="o">=</span> <span class="s">&quot;scorocodeSdkTestBotName&quot;</span><span class="o">;</span>
@@ -1095,46 +1095,47 @@
     <span class="o">}</span>
 <span class="o">});</span>
 </pre></div>
-</p>
+
+
 <hr />
 <p><a name="Bot+updateBot"></a></p>
 <h2 id="updatebotbotid-newbotinfo-callback">.updateBot(botId, newBotInfo, callback)</h2>
-<p>Метод для обновления информации уже существующего бота.</p>
+<p>Method for updating a bot that already exists</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>botId</td>
 <td><code>String</code></td>
-<td>Обязательный</td>
-<td>Уникальный Id обновляемого бота</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Scorocode bot identifier</td>
+<td>See the example below</td>
 </tr>
 <tr>
 <td>newBotInfo</td>
 <td><code>ScorocodeBot</code></td>
-<td>Обязательный</td>
-<td>Класс, содержащий информацию о создаваемом боте</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Class that contains bot information</td>
+<td>See the example below</td>
 </tr>
 <tr>
 <td>callback</td>
-<td><code>CallbackGetBotList</code></td>
-<td>Обязательный</td>
-<td>Callback, который будет вызван после выполнения запроса.</td>
-<td>см. пример ниже</td>
+<td><code>CallbackUpdateBot</code></td>
+<td>Mandatory</td>
+<td>Callback for the request being executed</td>
+<td>See the example below</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong>
+<p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">String</span> <span class="n">botId</span> <span class="o">=</span> <span class="err">“</span><span class="mi">584</span><span class="n">fba2c42d52f1ba275fdb5</span><span class="err">”</span><span class="o">;</span>
@@ -1154,39 +1155,40 @@
     <span class="o">}</span>
 <span class="o">});</span>
 </pre></div>
-</p>
+
+
 <hr />
 <p><a name="Bot+deleteBot"></a></p>
 <h2 id="deletebotbotid-callback">.deleteBot(botId, callback)</h2>
-<p>Метод для удаления бота</p>
+<p>Method for deleteing a bot</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>botId</td>
 <td><code>String</code></td>
-<td>Обязательный</td>
-<td>Уникальный Id обновляемого бота</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Scorocode bot identifier</td>
+<td>See the example below</td>
 </tr>
 <tr>
 <td>callback</td>
-<td><code>CallbackGetBotList</code></td>
-<td>Обязательный</td>
-<td>Callback, который будет вызван после выполнения запроса.</td>
-<td>см. пример ниже</td>
+<td><code>CallbackDeleteBot</code></td>
+<td>Mandatory</td>
+<td>Callback for the request being executed</td>
+<td>See the example below</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">String</span> <span class="n">botId</span> <span class="o">=</span> <span class="err">“</span><span class="mi">584</span><span class="n">fba2c42d52f1ba275fdb5</span><span class="err">”</span><span class="o">;</span>

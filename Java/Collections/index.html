@@ -1073,8 +1073,6 @@
                   <h1>Collections</h1>
                 
                 <p><a name="Collections"></a></p>
-<p>Класс для работы с коллекциями приложения</p>
-<p><strong>Содержание</strong></p>
 <ul>
 <li><a href="#Collections">Collections</a><ul>
 <li><a href="#Collections_new">new Collections()</a></li>
@@ -1095,7 +1093,7 @@
 <hr />
 <p><a name="Collections_new"></a></p>
 <h2 id="new-collections">new Collections()</h2>
-<p>Конструктор Collections</p>
+<p>Constructor Collections</p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
@@ -1103,34 +1101,34 @@
 
 
 <div class="admonition note">
-<p class="admonition-title">Примечание</p>
-<p>Для использования методов класса Collections необходима инициализация SDK с указанием MasterKey.</p>
+<p class="admonition-title">MasterKey</p>
+<p>You should initialise SDK with MasterKey to use ApplicationInfo methods.</p>
 </div>
 <hr />
 <p><a name="Collections+getCollectionsList"></a></p>
 <h2 id="getcollectionslistcallback">.getCollectionsList(callback)</h2>
-<p>Метод для получения списка коллекций приложения.</p>
+<p>Method for retrieving an application collections list.</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>callback</td>
 <td><code>CallbackGetCollectionsList</code></td>
-<td>Обязательный</td>
-<td>Callback, который будет вызван после выполнения запроса.</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Callback for the request being executed</td>
+<td>See the example below</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
@@ -1151,35 +1149,35 @@
 <hr />
 <p><a name="Collections+getCollectionByName"></a></p>
 <h2 id="getcollectionbynamecollectionname-callback">.getCollectionByName(collectionName, callback)</h2>
-<p>Метод для получения информации о коллекции по ее имени.</p>
+<p>Method for retrieving a collection info by it's name.</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>collectionName</td>
 <td><code>String</code></td>
-<td>Обязательный</td>
-<td>Имя запрашиваемой коллекции</td>
+<td>Mandatory</td>
+<td>Collection name</td>
 <td>“testcollection”</td>
 </tr>
 <tr>
 <td>callback</td>
 <td><code>CallbackGetCollection</code></td>
-<td>Обязательный</td>
-<td>Callback, который будет вызван после выполнения запроса.</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Callback for the request being executed</td>
+<td>See the example below</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
@@ -1200,35 +1198,35 @@
 <hr />
 <p><a name="Collections+createCollection"></a></p>
 <h2 id="createcollectioncollection-callback">.createCollection(collection, callback)</h2>
-<p>Метод для создания новой коллекции.</p>
+<p>Method for creating new collection</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>collection</td>
 <td><code>ScorocodeCollection</code></td>
-<td>Обязательный</td>
-<td>Информация о создаваемой коллекции</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Class that contains new collection info</td>
+<td>See the example below</td>
 </tr>
 <tr>
 <td>callback</td>
 <td><code>CallbackCreateCollection</code></td>
-<td>Обязательный</td>
-<td>Callback, который будет вызван после выполнения запроса.</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Callback for the request being executed</td>
+<td>See the example below</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">ScorocodeCollection</span> <span class="n">newCollection</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScorocodeCollection</span><span class="o">()</span>
@@ -1254,42 +1252,42 @@
 <hr />
 <p><a name="Collections+updateCollcetion"></a></p>
 <h2 id="updatecollcetioncollectionid-collection-callback">.updateCollcetion(collectionId, collection, callback)</h2>
-<p>Метод для обновления параметров коллекции</p>
+<p>Method fot Updating the existing collection</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>collectionId</td>
 <td><code>String</code></td>
-<td>Обязательный</td>
-<td>Id обновляемой коллекции</td>
+<td>Mandatory</td>
+<td>Collection identifier</td>
 <td>“584fba2c42d52f1ba275fdb”</td>
 </tr>
 <tr>
 <td>collection</td>
 <td><code>ScorocodeCollection</code></td>
-<td>Обязательный</td>
-<td>Новая информация о коллекции</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Class that contains collection info</td>
+<td>See the example below</td>
 </tr>
 <tr>
 <td>callback</td>
 <td><code>CallbackUpdateCollection</code></td>
-<td>Обязательный</td>
-<td>Callback, который будет вызван после выполнения запроса.</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Сallback for the request being executed</td>
+<td>See the example below</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
@@ -1316,42 +1314,42 @@
 <hr />
 <p><a name="Collections+cloneCollection"></a></p>
 <h2 id="clonecollectioncollectionid-collectionname-callback">.cloneCollection(collectionId, collectionName, callback)</h2>
-<p>Метод для клонирования коллекции</p>
+<p>Method for collection clone creation.</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>collectionId</td>
 <td><code>String</code></td>
-<td>Обязательный</td>
-<td>Id  клонируемой коллекции</td>
+<td>Mandatory</td>
+<td>Collection identifier</td>
 <td>“584fba2c42d52f1ba275fdb”</td>
 </tr>
 <tr>
 <td>collectionName</td>
 <td><code>String</code></td>
-<td>Обязательный</td>
-<td>Имя новой коллекции</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>New collection name</td>
+<td>See the example below</td>
 </tr>
 <tr>
 <td>callback</td>
 <td><code>CallbackCloneCollection</code></td>
-<td>Обязательный</td>
-<td>Callback, который будет вызван после выполнения запроса.</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Callback for the request being executed</td>
+<td>See the example below</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
@@ -1372,42 +1370,42 @@
 <hr />
 <p><a name="Collections+createCollectionIndex"></a></p>
 <h2 id="createcollectionindexcollectionname-index-callback">.createCollectionIndex(collectionName, index, callback)</h2>
-<p>Метод для создания индекса коллекции</p>
+<p>Method for collection index creation</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>collectionName</td>
 <td><code>String</code></td>
-<td>Обязательный</td>
-<td>Имя новой коллекции</td>
+<td>Mandatory</td>
+<td>Collection name</td>
 <td>"testcoll"</td>
 </tr>
 <tr>
 <td>index</td>
 <td><code>Index</code></td>
-<td>Обязательный</td>
-<td>Информация о создаваемом индексе коллекции</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Class that contains index information</td>
+<td>See the example below</td>
 </tr>
 <tr>
 <td>callback</td>
 <td><code>CallbackCreateCollectionIndex</code></td>
-<td>Обязательный</td>
-<td>Callback, который будет вызван после выполнения запроса.</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Callback for the request being executed</td>
+<td>See the example below</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">List</span><span class="o">&lt;</span><span class="n">IndexField</span><span class="o">&gt;</span> <span class="n">indexFields</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
@@ -1433,42 +1431,42 @@
 <hr />
 <p><a name="Collections+deleteCollectionIndex"></a></p>
 <h2 id="deletecollectionindexcollectionname-indexname-callback">.deleteCollectionIndex(collectionName, indexName, callback)</h2>
-<p>Метод для удаления индекса коллекции.</p>
+<p>Method for collection index deletion</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>collectionName</td>
 <td><code>String</code></td>
-<td>Обязательный</td>
-<td>Имя новой коллекции</td>
+<td>Mandatory</td>
+<td>Collection name</td>
 <td>"testcoll"</td>
 </tr>
 <tr>
 <td>indexName</td>
 <td><code>String</code></td>
-<td>Обязательный</td>
-<td>Название удаляемого индекса</td>
+<td>Mandatory</td>
+<td>Index name</td>
 <td>"testindex"</td>
 </tr>
 <tr>
 <td>callback</td>
 <td><code>CallbackDeleteCollectionIndex</code></td>
-<td>Обязательный</td>
-<td>Callback, который будет вызван после выполнения запроса.</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Callback for the request being executed</td>
+<td>See the example below</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
@@ -1489,42 +1487,42 @@
 <hr />
 <p><a name="Collections+updateCollectionTriggers"></a></p>
 <h2 id="updatecollectiontriggerscollectionname-triggers-callback">.updateCollectionTriggers(collectionName, triggers, callback)</h2>
-<p>Метод для обновления информации о триггерах коллекции.</p>
+<p>Method for updating collection triggers</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>collectionName</td>
 <td><code>String</code></td>
-<td>Обязательный</td>
-<td>Имя коллекции в которой мы обновляем триггеры</td>
+<td>Mandatory</td>
+<td>Collection name</td>
 <td>"testcoll"</td>
 </tr>
 <tr>
-<td>triggers</td>
-<td><code>ScorocodeTriggers</code></td>
-<td>Обязательный</td>
-<td>Информаци о триггерах для обновления</td>
-<td>см. пример ниже</td>
+<td>collection</td>
+<td><code>ScorocodeCollection</code></td>
+<td>Mandatory</td>
+<td>Class that contains Trigger info</td>
+<td>See the example below</td>
 </tr>
 <tr>
 <td>callback</td>
 <td><code>CallbackUpdateCollectionTriggers</code></td>
-<td>Обязательный</td>
-<td>Callback, который будет вызван после выполнения запроса.</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Callback for the request being executed</td>
+<td>See the example below</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="kt">boolean</span> <span class="n">isActive</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
@@ -1554,42 +1552,42 @@
 <hr />
 <p><a name="Collections+createCollectionField"></a></p>
 <h2 id="createcollectionfieldcallback">.createCollectionField(callback)</h2>
-<p>Метод для создания нового поля коллекции.</p>
+<p>Method for creating collection field</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>collectionName</td>
 <td><code>String</code></td>
-<td>Обязательный</td>
-<td>Имя коллекции в которую мы добавляем поле</td>
+<td>Mandatory</td>
+<td>Collection name</td>
 <td>"testcoll"</td>
 </tr>
 <tr>
 <td>field</td>
 <td><code>ScorocodeField</code></td>
-<td>Обязательный</td>
-<td>Информация о добавляемом поле</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Class that contains field's info</td>
+<td>See the example below</td>
 </tr>
 <tr>
 <td>callback</td>
 <td><code>CallbackAddField</code></td>
-<td>Обязательный</td>
-<td>Callback, который будет вызван после выполнения запроса.</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Callback for the request being executed</td>
+<td>See the example below</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">ScorocodeField</span> <span class="n">field</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScorocodeField</span><span class="o">(</span><span class="s">&quot;testnumberfield&quot;</span><span class="o">,</span> <span class="n">ScorocodeTypes</span><span class="o">.</span><span class="na">TypeNumber</span><span class="o">,</span> <span class="s">&quot;&quot;</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
@@ -1612,42 +1610,42 @@
 <hr />
 <p><a name="Collections+deleteCollectionField"></a></p>
 <h2 id="deletecollectionfieldcollectionname-fieldname-callback">.deleteCollectionField(collectionName, fieldName, callback)</h2>
-<p>Метод для удаления поля из коллекции.</p>
+<p>Method for deleteing collection field</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>collectionName</td>
 <td><code>String</code></td>
-<td>Обязательный</td>
-<td>Имя коллекции из которой мы удаляем поле</td>
-<td>"testcoll"</td>
+<td>Mandatory</td>
+<td>Collection idenifier</td>
+<td>"Testcoll"</td>
 </tr>
 <tr>
 <td>fieldName</td>
 <td><code>String</code></td>
-<td>Обязательный</td>
-<td>Имя удаляемого поля</td>
+<td>Mandatory</td>
+<td>Field name</td>
 <td>"testfield"</td>
 </tr>
 <tr>
 <td>callback</td>
 <td><code>CallbackDeleteField</code></td>
-<td>Обязательный</td>
-<td>Callback, который будет вызван после выполнения запроса.</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Callback for the request being executed</td>
+<td>See the example below</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
@@ -1668,35 +1666,35 @@
 <hr />
 <p><a name="Collections+deleteCollection"></a></p>
 <h2 id="deletecollectioncollectionid-callback">.deleteCollection(collectionId, callback)</h2>
-<p>Метод для удаления коллекции и всех её документов</p>
+<p>Method for deleteing collection and all it's documents</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>collectionId</td>
 <td><code>String</code></td>
-<td>Обязательный</td>
-<td>Id удаляемрй коллекции</td>
+<td>Mandatory</td>
+<td>Collection idenifier</td>
 <td>"584fba2c42d52f1ba275fdb"</td>
 </tr>
 <tr>
 <td>callback</td>
 <td><code>CallbackDeleteCollection</code></td>
-<td>Обязательный</td>
-<td>Callback, который будет вызван после выполнения запроса.</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Callback for the request being executed</td>
+<td>See the example below</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>

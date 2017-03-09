@@ -945,7 +945,7 @@
 <hr />
 <p><a name="ApplicationInfo_new"></a></p>
 <h2 id="new-applicationinfo">new ApplicationInfo()</h2>
-<p>Конструктор ApplicationInfo</p>
+<p>Constructor ApplicationInfo</p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">ApplicationInfo</span> <span class="n">applicationInfo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ApplicationInfo</span><span class="o">();</span>
@@ -953,34 +953,34 @@
 
 
 <div class="admonition note">
-<p class="admonition-title">Примечание</p>
-<p>Для использования методов класса ApplicationInfo необходима инициализация SDK с указанием MasterKey.</p>
+<p class="admonition-title">MasterKey</p>
+<p>You should initialise SDK with MasterKey to use ApplicationInfo methods.</p>
 </div>
 <hr />
 <p><a name="ApplicationInfo+getApplicationInfo"></a></p>
 <h2 id="getapplicationinfocallback">.getApplicationInfo(callback)</h2>
-<p>Метод для получения полной информации о приложении.</p>
+<p>Retreive full application info.</p>
 <table>
 <thead>
 <tr>
-<th>Параметр</th>
-<th>Тип</th>
-<th>Свойства</th>
-<th>Описание</th>
-<th>Пример значения</th>
+<th>Parameter</th>
+<th>Type</th>
+<th>Properties</th>
+<th>Description</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>callback</td>
 <td><code>CallbackGetApplicationInfo</code></td>
-<td>Обязательный</td>
-<td>Callback, который будет вызван после выполнения запроса.</td>
-<td>см. пример ниже</td>
+<td>Mandatory</td>
+<td>Callback for the request being executed</td>
+<td>See the example below</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Пример</strong></p>
+<p><strong>Example</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
 
 <span class="n">ApplicationInfo</span> <span class="n">applicationInfo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ApplicationInfo</span><span class="o">();</span>
