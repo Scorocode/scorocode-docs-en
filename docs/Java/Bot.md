@@ -1,9 +1,5 @@
 <a name="Bot"></a>
 
-Класс для работы с ботами приложениия.
-
-**Содержание**
-
 * [Bot](#Bot)
     * [new Bot()](#Bot_new)
     * [.getBotsList(callback)](#Bot+getBotsList)
@@ -27,7 +23,7 @@ Bot bot = new Bot();
 ```
 
 !!! Note "MasterKey"
-    You should initialise SDK with MasterKey to use ApplicationInfo methods.
+    You should initialise SDK with MasterKey to use Bot methods.
 
 ------------------------------------------------------------------------
 

@@ -29,7 +29,7 @@ Collections collections = new Collections();
 ```
 
 !!! Note "MasterKey"
-    You should initialise SDK with MasterKey to use ApplicationInfo methods.
+    You should initialise SDK with MasterKey to use Collections methods.
 
 
 ------------------------------------------------------------------------
