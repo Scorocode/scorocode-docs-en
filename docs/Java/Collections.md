@@ -1,9 +1,5 @@
 <a name="Collections"></a>
 
-Класс для работы с коллекциями приложения
-
-**Содержание**
-
 * [Collections](#Collections)
     * [new Collections()](#Collections_new)
     * [.getCollectionsList(callback)](#Collections+getCollectionsList)
@@ -24,7 +20,7 @@
 
 ## new Collections()
 
-Конструктор Collections
+Constructor Collections
 
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
@@ -32,8 +28,9 @@ ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da
 Collections collections = new Collections();
 ```
 
-!!! Note "Примечание"
-    Для использования методов класса Collections необходима инициализация SDK с указанием MasterKey.
+!!! Note "MasterKey"
+    You should initialise SDK with MasterKey to use ApplicationInfo methods.
+
 
 ------------------------------------------------------------------------
 
@@ -41,13 +38,13 @@ Collections collections = new Collections();
 
 ## .getCollectionsList(callback)
 
-Метод для получения списка коллекций приложения.
+Method for retrieving an application collections list.
 
-| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| Parameter | Type |    Properties  | Description | Example |
 | --- | --- | --- | --- | --- |
-| callback | `CallbackGetCollectionsList` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| callback | `CallbackGetCollectionsList` | Mandatory | Callback for the request being executed | See the example below |
 
-**Пример**
+**Example**
 
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
@@ -73,14 +70,14 @@ collections.getCollectionsList(new CallbackGetCollectionsList() {
 
 ## .getCollectionByName(collectionName, callback)
 
-Метод для получения информации о коллекции по ее имени.
+Method for retrieving a collection info by it's name.
 
-| Параметр | Тип | 	Свойства	| Описание | Пример значения |
+| Parameter | Type |    Properties  | Description | Example |
 | --- | --- | --- | --- | --- |
-| collectionName | `String` | Обязательный | Имя запрашиваемой коллекции| “testcollection” |
-| callback | `CallbackGetCollection` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| collectionName | `String` | Mandatory | Collection name | “testcollection” |
+| callback | `CallbackGetCollection` | Mandatory | Callback for the request being executed | See the example below |
 
-**Пример**
+**Example**
 
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
@@ -106,14 +103,14 @@ collections.getCollectionByName("testCollection", new CallbackGetCollection() {
 
 ## .createCollection(collection, callback)
 
-Метод для создания новой коллекции.
+Method for creating new collection
 
-| Параметр | Тип | 	Свойства	| Описание | Пример значения |
+| Parameter | Type |    Properties  | Description | Example |
 | --- | --- | --- | --- | --- |
-| collection | `ScorocodeCollection` | Обязательный | Информация о создаваемой коллекции | см. пример ниже |
-| callback | `CallbackCreateCollection` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| collection | `ScorocodeCollection` | Mandatory | Class that contains new collection info | See the example below |
+| callback | `CallbackCreateCollection` | Mandatory | Callback for the request being executed | See the example below |
 
-**Пример**
+**Example**
 
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
@@ -144,15 +141,16 @@ collections.createCollection(newCollection, new CallbackCreateCollection() {
 
 ## .updateCollcetion(collectionId, collection, callback)
 
-Метод для обновления параметров коллекции
+Method fot Updating the existing collection
 
-| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+
+| Parameter | Type |    Properties  | Description | Example |
 | --- | --- | --- | --- | --- |
-| collectionId | `String` | Обязательный | Id обновляемой коллекции |“584fba2c42d52f1ba275fdb”|
-| collection | `ScorocodeCollection` | Обязательный | Новая информация о коллекции |см. пример ниже|
-| callback | `CallbackUpdateCollection` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| collectionId | `String` | Mandatory | Collection identifier |“584fba2c42d52f1ba275fdb”|
+| collection | `ScorocodeCollection` | Mandatory | Class that contains collection info | See the example below |
+| callback | `CallbackUpdateCollection` | Mandatory | Сallback for the request being executed | See the example below |
 
-**Пример**
+**Example**
 
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
@@ -175,7 +173,6 @@ collections.updateCollection(“ahfdsjlsdlffdsdsa”, collection, new CallbackUp
         //error during request
     }
 });
-
 ```
 
 ------------------------------------------------------------------------
@@ -184,15 +181,15 @@ collections.updateCollection(“ahfdsjlsdlffdsdsa”, collection, new CallbackUp
 
 ## .cloneCollection(collectionId, collectionName, callback)
 
-Метод для клонирования коллекции
+Method for collection clone creation.
 
-| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| Parameter | Type |    Properties  | Description | Example |
 | --- | --- | --- | --- | --- |
-| collectionId | `String` | Обязательный | Id  клонируемой коллекции |“584fba2c42d52f1ba275fdb”|
-| collectionName | `String` | Обязательный |  Имя новой коллекции |см. пример ниже|
-| callback | `CallbackCloneCollection` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| collectionId | `String` | Mandatory |  Collection identifier | “584fba2c42d52f1ba275fdb”|
+| collectionName | `String` | Mandatory | New collection name | See the example below |
+| callback | `CallbackCloneCollection` | Mandatory | Callback for the request being executed | See the example below |
 
-**Пример**
+**Example**
 
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
@@ -217,15 +214,15 @@ collections.cloneCollection(“asdhjkasdjska”, "clonedtestcollection”), new 
 
 ## .createCollectionIndex(collectionName, index, callback)
 
-Метод для создания индекса коллекции
+Method for collection index creation
 
-| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| Parameter | Type |    Properties  | Description | Example |
 | --- | --- | --- | --- | --- |
-| collectionName | `String` | Обязательный | Имя новой коллекции | "testcoll" |
-| index | `Index` | Обязательный |  Информация о создаваемом индексе коллекции | см. пример ниже |
-| callback | `CallbackCreateCollectionIndex` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| collectionName | `String` | Mandatory | Collection name | "testcoll" |
+| index | `Index` | Mandatory |  Class that contains index information | See the example below |
+| callback | `CallbackCreateCollectionIndex` | Mandatory | Callback for the request being executed | See the example below |
 
-**Пример**
+**Example**
 
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
@@ -255,15 +252,15 @@ collections.createCollectionIndex(“testcollection”, index, new CallbackCreat
 
 ## .deleteCollectionIndex(collectionName, indexName, callback)
 
-Метод для удаления индекса коллекции.
+Method for collection index deletion
 
-| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| Parameter | Type |    Properties  | Description | Example |
 | --- | --- | --- | --- | --- |
-| collectionName | `String` | Обязательный | Имя новой коллекции | "testcoll" |
-| indexName | `String` | Обязательный |  Название удаляемого индекса | "testindex" |
-| callback | `CallbackDeleteCollectionIndex` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| collectionName | `String` | Mandatory | Collection name | "testcoll" |
+| indexName | `String` | Mandatory |  Index name | "testindex" |
+| callback | `CallbackDeleteCollectionIndex` | Mandatory | Callback for the request being executed | See the example below |
 
-**Пример**
+**Example**
 
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
@@ -288,15 +285,15 @@ collections.deleteCollectionIndex(testCollection.getCollectionName(), INDEX_NAME
 
 ## .updateCollectionTriggers(collectionName, triggers, callback)
 
-Метод для обновления информации о триггерах коллекции.
+Method for updating collection triggers
 
-| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| Parameter | Type |    Properties  | Description | Example |
 | --- | --- | --- | --- | --- |
-| collectionName | `String` | Обязательный | Имя коллекции в которой мы обновляем триггеры | "testcoll" |
-| triggers | `ScorocodeTriggers` | Обязательный |  Информаци о триггерах для обновления | см. пример ниже |
-| callback | `CallbackUpdateCollectionTriggers` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| collectionName | `String` | Mandatory | Collection name | "testcoll" |
+| collection | `ScorocodeCollection` | Mandatory | Class that contains Trigger info | See the example below |
+| callback | `CallbackUpdateCollectionTriggers` | Mandatory | Callback for the request being executed | See the example below |
 
-**Пример**
+**Example**
 
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
@@ -330,15 +327,15 @@ collections.updateCollectionTriggers(“testcollection”, triggers, new Callbac
 
 ## .createCollectionField(callback)
 
-Метод для создания нового поля коллекции.
+Method for creating collection field
 
-| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| Parameter | Type |    Properties  | Description | Example |
 | --- | --- | --- | --- | --- |
-| collectionName | `String` | Обязательный | Имя коллекции в которую мы добавляем поле  | "testcoll" |
-| field | `ScorocodeField` | Обязательный |  Информация о добавляемом поле | см. пример ниже |
-| callback | `CallbackAddField` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| collectionName | `String` | Mandatory | Collection name | "testcoll" |
+| field | `ScorocodeField` | Mandatory | Class that contains field's info | See the example below |
+| callback | `CallbackAddField` | Mandatory | Callback for the request being executed | See the example below |
 
-**Пример**
+**Example**
 
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
@@ -359,21 +356,22 @@ collections.createCollectionField(“testcollection”, field, new CallbackAddFi
 });
 ```
 
+
 ------------------------------------------------------------------------
 
 <a name="Collections+deleteCollectionField"></a>
 
 ## .deleteCollectionField(collectionName, fieldName, callback)
 
-Метод для удаления поля из коллекции.
+Method for deleteing collection field
 
-| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| Parameter | Type |    Properties  | Description | Example |
 | --- | --- | --- | --- | --- |
-| collectionName | `String` | Обязательный | Имя коллекции из которой мы удаляем поле  | "testcoll" |
-| fieldName | `String` | Обязательный |  Имя удаляемого поля | "testfield" |
-| callback | `CallbackDeleteField` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| collectionName | `String` | Mandatory | Collection idenifier | "Testcoll" |
+| fieldName | `String` | Mandatory |  Field name | "testfield" |
+| callback | `CallbackDeleteField` | Mandatory | Callback for the request being executed | See the example below |
 
-**Пример**
+**Example**
 
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
@@ -398,14 +396,14 @@ collections.deleteCollectionField(“testcoll”, "testnumberfield", new Callbac
 
 ## .deleteCollection(collectionId, callback)
 
-Метод для удаления коллекции и всех её документов
+Method for deleteing collection and all it's documents
 
-| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| Parameter | Type |    Properties  | Description | Example |
 | --- | --- | --- | --- | --- |
-| collectionId | `String` | Обязательный | Id удаляемрй коллекции  | "584fba2c42d52f1ba275fdb" |
-| callback | `CallbackDeleteCollection` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| collectionId | `String` | Mandatory | Collection idenifier | "584fba2c42d52f1ba275fdb" |
+| callback | `CallbackDeleteCollection` | Mandatory | Callback for the request being executed | See the example below |
 
-**Пример**
+**Example**
 
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);

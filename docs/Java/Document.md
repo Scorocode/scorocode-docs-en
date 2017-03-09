@@ -13,6 +13,7 @@
     * [.removeDocument(callback)](#Document+removeDocument)  
 
 ----------------------------------------------------------------------------------------------
+
 <a name="new_Scorocode.Document_new"></a>
 
 ### new Document(collection_name)
@@ -21,7 +22,7 @@ Document initialisation
 
 | Parameter | Type | Properties | Description | Value example |
 |-----------|------|------------|-------------|---------------|
-| collection_name | `String` | Обязательное | Name of the collection where the document is added  | "Things" |
+| collection_name | `String` | Mandatory | Name of the collection where the document is added  | "Things" |
 
 **Example** 
 
@@ -32,6 +33,7 @@ Document exampleItem = new Document("Items");
 ```
 
 ----------------------------------------------------------------------------------------------
+
 <a name="Document+setField"></a>
 
 ### .setField(field, value)
@@ -53,7 +55,9 @@ order.setField(“orderId”, “Ku128A439ads”);
 ```
 
 ----------------------------------------------------------------------------------------------
+
 <a name="Document+saveDocument"></a>
+
 ### .saveDocument(callback)
 
 The method saves the document in the database or updates an object that already exists there
@@ -121,7 +125,9 @@ Updating the existing document
 ```
 
 ----------------------------------------------------------------------------------------------
+
 <a name="Document+getDocumentById"></a>
+
 ### .getDocumentById(documentId, callback)
 
 Method for retrieving a collection object from DB by its _id.
@@ -152,7 +158,9 @@ document.getDocumentById("nV0p50CDKq", new CallbackGetDocumentById() {
 ```
 
 ----------------------------------------------------------------------------------------------
+
 <a name="Document+getField"></a>
+
 ### .getField(field)
 
 Method for retrieving data from a specified document field.
@@ -168,10 +176,13 @@ final Document document = new Document(“ordersCollection”);
 String orderId = document.getField(“orderId”);
 ```
 ----------------------------------------------------------------------------------------------
+
 <a name="Document+updateDocument"></a>
+
 ### .updateDocument()
 
 Method for updating the document using Update class.
+
 
 ----------------------------------------------------------------------------------------------
 <a name="Document+uploadFile"></a>
@@ -227,7 +238,7 @@ Method for retreiving file link
 
 | Parameter | Type | Properties | Description | Value example |
 |-----------|------|------------|-------------|---------------|
-| fieldName| `String`     | Mandatory | Field name         | "attachment"    | 
+| fieldName | `String`     | Mandatory | Field name         | "attachment"    | 
 | fileName | `String`   | Mandatory | Filename with extension| "file.txt"    | 
 
 **Example** 
@@ -257,7 +268,7 @@ Method for removing the file
 
 | Parameter | Type | Properties | Description | Value example |
 |-----------|------|------------|-------------|---------------|
-| fieldName| `String`     | Mandatory | Collection field name | "attachment"    | 
+| fieldName | `String`     | Mandatory | Collection field name | "attachment"    | 
 | fileName | `String`   | Mandatory | Filename with extension | "file.txt"      | 
 | callback | `CallbackDeleteFile` | Mandatory | Callback for the request being executed. |  | 
 

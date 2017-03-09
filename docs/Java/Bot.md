@@ -18,7 +18,7 @@
 
 ## new Bot()
 
-Конструктор Bot
+Constructor Bot
 
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
@@ -26,8 +26,8 @@ ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da
 Bot bot = new Bot();
 ```
 
-!!! Note "Примечание"
-    Для использования методов класса Bot необходима инициализация SDK с указанием MasterKey.
+!!! Note "MasterKey"
+    You should initialise SDK with MasterKey to use ApplicationInfo methods.
 
 ------------------------------------------------------------------------
 
@@ -35,13 +35,13 @@ Bot bot = new Bot();
 
 ## .getBotsList(callback)
 
-Метод для получения списка всех ботов приложения.
+Retrieve application bots list.
 
-| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| Parameter | Type |    Properties  | Description | Example |
 | --- | --- | --- | --- | --- |
-| callback | `CallbackGetBotList` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| callback | `CallbackGetBotList` | Mandatory | Callback for the request being executed | See the example below |
 
-**Пример**
+**Example**
 
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
@@ -67,14 +67,15 @@ bot.getBotsList(new CallbackGetBotList() {
 
 ## .createBot(botInfo, callback)
 
-Метод для создания нового бота.
+Method for create a new bot.
 
-| Параметр | Тип |  Свойства    | Описание |    Пример значения |
+| Parameter | Type |    Properties  | Description | Example |
 | --- | --- | --- | --- | --- |
-| botInfo | `ScorocodeBot` | Обязательный | Класс, содержащий информацию о создаваемом боте | см. пример ниже |
-| callback | `CallbackGetBotList` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| botInfo | `ScorocodeBot` | Mandatory | Class that contains bot information | See the example below |
+| callback | `CallbackCreateBot` | Mandatory | Callback for the request being executed | See the example below |
 
-**Пример**
+**Example**
+
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
 
@@ -97,21 +98,23 @@ bot.createBot(botInfo, new CallbackCreateBot() {
 });
 ```
 
+
 ------------------------------------------------------------------------
 <a name="Bot+updateBot"></a>
 
 
 ## .updateBot(botId, newBotInfo, callback)
 
-Метод для обновления информации уже существующего бота.
+Method for updating a bot that already exists
 
-| Параметр | Тип |  Свойства    | Описание |    Пример значения |
+| Parameter | Type |    Properties  | Description | Example |
 | --- | --- | --- | --- | --- |
-| botId | `String` | Обязательный | Уникальный Id обновляемого бота  | см. пример ниже |
-| newBotInfo | `ScorocodeBot` | Обязательный | Класс, содержащий информацию о создаваемом боте | см. пример ниже |
-| callback | `CallbackGetBotList` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| botId | `String` | Mandatory | Scorocode bot identifier | See the example below |
+| newBotInfo | `ScorocodeBot` | Mandatory | Class that contains bot information| See the example below |
+| callback | `CallbackUpdateBot` | Mandatory | Callback for the request being executed | See the example below |
 
-**Пример**
+**Example**
+
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
 
@@ -139,14 +142,14 @@ bot.updateBot(botId, newBotInfo, new CallbackUpdateBot() {
 
 ## .deleteBot(botId, callback)
 
-Метод для удаления бота
+Method for deleteing a bot
 
-| Параметр | Тип |  Свойства    | Описание |    Пример значения |
+| Parameter | Type |    Properties  | Description | Example |
 | --- | --- | --- | --- | --- |
-| botId | `String` | Обязательный | Уникальный Id обновляемого бота  | см. пример ниже |
-| callback | `CallbackGetBotList` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| botId | `String` | Mandatory | Scorocode bot identifier | See the example below |
+| callback | `CallbackDeleteBot` | Mandatory | Callback for the request being executed | See the example below |
 
-**Пример**
+**Example**
 
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);

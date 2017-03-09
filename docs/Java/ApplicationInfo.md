@@ -15,7 +15,7 @@
 
 ## new ApplicationInfo()
 
-Конструктор ApplicationInfo
+Constructor ApplicationInfo
 
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
@@ -23,8 +23,8 @@ ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da
 ApplicationInfo applicationInfo = new ApplicationInfo();
 ```
 
-!!! Note "Примечание"
-    Для использования методов класса ApplicationInfo необходима инициализация SDK с указанием MasterKey.
+!!! Note "MasterKey"
+    You should initialise SDK with MasterKey to use ApplicationInfo methods.
 
 ------------------------------------------------------------------------
 
@@ -32,13 +32,13 @@ ApplicationInfo applicationInfo = new ApplicationInfo();
 
 ## .getApplicationInfo(callback)
 
-Метод для получения полной информации о приложении.
+Retreive full application info.
 
-| Параметр | Тип | 	Свойства	| Описание |	Пример значения |
+| Parameter | Type | 	Properties	| Description |	Example |
 | --- | --- | --- | --- | --- |
-| callback | `CallbackGetApplicationInfo` | Обязательный | Callback, который будет вызван после выполнения запроса. | см. пример ниже |
+| callback | `CallbackGetApplicationInfo` | Mandatory | Callback for the request being executed | See the example below |
 
-**Пример**
+**Example**
 
 ```Java
 ScorocodeSdk.initWith("db8a1b41b8543397a798a181d9891b4c", "563452bbc611d8106d5da767365897de", "28f06b89b62165c33de55265166d8781", null, null, null, null);
