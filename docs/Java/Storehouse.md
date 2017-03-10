@@ -1213,20 +1213,19 @@ private void setColorsUpdateInfo() {
 }
 ```
 
-Для обновления информации об устройстве используется метод `updateDocument()` класса `Document`. При этом экземпляр класса Document обновление которого мы проводим должен быть ассоциирован с реальным документом из БД при помощи метода `getDocumentById`. При этом новые значения следующих полей:
+To update device information we use the `updateDocument()` method of the `Document` class. In this case, the instance of the Document class wich we are updating should be linked to a real document in the database using the `getDocumentById` method. New values for the fileds below are set with the `set(field, value)` method of the `Update` class.
 
-* Название устройства (поле deviceName в БД)
-* ОС устройства (поле platform в БД)
-* Информация о камере (deviceCameraInfo)
+* Device Name ( deviceName field in the database)
+* Device OS (platform field in the database)
+* Camera Information (deviceCameraInfo)
 
-задаются при помощи метода `set(field, value)` класса `Update`.
+The  «device price» field (devicePrice in the database) is set with the `.inc(field, value)` mehod of the `Update` class. When we increase the price, we use positive prarameter values, and when we decrease it, then we use the negative ones.
 
-Поле «цена устройства» (поле devicePrice в БД) задается при помощи метода `.inc(field, value)` класса `Update`. При этом если мы увеличиваем цену, то используем в положительные значения параметра value, если уменьшаем, то отрицательную.
+The «avaliable colours» field (colorsAvailable in the database) is set with the `.push()` method (to add a colour) and the `.pull()` method (to remove a colour).
 
-Поле «доступные цвета» (поле colorsAvailable в БД) задается при помощи методов `.push()` (для добавления цвета устройства) и `.pull()` (для удаления цвета устройства).
+Let's look again at the `updateItemDocument(...)` method: to update the document fields we need to verify that such document exists  and to link our instance of the `Document` class to a document in the database. To do so we can use the `.getDocumentById(…)` method of the `Document` class.
 
-Рассмотрим еще раз работу метода `updateItemDocument(...)`: для обновления полей документа нам нужно удостовериться, что такой документ существует и ассоциировать наш экземпляр класса `Document` с документом в БД. Для этого мы используем метод `.getDocumentById(…)` класса `Document`.
-После того как мы ассоциировали наш документ с документом из БД мы получаем объект класса `Update` при помощи метода `.updateDocument()`. Далее используя объект класса Update мы задаем название, платформу и информацию о камере устройства при помощи метода `.set(…)`, добавляем в массив (при помощи метода `.push()`) или удаляем из массива (при помощи метода `.pull`) доступные цвета для данного устройства и изменяем цену (при помощи метода `.inc()`) в поле цены. После задания всех необходимых изменений в экземпляре класса `Update` мы производим сохранение документа при помощи метода `.saveDocument(…)` класса `Document`.
+After we have linked our document to the database one, we receive an object of the `Update` class using the `.updateDocument()` method. With that object we set a device name, OS and camera informaton using the `.set(…)` method.  We can add to the array  (with the `.push()` method) or remove from the array (with the `.pull` method) avaliable colours for this device and change its price in the price field (with the `.inc()` method). When all udates are done in our instance of the `Update` class, we save the document using the  `.saveDocument(…)` method of the `Document` class.
 
 Поскольку документ получен путем ассоциации с документом из БД (при помощи метода `.getDocumentById`), то в результате выполнения `.saveDocument(…)` произойдет обновление документа, а не создание нового документа.
 
