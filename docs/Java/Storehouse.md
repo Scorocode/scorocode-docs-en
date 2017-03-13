@@ -1227,9 +1227,9 @@ Let's look again at the `updateItemDocument(...)` method: to update the document
 
 After we have linked our document to the database one, we receive an object of the `Update` class using the `.updateDocument()` method. With that object we set a device name, OS and camera informaton using the `.set(…)` method.  We can add to the array  (with the `.push()` method) or remove from the array (with the `.pull` method) avaliable colours for this device and change its price in the price field (with the `.inc()` method). When all udates are done in our instance of the `Update` class, we save the document using the  `.saveDocument(…)` method of the `Document` class.
 
-Поскольку документ получен путем ассоциации с документом из БД (при помощи метода `.getDocumentById`), то в результате выполнения `.saveDocument(…)` произойдет обновление документа, а не создание нового документа.
+Since we received the document via linking it with another document from the database, (using the `.getDocumentById` method), the result of running `.saveDocument(…)` is an updated documet, not a new one.
 
-Рассмотрим действие кнопки ![Удалить данное устройство из БД](img/Storehouse/3.1.2.png) - при нажатии на данную кнопку происходит удаление информации об устройстве из БД. Для этого добавим обработчик нажатия данной кнопки вызывающий метод показанный ниже:
+Let's consider the ![Remove this device from the database](img/Storehouse/3.1.2.png) button - when pressed, the information is about a device is deleted from the database. To do so, we can add a click event handler which would trigger a method shown below:
 
 ```Java
 public static void fetchAndRemoveDocument(final Context context, final Document document, DocumentInfo documentInfo) {
@@ -1259,8 +1259,8 @@ public static void removeDocument(final Context context, Document document) {
 }
 ```
 
-Рассмотрим данный метод подробней:
-Сначала мы используем метод `.getDocumentById(...)` класса `Document` для того чтобы удостовериться, что такой документ существует и провести ассоциацию данного документа с созданным нами экземпляром класса `Document`.
+Let's consider this method in more detail:
+At first we use the `.getDocumentById(...)` method of the `Document` class to check whether a document exists and to link this document with our created instance of the `Document` class.
 
 После того как мы удостоверились в наличии данного документа мы вызываем метод `.removeDocument()` класса `Document` который удаляет документ из БД.
 
