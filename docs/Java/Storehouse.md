@@ -1259,16 +1259,15 @@ public static void removeDocument(final Context context, Document document) {
 }
 ```
 
-Let's consider this method in more detail:
-At first we use the `.getDocumentById(...)` method of the `Document` class to check whether a document exists and to link this document with our created instance of the `Document` class.
+Let's consider this method in more detail. At first we use the `.getDocumentById(...)` method of the `Document` class to check whether a document exists and to link this document with our created instance of the `Document` class.
 
-После того как мы удостоверились в наличии данного документа мы вызываем метод `.removeDocument()` класса `Document` который удаляет документ из БД.
+After we verified the document we can execute the `.removeDocument()` method of the `Document` class which deletes the document form the database.
 
-Рассмотрим действие кнопки ![Перейти к информации об отгрузке данного товара.](img/Storehouse/3.1.3.png). При нажатии на эту кнопку мы переходим к экрану с информацией об отгрузке товара. 
+The ![Switch to the device shipping info](img/Storehouse/3.1.3.png) button switches a screen to the screen with device shipping information. 
 
-## Экран информации об отгрузке товара.
+## Device Shipping Info Screen.
 
-Создадим новую активность с именем `SendItemActivity` и добавим в layout-файл данной активности следующий xml код:
+Let's create a new activity called `SendItemActivity` and add the following xml code lines into its layout file:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -1358,13 +1357,13 @@ At first we use the `.getDocumentById(...)` method of the `Document` class to ch
 </LinearLayout>
 ```
 
-Полученный экран показан на рисунке  4.1
+The created screen is shown in Figure 4.1
 
-![экран с информацией об отгрузке товара](img/Storehouse/4.1.png)
+![Device Shipping Info Screen](img/Storehouse/4.1.png)
 
-Рисунок 4.1 — экран с информацией об отгрузке товара
+Figure 4.1 — Device Shipping Info Screen
 
-При нажатии на кнопку «ДОБАВИТЬ ПОКУПАТЕЛЯ» вызывается диалоговое окно с просьбой ввести информацию о покупателе после чего вызывается метод:
+When the «ADD BUYER» button is pressed, a dialog screen appears where one can enter information about a buyer. Afterwards, the following code is run:
 
 ```Java
 private void addBuyerAndRefreshWaitingList(final String buyerInfo) {
@@ -1395,7 +1394,7 @@ private void addBuyerAndRefreshWaitingList(final String buyerInfo) {
 }
 ```
 
-Рассмотрим метод более подробно. Сначала проверяем, что введенное поле с именем клиента не является пустым. В случае если пользователь ввел данные происходит ассоциация экземпляра класса Document с документом в БД после чего происходит обновление информации документа следующем образом: веденная пользователем информация о покупателе добавляется в конец массива покупателей с помощью метода `.push()` класса `Update`. Таким образом формируется очередь покупателей, ожидающих отправки товара.
+Let's consider the method in more details. At first, we use verify that the buyer's name field is not empty. In case a user did provide with the buyer's information, the instance of the `Document` class is linked to the document in the database. Afterwards, the document data is updated and the entered information about the buyer is added to the end of the buyers array with the `.push()` method of the `Update` class. This is how a queue is formed which consists of buyers waiting for thier goods shipment.  
 
 При нажатии на кнопку «ОТГРУЗИТЬ ПОЛЬЗОВАТЕЛЮ» из массива ожидающих отправки клиентов должен удаляться первый клиент, должно сохраняться время последней отправки и сотрудники (грузчики, курьеры, бухгалтерия) должны быть оповещены об этом.  
 Для этого добавим обработчик для данной кнопки, который вызывает метод показанный ниже:
