@@ -1396,8 +1396,8 @@ private void addBuyerAndRefreshWaitingList(final String buyerInfo) {
 
 Let's consider the method in more details. At first, we use verify that the buyer's name field is not empty. In case a user did provide with the buyer's information, the instance of the `Document` class is linked to the document in the database. Afterwards, the document data is updated and the entered information about the buyer is added to the end of the buyers array with the `.push()` method of the `Update` class. This is how a queue is formed which consists of buyers waiting for thier goods shipment.  
 
-При нажатии на кнопку «ОТГРУЗИТЬ ПОЛЬЗОВАТЕЛЮ» из массива ожидающих отправки клиентов должен удаляться первый клиент, должно сохраняться время последней отправки и сотрудники (грузчики, курьеры, бухгалтерия) должны быть оповещены об этом.  
-Для этого добавим обработчик для данной кнопки, который вызывает метод показанный ниже:
+When the «SHIP TO BUYER» button is pressed, the first client in the waiting clients queue array gets deleted. Alongside this, the latest shipment time should be recorded and the employees should be notified about it (e.g. movers, delivery drivers, accountants).  
+To do this, we can add a click event handler which executes the following method:
 
 ```Java
 @OnClick(R.id.btnSendToUser)
@@ -1428,9 +1428,9 @@ public void onSendToUserButtonClicked() {
  }
 ```
 
-В данном методе происходит ассоциация экземпляра класса `Document` с документом из БД при помощи метода `.getDocumentById()` класса `Document`, после чего получается экземпляр класса `Update` и используется его метод `.popFirst` который удаляет первый элемент массива (имитируя обслуживание первого человека в очереди). Кроме того в поле «Последняя отгрузка совершена в» (поле lastSend в БД) записывается время последней отгрузки при помощи метода `.setCurrentDate(…)` класса `Update`.
+In this method, we can see a `Document` class instance being linked to a document from the database with the `.getDocumentById()` method of the `Document` class. We use its `.popFirst` method which deletes the first element of an array (imitating attending to the first person in a queue). Furthermore, the time of the last shipment is recorded in the field called "Last shipment occurred..." (lastSend in the database) using the `.setCurrentDate(…)` method of the `Update` class.
 
-Так же на этом экране присутствует комментарий к отгрузке товара, который хранится в файле документа (поле sendInfo типа File). По умолчанию этот файл отсутствует и в текстовое окно выдается информацию по умолчанию «По товару в настоящее время нет комментария ...». Пользователь может нажать кнопку «редактировать», изменить комментарий к отгрузке и нажать «сохранить». При этом будет вызван метод:
+The screen also contains comments about the shipment which are stored in the document file (sendInfo field of the File type). By default, this file does not exist and the text screen shows "No comments about the device...". A user can press the Edit button, change the shipment comment and press the Save button. It will execute the following method:  
 
 ```Java
 public static void uploadFile(final Context context, Document document, String content) {
@@ -1449,9 +1449,9 @@ public static void uploadFile(final Context context, Document document, String c
 }
 ```
 
-Данный метод загружает файл в поле (типа File) документа БД. Документ при этом должен быть ассоциирован при помощи метода `getDocumentById(…)`. Аналогичным образом происходит удаление документа из БД.
+This method uploads the file into a document field (File type) in the database. The document should be linked with the `getDocumentById(…)` method. A similar routine happens when a document is deleted from the database. 
 
-Информация о пользователях, ожидающих отгрузки и комментарии загружаются с сервера при помощи метода показанного ниже.
+Waiting users' information and shipment comments are retrieved from the server using the method shown below:
 
 ```Java
 private void refreshWaitingList() {
