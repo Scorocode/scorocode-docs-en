@@ -1529,7 +1529,7 @@ private void sendPushToLoaderPerson() {
 }
 ```
 
-- send a txt to delivery services: 
+- sending a txt to delivery services: 
 
 ```Java
 private void sendSmsToDeliveryPerson() {
@@ -1553,7 +1553,7 @@ private void sendSmsToDeliveryPerson() {
 }
 ```
 
-- sends an email to the accountants office:
+- sending an email to the accountants office:
 
 ```Java
 private void sendEmailInAccountingDepartment() {
