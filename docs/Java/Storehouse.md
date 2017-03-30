@@ -1488,23 +1488,25 @@ private void refreshWaitingList() {
 }
 ```
 
-В данном методе происходит ассоциация экземпляра класса `Document` с документом из БД после чего на экране обновляются значения следующих полей:
-1. список ожидающих пользователей
-2. время последней отгрузки
-3. устанавливается видимость тех или иных элементов в зависимости от контента.
-4. При помощи метода getFileContent класса Document получаем содержимое файла в виде строки (с сохранением форматирования). Полученную строку устанавливаем в поле комментария.
+In this method, we can see a `Document` class instance being linked to a document from the database which leads to the following fields updating on the screen:
+1. users waiting queue list 
+2. time of the last shipment
+3. setting visibility of different elements depending on the content 
 
-Так же создадим класс  ItemNotificator и добавим в него метод notifyPersonalAboutItemSend()
-который будем вызывать при отгрузке товара пользователю. Код метода показан ниже
-public void notifyPersonalAboutItemSend() {
+Using the `getFileContent` method of the `Document` class we can receive the file contents as a line (with formating). The line then is set in the comment field. 
+
+Lets also create the `ItemNotificator` class and add the `notifyPersonalAboutItemSend()` method to it. The method will be called when a device is shipped to a user. Its code is shown below:
+
+```public void notifyPersonalAboutItemSend() {
     sendPushToLoaderPerson();
     sendEmailInAccountingDepartment();
     sendSmsToDeliveryPerson();
 }
- 
-Данный метод проводит уведомление персонала о том, что товар подготовлен к отправке следующим образом:
+``` 
 
-- отсылает push сообщение грузчику при помощи метода:
+This method is notifying the employees stating that the device is ready for shipment. It does so by:
+
+- sending a push notification to a mover with the following:
 
 ```Java
 private void sendPushToLoaderPerson() {
@@ -1527,7 +1529,7 @@ private void sendPushToLoaderPerson() {
 }
 ```
 
-- отсылает sms сообщение курьеру
+- send a txt to delivery services: 
 
 ```Java
 private void sendSmsToDeliveryPerson() {
@@ -1551,7 +1553,7 @@ private void sendSmsToDeliveryPerson() {
 }
 ```
 
-- отсылает email в бухгалтерию.
+- sends an email to the accountants office:
 
 ```Java
 private void sendEmailInAccountingDepartment() {
@@ -1572,7 +1574,7 @@ private void sendEmailInAccountingDepartment() {
 }
 ```
 
-Рассмотрим работу этих методов более подробно:
+Let's consider how these methods work in detail:
 
 1. В методе `sendEmailInAccountingDepartment` из коллекции ролей («roles») выбирается роль «accountantPerson» и всем пользователям с такой ролью отсылаются email сообщения при помощи метода `.sendEmail()` класса `Message`.
 2. В методе `sendSmdToDeliveryPerson` из коллекции ролей («roles») выбирается один (условие setLimit(1)) свободный (условие isFree == true) сотрудник с ролью «deliveryPerson» и ему отправляется sms при помощи метода `.sendSms` класса `Message`.
