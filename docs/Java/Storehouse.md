@@ -1430,7 +1430,7 @@ public void onSendToUserButtonClicked() {
 
 In this method, we can see a `Document` class instance being linked to a document from the database with the `.getDocumentById()` method of the `Document` class. We use its `.popFirst` method which deletes the first element of an array (imitating attending to the first person in a queue). Furthermore, the time of the last shipment is recorded in the field called "Last shipment occurred..." (lastSend in the database) using the `.setCurrentDate(…)` method of the `Update` class.
 
-The screen also contains comments about the shipment which are stored in the document file (sendInfo field of the File type). By default, this file does not exist and the text screen shows "No comments about the device...". A user can press the Edit button, change the shipment comment and press the Save button. It will execute the following method:  
+The screen also contains comments about the shipment, which are stored in the document file (sendInfo field of the File type). By default, this file does not exist and the text screen shows "No comments about the device...". A user can press the Edit button, change the shipment comment and press the Save button. It will execute the following method:  
 
 ```Java
 public static void uploadFile(final Context context, Document document, String content) {
@@ -1488,7 +1488,7 @@ private void refreshWaitingList() {
 }
 ```
 
-In this method, we can see a `Document` class instance being linked to a document from the database which leads to the following fields updating on the screen:
+In this method, we can see a `Document` class instance being linked to a document from the database, which leads to the following fields updating on the screen:
 1. users waiting queue list 
 2. time of the last shipment
 3. setting visibility of different elements depending on the content 
@@ -1529,7 +1529,7 @@ private void sendPushToLoaderPerson() {
 }
 ```
 
-- sending a txt to delivery services: 
+- sending a text (sms) to a delivery person: 
 
 ```Java
 private void sendSmsToDeliveryPerson() {
@@ -1553,7 +1553,7 @@ private void sendSmsToDeliveryPerson() {
 }
 ```
 
-- sending an email to the accountants office:
+- sending an email to the accountants' office:
 
 ```Java
 private void sendEmailInAccountingDepartment() {
@@ -1576,13 +1576,13 @@ private void sendEmailInAccountingDepartment() {
 
 Let's consider how these methods work in detail:
 
-1. В методе `sendEmailInAccountingDepartment` из коллекции ролей («roles») выбирается роль «accountantPerson» и всем пользователям с такой ролью отсылаются email сообщения при помощи метода `.sendEmail()` класса `Message`.
-2. В методе `sendSmdToDeliveryPerson` из коллекции ролей («roles») выбирается один (условие setLimit(1)) свободный (условие isFree == true) сотрудник с ролью «deliveryPerson» и ему отправляется sms при помощи метода `.sendSms` класса `Message`.
-3. В методе `sendSmdToLoaderPerson` из коллекции ролей («roles») выбирается один (условие setLimit(1)) свободный (условие isFree == true) сотрудник с ролью loaderPerson и ему отправляется push при помощи метода `.sendPush` класса `Message`.
+1. In the `sendEmailInAccountingDepartment` method the following happens: the «accountantPerson» role is chosen from the roles collection and all users with this role are sent emails using the `.sendEmail()` method of the `Message` class.
+2. In the `sendSmdToDeliveryPerson` method the following happens: one unoccupied employee (`setLimit(1)` and `sFree == true` conditions) with the «deliveryPerson» role is chosen from the roles collection and is sent a text (sms) using the `.sendSms` method of the `Message` class.
+3. In the `sendSmdToLoaderPerson` method the following happens: one unoccupied employee (`setLimit(1)` and `sFree == true` conditions) with the «loaderPerson» role is chosen from the roles collection and is sent a push notification using the `.sendPush` method of the `Message` class.
 
-Кроме того после нажатия на кнопку «ОТГРУЗИТЬ ПОЛЬЗОВАТЕЛЮ» вызывается метод `refreshCompanyBalance()` класса `BalanceNotivicator`.
+After the "SHIP TO BUYER" button is pushed the `refreshCompanyBalance()` method of the `BalanceNotivicator` class is executed.
 
-Листинг метода `resreshCompanyBalance()`:
+The `resreshCompanyBalance()` method listing:
 
 ```Java
 public void refreshCompanyBalance() {
@@ -1600,5 +1600,4 @@ public void refreshCompanyBalance() {
 }
 ```
 
-В данном листинге при помощи метода `runScript(...)` класса `Script` вызывается серверный код с id 5800ad9342d52f1ba275fbcd, который пересчитывает количество товаров на складе, издержки на хранение и другие характеристики.
- 
+In this listing, the server-side code with 5800ad9342d52f1ba275fbcd ID is called using the `runScript(...)` method of the `Script` class. It recounts the goods in our storehouse and adjusts the storage costs, the balance and other characteristics.  
