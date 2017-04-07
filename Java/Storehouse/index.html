@@ -906,8 +906,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="Экран информации об отгрузке товара." class="md-nav__link">
-    Экран информации об отгрузке товара.
+  <a href="#device-shipping-info-screen" title="Device Shipping Info Screen." class="md-nav__link">
+    Device Shipping Info Screen.
   </a>
   
 </li>
@@ -987,8 +987,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="Экран информации об отгрузке товара." class="md-nav__link">
-    Экран информации об отгрузке товара.
+  <a href="#device-shipping-info-screen" title="Device Shipping Info Screen." class="md-nav__link">
+    Device Shipping Info Screen.
   </a>
   
 </li>
@@ -2120,19 +2120,18 @@ In this method, as our first step we need to take is to delete the user data fil
 </pre></div>
 
 
-<p>Для обновления информации об устройстве используется метод <code>updateDocument()</code> класса <code>Document</code>. При этом экземпляр класса Document обновление которого мы проводим должен быть ассоциирован с реальным документом из БД при помощи метода <code>getDocumentById</code>. При этом новые значения следующих полей:</p>
+<p>To update device information we use the <code>updateDocument()</code> method of the <code>Document</code> class. In this case, the instance of the Document class wich we are updating should be linked to a real document in the database using the <code>getDocumentById</code> method. New values for the fileds below are set with the <code>set(field, value)</code> method of the <code>Update</code> class.</p>
 <ul>
-<li>Название устройства (поле deviceName в БД)</li>
-<li>ОС устройства (поле platform в БД)</li>
-<li>Информация о камере (deviceCameraInfo)</li>
+<li>Device Name ( deviceName field in the database)</li>
+<li>Device OS (platform field in the database)</li>
+<li>Camera Information (deviceCameraInfo)</li>
 </ul>
-<p>задаются при помощи метода <code>set(field, value)</code> класса <code>Update</code>.</p>
-<p>Поле «цена устройства» (поле devicePrice в БД) задается при помощи метода <code>.inc(field, value)</code> класса <code>Update</code>. При этом если мы увеличиваем цену, то используем в положительные значения параметра value, если уменьшаем, то отрицательную.</p>
-<p>Поле «доступные цвета» (поле colorsAvailable в БД) задается при помощи методов <code>.push()</code> (для добавления цвета устройства) и <code>.pull()</code> (для удаления цвета устройства).</p>
-<p>Рассмотрим еще раз работу метода <code>updateItemDocument(...)</code>: для обновления полей документа нам нужно удостовериться, что такой документ существует и ассоциировать наш экземпляр класса <code>Document</code> с документом в БД. Для этого мы используем метод <code>.getDocumentById(…)</code> класса <code>Document</code>.
-После того как мы ассоциировали наш документ с документом из БД мы получаем объект класса <code>Update</code> при помощи метода <code>.updateDocument()</code>. Далее используя объект класса Update мы задаем название, платформу и информацию о камере устройства при помощи метода <code>.set(…)</code>, добавляем в массив (при помощи метода <code>.push()</code>) или удаляем из массива (при помощи метода <code>.pull</code>) доступные цвета для данного устройства и изменяем цену (при помощи метода <code>.inc()</code>) в поле цены. После задания всех необходимых изменений в экземпляре класса <code>Update</code> мы производим сохранение документа при помощи метода <code>.saveDocument(…)</code> класса <code>Document</code>.</p>
-<p>Поскольку документ получен путем ассоциации с документом из БД (при помощи метода <code>.getDocumentById</code>), то в результате выполнения <code>.saveDocument(…)</code> произойдет обновление документа, а не создание нового документа.</p>
-<p>Рассмотрим действие кнопки <img alt="Удалить данное устройство из БД" src="../img/Storehouse/3.1.2.png" /> - при нажатии на данную кнопку происходит удаление информации об устройстве из БД. Для этого добавим обработчик нажатия данной кнопки вызывающий метод показанный ниже:</p>
+<p>The  «device price» field (devicePrice in the database) is set with the <code>.inc(field, value)</code> mehod of the <code>Update</code> class. When we increase the price, we use positive prarameter values, and when we decrease it, then we use the negative ones.</p>
+<p>The «avaliable colours» field (colorsAvailable in the database) is set with the <code>.push()</code> method (to add a colour) and the <code>.pull()</code> method (to remove a colour).</p>
+<p>Let's look again at the <code>updateItemDocument(...)</code> method: to update the document fields we need to verify that such document exists  and to link our instance of the <code>Document</code> class to a document in the database. To do so we can use the <code>.getDocumentById(…)</code> method of the <code>Document</code> class.</p>
+<p>After we have linked our document to the database one, we receive an object of the <code>Update</code> class using the <code>.updateDocument()</code> method. With that object we set a device name, OS and camera informaton using the <code>.set(…)</code> method.  We can add to the array  (with the <code>.push()</code> method) or remove from the array (with the <code>.pull</code> method) avaliable colours for this device and change its price in the price field (with the <code>.inc()</code> method). When all udates are done in our instance of the <code>Update</code> class, we save the document using the  <code>.saveDocument(…)</code> method of the <code>Document</code> class.</p>
+<p>Since we received the document via linking it with another document from the database, (using the <code>.getDocumentById</code> method), the result of running <code>.saveDocument(…)</code> is an updated documet, not a new one.</p>
+<p>Let's consider the <img alt="Remove this device from the database" src="../img/Storehouse/3.1.2.png" /> button - when pressed, the information is about a device is deleted from the database. To do so, we can add a click event handler which would trigger a method shown below:</p>
 <div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">fetchAndRemoveDocument</span><span class="o">(</span><span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span><span class="o">,</span> <span class="n">DocumentInfo</span> <span class="n">documentInfo</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="n">documentInfo</span><span class="o">.</span><span class="na">getId</span><span class="o">(),</span> <span class="k">new</span> <span class="n">CallbackGetDocumentById</span><span class="o">()</span> <span class="o">{</span>
         <span class="nd">@Override</span>
@@ -2161,12 +2160,11 @@ In this method, as our first step we need to take is to delete the user data fil
 </pre></div>
 
 
-<p>Рассмотрим данный метод подробней:
-Сначала мы используем метод <code>.getDocumentById(...)</code> класса <code>Document</code> для того чтобы удостовериться, что такой документ существует и провести ассоциацию данного документа с созданным нами экземпляром класса <code>Document</code>.</p>
-<p>После того как мы удостоверились в наличии данного документа мы вызываем метод <code>.removeDocument()</code> класса <code>Document</code> который удаляет документ из БД.</p>
-<p>Рассмотрим действие кнопки <img alt="Перейти к информации об отгрузке данного товара." src="../img/Storehouse/3.1.3.png" />. При нажатии на эту кнопку мы переходим к экрану с информацией об отгрузке товара. </p>
-<h2 id="_1">Экран информации об отгрузке товара.</h2>
-<p>Создадим новую активность с именем <code>SendItemActivity</code> и добавим в layout-файл данной активности следующий xml код:</p>
+<p>Let's consider this method in more detail. At first we use the <code>.getDocumentById(...)</code> method of the <code>Document</code> class to check whether a document exists and to link this document with our created instance of the <code>Document</code> class.</p>
+<p>After we verified the document we can execute the <code>.removeDocument()</code> method of the <code>Document</code> class which deletes the document form the database.</p>
+<p>The <img alt="Switch to the device shipping info" src="../img/Storehouse/3.1.3.png" /> button switches a screen to the screen with device shipping information. </p>
+<h2 id="device-shipping-info-screen">Device Shipping Info Screen.</h2>
+<p>Let's create a new activity called <code>SendItemActivity</code> and add the following xml code lines into its layout file:</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
     <span class="na">xmlns:tools=</span><span class="s">&quot;http://schemas.android.com/tools&quot;</span>
@@ -2255,10 +2253,10 @@ In this method, as our first step we need to take is to delete the user data fil
 </pre></div>
 
 
-<p>Полученный экран показан на рисунке  4.1</p>
-<p><img alt="экран с информацией об отгрузке товара" src="../img/Storehouse/4.1.png" /></p>
-<p>Рисунок 4.1 — экран с информацией об отгрузке товара</p>
-<p>При нажатии на кнопку «ДОБАВИТЬ ПОКУПАТЕЛЯ» вызывается диалоговое окно с просьбой ввести информацию о покупателе после чего вызывается метод:</p>
+<p>The created screen is shown in Figure 4.1</p>
+<p><img alt="Device Shipping Info Screen" src="../img/Storehouse/4.1.png" /></p>
+<p>Figure 4.1 — Device Shipping Info Screen</p>
+<p>When the «ADD BUYER» button is pressed, a dialog screen appears where one can enter information about a buyer. Afterwards, the following code is run:</p>
 <div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="kt">void</span> <span class="nf">addBuyerAndRefreshWaitingList</span><span class="o">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">buyerInfo</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">if</span><span class="o">(!</span><span class="n">buyerInfo</span><span class="o">.</span><span class="na">trim</span><span class="o">().</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
         <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="n">getDocumentInfo</span><span class="o">().</span><span class="na">getId</span><span class="o">(),</span> <span class="k">new</span> <span class="n">CallbackGetDocumentById</span><span class="o">()</span> <span class="o">{</span>
@@ -2288,9 +2286,9 @@ In this method, as our first step we need to take is to delete the user data fil
 </pre></div>
 
 
-<p>Рассмотрим метод более подробно. Сначала проверяем, что введенное поле с именем клиента не является пустым. В случае если пользователь ввел данные происходит ассоциация экземпляра класса Document с документом в БД после чего происходит обновление информации документа следующем образом: веденная пользователем информация о покупателе добавляется в конец массива покупателей с помощью метода <code>.push()</code> класса <code>Update</code>. Таким образом формируется очередь покупателей, ожидающих отправки товара.</p>
-<p>При нажатии на кнопку «ОТГРУЗИТЬ ПОЛЬЗОВАТЕЛЮ» из массива ожидающих отправки клиентов должен удаляться первый клиент, должно сохраняться время последней отправки и сотрудники (грузчики, курьеры, бухгалтерия) должны быть оповещены об этом.<br />
-Для этого добавим обработчик для данной кнопки, который вызывает метод показанный ниже:</p>
+<p>Let's consider the method in more details. At first, we use verify that the buyer's name field is not empty. In case a user did provide with the buyer's information, the instance of the <code>Document</code> class is linked to the document in the database. Afterwards, the document data is updated and the entered information about the buyer is added to the end of the buyers array with the <code>.push()</code> method of the <code>Update</code> class. This is how a queue is formed which consists of buyers waiting for thier goods shipment.  </p>
+<p>When the «SHIP TO BUYER» button is pressed, the first client in the waiting clients queue array gets deleted. Alongside this, the latest shipment time should be recorded and the employees should be notified about it (e.g. movers, delivery drivers, accountants).<br />
+To do this, we can add a click event handler which executes the following method:</p>
 <div class="codehilite"><pre><span></span><span class="nd">@OnClick</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">btnSendToUser</span><span class="o">)</span>
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSendToUserButtonClicked</span><span class="o">()</span> <span class="o">{</span>
     <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="n">getDocumentInfo</span><span class="o">().</span><span class="na">getId</span><span class="o">(),</span> <span class="k">new</span> <span class="n">CallbackGetDocumentById</span><span class="o">()</span> <span class="o">{</span>
@@ -2320,8 +2318,8 @@ In this method, as our first step we need to take is to delete the user data fil
 </pre></div>
 
 
-<p>В данном методе происходит ассоциация экземпляра класса <code>Document</code> с документом из БД при помощи метода <code>.getDocumentById()</code> класса <code>Document</code>, после чего получается экземпляр класса <code>Update</code> и используется его метод <code>.popFirst</code> который удаляет первый элемент массива (имитируя обслуживание первого человека в очереди). Кроме того в поле «Последняя отгрузка совершена в» (поле lastSend в БД) записывается время последней отгрузки при помощи метода <code>.setCurrentDate(…)</code> класса <code>Update</code>.</p>
-<p>Так же на этом экране присутствует комментарий к отгрузке товара, который хранится в файле документа (поле sendInfo типа File). По умолчанию этот файл отсутствует и в текстовое окно выдается информацию по умолчанию «По товару в настоящее время нет комментария ...». Пользователь может нажать кнопку «редактировать», изменить комментарий к отгрузке и нажать «сохранить». При этом будет вызван метод:</p>
+<p>In this method, we can see a <code>Document</code> class instance being linked to a document from the database with the <code>.getDocumentById()</code> method of the <code>Document</code> class. We use its <code>.popFirst</code> method which deletes the first element of an array (imitating attending to the first person in a queue). Furthermore, the time of the last shipment is recorded in the field called "Last shipment occurred..." (lastSend in the database) using the <code>.setCurrentDate(…)</code> method of the <code>Update</code> class.</p>
+<p>The screen also contains comments about the shipment, which are stored in the document file (sendInfo field of the File type). By default, this file does not exist and the text screen shows "No comments about the device...". A user can press the Edit button, change the shipment comment and press the Save button. It will execute the following method:  </p>
 <div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">uploadFile</span><span class="o">(</span><span class="kd">final</span> <span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">Document</span> <span class="n">document</span><span class="o">,</span> <span class="n">String</span> <span class="n">content</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">document</span><span class="o">.</span><span class="na">uploadFile</span><span class="o">(</span><span class="k">new</span> <span class="n">DocumentFields</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">getSendInfoField</span><span class="o">(),</span> <span class="n">FILE_NAME</span><span class="o">,</span> <span class="n">encode</span><span class="o">(</span><span class="n">content</span><span class="o">.</span><span class="na">getBytes</span><span class="o">()),</span>
         <span class="k">new</span> <span class="n">CallbackUploadFile</span><span class="o">()</span> <span class="o">{</span>
@@ -2339,8 +2337,8 @@ In this method, as our first step we need to take is to delete the user data fil
 </pre></div>
 
 
-<p>Данный метод загружает файл в поле (типа File) документа БД. Документ при этом должен быть ассоциирован при помощи метода <code>getDocumentById(…)</code>. Аналогичным образом происходит удаление документа из БД.</p>
-<p>Информация о пользователях, ожидающих отгрузки и комментарии загружаются с сервера при помощи метода показанного ниже.</p>
+<p>This method uploads the file into a document field (File type) in the database. The document should be linked with the <code>getDocumentById(…)</code> method. A similar routine happens when a document is deleted from the database. </p>
+<p>Waiting users' information and shipment comments are retrieved from the server using the method shown below:</p>
 <div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="kt">void</span> <span class="nf">refreshWaitingList</span><span class="o">()</span> <span class="o">{</span>
     <span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="n">getDocumentInfo</span><span class="o">().</span><span class="na">getId</span><span class="o">(),</span> <span class="k">new</span> <span class="n">CallbackGetDocumentById</span><span class="o">()</span> <span class="o">{</span>
         <span class="nd">@Override</span>
@@ -2376,45 +2374,44 @@ In this method, as our first step we need to take is to delete the user data fil
 </pre></div>
 
 
-<p>В данном методе происходит ассоциация экземпляра класса <code>Document</code> с документом из БД после чего на экране обновляются значения следующих полей:
-1. список ожидающих пользователей
-2. время последней отгрузки
-3. устанавливается видимость тех или иных элементов в зависимости от контента.
-4. При помощи метода getFileContent класса Document получаем содержимое файла в виде строки (с сохранением форматирования). Полученную строку устанавливаем в поле комментария.</p>
-<p>Так же создадим класс  ItemNotificator и добавим в него метод notifyPersonalAboutItemSend()
-который будем вызывать при отгрузке товара пользователю. Код метода показан ниже
-public void notifyPersonalAboutItemSend() {
+<p>In this method, we can see a <code>Document</code> class instance being linked to a document from the database, which leads to the following fields updating on the screen:
+1. users waiting queue list 
+2. time of the last shipment
+3. setting visibility of different elements depending on the content </p>
+<p>Using the <code>getFileContent</code> method of the <code>Document</code> class we can receive the file contents as a line (with formating). The line then is set in the comment field. </p>
+<p>Lets also create the <code>ItemNotificator</code> class and add the <code>notifyPersonalAboutItemSend()</code> method to it. The method will be called when a device is shipped to a user. Its code is shown below:</p>
+<p>```public void notifyPersonalAboutItemSend() {
     sendPushToLoaderPerson();
     sendEmailInAccountingDepartment();
     sendSmsToDeliveryPerson();
-}</p>
-<p>Данный метод проводит уведомление персонала о том, что товар подготовлен к отправке следующим образом:</p>
-<ul>
-<li>отсылает push сообщение грузчику при помощи метода:</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="kt">void</span> <span class="nf">sendPushToLoaderPerson</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="s">&quot;roles&quot;</span><span class="o">);</span>
-    <span class="n">query</span><span class="o">.</span><span class="na">equalTo</span><span class="o">(</span><span class="s">&quot;name&quot;</span><span class="o">,</span> <span class="s">&quot;loaderPerson&quot;</span><span class="o">);</span>
-    <span class="n">query</span><span class="o">.</span><span class="na">equalTo</span><span class="o">(</span><span class="s">&quot;isFree&quot;</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
-    <span class="n">query</span><span class="o">.</span><span class="na">setLimit</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+}
+<div class="codehilite"><pre><span></span>This method is notifying the employees stating that the device is ready for shipment. It does so by:
 
-    <span class="n">MessagePush</span> <span class="n">messagePush</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MessagePush</span><span class="o">(</span><span class="n">context</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">you_should_take</span><span class="o">)</span> <span class="o">+</span> <span class="n">getItemInfo</span><span class="o">()</span> <span class="o">+</span> <span class="n">context</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">and_prepare</span><span class="o">),</span> <span class="kc">null</span><span class="o">);</span>
-    <span class="n">message</span><span class="o">.</span><span class="na">sendPush</span><span class="o">(</span><span class="n">messagePush</span><span class="o">,</span> <span class="n">query</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackSendPush</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onPushSended</span><span class="o">()</span> <span class="o">{</span>
-            <span class="n">Helper</span><span class="o">.</span><span class="na">showToast</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">push_sended</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onPushSendFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">Helper</span><span class="o">.</span><span class="na">showToast</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">cant_send_push</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">});</span>
-<span class="o">}</span>
+- sending a push notification to a mover with the following:
+
+```Java
+private void sendPushToLoaderPerson() {
+    Query query = new Query(&quot;roles&quot;);
+    query.equalTo(&quot;name&quot;, &quot;loaderPerson&quot;);
+    query.equalTo(&quot;isFree&quot;, true);
+    query.setLimit(1);
+
+    MessagePush messagePush = new MessagePush(context.getString(R.string.you_should_take) + getItemInfo() + context.getString(R.string.and_prepare), null);
+    message.sendPush(messagePush, query, new CallbackSendPush() {
+        @Override
+        public void onPushSended() {
+            Helper.showToast(context, R.string.push_sended);
+        }
+        @Override
+        public void onPushSendFailed(String errorCode, String errorMessage) {
+            Helper.showToast(context, R.string.cant_send_push);
+        }
+    });
+}
 </pre></div>
-
-
+</p>
 <ul>
-<li>отсылает sms сообщение курьеру</li>
+<li>sending a text (sms) to a delivery person: </li>
 </ul>
 <div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="kt">void</span> <span class="nf">sendSmsToDeliveryPerson</span><span class="o">()</span> <span class="o">{</span>
     <span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="s">&quot;roles&quot;</span><span class="o">);</span>
@@ -2439,7 +2436,7 @@ public void notifyPersonalAboutItemSend() {
 
 
 <ul>
-<li>отсылает email в бухгалтерию.</li>
+<li>sending an email to the accountants' office:</li>
 </ul>
 <div class="codehilite"><pre><span></span><span class="kd">private</span> <span class="kt">void</span> <span class="nf">sendEmailInAccountingDepartment</span><span class="o">()</span> <span class="o">{</span>
     <span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="s">&quot;roles&quot;</span><span class="o">);</span>
@@ -2460,14 +2457,14 @@ public void notifyPersonalAboutItemSend() {
 </pre></div>
 
 
-<p>Рассмотрим работу этих методов более подробно:</p>
+<p>Let's consider how these methods work in detail:</p>
 <ol>
-<li>В методе <code>sendEmailInAccountingDepartment</code> из коллекции ролей («roles») выбирается роль «accountantPerson» и всем пользователям с такой ролью отсылаются email сообщения при помощи метода <code>.sendEmail()</code> класса <code>Message</code>.</li>
-<li>В методе <code>sendSmdToDeliveryPerson</code> из коллекции ролей («roles») выбирается один (условие setLimit(1)) свободный (условие isFree == true) сотрудник с ролью «deliveryPerson» и ему отправляется sms при помощи метода <code>.sendSms</code> класса <code>Message</code>.</li>
-<li>В методе <code>sendSmdToLoaderPerson</code> из коллекции ролей («roles») выбирается один (условие setLimit(1)) свободный (условие isFree == true) сотрудник с ролью loaderPerson и ему отправляется push при помощи метода <code>.sendPush</code> класса <code>Message</code>.</li>
+<li>In the <code>sendEmailInAccountingDepartment</code> method the following happens: the «accountantPerson» role is chosen from the roles collection and all users with this role are sent emails using the <code>.sendEmail()</code> method of the <code>Message</code> class.</li>
+<li>In the <code>sendSmdToDeliveryPerson</code> method the following happens: one unoccupied employee (<code>setLimit(1)</code> and <code>sFree == true</code> conditions) with the «deliveryPerson» role is chosen from the roles collection and is sent a text (sms) using the <code>.sendSms</code> method of the <code>Message</code> class.</li>
+<li>In the <code>sendSmdToLoaderPerson</code> method the following happens: one unoccupied employee (<code>setLimit(1)</code> and <code>sFree == true</code> conditions) with the «loaderPerson» role is chosen from the roles collection and is sent a push notification using the <code>.sendPush</code> method of the <code>Message</code> class.</li>
 </ol>
-<p>Кроме того после нажатия на кнопку «ОТГРУЗИТЬ ПОЛЬЗОВАТЕЛЮ» вызывается метод <code>refreshCompanyBalance()</code> класса <code>BalanceNotivicator</code>.</p>
-<p>Листинг метода <code>resreshCompanyBalance()</code>:</p>
+<p>After the "SHIP TO BUYER" button is pushed the <code>refreshCompanyBalance()</code> method of the <code>BalanceNotivicator</code> class is executed.</p>
+<p>The <code>resreshCompanyBalance()</code> method listing:</p>
 <div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">refreshCompanyBalance</span><span class="o">()</span> <span class="o">{</span>
     <span class="n">Script</span> <span class="n">script</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Script</span><span class="o">();</span>
     <span class="n">script</span><span class="o">.</span><span class="na">runScript</span><span class="o">(</span><span class="s">&quot; 5800ad9342d52f1ba275fbcd&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackSendScript</span><span class="o">()</span> <span class="o">{</span>
@@ -2484,7 +2481,7 @@ public void notifyPersonalAboutItemSend() {
 </pre></div>
 
 
-<p>В данном листинге при помощи метода <code>runScript(...)</code> класса <code>Script</code> вызывается серверный код с id 5800ad9342d52f1ba275fbcd, который пересчитывает количество товаров на складе, издержки на хранение и другие характеристики.</p>
+<p>In this listing, the server-side code with 5800ad9342d52f1ba275fbcd ID is called using the <code>runScript(...)</code> method of the <code>Script</code> class. It recounts the goods in our storehouse and adjusts the storage costs, the balance and other characteristics.  </p>
               
             </article>
           </div>
