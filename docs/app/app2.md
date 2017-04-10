@@ -51,13 +51,13 @@ When working with a widget you can use the filter "Show only selected documents"
 * For `users` tab: "_id", "username", "email"
 
 !!! note "Notice"
-     Search is case-sensitive
+    Search is case-sensitive
 
 ## Adding a field
 
 To add a field to a document, click the Add field link.
 
-![Data](../img/dataddfield.png)
+![Data](../img/dataaddfield.png)
 
 Enter the field name (Latin letters and digits) and choose the field type from the following list:
 
