@@ -50,8 +50,10 @@ When working with a widget you can use the filter "Show only selected documents"
 * For `roles` tab: "_id", "name".
 * For `users` tab: "_id", "username", "email"
 
+
 !!! note "Notice"
-    Search is case-sensitive
+	Search is case-sensitive
+
 
 ## Adding a field
 
