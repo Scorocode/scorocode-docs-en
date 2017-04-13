@@ -175,6 +175,7 @@ Method for retrieving data from a specified document field.
 final Document document = new Document(“ordersCollection”);
 String orderId = document.getField(“orderId”);
 ```
+
 ----------------------------------------------------------------------------------------------
 
 <a name="Document+updateDocument"></a>

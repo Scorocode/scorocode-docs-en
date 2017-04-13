@@ -17,7 +17,7 @@ Constructor sc.Bot
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| botId | <code>String</code> | Telegram Bot identifier `@BotFather` |
+| botId | <code>String</code> | Telegram Bot identifier given by `@BotFather` |
 
 **Example**
 
