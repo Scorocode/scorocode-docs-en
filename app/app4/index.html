@@ -1284,223 +1284,179 @@ If you execute the "insert" operation for the same collection after the "insert"
 <p class="admonition-title">Returning data when trigger operations are interrupted</p>
 <p>In case there is a need to return data when a trigger operation was interrupted, you can specify data that needs to be returned in <code>pool.result</code>parameter.
 For example, inside a trigger you can create a field validation for a mandatory value before adding a document.</p>
-<p><div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span>  <span class="c1">// check if pool.doc does not have property &quot;name&quot;</span>
-    <span class="nx">pool</span><span class="p">.</span><span class="nx">result</span> <span class="o">=</span> <span class="s2">&quot;You Shall Not Pass&quot;</span><span class="p">;</span>  
-    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>                        <span class="c1">// interrupt document creation</span>
-<span class="p">};</span> 
-<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>    <span class="c1">// else - create the document</span>
-</pre></div>
-
+<p><pre class="codehilite"><code class="language-js">if (!pool.doc.hasOwnProperty('name')) {  // check if pool.doc does not have property &quot;name&quot;
+    pool.result = &quot;You Shall Not Pass&quot;;  
+    return false;                        // interrupt document creation
+}; 
+return true;    // else - create the document</code></pre>
 Now when we try to create a document with an empty field value for <code>name</code>, the operation will be interrupted and the following data will be returned: </p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;errCode&quot;</span><span class="o">:</span> <span class="mi">412</span><span class="p">,</span>
-    <span class="s2">&quot;errMsg&quot;</span><span class="o">:</span> <span class="s2">&quot;beforeInsert Trigger result: false&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;error&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="s2">&quot;result&quot;</span><span class="o">:</span> <span class="s2">&quot;You Shall Not Pass&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">{
+    &quot;errCode&quot;: 412,
+    &quot;errMsg&quot;: &quot;beforeInsert Trigger result: false&quot;,
+    &quot;error&quot;: true,
+    &quot;result&quot;: &quot;You Shall Not Pass&quot;
+}</code></pre>
 
 </div>
 <h2 id="pool-object">pool Object</h2>
 <p>Object <code>pool</code> contains the following data:</p>
 <h3 id="before-operation-insert">Before operation <code>insert</code>:</h3>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     coll : &quot;&quot;, // collection name
     doc : {}   // document with field_name:value pairs
-}
-</pre></div>
-
+}</code></pre>
 
 <h3 id="after-operation-insert">After operation <code>insert</code>:</h3>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     coll : &quot;&quot;,   // collection name
     newDoc : {}  // newly created document with field_name:value pairs
-}
-</pre></div>
-
+}</code></pre>
 
 <h3 id="before-operation-remove">Before operation <code>remove</code>:</h3>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     coll : &quot;&quot;,  // collection name
     query : {}  // search query on the basis of which documents should be removed
-}
-</pre></div>
-
+}</code></pre>
 
 <h3 id="after-operation-remove">After operation <code>remove</code>:</h3>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     coll : &quot;&quot;,  // collection name
     count : int, // number of removed documents
-    docs  : []  // array of deleted document IDs
-</pre></div>
-
+    docs  : []  // array of deleted document IDs</code></pre>
 
 <h3 id="before-operation-update">Before operation <code>update</code>:</h3>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     coll : &quot;&quot;,  // collection name
     doc   : {}, // document with value update rules
     query : {}  // search query on the basis of which documents should be updated
-}
-</pre></div>
-
+}</code></pre>
 
 <h3 id="after-operation-update">After operation <code>update</code>:</h3>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     coll : &quot;&quot;, // collection name
     count : int, // number of updated documents
     docs  : []  // array of updated document IDs
-}
-</pre></div>
-
+}</code></pre>
 
 <h3 id="before-operation-updatebyid">Before operation <code>updatebyid</code>:</h3>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     coll        : &quot;&quot;, // collection name
     doc         : {}, // document with value update rules
     query       : {}, // search query {&quot;_id&quot; : }
-}
-</pre></div>
-
+}</code></pre>
 
 <h3 id="after-operation-updatebyid">After operation <code>updatebyid</code>:</h3>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     coll        : &quot;&quot;, // collection name
     newDoc      : { } // updated document
-}
-</pre></div>
-
+}</code></pre>
 
 <h2 id="datamanager-object">DataManager Object</h2>
 <p>The <code>DataManager</code> object contains the following data handling methods:</p>
 <h3 id="datamanagerinsertdata-object">DataManager.Insert(data Object)</h3>
 <p>Method for inserting a document into a collection. Parameters:</p>
 <p><code>data Object</code> - object containing the following attributes:</p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     coll : &quot;&quot;, // collection name, mandatory
     doc  : {}  // document with field_name:value pairs, optional
-}
-</pre></div>
-
+}</code></pre>
 
 <p>Returned value – <code>Object</code>:</p>
 <p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     error  : false,
     result : {}     // created document
-}
-</pre></div>
-
+}</code></pre>
 
 <p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     error   : true,
     errCode : 4XX/5XX, // Error code
     errMsg  : &quot;Error text&quot;
-}
-</pre></div>
-
+}</code></pre>
 
 <h3 id="datamanagerremovedata-object">DataManager.Remove(data Object)</h3>
 <p>Method for removing documents from collection. Parameters:</p>
 <p><code>data Object</code> - object containing the following attributes:</p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     coll  : &quot;&quot;, // collection name, mandatory
     query : {}, // query with field_name/operator:value pairs, optional
     limit : int // limit for the number of documents to be removed, optional,
                 // if not specified, the first 1,000 documents will be removed
-}
-</pre></div>
-
+}</code></pre>
 
 <p>Returned value – <code>Object</code>:</p>
 <p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     error  : false,
     result : {
         count : int, // number of removed documents
         docs  : []  // array of removed document IDs
     }
-}
-</pre></div>
-
+}</code></pre>
 
 <p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     error   : true,
     errCode : 4XX/5XX, // Error code
     errMsg  : &quot;Error text&quot;
-}
-</pre></div>
-
+}</code></pre>
 
 <h3 id="datamanagerupdatedata-object">DataManager.Update(data Object)</h3>
 <p>Method for updating documents in a collection. Parameters:</p>
 <p><code>data Object</code> - object containing the following attributes:</p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     coll  : &quot;&quot;, // collection name, mandatory
     query : {}, // query with field_name/operator:value pairs, optional
     doc   : {}, // document with field_name:value pairs, mandatory
     limit : int // limit for the number of documents to be updated, optional,
                 // if not specified, the first 1,000 documents will be updated
-}
-</pre></div>
-
+}</code></pre>
 
 <p>Returned value – <code>Object</code>:</p>
 <p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     error  : false,
     result : {
         count : int, // number of removed documents
         docs  : []  // array of updated document IDs
     }
-}
-</pre></div>
-
+}</code></pre>
 
 <p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     error   : true,
     errCode : 4XX/5XX, // Error code
     errMsg  : &quot;Error text&quot;
-}
-</pre></div>
-
+}</code></pre>
 
 <h3 id="datamanagerupdatebyiddata-object">DataManager.UpdateById(data Object)</h3>
 <p>Method for updating one document in a collection which is identified by its ID. Parameters:</p>
 <p><code>data Object</code> - object containing the following attributes:</p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     coll  : &quot;&quot;, // collection name, mandatory
     query : {}, // query in the following format: &quot;_id&quot; : &quot;document identifier&quot;, mandatory
     doc   : {}  // document with field_name:value pairs, mandatory
-}
-</pre></div>
-
+}</code></pre>
 
 <p>Returned value - <code>Object</code>:</p>
 <p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     error  : false,
     result : {} // updated document
-}
-</pre></div>
-
+}</code></pre>
 
 <p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     error   : true,
     errCode : 4XX/5XX, // Error code
     errMsg  : &quot;Error text&quot;
-}
-</pre></div>
-
+}</code></pre>
 
 <h3 id="datamanagerfinddata-object">DataManager.Find(data Object)</h3>
 <p>Method for requesting a document from a collection. Parameters:</p>
 <p><code>data Object</code> - object containing the following attributes:</p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     coll   : &quot;&quot;, // collection name, mandatory
     query  : {}, // query with field_name/operator:value pairs, optional if empty
                  // then first 100 documents will be returned
@@ -1509,135 +1465,109 @@ Now when we try to create a document with an empty field value for <code>name</c
     limit  : int,// limit of the sample size, by default, 50
     skip   : int // number of documents to be skipped in the sample
 }
-</pre></div>
-
+</code></pre>
 
 <p>Returned value – <code>Object</code>:</p>
 <p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     error  : false,
     result : [] // array of selected documents taking into account the limit
-}
-</pre></div>
-
+}</code></pre>
 
 <p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     error   : true,
     errCode : 4XX/5XX, // Error code
     errMsg  : &quot;Error text&quot;
-}
-</pre></div>
-
+}</code></pre>
 
 <h3 id="datamanagercountdata-object">DataManager.Count(data Object)</h3>
 <p>Method for requesting the number of documents in a collection Parameters:</p>
 <p><code>data Object</code> - object containing the following attributes:</p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     coll  : &quot;&quot;, // collection name, mandatory
     query : {}  // query with field_name/operator:value pairs, optional
-}
-</pre></div>
-
+}</code></pre>
 
 <p>Returned value – <code>Object</code>:</p>
 <p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     error  : false,
     result : int // number of documents
-}
-</pre></div>
-
+}</code></pre>
 
 <p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     error   : true,
     errCode : 4XX/5XX, // Error code
     errMsg  : &quot;Error text&quot;
-}
-</pre></div>
-
+}</code></pre>
 
 <h3 id="datamanagerrunscriptdata-object">DataManager.RunScript(data Object)</h3>
 <p>A method that runs a server-side script. Parameters:</p>
 <p><code>data Object</code> - object containing the following attributes:</p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     script   : &quot;&quot;, // script identifier, mandatory
     pool     : {}  // object with the data that will be passed to the server-side script, optional
-}
-</pre></div>
-
+}</code></pre>
 
 <p>Returned value – <code>Object</code>:</p>
 <p><em>Success</em></p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     error  : false
-}
-</pre></div>
-
+}</code></pre>
 
 <p><em>Error</em></p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     error   : true,
     errCode : 4XX/5XX, // Error code
     errMsg  : &quot;Error text&quot;
-}
-</pre></div>
-
+}</code></pre>
 
 <h2 id="trigger-examples">Trigger examples</h2>
 <h3 id="setting-a-field-value-as-mandatory">Setting a field value as mandatory.</h3>
 <p>Before adding a document you can check whether a value is specified in the "name" field. In case it is not, you can interrupt the operation of adding the document.</p>
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span>   
-        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>                     <span class="c1">// if name is not specified then document creation will be interrupted</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>                      
-    <span class="p">};</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">if (!pool.doc.hasOwnProperty('name')) {   
+        return false;                     // if name is not specified then document creation will be interrupted
+    } else {
+        return true;                      
+    };</code></pre>
 
 <h3 id="setting-a-default-value">Setting a default value.</h3>
 <p>Before adding a document you can check whether a value is specified in the "name" field. In case it is not, you can set the value as a default one.</p>
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">))</span> <span class="p">{</span> 
-        <span class="nx">pool</span><span class="p">.</span><span class="nx">doc</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s2">&quot;John Snow&quot;</span><span class="p">;</span>    <span class="c1">// if not specified, name is now &quot;John Snow&quot; dy default </span>
-    <span class="p">}</span>
+<pre class="codehilite"><code class="language-js">if (!pool.doc.hasOwnProperty('name')) { 
+        pool.doc.name = &quot;John Snow&quot;;    // if not specified, name is now &quot;John Snow&quot; dy default 
+    }
 
-<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>                    
-</pre></div>
-
+return true;                    </code></pre>
 
 <h3 id="creating-a-document-related-in-a-different-collection">Creating a document related in a different collection.</h3>
 <p>After adding a document, you can create another document in a different collection with a link to the added one.</p>
-<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">Insert</span><span class="p">({</span>                           <span class="c1">// create new document in the &quot;stuff&quot; collection</span>
-        <span class="nx">coll</span> <span class="o">:</span> <span class="s2">&quot;stuff&quot;</span><span class="p">,</span>
-        <span class="nx">doc</span>  <span class="o">:</span> <span class="p">{</span>
-                   <span class="s2">&quot;thing&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">newDoc</span><span class="p">.</span><span class="nx">_id</span>    <span class="c1">// pass _id value to the new document&#39;s field &quot;thing&quot;</span>
-        <span class="p">}</span>
-    <span class="p">})</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">DataManager.Insert({                           // create new document in the &quot;stuff&quot; collection
+        coll : &quot;stuff&quot;,
+        doc  : {
+                   &quot;thing&quot;: pool.newDoc._id    // pass _id value to the new document's field &quot;thing&quot;
+        }
+    })</code></pre>
 
 <h3 id="deleting-related-documents-from-a-different-collection">Deleting related documents from a different collection.</h3>
 <p>Before deleting a document, you can delete all documents from a different collection with a link to the document you want to delete.</p>
-<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">Remove</span><span class="p">({</span>                           <span class="c1">//  delete all related documents in the &quot;stuff&quot; collection</span>
-    <span class="nx">coll</span>  <span class="o">:</span> <span class="s2">&quot;stuff&quot;</span><span class="p">,</span>
-    <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;thing&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">_id</span>                <span class="c1">// pass _id to the document which is about to be deleted</span>
-    <span class="p">}</span>
-<span class="p">})</span>
-<span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">DataManager.Remove({                           //  delete all related documents in the &quot;stuff&quot; collection
+    coll  : &quot;stuff&quot;,
+    query: {
+        &quot;thing&quot;: pool.query._id                // pass _id to the document which is about to be deleted
+    }
+})
+return true;</code></pre>
 
 <h3 id="running-a-server-side-script-from-a-trigger">Running a server-side script from a trigger.</h3>
 <p>After a document is created, a script can be executed with the new document data. As an example, the script can send PUSH-notifications.</p>
-<div class="codehilite"><pre><span></span><span class="nx">DataManager</span><span class="p">.</span><span class="nx">RunScript</span><span class="p">({</span>                   <span class="c1">// run a script with the ID 580b386d42d52f1ba275fc24</span>
-    <span class="nx">script</span>  <span class="o">:</span> <span class="s2">&quot;580b386d42d52f1ba275fc24&quot;</span><span class="p">,</span>
-    <span class="nx">pool</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;doc&quot;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">newDoc</span>                <span class="c1">// pass a new document to the script </span>
-    <span class="p">}</span>
-<span class="p">})</span>
-</pre></div>
+<pre class="codehilite"><code class="language-js">DataManager.RunScript({                   // run a script with the ID 580b386d42d52f1ba275fc24
+    script  : &quot;580b386d42d52f1ba275fc24&quot;,
+    pool: {
+        &quot;doc&quot;: pool.newDoc                // pass a new document to the script 
+    }
+})</code></pre>
               
             </article>
           </div>

@@ -1145,11 +1145,9 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
-<span class="kd">let</span> <span class="nv">currentDate</span> <span class="p">=</span> <span class="n">SCUpdateOperator</span><span class="p">.</span><span class="n">currentDate</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">typeSpec</span><span class="p">:</span> <span class="s">&quot;timestamp&quot;</span><span class="p">)</span>
-<span class="n">update</span><span class="p">.</span><span class="n">addOperator</span><span class="p">(</span><span class="n">currentDate</span><span class="p">)</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">var update = SCUpdate()
+let currentDate = SCUpdateOperator.currentDate(&quot;fieldName&quot;, typeSpec: &quot;timestamp&quot;)
+update.addOperator(currentDate)</code></pre>
 
 <hr />
 <p><a name="SCUpdate+set"></a></p>
@@ -1176,10 +1174,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
-<span class="n">update</span><span class="p">.</span><span class="kr">set</span><span class="p">([</span><span class="s">&quot;fieldName&quot;</span><span class="p">:</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">)])</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">var update = SCUpdate()
+update.set([&quot;fieldName&quot;: SCString(&quot;A&quot;)])</code></pre>
 
 <hr />
 <p><a name="SCUpdate+push"></a></p>
@@ -1213,11 +1209,9 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
-<span class="n">update</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">))</span>
-<span class="n">update</span><span class="p">.</span><span class="n">save</span><span class="p">()</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">var update = SCUpdate()
+update.push(&quot;fieldName&quot;, SCString(&quot;A&quot;))
+update.save()</code></pre>
 
 <hr />
 <p><a name="SCUpdate+pushEach"></a></p>
@@ -1251,10 +1245,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
-<span class="n">update</span><span class="p">.</span><span class="n">pushEach</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCArray</span><span class="p">([</span><span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">)]))</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">var update = SCUpdate()
+update.pushEach(&quot;fieldName&quot;, SCArray([SCString(&quot;A&quot;)]))</code></pre>
 
 <hr />
 <p><a name="SCUpdate+pull"></a></p>
@@ -1288,10 +1280,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
-<span class="n">update</span><span class="p">.</span><span class="n">pull</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">))</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">var update = SCUpdate()
+update.pull(&quot;fieldName&quot;, SCString(&quot;A&quot;))</code></pre>
 
 <hr />
 <p><a name="SCUpdate+pullAll"></a></p>
@@ -1325,10 +1315,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
-<span class="n">update</span><span class="p">.</span><span class="n">pullAll</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCArray</span><span class="p">([</span><span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">)]))</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">var update = SCUpdate()
+update.pullAll(&quot;fieldName&quot;, SCArray([SCString(&quot;A&quot;)]))</code></pre>
 
 <hr />
 <p><a name="SCUpdate+addToSet"></a></p>
@@ -1362,10 +1350,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
-<span class="n">update</span><span class="p">.</span><span class="n">addToSet</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">))</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">var update = SCUpdate()
+update.addToSet(&quot;fieldName&quot;, SCString(&quot;A&quot;))</code></pre>
 
 <hr />
 <p><a name="SCUpdate+addToSetEach"></a></p>
@@ -1399,10 +1385,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
-<span class="n">update</span><span class="p">.</span><span class="n">addToSetEach</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCArray</span><span class="p">(</span><span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">))</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">var update = SCUpdate()
+update.addToSetEach(&quot;fieldName&quot;, SCArray(SCString(&quot;A&quot;))</code></pre>
 
 <hr />
 <p><a name="SCUpdate+pop"></a></p>
@@ -1436,10 +1420,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
-<span class="n">update</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">var update = SCUpdate()
+update.pop(&quot;fieldName&quot;, 1)</code></pre>
 
 <hr />
 <p><a name="SCUpdate+inc"></a></p>
@@ -1473,10 +1455,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong> </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
-<span class="n">update</span><span class="p">.</span><span class="n">inc</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCInt</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">var update = SCUpdate()
+update.inc(&quot;fieldName&quot;, SCInt(1))</code></pre>
 
 <hr />
 <p><a name="SCUpdate+currentDate"></a></p>
@@ -1510,10 +1490,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
-<span class="n">update</span><span class="p">.</span><span class="n">currentDate</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">typeSpec</span><span class="p">:</span> <span class="s">&quot;date&quot;</span><span class="p">)</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">var update = SCUpdate()
+update.currentDate(&quot;fieldName&quot;, typeSpec: &quot;date&quot;)</code></pre>
 
 <hr />
 <p><a name="SCUpdate+mul"></a></p>
@@ -1547,10 +1525,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
-<span class="n">update</span><span class="p">.</span><span class="n">mul</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCInt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">var update = SCUpdate()
+update.mul(&quot;fieldName&quot;, SCInt(5))</code></pre>
 
 <hr />
 <p><a name="SCUpdate+min"></a></p>
@@ -1584,10 +1560,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
-<span class="n">update</span><span class="p">.</span><span class="bp">min</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCInt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">var update = SCUpdate()
+update.min(&quot;fieldName&quot;, SCInt(5))</code></pre>
 
 <hr />
 <p><a name="SCUpdate+max"></a></p>
@@ -1621,9 +1595,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">update</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
-<span class="n">update</span><span class="p">.</span><span class="bp">max</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCInt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
+<pre class="codehilite"><code class="language-SWIFT">var update = SCUpdate()
+update.max(&quot;fieldName&quot;, SCInt(5))</code></pre>
               
             </article>
           </div>

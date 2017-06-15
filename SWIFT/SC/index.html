@@ -980,17 +980,14 @@
 </table>
 <p><strong>Example</strong>  </p>
 <p>In <code>AppDelegate.swift</code>, specify initialization parameter values in the <code>didFinishLaunchingWithOptions</code> method:</p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">applicationId</span> <span class="p">=</span> <span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span>
-<span class="kd">let</span> <span class="nv">clientId</span> <span class="p">=</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span>
-<span class="kd">let</span> <span class="nv">accessKey</span> <span class="p">=</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span>
-<span class="kd">let</span> <span class="nv">fileKey</span> <span class="p">=</span> <span class="s">&quot;6305ee7ac8023191a333d9267f1a07e8&quot;</span>
-<span class="kd">let</span> <span class="nv">messageKey</span> <span class="p">=</span> <span class="s">&quot;9d774f6fa704f192e6aef53933f44e4f&quot;</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let applicationId = &quot;db8a1b41b8543397a798a181d9891b4c&quot;
+let clientId = &quot;563452bbc611d8106d5da767365897de&quot;
+let accessKey = &quot;28f06b89b62165c33de55265166d8781&quot;
+let fileKey = &quot;6305ee7ac8023191a333d9267f1a07e8&quot;
+let messageKey = &quot;9d774f6fa704f192e6aef53933f44e4f&quot;</code></pre>
 
 <p>SDK initialization</p>
-<div class="codehilite"><pre><span></span><span class="n">SC</span><span class="p">.</span><span class="n">initWith</span><span class="p">(</span><span class="n">applicationId</span><span class="p">:</span> <span class="n">applicationId</span><span class="p">,</span> <span class="n">clientId</span><span class="p">:</span> <span class="n">clientId</span><span class="p">,</span> <span class="n">accessKey</span><span class="p">:</span> <span class="n">accessKey</span><span class="p">,</span> <span class="n">fileKey</span><span class="p">:</span> <span class="n">fileKey</span><span class="p">,</span> <span class="n">messageKey</span><span class="p">:</span> <span class="n">messageKey</span><span class="p">)</span>
-</pre></div>
+<pre class="codehilite"><code class="language-SWIFT">SC.initWith(applicationId: applicationId, clientId: clientId, accessKey: accessKey, fileKey: fileKey, messageKey: messageKey)</code></pre>
               
             </article>
           </div>

@@ -1365,22 +1365,20 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<p><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<p><pre class="codehilite"><code class="language-js">var sc = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">data</span><span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">finded</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">finded</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-    <span class="p">});</span>    
-</pre></div>
-
+var data = new Scorocode.Query(&quot;items&quot;);
+data.find()
+    .then((finded) =&gt;{
+        console.log(finded);
+    })
+    .catch((err)=&gt;{
+        console.log(err)
+    });    </code></pre>
 <strong>Returns</strong>: <code><a href="#Scorocode.Query">Scorocode.Query</a></code> - Returns the <code>Scorocode.Query</code></p>
 <p><strong>Exception</strong>:</p>
 <ul>
@@ -1407,23 +1405,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">data</span><span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">finded</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">util</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;util&#39;</span><span class="p">);</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">util</span><span class="p">.</span><span class="nx">inspect</span><span class="p">(</span><span class="nx">finded</span><span class="p">,</span> <span class="p">{</span><span class="nx">showHidden</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">depth</span><span class="o">:</span> <span class="kc">null</span><span class="p">}))</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-    <span class="p">});</span>    
-</pre></div>
-
+var data = new Scorocode.Query(&quot;items&quot;);
+data.find()
+    .then((finded) =&gt;{
+        var util = require('util');
+        console.log(util.inspect(finded, {showHidden: false, depth: null}))
+    })
+    .catch((err)=&gt;{
+        console.log(err)
+    });    </code></pre>
 
 <p><strong>Returns</strong>: <code>promise.{error: Boolean, limit: Number, skip: Number, result: [{Scorocode.Object}]}</code> - Returns promise, which returns the object containing the result of the query execution.</p>
 <ul>
@@ -1432,13 +1428,13 @@
 <li>"skip" - <code>Number</code>  - How many documents were skipped during the sampling</li>
 <li>"result" - <code>Array</code>  - Obtained data array</li>
 </ul>
-<div class="codehilite"><pre><span></span>{ 
+<pre class="codehilite"><code>{ 
     error: false,
     limit: 100,
     skip: 0,
     result:
     [ 
-       { _id: &#39;CrT49joIxn&#39;,
+       { _id: 'CrT49joIxn',
            createdAt: Wed May 25 2016 17:24:17 GMT+0300 (RTZ 2 (зима)),
            updatedAt: Wed May 25 2016 22:15:03 GMT+0300 (RTZ 2 (зима)),
            readACL: [],
@@ -1448,7 +1444,7 @@
            price: 41.999 
        },
        // ...
-       { _id: &#39;NseSaqqd5v&#39;,
+       { _id: 'NseSaqqd5v',
            createdAt: Wed May 25 2016 17:24:17 GMT+0300 (RTZ 2 (зима)),
            updatedAt: Wed May 25 2016 22:15:03 GMT+0300 (RTZ 2 (зима)),
            readACL: [],
@@ -1456,9 +1452,7 @@
            removeACL: []
        } 
     ]
-}
-</pre></div>
-
+}</code></pre>
 
 <hr />
 <p><a name="Scorocode.Query+count"></a></p>
@@ -1481,23 +1475,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">countItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">countItems</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">count</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">counted</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">counted</span><span class="p">)</span> <span class="c1">// { error: false, result: 5 }</span>
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var countItems = new Scorocode.Query(&quot;items&quot;);
+countItems.exists(&quot;price&quot;)
+    .count()
+        .then((counted) =&gt; {
+            console.log(counted) // { error: false, result: 5 }
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <p><strong>Returns</strong>: <code>promise.{error: Boolean, result: Number}</code> -  Returns promise, which returns the object containing the result of the query execution.</p>
 <ul>
@@ -1530,29 +1522,28 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">updateItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">UpdateOps</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+var Items = new Scorocode.Query(&quot;items&quot;);
+var updateItems = new Scorocode.UpdateOps(&quot;items&quot;);
 
-<span class="nx">Items</span><span class="p">.</span><span class="nx">notEqualTo</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">updateItems</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>
-            <span class="k">return</span> <span class="nx">Items</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">updateItems</span><span class="p">)</span>
-        <span class="p">})</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">updated</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">updated</span><span class="p">);</span>
-        <span class="p">})</span> 
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+Items.notEqualTo(&quot;price&quot;, 42)
+    .find()
+        .then((result) =&gt; {
+            updateItems.set(&quot;price&quot;, 42);
+            return Items.update(updateItems)
+        })
+        .then((updated) =&gt; {
+            console.log(updated);
+        }) 
+        .catch((error) =&gt; {
+            console.log(error)
+        });
+</code></pre>
 
 <p><strong>Returns</strong>: <code>promise.{error: Boolean, result: {count: Number, docs: Array}}</code> - Returns promise, which returns the object containing the result of the query execution.</p>
 <ul>
@@ -1563,23 +1554,21 @@
 </ul>
 </li>
 </ul>
-<div class="codehilite"><pre><span></span>{ error: false,
+<pre class="codehilite"><code>{ error: false,
   result:
    { count: 8,
      docs:[ 
-        &#39;CrT49joIxn&#39;,
-        &#39;8Qcfll2GwE&#39;,
-        &#39;dMSYsK8jld&#39;,
-        &#39;6TFVG5UqV6&#39;,
-        &#39;gNxzwAfvDj&#39;,
-        &#39;eoVWeg9oeY&#39;,
-        &#39;vRf58kEDpo&#39;,
-        &#39;abOkjQAnYE&#39; 
+        'CrT49joIxn',
+        '8Qcfll2GwE',
+        'dMSYsK8jld',
+        '6TFVG5UqV6',
+        'gNxzwAfvDj',
+        'eoVWeg9oeY',
+        'vRf58kEDpo',
+        'abOkjQAnYE' 
         ] 
     } 
-}
-</pre></div>
-
+}</code></pre>
 
 <hr />
 <p><a name="Scorocode.Query+remove"></a></p>
@@ -1602,69 +1591,63 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="nx">Items</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">finded</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">Items</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">finded</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-                <span class="p">})</span>  
-                <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-                <span class="p">});</span>
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+Items.exists(&quot;arrayField&quot;)
+    .find()
+        .then((finded) =&gt; {
+            Items.remove(finded)
+                .then((result) =&gt; {
+                    console.log(result);
+                })  
+                .catch((error) =&gt; {
+                    console.log(error)
+                });
+        })
+        .catch((error) =&gt; {
+                console.log(error)
+        });</code></pre>
 
 <p><strong>Returns</strong>: <code>promise.{ecount: Number, docs: Array}</code> - Returns promise, which returns the object containing the result of the query execution.</p>
 <ul>
 <li>"count" - <code>Number</code>  - Number of deleted objects</li>
 <li>"docs" - <code>Array</code>  - _id array of deleted objects</li>
 </ul>
-<div class="codehilite"><pre><span></span>{ 
+<pre class="codehilite"><code>{ 
     count: 4, 
     docs:[ 
-        &#39;CrT49joIxn&#39;, 
-        &#39;eoVWeg9oeY&#39;, 
-        &#39;vRf58kEDpo&#39;, 
-        &#39;abOkjQAnYE&#39;
+        'CrT49joIxn', 
+        'eoVWeg9oeY', 
+        'vRf58kEDpo', 
+        'abOkjQAnYE'
         ] 
-}
-</pre></div>
-
+}</code></pre>
 
 <hr />
 <p><a name="Scorocode.Query+reset"></a></p>
 <h2 id="reset">.reset()</h2>
 <p>Method for resetting the sampling conditions</p>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">equalTo</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">getItems</span><span class="p">.</span><span class="nx">reset</span><span class="p">()</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+getItems.equalTo(&quot;price&quot;, 42)
+    .find()
+        .then((result) =&gt; {
+            console.log(result)
+        })
+        .catch((error) =&gt; {
+            getItems.reset()
+            console.log(error)
+        });</code></pre>
 
 <hr />
 <p><a name="Scorocode.Query+equalTo"></a></p>
@@ -1692,24 +1675,22 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">equalTo</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-            <span class="nx">getItems</span><span class="p">.</span><span class="nx">reset</span><span class="p">()</span>
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+getItems.equalTo(&quot;price&quot;, 42)
+    .find()
+        .then((result) =&gt; {
+            console.log(result) 
+            getItems.reset()
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <hr />
 <p><a name="Scorocode.Query+notEqualTo"></a></p>
@@ -1737,23 +1718,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">notEqualTo</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="c1">// { error: false, result: 5 }</span>
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+getItems.notEqualTo(&quot;price&quot;, 42)
+    .find()
+        .then((result) =&gt; {
+            console.log(result) // { error: false, result: 5 }
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <hr />
 <p><a name="Scorocode.Query+containedIn"></a></p>
@@ -1781,23 +1760,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">containedIn</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,[</span><span class="o">-</span><span class="mi">42</span><span class="p">,</span> <span class="mf">41.999</span><span class="p">,</span> <span class="mi">42</span><span class="p">])</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+getItems.containedIn(&quot;price&quot;,[-42, 41.999, 42])
+    .find()
+        .then((result) =&gt; {
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <p><strong>Exceptions</strong></p>
 <ul>
@@ -1828,23 +1805,21 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">containsAll</span><span class="p">(</span><span class="s2">&quot;arrayField&quot;</span><span class="p">,[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">42</span><span class="p">])</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+getItems.containsAll(&quot;arrayField&quot;,[4, 8, 15, 16, 23, 42])
+    .find()
+        .then((result) =&gt; {
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <p><strong>Exceptions</strong>:</p>
 <ul>
@@ -1876,23 +1851,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">notContainedIn</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,[</span><span class="mf">41.999</span><span class="p">,</span> <span class="mi">42</span><span class="p">])</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+getItems.notContainedIn(&quot;price&quot;,[41.999, 42])
+    .find()
+        .then((result) =&gt; {
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <p><strong>Exceptions</strong>:</p>
 <ul>
@@ -1924,23 +1897,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">greaterThan</span><span class="p">(</span><span class="s2">&quot;createdAt&quot;</span><span class="p">,</span> <span class="s2">&quot;2016-05-19T15:35:16.000Z&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+getItems.greaterThan(&quot;createdAt&quot;, &quot;2016-05-19T15:35:16.000Z&quot;)
+    .find()
+        .then((result) =&gt; {
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <hr />
 <p><a name="Scorocode.Query+greaterThanOrEqualTo"></a></p>
@@ -1968,23 +1939,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">greaterThanOrEqualTo</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="mf">41.999</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+getItems.greaterThanOrEqualTo(&quot;price&quot;, 41.999)
+    .find()
+        .then((result) =&gt; {
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <hr />
 <p><a name="Scorocode.Query+lessThan"></a></p>
@@ -2012,23 +1981,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">lessThan</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="mi">41</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+getItems.lessThan(&quot;price&quot;, 41)
+    .find()
+        .then((result) =&gt; {
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <hr />
 <p><a name="Scorocode.Query+lessThanOrEqualTo"></a></p>
@@ -2056,23 +2023,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">lessThanOrEqualTo</span><span class="p">(</span><span class="s2">&quot;updatedAt&quot;</span><span class="p">,</span> <span class="s2">&quot;2016-05-19T15:35:16.000Z&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+getItems.lessThanOrEqualTo(&quot;updatedAt&quot;, &quot;2016-05-19T15:35:16.000Z&quot;)
+    .find()
+        .then((result) =&gt; {
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <hr />
 <p><a name="Scorocode.Query+exists"></a></p>
@@ -2095,22 +2060,20 @@
 </tbody>
 </table>
 <p><strong>Example</strong> </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">Items</span><span class="p">.</span><span class="nx">exists</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var Items = new Scorocode.Query(&quot;items&quot;);
+Items.exists(&quot;price&quot;)
+    .find()
+        .then((result) =&gt; {
+            console.log(result)
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <hr />
 <p><a name="Scorocode.Query+doesNotExist"></a></p>
@@ -2133,22 +2096,20 @@
 </tbody>
 </table>
 <p><strong>Example</strong> </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">Items</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">Items</span><span class="p">.</span><span class="nx">doesNotExist</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var Items = new Scorocode.Query(&quot;items&quot;);
+Items.doesNotExist(&quot;price&quot;)
+    .find()
+        .then((result) =&gt; {
+            console.log(result)
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <hr />
 <p><a name="Scorocode.Query+contains"></a></p>
@@ -2176,23 +2137,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s2">&quot;someString&quot;</span><span class="p">,</span><span class="s2">&quot;[0-9]&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+getItems.contains(&quot;someString&quot;,&quot;[0-9]&quot;)
+    .find()
+        .then((result) =&gt; {
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <p><strong>Exception</strong>:</p>
 <ul>
@@ -2224,23 +2183,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;ite&quot;</span><span class="p">);</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+getItems.startsWith(&quot;name&quot;, &quot;ite&quot;);
+    .find()
+        .then((result) =&gt; {
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <p><strong>Exception</strong>:</p>
 <ul>
@@ -2271,23 +2228,21 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;waterchip&quot;</span><span class="p">);</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+getItems.endsWith(&quot;name&quot;, &quot;waterchip&quot;);
+    .find()
+        .then((result) =&gt; {
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <p><strong>Exception</strong>:</p>
 <ul>
@@ -2314,23 +2269,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong> </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="mi">1000</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s2">&quot;someString&quot;</span><span class="p">,</span><span class="s2">&quot;[a-zA-Z-0-9]&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+getItems.limit(1000).contains(&quot;someString&quot;,&quot;[a-zA-Z-0-9]&quot;)
+    .find()
+        .then((result) =&gt; {
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <p><strong>Exception</strong>:</p>
 <ul>
@@ -2357,23 +2310,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="mi">1000</span><span class="p">).</span><span class="nx">skip</span><span class="p">(</span><span class="mi">1000</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s2">&quot;someString&quot;</span><span class="p">,</span><span class="s2">&quot;[a-zA-Z-0-9]&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+getItems.limit(1000).skip(1000).contains(&quot;someString&quot;,&quot;[a-zA-Z-0-9]&quot;)
+    .find()
+        .then((result) =&gt; {
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <p><strong>Exception</strong></p>
 <ul>
@@ -2400,23 +2351,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="mi">30</span><span class="p">).</span><span class="nx">page</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s2">&quot;someString&quot;</span><span class="p">,</span><span class="s2">&quot;[a-zA-Z-0-9]&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+getItems.limit(30).page(2).contains(&quot;someString&quot;,&quot;[a-zA-Z-0-9]&quot;)
+    .find()
+        .then((result) =&gt; {
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <p><strong>Exception</strong>:</p>
 <ul>
@@ -2443,23 +2392,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="mi">30</span><span class="p">).</span><span class="nx">ascending</span><span class="p">(</span><span class="s2">&quot;updatedAt&quot;</span><span class="p">).</span><span class="nx">page</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s2">&quot;someString&quot;</span><span class="p">,</span><span class="s2">&quot;[a-zA-Z-0-9]&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+getItems.limit(30).ascending(&quot;updatedAt&quot;).page(1).contains(&quot;someString&quot;,&quot;[a-zA-Z-0-9]&quot;)
+    .find()
+        .then((result) =&gt; {
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <hr />
 <p><a name="Scorocode.Query+descending"></a></p>
@@ -2482,23 +2429,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="mi">30</span><span class="p">).</span><span class="nx">descending</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">).</span><span class="nx">page</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">contains</span><span class="p">(</span><span class="s2">&quot;someString&quot;</span><span class="p">,</span><span class="s2">&quot;[a-zA-Z-0-9]&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+getItems.limit(30).descending(&quot;price&quot;).page(1).contains(&quot;someString&quot;,&quot;[a-zA-Z-0-9]&quot;)
+    .find()
+        .then((result) =&gt; {
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <hr />
 <p><a name="Scorocode.Query+or"></a></p>
@@ -2521,29 +2466,27 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">range1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">range2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+var getItems = new Scorocode.Query(&quot;items&quot;);
+var range1 = new Scorocode.Query(&quot;items&quot;);
+var range2 = new Scorocode.Query(&quot;items&quot;);
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">range1</span><span class="p">.</span><span class="nx">lessThanOrEqualTo</span><span class="p">(</span><span class="s2">&quot;createdAt&quot;</span><span class="p">,</span> <span class="s2">&quot;2016-05-19T10:00:00.000Z&quot;</span><span class="p">);</span>
-<span class="nx">range2</span><span class="p">.</span><span class="nx">greaterThanOrEqualTo</span><span class="p">(</span><span class="s2">&quot;createdAt&quot;</span><span class="p">,</span> <span class="s2">&quot;2016-05-21T15:00:00.000Z&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">or</span><span class="p">(</span><span class="nx">range1</span><span class="p">).</span><span class="nx">or</span><span class="p">(</span><span class="nx">range2</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+range1.lessThanOrEqualTo(&quot;createdAt&quot;, &quot;2016-05-19T10:00:00.000Z&quot;);
+range2.greaterThanOrEqualTo(&quot;createdAt&quot;, &quot;2016-05-21T15:00:00.000Z&quot;);
+getItems.or(range1).or(range2)
+    .find()
+        .then((result) =&gt; {
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <p><strong>Exception</strong>:</p>
 <ul>
@@ -2570,51 +2513,48 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">range</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">price</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
+var getItems = new Scorocode.Query(&quot;items&quot;);
+var range = new Scorocode.Query(&quot;items&quot;);
+var price = new Scorocode.Query(&quot;items&quot;);
 
-<span class="kd">var</span> <span class="nx">getItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">range</span><span class="p">.</span><span class="nx">greaterThanOrEqualTo</span><span class="p">(</span><span class="s2">&quot;createdAt&quot;</span><span class="p">,</span> <span class="s2">&quot;2016-05-19T10:00:00.000Z&quot;</span><span class="p">);</span>
-<span class="nx">price</span><span class="p">.</span><span class="nx">doesNotExists</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">);</span>
-<span class="nx">getItems</span><span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">range</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span><span class="nx">price</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> 
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var getItems = new Scorocode.Query(&quot;items&quot;);
+range.greaterThanOrEqualTo(&quot;createdAt&quot;, &quot;2016-05-19T10:00:00.000Z&quot;);
+price.doesNotExists(&quot;price&quot;);
+getItems.and(range).and(price)
+    .find()
+        .then((result) =&gt; {
+            console.log(result) 
+        })
+        .catch((error) =&gt; {
+            console.log(error)
+        });</code></pre>
 
 <hr />
 <p><a name="Scorocode.Query+select"></a></p>
 <h2 id="select">.select()</h2>
 <p>Method for specifying a list of returned fields.</p>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">data</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;price&quot;</span><span class="p">,</span> <span class="s2">&quot;reward&quot;</span><span class="p">).</span><span class="nx">find</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">finded</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">finded</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-    <span class="p">});</span>    
-</pre></div>
-
+var data = new Scorocode.Query(&quot;items&quot;);
+data.select(&quot;price&quot;, &quot;reward&quot;).find()
+    .then((finded) =&gt;{
+        console.log(finded);
+    })
+    .catch((err)=&gt;{
+        console.log(err)
+    });    
+</code></pre>
 
 <hr />
 <p><a name="Scorocode.Query+raw"></a></p>
@@ -2636,22 +2576,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;items&quot;</span><span class="p">);</span>
-<span class="nx">query</span><span class="p">.</span><span class="nx">raw</span><span class="p">(</span><span class="s2">&quot;{ \&quot;fieldString\&quot; : \&quot;String\&quot; }&quot;</span><span class="p">);</span>
-<span class="nx">query</span><span class="p">.</span><span class="nx">find</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">finded</span><span class="p">)</span> <span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">finded</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-    <span class="p">});</span>    
-</pre></div>
+var query = Scorocode.Query(&quot;items&quot;);
+query.raw(&quot;{ \&quot;fieldString\&quot; : \&quot;String\&quot; }&quot;);
+query.find()
+    .then((finded) =&gt;{
+        console.log(finded);
+    })
+    .catch((err)=&gt;{
+        console.log(err)
+    });    </code></pre>
               
             </article>
           </div>

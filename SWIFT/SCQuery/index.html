@@ -1750,9 +1750,7 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;users&quot;)</code></pre>
 
 <hr />
 <p><a name="SCQuery+find"></a> </p>
@@ -1780,19 +1778,17 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-users-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-users-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;users&quot;)
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+count"></a> </p>
 <h3 id="countcallback">.count(callback)</h3>
 <p>Method for counting objects that meet the query conditions.</p>
@@ -1818,19 +1814,17 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-users-querycount-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">count</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-users-querycount-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;users&quot;)
+query.count() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+update"></a> </p>
 <h3 id="updateupdate-callback">.update(update, callback)</h3>
 <p>Method for updating the objects matching the sampling conditions.</p>
@@ -1863,24 +1857,22 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-userarrivaltime-scupdate-let-currentdate-scupdateoperatorcurrentdatefieldname-typespec-timestamp-logarrivaltimeaddoperatorcurrentdate-var-arrivedusers-scquerycollection-users-arrivedusersequaltoflightrace-scstringaf4926-arrivedusersupdateuserarrivaltime-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">userArrivalTime</span> <span class="p">=</span> <span class="n">SCUpdate</span><span class="p">()</span>
-<span class="kd">let</span> <span class="nv">currentDate</span> <span class="p">=</span> <span class="n">SCUpdateOperator</span><span class="p">.</span><span class="n">currentDate</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">typeSpec</span><span class="p">:</span> <span class="s">&quot;timestamp&quot;</span><span class="p">)</span>
-<span class="n">logArrivalTime</span><span class="p">.</span><span class="n">addOperator</span><span class="p">(</span><span class="n">currentDate</span><span class="p">)</span>
+<h2 id="var-userarrivaltime-scupdate-let-currentdate-scupdateoperatorcurrentdatefieldname-typespec-timestamp-logarrivaltimeaddoperatorcurrentdate-var-arrivedusers-scquerycollection-users-arrivedusersequaltoflightrace-scstringaf4926-arrivedusersupdateuserarrivaltime-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var userArrivalTime = SCUpdate()
+let currentDate = SCUpdateOperator.currentDate(&quot;fieldName&quot;, typeSpec: &quot;timestamp&quot;)
+logArrivalTime.addOperator(currentDate)
 
-<span class="kd">var</span> <span class="nv">arrivedUsers</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
-<span class="n">arrivedUsers</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="s">&quot;flightRace&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;AF4926&quot;</span><span class="p">))</span>
-<span class="n">arrivedUsers</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">userArrivalTime</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+var arrivedUsers = SCQuery(collection: &quot;users&quot;)
+arrivedUsers.equalTo(&quot;flightRace&quot;, SCString(&quot;AF4926&quot;))
+arrivedUsers.update(userArrivalTime) {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+remove"></a></p>
 <h3 id="removecallback">.remove(callback)</h3>
 <p>Method for removing the objects matching the sampling conditions.</p>
@@ -1906,20 +1898,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-oldstuff-scquerycollection-stuff-oldstufflessthancreatedat-scdate2016-06-54t1724230910300-oldstuffremove-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">oldStuff</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;Stuff&quot;</span><span class="p">)</span>
-<span class="n">oldStuff</span><span class="p">.</span><span class="n">lessThan</span><span class="p">(</span><span class="s">&quot;createdAt&quot;</span><span class="p">,</span> <span class="n">SCDate</span><span class="p">(</span><span class="s">&quot;2016-06-54T17:24:23.091+03:00&quot;</span><span class="p">))</span>
-<span class="n">oldStuff</span><span class="p">.</span><span class="n">remove</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-oldstuff-scquerycollection-stuff-oldstufflessthancreatedat-scdate2016-06-54t1724230910300-oldstuffremove-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var oldStuff = SCQuery(collection: &quot;Stuff&quot;)
+oldStuff.lessThan(&quot;createdAt&quot;, SCDate(&quot;2016-06-54T17:24:23.091+03:00&quot;))
+oldStuff.remove() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+limit"></a> </p>
 <h3 id="limitlimit">.limit(limit)</h3>
 <p>Method for setting the sampling limit.</p>
@@ -1945,20 +1935,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-querylimit25-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-querylimit25-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.limit(25)
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+skip"></a></p>
 <h3 id="skipskip">.skip(skip)</h3>
 <p>Method for defining the number of documents to be skipped before document sampling</p>
@@ -1984,20 +1972,19 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-queryskip1000-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">skip</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-queryskip1000-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.skip(1000)
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}
+</code></pre></h2>
 <p><a name="SCQuery+page"></a></p>
 <h3 id="pagepage">.page(page)</h3>
 <p>Method for "per-page" output of sampling results in accordance with the specified sampling limit.</p>
@@ -2023,21 +2010,19 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-querylimit25-querypage4-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">page</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-querylimit25-querypage4-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.limit(25)
+query.page(4)
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+raw"></a> </p>
 <h3 id="rawjson">.raw(json)</h3>
 <p>Method for defining sampling conditions in the form of a JSON structure to create a DB query in MongoDB language.</p>
@@ -2063,38 +2048,36 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-queryraw-fieldstring-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">raw</span><span class="p">(</span><span class="s">&quot;{ </span><span class="se">\&quot;</span><span class="s">fieldString</span><span class="se">\&quot;</span><span class="s"> : </span><span class="se">\&quot;</span><span class="s">Строка</span><span class="se">\&quot;</span><span class="s"> }&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-queryraw-fieldstring-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.raw(&quot;{ \&quot;fieldString\&quot; : \&quot;Строка\&quot; }&quot;)
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}
+</code></pre></h2>
 <p><a name="SCQuery+reset"></a> </p>
 <h3 id="reset">.reset()</h3>
 <p>Method for resetting the sampling conditions</p>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-queryequaltofieldname-scstringjohn-doe-queryraw-fieldstring-queryascendingfield1-querydescendingfield2-queryfieldsfield1-field2-let-and1-scoperatorequaltofieldstring-scstring-let-and2-scoperatorequaltofieldnumber-scint33-queryandand1-and2-queryreset"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
+<h2 id="var-query-scquerycollection-items-queryequaltofieldname-scstringjohn-doe-queryraw-fieldstring-queryascendingfield1-querydescendingfield2-queryfieldsfield1-field2-let-and1-scoperatorequaltofieldstring-scstring-let-and2-scoperatorequaltofieldnumber-scint33-queryandand1-and2-queryreset"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
 
-<span class="n">query</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="s">&quot;fieldName&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;John Doe&quot;</span><span class="p">))</span>
-<span class="n">query</span><span class="p">.</span><span class="n">raw</span><span class="p">(</span><span class="s">&quot;{ </span><span class="se">\&quot;</span><span class="s">fieldString</span><span class="se">\&quot;</span><span class="s"> : </span><span class="se">\&quot;</span><span class="s">Строка</span><span class="se">\&quot;</span><span class="s"> }&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">ascending</span><span class="p">(</span><span class="s">&quot;field1&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">descending</span><span class="p">(</span><span class="s">&quot;field2&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">fields</span><span class="p">([</span><span class="s">&quot;field1&quot;</span><span class="p">,</span> <span class="s">&quot;field2&quot;</span><span class="p">])</span>
-<span class="kd">let</span> <span class="nv">and1</span> <span class="p">=</span> <span class="n">SCOperator</span><span class="p">.</span><span class="n">EqualTo</span><span class="p">(</span><span class="s">&quot;fieldString&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;Строка&quot;</span><span class="p">))</span>
-<span class="kd">let</span> <span class="nv">and2</span> <span class="p">=</span> <span class="n">SCOperator</span><span class="p">.</span><span class="n">EqualTo</span><span class="p">(</span><span class="s">&quot;fieldNumber&quot;</span><span class="p">,</span> <span class="n">SCInt</span><span class="p">(</span><span class="mi">33</span><span class="p">))</span>
-<span class="n">query</span><span class="p">.</span><span class="n">and</span><span class="p">([</span><span class="n">and1</span><span class="p">,</span> <span class="n">and2</span><span class="p">])</span>
+query.equalTo(&quot;fieldName&quot;, SCString(&quot;John Doe&quot;))
+query.raw(&quot;{ \&quot;fieldString\&quot; : \&quot;Строка\&quot; }&quot;)
+query.ascending(&quot;field1&quot;)
+query.descending(&quot;field2&quot;)
+query.fields([&quot;field1&quot;, &quot;field2&quot;])
+let and1 = SCOperator.EqualTo(&quot;fieldString&quot;, SCString(&quot;Строка&quot;))
+let and2 = SCOperator.EqualTo(&quot;fieldNumber&quot;, SCInt(33))
+query.and([and1, and2])
 
-<span class="n">query</span><span class="p">.</span><span class="n">reset</span><span class="p">()</span>
-</pre></div>
-</h2>
+query.reset()
+</code></pre></h2>
 <p><a name="SCQuery+ascending"></a> </p>
 <h3 id="ascendingname">.ascending(name)</h3>
 <p>Method for sorting data in ascending order of specified field values before sampling.</p>
@@ -2120,20 +2103,19 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-sortbyprice-scquerycollection-items-sortbypriceascendingprice-sortbypricefind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">sortByPrice</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">sortByPrice</span><span class="p">.</span><span class="n">ascending</span><span class="p">(</span><span class="s">&quot;price&quot;</span><span class="p">)</span>
-<span class="n">sortByPrice</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-sortbyprice-scquerycollection-items-sortbypriceascendingprice-sortbypricefind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var sortByPrice = SCQuery(collection: &quot;items&quot;)
+sortByPrice.ascending(&quot;price&quot;)
+sortByPrice.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}
+</code></pre></h2>
 <p><a name="SCQuery+descending"></a></p>
 <h3 id="descendingname">.descending(name)</h3>
 <p>Method for sorting data in the descending order of specified field values before sampling.</p>
@@ -2159,20 +2141,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">sortByReward</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">sortByReward</span><span class="p">.</span><span class="n">descending</span><span class="p">(</span><span class="s">&quot;reward&quot;</span><span class="p">)</span>
-<span class="n">sortByReward</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">var sortByReward = SCQuery(collection: &quot;items&quot;)
+sortByReward.descending(&quot;reward&quot;)
+sortByReward.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre>
 
 <hr />
 <p><a name="SCQuery+fields"></a></p>
@@ -2200,20 +2180,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">getPriceAndReward</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">getPriceAndReward</span><span class="p">.</span><span class="n">fields</span><span class="p">([</span><span class="s">&quot;price&quot;</span><span class="p">,</span> <span class="s">&quot;reward&quot;</span><span class="p">])</span>
-<span class="n">getPriceAndReward</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">var getPriceAndReward = SCQuery(collection: &quot;items&quot;)
+getPriceAndReward.fields([&quot;price&quot;, &quot;reward&quot;])
+getPriceAndReward.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre>
 
 <hr />
 <p><a name="SCQuery+addOperator"></a> </p>
@@ -2248,10 +2226,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="let-lessnorequal-scoperatorlessthanorequaltoprice-42-scqueryaddoperatorname-oper-lessnorequal"><div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">lessNorEqual</span> <span class="p">=</span> <span class="n">SCOperator</span><span class="p">.</span><span class="n">LessThanOrEqualTo</span><span class="p">(</span><span class="s">&quot;price&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
-<span class="n">SCQuery</span><span class="p">.</span><span class="n">addOperator</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">oper</span><span class="p">:</span> <span class="n">lessNorEqual</span><span class="p">)</span>
-</pre></div>
-</h2>
+<h2 id="let-lessnorequal-scoperatorlessthanorequaltoprice-42-scqueryaddoperatorname-oper-lessnorequal"><pre class="codehilite"><code class="language-SWIFT">let lessNorEqual = SCOperator.LessThanOrEqualTo(&quot;price&quot;, 42)
+SCQuery.addOperator(name, oper: lessNorEqual)</code></pre></h2>
 <p><a name="SCQuery+equalTo"></a> </p>
 <h3 id="equaltoname-_-value">.equalTo(name, _ value)</h3>
 <p>Method for retrieving all documents with the field value indicated in the condition.</p>
@@ -2284,20 +2260,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-queryequaltoequality-scstringyep-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">equalTo</span><span class="p">(</span><span class="s">&quot;equality&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;yep&quot;</span><span class="p">))</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-queryequaltoequality-scstringyep-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.equalTo(&quot;equality&quot;, SCString(&quot;yep&quot;))
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+notEqualTo"></a></p>
 <h3 id="notequaltoname-_-value">.notEqualTo(name, _ value)</h3>
 <p>Method for retrieving all documents except for objects with the field value indicated in the condition.</p>
@@ -2330,20 +2304,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-querynotequaltounequality-scstringnope-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">notEqualTo</span><span class="p">(</span><span class="s">&quot;unequality&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;nope&quot;</span><span class="p">))</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-querynotequaltounequality-scstringnope-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.notEqualTo(&quot;unequality&quot;, SCString(&quot;nope&quot;))
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+containedIn"></a> </p>
 <h3 id="containedinname-_-value">.containedIn(name, _ value)</h3>
 <p>Method for retrieving all objects whose field value contains the array elements specified in the query.</p>
@@ -2376,20 +2348,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-querycontainedinsomefield-scarrayscstringa-scstringb-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">containedIn</span><span class="p">(</span><span class="s">&quot;someField&quot;</span><span class="p">,</span> <span class="n">SCArray</span><span class="p">([</span><span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">),</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">)]))</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-querycontainedinsomefield-scarrayscstringa-scstringb-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.containedIn(&quot;someField&quot;, SCArray([SCString(&quot;A&quot;), SCString(&quot;B&quot;)]))
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+containsAll"></a> </p>
 <h3 id="containsallname-_-value">.containsAll(name, _ value)</h3>
 <p>Method for retrieving all objects whose field value contains all array elements specified in the query.</p>
@@ -2422,20 +2392,19 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-querycontainsallsomefield-scarrayscstringa-scstringb-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">containsAll</span><span class="p">(</span><span class="s">&quot;someField&quot;</span><span class="p">,</span> <span class="n">SCArray</span><span class="p">([</span><span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">),</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">)]))</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-querycontainsallsomefield-scarrayscstringa-scstringb-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.containsAll(&quot;someField&quot;, SCArray([SCString(&quot;A&quot;), SCString(&quot;B&quot;)]))
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}
+</code></pre></h2>
 <p><a name="SCQuery+notContainedIn"></a></p>
 <h3 id="notcontainedinname-_-value">.notContainedIn(name, _ value)</h3>
 <p>Method for retrieving all objects whose field value does not contain the array elements specified in the query.</p>
@@ -2468,20 +2437,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-querynotcontainedinsomefield-scarrayscstringa-scstringb-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">notContainedIn</span><span class="p">(</span><span class="s">&quot;someField&quot;</span><span class="p">,</span> <span class="n">SCArray</span><span class="p">([</span><span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">),</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">)]))</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-querynotcontainedinsomefield-scarrayscstringa-scstringb-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.notContainedIn(&quot;someField&quot;, SCArray([SCString(&quot;A&quot;), SCString(&quot;B&quot;)]))
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+greaterThan"></a></p>
 <h3 id="greaterthanname-_-value">.greaterThan(name, _ value)</h3>
 <p>Method for retrieving all objects whose field value is greater than the number specified in the query.</p>
@@ -2514,20 +2481,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-querygreaterthanreward-scint100-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">greaterThan</span><span class="p">(</span><span class="s">&quot;reward&quot;</span><span class="p">,</span> <span class="n">SCInt</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-querygreaterthanreward-scint100-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.greaterThan(&quot;reward&quot;, SCInt(100))
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+greaterThanOrEqualTo"></a></p>
 <h3 id="greaterthanorequaltoname-_-value">.greaterThanOrEqualTo(name, _ value)</h3>
 <p>Method for retrieving all objects whose field value is no less than the number specified in the query.</p>
@@ -2560,20 +2525,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-querygreaterthanorequaltocreatedat-scdate2016-06-04t1724230910300-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">greaterThanOrEqualTo</span><span class="p">(</span><span class="s">&quot;createdAt&quot;</span><span class="p">,</span> <span class="n">SCDate</span><span class="p">(</span><span class="s">&quot;2016-06-04T17:24:23.091+03:00&quot;</span><span class="p">))</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-querygreaterthanorequaltocreatedat-scdate2016-06-04t1724230910300-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.greaterThanOrEqualTo(&quot;createdAt&quot;, SCDate(&quot;2016-06-04T17:24:23.091+03:00&quot;))
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+lessThan"></a></p>
 <h3 id="lessthanname-_-value">.lessThan(name, _ value)</h3>
 <p>Method for retrieving all objects whose field value is less than the number specified in the query.</p>
@@ -2606,20 +2569,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-querylessthanprice-scint42-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">lessThan</span><span class="p">(</span><span class="s">&quot;price&quot;</span><span class="p">,</span> <span class="n">SCInt</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-querylessthanprice-scint42-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.lessThan(&quot;price&quot;, SCInt(42))
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+lessThanOrEqualTo"></a></p>
 <h3 id="lessthanorequaltoname-_-value">.lessThanOrEqualTo(name, _ value)</h3>
 <p>Method for retrieving all objects whose field value is no greater than the number specified in the query.</p>
@@ -2652,20 +2613,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-querylessthanorequaltoprice-scint42-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">lessThanOrEqualTo</span><span class="p">(</span><span class="s">&quot;price&quot;</span><span class="p">,</span> <span class="n">SCInt</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-querylessthanorequaltoprice-scint42-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.lessThanOrEqualTo(&quot;price&quot;, SCInt(42))
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+exists"></a></p>
 <h3 id="existsname">.exists(name)</h3>
 <p>Method for retrieving all objects with an existing value of a defined field</p>
@@ -2691,20 +2650,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-queryexistsreward-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&quot;reward&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-queryexistsreward-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.exists(&quot;reward&quot;)
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+doesNotExist"></a></p>
 <h3 id="doesnotexistname">.doesNotExist(name)</h3>
 <p>Method for retrieving all objects with a missing value in a defined field.</p>
@@ -2730,20 +2687,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-querydoesnotexistprice-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">doesNotExist</span><span class="p">(</span><span class="s">&quot;price&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-querydoesnotexistprice-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.doesNotExist(&quot;price&quot;)
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+contains"></a></p>
 <h3 id="containsname-_-pattern">.contains(name, _ pattern)</h3>
 <p>Method for retrieving all objects with a value of a defined field that matches a defined regular expression.</p>
@@ -2776,20 +2731,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-querycontainsdescription-a-za-z0-9-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">contains</span><span class="p">(</span><span class="s">&quot;description&quot;</span><span class="p">,</span> <span class="s">&quot;[a-zA-Z0-9]&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-querycontainsdescription-a-za-z0-9-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.contains(&quot;description&quot;, &quot;[a-zA-Z0-9]&quot;)
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+startsWith"></a></p>
 <h3 id="startswithname-_-pattern">.startsWith(name, _ pattern)</h3>
 <p>Method for retrieving all objects with a value of a defined field starting from a specified string.</p>
@@ -2822,20 +2775,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-querystartswithfieldstring-a-z-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">startsWith</span><span class="p">(</span><span class="s">&quot;fieldString&quot;</span><span class="p">,</span> <span class="s">&quot;[A-Z]&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-querystartswithfieldstring-a-z-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.startsWith(&quot;fieldString&quot;, &quot;[A-Z]&quot;)
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+endsWith"></a></p>
 <h3 id="endswithname-_-pattern">.endsWith(name, _ pattern)</h3>
 <p>Method for retrieving all objects with a value of a defined field ending with a specified string.</p>
@@ -2868,20 +2819,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-queryendswithfieldstring-ing-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">endsWith</span><span class="p">(</span><span class="s">&quot;fieldString&quot;</span><span class="p">,</span> <span class="s">&quot;ing&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-queryendswithfieldstring-ing-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.endsWith(&quot;fieldString&quot;, &quot;ing&quot;)
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+and"></a></p>
 <h3 id="andoperators">.and(operators)</h3>
 <p>Method for logical multiplication of conditions of several samplings</p>
@@ -2907,20 +2856,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<h2 id="var-query-scquerycollection-items-querynotequaltounequality-scstringnope-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror_1"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">notEqualTo</span><span class="p">(</span><span class="s">&quot;unequality&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;nope&quot;</span><span class="p">))</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="var-query-scquerycollection-items-querynotequaltounequality-scstringnope-queryfind-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror_1"><pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.notEqualTo(&quot;unequality&quot;, SCString(&quot;nope&quot;))
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCQuery+or"></a></p>
 <h3 id="oroperators">.or(operators)</h3>
 <p>Method for Boolean addition of conditions of several samplings</p>
@@ -2946,19 +2893,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">query</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">query</span><span class="p">.</span><span class="n">notEqualTo</span><span class="p">(</span><span class="s">&quot;unequality&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;nope&quot;</span><span class="p">))</span>
-<span class="n">query</span><span class="p">.</span><span class="bp">find</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
+<pre class="codehilite"><code class="language-SWIFT">var query = SCQuery(collection: &quot;items&quot;)
+query.notEqualTo(&quot;unequality&quot;, SCString(&quot;nope&quot;))
+query.find() {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre>
               
             </article>
           </div>

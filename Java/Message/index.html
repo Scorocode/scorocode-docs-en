@@ -1003,9 +1003,7 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">MessagePush</span> <span class="n">messagePush</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MessagePush</span><span class="o">(</span><span class="s">&quot;Any text&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-Java">MessagePush messagePush = new MessagePush(&quot;Any text&quot;, null);</code></pre>
 
 <hr />
 <p><a name="Message+sendPush1"></a></p>
@@ -1046,25 +1044,23 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">MessagePush</span> <span class="n">messagePush</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MessagePush</span><span class="o">(</span><span class="s">&quot;Any text&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">MessagePush messagePush = new MessagePush(&quot;Any text&quot;, null);
 
-<span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="s">&quot;USERS&quot;</span><span class="o">);</span>
-<span class="n">query</span><span class="o">.</span><span class="na">equalTo</span><span class="o">(</span><span class="s">&quot;_id&quot;</span><span class="o">,</span> <span class="s">&quot;XukL1FrVoL&quot;</span><span class="o">);</span>
+Query query = new Query(&quot;USERS&quot;);
+query.equalTo(&quot;_id&quot;, &quot;XukL1FrVoL&quot;);
 
-<span class="n">Message</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Message</span><span class="o">();</span>
-<span class="n">message</span><span class="o">.</span><span class="na">sendPush</span><span class="o">(</span><span class="n">messagePush</span><span class="o">,</span> <span class="n">query</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackSendPush</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onPushSended</span><span class="o">()</span> <span class="o">{</span>
-                <span class="c1">//push send</span>
-            <span class="o">}</span>
+Message message = new Message();
+message.sendPush(messagePush, query, new CallbackSendPush() {
+            @Override
+            public void onPushSended() {
+                //push send
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onPushSendFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//error during sending</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-
+            @Override
+            public void onPushSendFailed(String errorCode, String errorMessage) {
+                //error during sending
+            }
+        });</code></pre>
 
 <hr />
 <p><a name="Message+sendPush2"></a></p>
@@ -1098,25 +1094,23 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">MessagePush</span> <span class="n">messagePush</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MessagePush</span><span class="o">(</span><span class="s">&quot;Any text&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">MessagePush messagePush = new MessagePush(&quot;Any text&quot;, null);
 
-<span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="s">&quot;USERS&quot;</span><span class="o">);</span>
-<span class="n">query</span><span class="o">.</span><span class="na">equalTo</span><span class="o">(</span><span class="s">&quot;_id&quot;</span><span class="o">,</span> <span class="s">&quot;XukL1FrVoL&quot;</span><span class="o">);</span>
+Query query = new Query(&quot;USERS&quot;);
+query.equalTo(&quot;_id&quot;, &quot;XukL1FrVoL&quot;);
 
-<span class="n">Message</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Message</span><span class="o">();</span>
-<span class="n">message</span><span class="o">.</span><span class="na">sendPush</span><span class="o">(</span><span class="n">messagePush</span><span class="o">,</span> <span class="n">query</span><span class="o">,</span> <span class="k">new</span> <span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onPushSended</span><span class="o">()</span> <span class="o">{</span>
-                <span class="c1">//push send</span>
-            <span class="o">}</span>
+Message message = new Message();
+message.sendPush(messagePush, query, new () {
+            @Override
+            public void onPushSended() {
+                //push send
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onPushSendFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//error during sending</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-
+            @Override
+            public void onPushSendFailed(String errorCode, String errorMessage) {
+                //error during sending
+            }
+        });</code></pre>
 
 <hr />
 <p><a name="Message+sendSms1"></a></p>
@@ -1157,24 +1151,23 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">MessageSms</span> <span class="n">messageSms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MessageSms</span><span class="o">(</span><span class="s">&quot;Hello world&quot;</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">MessageSms messageSms = new MessageSms(&quot;Hello world&quot;);
 
-<span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Query</span><span class="o">(</span><span class="s">&quot;USERS&quot;</span><span class="o">);</span>
-<span class="n">query</span><span class="o">.</span><span class="na">equalTo</span><span class="o">(</span><span class="s">&quot;_id&quot;</span><span class="o">,</span> <span class="s">&quot;XukL1FrVoL&quot;</span><span class="o">);</span>
+Query query = new Query(&quot;USERS&quot;);
+query.equalTo(&quot;_id&quot;, &quot;XukL1FrVoL&quot;);
 
-<span class="n">message</span><span class="o">.</span><span class="na">sendSms</span><span class="o">(</span><span class="n">messageSms</span><span class="o">,</span> <span class="n">query</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackSendSms</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSmsSended</span><span class="o">()</span> <span class="o">{</span>
-                <span class="c1">//sms send</span>
-            <span class="o">}</span>
+message.sendSms(messageSms, query, new CallbackSendSms() {
+            @Override
+            public void onSmsSended() {
+                //sms send
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSmsSendFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//error during sending</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-
+            @Override
+            public void onSmsSendFailed(String errorCode, String errorMessage) {
+                //error during sending
+            }
+        });
+</code></pre>
 
 <hr />
 <p><a name="Message+sendSms2"></a></p>
@@ -1208,19 +1201,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">MessageSms</span> <span class="n">messageSms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MessageSms</span><span class="o">(</span><span class="s">&quot;Hello world&quot;</span><span class="o">);</span>
-<span class="n">message</span><span class="o">.</span><span class="na">sendSms</span><span class="o">(</span><span class="n">messageSms</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackSendSms</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSmsSended</span><span class="o">()</span> <span class="o">{</span>
-                <span class="c1">//sms send</span>
-            <span class="o">}</span>
+<pre class="codehilite"><code class="language-Java">MessageSms messageSms = new MessageSms(&quot;Hello world&quot;);
+message.sendSms(messageSms, new CallbackSendSms() {
+            @Override
+            public void onSmsSended() {
+                //sms send
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSmsSendFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//error during sending</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
+            @Override
+            public void onSmsSendFailed(String errorCode, String errorMessage) {
+                //error during sending
+            }
+        });</code></pre>
               
             </article>
           </div>

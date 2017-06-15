@@ -946,11 +946,9 @@
 <p><a name="ApplicationInfo_new"></a></p>
 <h2 id="new-applicationinfo">new ApplicationInfo()</h2>
 <p>Constructor ApplicationInfo</p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">ApplicationInfo</span> <span class="n">applicationInfo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ApplicationInfo</span><span class="o">();</span>
-</pre></div>
-
+ApplicationInfo applicationInfo = new ApplicationInfo();</code></pre>
 
 <div class="admonition note">
 <p class="admonition-title">MasterKey</p>
@@ -981,21 +979,20 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">ApplicationInfo</span> <span class="n">applicationInfo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ApplicationInfo</span><span class="o">();</span>
-<span class="n">applicationInfo</span><span class="o">.</span><span class="na">getApplicationInfo</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackGetApplicationInfo</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRequestSucceed</span><span class="o">(</span><span class="n">ScorocodeApplicationInfo</span> <span class="n">appInfo</span><span class="o">)</span> <span class="o">{</span>
-         <span class="c1">//sdk  returned info</span>
-    <span class="o">}</span>
+ApplicationInfo applicationInfo = new ApplicationInfo();
+applicationInfo.getApplicationInfo(new CallbackGetApplicationInfo() {
+    @Override
+    public void onRequestSucceed(ScorocodeApplicationInfo appInfo) {
+         //sdk  returned info
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRequestFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request</span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
+    @Override
+    public void onRequestFailed(String errorCode, String errorMessage) {
+        //error during request
+    }
+});</code></pre>
               
             </article>
           </div>

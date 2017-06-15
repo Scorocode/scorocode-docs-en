@@ -993,22 +993,20 @@
 </tbody>
 </table>
 <p><strong>Example</strong>   </p>
-<h2 id="var-queryuserdevices-scquerycollection-devices-var-broadcast-scmessage-queryuserdevicesexistsuserrelation-broadcastsendpushqueryuserdevices-textpush-text-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">queryUserDevices</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;devices&quot;</span><span class="p">)</span>
-<span class="kd">var</span> <span class="nv">broadcast</span> <span class="p">=</span> <span class="n">SCMessage</span><span class="p">()</span>
+<h2 id="var-queryuserdevices-scquerycollection-devices-var-broadcast-scmessage-queryuserdevicesexistsuserrelation-broadcastsendpushqueryuserdevices-textpush-text-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">var queryUserDevices = SCQuery(collection: &quot;devices&quot;)
+var broadcast = SCMessage()
 
-<span class="n">queryUserDevices</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&quot;userRelation&quot;</span><span class="p">)</span>
-<span class="n">broadcast</span><span class="p">.</span><span class="n">sendPush</span><span class="p">(</span><span class="n">queryUserDevices</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span><span class="s">&quot;Push text&quot;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+queryUserDevices.exists(&quot;userRelation&quot;)
+broadcast.sendPush(queryUserDevices, text:&quot;Push text&quot;) {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCMessage+sendSms"></a></p>
 <h2 id="sendsmsquery-subject-text-callback">.sendSms(query, subject, text, callback)</h2>
 <p>SMS sending method</p>
@@ -1047,21 +1045,20 @@
 </tbody>
 </table>
 <p><strong>Example</strong>   </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nv">queryUsersWithPhone</span> <span class="p">=</span> <span class="n">SCQuery</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
-<span class="kd">var</span> <span class="nv">broadcast</span> <span class="p">=</span> <span class="n">SCMessage</span><span class="p">()</span>
+<pre class="codehilite"><code class="language-SWIFT">var queryUsersWithPhone = SCQuery(collection: &quot;users&quot;)
+var broadcast = SCMessage()
 
-<span class="n">queryUsersWithPhone</span><span class="p">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&quot;phone&quot;</span><span class="p">)</span>
-<span class="n">broadcast</span><span class="p">.</span><span class="n">sendSms</span><span class="p">(</span><span class="n">queryUsersWithPhone</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span><span class="s">&quot;SMS text&quot;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
+queryUsersWithPhone.exists(&quot;phone&quot;)
+broadcast.sendSms(queryUsersWithPhone, text:&quot;SMS text&quot;) {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre>
               
             </article>
           </div>

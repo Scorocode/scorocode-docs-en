@@ -1094,11 +1094,9 @@
 <p><a name="Collections_new"></a></p>
 <h2 id="new-collections">new Collections()</h2>
 <p>Constructor Collections</p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
-</pre></div>
-
+Collections collections = new Collections();</code></pre>
 
 <div class="admonition note">
 <p class="admonition-title">MasterKey</p>
@@ -1129,22 +1127,20 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
-<span class="n">collections</span><span class="o">.</span><span class="na">getCollectionsList</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackGetCollectionsList</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRequestSucceed</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">ScorocodeCollection</span><span class="o">&gt;</span> <span class="n">collections</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//sdk returned collections list</span>
-    <span class="o">}</span>
+Collections collections = new Collections();
+collections.getCollectionsList(new CallbackGetCollectionsList() {
+    @Override
+    public void onRequestSucceed(List&lt;ScorocodeCollection&gt; collections) {
+        //sdk returned collections list
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRequestFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request</span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
-
+    @Override
+    public void onRequestFailed(String errorCode, String errorMessage) {
+        //error during request
+    }
+});</code></pre>
 
 <hr />
 <p><a name="Collections+getCollectionByName"></a></p>
@@ -1178,22 +1174,20 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
-<span class="n">collections</span><span class="o">.</span><span class="na">getCollectionByName</span><span class="o">(</span><span class="s">&quot;testCollection&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackGetCollection</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRequestSucceed</span><span class="o">(</span><span class="n">ScorocodeCollection</span> <span class="n">collection</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//sdk returned the collection</span>
-    <span class="o">}</span>
+Collections collections = new Collections();
+collections.getCollectionByName(&quot;testCollection&quot;, new CallbackGetCollection() {
+    @Override
+    public void onRequestSucceed(ScorocodeCollection collection) {
+        //sdk returned the collection
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRequestFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request</span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
-
+    @Override
+    public void onRequestFailed(String errorCode, String errorMessage) {
+        //error during request
+    }
+});</code></pre>
 
 <hr />
 <p><a name="Collections+createCollection"></a></p>
@@ -1227,27 +1221,25 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">ScorocodeCollection</span> <span class="n">newCollection</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScorocodeCollection</span><span class="o">()</span>
-        <span class="o">.</span><span class="na">setCollectionName</span><span class="o">(</span><span class="err">“</span><span class="n">testcollection</span><span class="err">”</span><span class="o">)</span>
-        <span class="o">.</span><span class="na">setUseDocsACL</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
-        <span class="o">.</span><span class="na">setACL</span><span class="o">(</span><span class="n">getTestACL</span><span class="o">());</span>
+ScorocodeCollection newCollection = new ScorocodeCollection()
+        .setCollectionName(“testcollection”)
+        .setUseDocsACL(false)
+        .setACL(getTestACL());
 
-<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
-<span class="n">collections</span><span class="o">.</span><span class="na">createCollection</span><span class="o">(</span><span class="n">newCollection</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackCreateCollection</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCollectionCreated</span><span class="o">(</span><span class="n">ScorocodeCollection</span> <span class="n">collection</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//collection created</span>
-    <span class="o">}</span>
+Collections collections = new Collections();
+collections.createCollection(newCollection, new CallbackCreateCollection() {
+    @Override
+    public void onCollectionCreated(ScorocodeCollection collection) {
+        //collection created
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreationFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request</span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
-
+    @Override
+    public void onCreationFailed(String errorCode, String errorMessage) {
+        //error during request
+    }
+});</code></pre>
 
 <hr />
 <p><a name="Collections+updateCollcetion"></a></p>
@@ -1288,28 +1280,26 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
+Collections collections = new Collections();
 
-<span class="n">ScorocodeCollection</span> <span class="n">collection</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScorocodeCollection</span><span class="o">()</span>
-        <span class="o">.</span><span class="na">setCollectionName</span><span class="o">(</span><span class="err">&quot;</span><span class="n">updatedcollection</span><span class="err">”</span><span class="o">))</span>
-        <span class="o">.</span><span class="na">setUseDocsACL</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
-        <span class="o">.</span><span class="na">setACL</span><span class="o">(</span><span class="n">getTestACL</span><span class="o">());</span>
+ScorocodeCollection collection = new ScorocodeCollection()
+        .setCollectionName(&quot;updatedcollection”))
+        .setUseDocsACL(false)
+        .setACL(getTestACL());
 
-<span class="n">collections</span><span class="o">.</span><span class="na">updateCollection</span><span class="o">(</span><span class="err">“</span><span class="n">ahfdsjlsdlffdsdsa</span><span class="err">”</span><span class="o">,</span> <span class="n">collection</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackUpdateCollection</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCollectionUpdated</span><span class="o">(</span><span class="n">ScorocodeCollection</span> <span class="n">collection</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//collection updated</span>
-    <span class="o">}</span>
+collections.updateCollection(“ahfdsjlsdlffdsdsa”, collection, new CallbackUpdateCollection() {
+    @Override
+    public void onCollectionUpdated(ScorocodeCollection collection) {
+        //collection updated
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUpdateFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request</span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
-
+    @Override
+    public void onUpdateFailed(String errorCode, String errorMessage) {
+        //error during request
+    }
+});</code></pre>
 
 <hr />
 <p><a name="Collections+cloneCollection"></a></p>
@@ -1350,22 +1340,20 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
-<span class="n">collections</span><span class="o">.</span><span class="na">cloneCollection</span><span class="o">(</span><span class="err">“</span><span class="n">asdhjkasdjska</span><span class="err">”</span><span class="o">,</span> <span class="err">&quot;</span><span class="n">clonedtestcollection</span><span class="err">”</span><span class="o">),</span> <span class="k">new</span> <span class="n">CallbackCloneCollection</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCollectionCloned</span><span class="o">(</span><span class="n">ScorocodeCollection</span> <span class="n">collection</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//collection cloned</span>
-    <span class="o">}</span>
+Collections collections = new Collections();
+collections.cloneCollection(“asdhjkasdjska”, &quot;clonedtestcollection”), new CallbackCloneCollection() {
+    @Override
+    public void onCollectionCloned(ScorocodeCollection collection) {
+        //collection cloned
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCloneOperationFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request</span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
-
+    @Override
+    public void onCloneOperationFailed(String errorCode, String errorMessage) {
+        //error during request
+    }
+});</code></pre>
 
 <hr />
 <p><a name="Collections+createCollectionIndex"></a></p>
@@ -1406,27 +1394,25 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">List</span><span class="o">&lt;</span><span class="n">IndexField</span><span class="o">&gt;</span> <span class="n">indexFields</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-<span class="n">indexFields</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">IndexField</span><span class="o">(</span><span class="s">&quot;readACL&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">));</span>
+List&lt;IndexField&gt; indexFields = new ArrayList&lt;&gt;();
+indexFields.add(new IndexField(&quot;readACL&quot;, 1));
 
-<span class="n">Index</span> <span class="n">index</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Index</span><span class="o">(</span><span class="err">“</span><span class="n">newindex</span><span class="err">”</span><span class="o">,</span> <span class="n">indexFields</span><span class="o">);</span>
+Index index = new Index(“newindex”, indexFields);
 
-<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
-<span class="n">collections</span><span class="o">.</span><span class="na">createCollectionIndex</span><span class="o">(</span><span class="err">“</span><span class="n">testcollection</span><span class="err">”</span><span class="o">,</span> <span class="n">index</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackCreateCollectionIndex</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onIndexCreated</span><span class="o">()</span> <span class="o">{</span>
-        <span class="c1">//index created</span>
-    <span class="o">}</span>
+Collections collections = new Collections();
+collections.createCollectionIndex(“testcollection”, index, new CallbackCreateCollectionIndex() {
+    @Override
+    public void onIndexCreated() {
+        //index created
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onIndexCreationFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request</span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
-
+    @Override
+    public void onIndexCreationFailed(String errorCode, String errorMessage) {
+        //error during request
+    }
+});</code></pre>
 
 <hr />
 <p><a name="Collections+deleteCollectionIndex"></a></p>
@@ -1467,22 +1453,20 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
-<span class="n">collections</span><span class="o">.</span><span class="na">deleteCollectionIndex</span><span class="o">(</span><span class="n">testCollection</span><span class="o">.</span><span class="na">getCollectionName</span><span class="o">(),</span> <span class="n">INDEX_NAME</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackDeleteCollectionIndex</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onIndexDeleted</span><span class="o">()</span> <span class="o">{</span>
-        <span class="c1">//index deleted</span>
-    <span class="o">}</span>
+Collections collections = new Collections();
+collections.deleteCollectionIndex(testCollection.getCollectionName(), INDEX_NAME, new CallbackDeleteCollectionIndex() {
+    @Override
+    public void onIndexDeleted() {
+        //index deleted
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onIndexDeletionFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request</span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
-
+    @Override
+    public void onIndexDeletionFailed(String errorCode, String errorMessage) {
+        //error during request
+    }
+});</code></pre>
 
 <hr />
 <p><a name="Collections+updateCollectionTriggers"></a></p>
@@ -1523,31 +1507,29 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="kt">boolean</span> <span class="n">isActive</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-<span class="n">ScorocodeTriggers</span> <span class="n">triggers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScorocodeTriggers</span><span class="o">();</span>
-<span class="n">triggers</span><span class="o">.</span><span class="na">setBeforeInsert</span><span class="o">(</span><span class="k">new</span> <span class="n">Trigger</span><span class="o">(</span><span class="s">&quot;BFI code&quot;</span><span class="o">,</span> <span class="n">isActive</span><span class="o">));</span>
-<span class="n">triggers</span><span class="o">.</span><span class="na">setAfterInsert</span><span class="o">(</span><span class="k">new</span> <span class="n">Trigger</span><span class="o">(</span><span class="s">&quot;AFI code&quot;</span><span class="o">,</span> <span class="n">isActive</span><span class="o">));</span>
-<span class="n">triggers</span><span class="o">.</span><span class="na">setBeforeRemove</span><span class="o">(</span><span class="k">new</span> <span class="n">Trigger</span><span class="o">(</span><span class="s">&quot;BFR code&quot;</span><span class="o">,</span> <span class="n">isActive</span><span class="o">));</span>
-<span class="n">triggers</span><span class="o">.</span><span class="na">setAfterRemove</span><span class="o">(</span><span class="k">new</span> <span class="n">Trigger</span><span class="o">(</span><span class="s">&quot;AFR code&quot;</span><span class="o">,</span> <span class="n">isActive</span><span class="o">));</span>
-<span class="n">triggers</span><span class="o">.</span><span class="na">setBeforeUpdate</span><span class="o">(</span><span class="k">new</span> <span class="n">Trigger</span><span class="o">(</span><span class="s">&quot;BFU code&quot;</span><span class="o">,</span> <span class="n">isActive</span><span class="o">));</span>
-<span class="n">triggers</span><span class="o">.</span><span class="na">setAfterUpdate</span><span class="o">(</span><span class="k">new</span> <span class="n">Trigger</span><span class="o">(</span><span class="s">&quot;AFU code&quot;</span><span class="o">,</span> <span class="n">isActive</span><span class="o">));</span>
+boolean isActive = false;
+ScorocodeTriggers triggers = new ScorocodeTriggers();
+triggers.setBeforeInsert(new Trigger(&quot;BFI code&quot;, isActive));
+triggers.setAfterInsert(new Trigger(&quot;AFI code&quot;, isActive));
+triggers.setBeforeRemove(new Trigger(&quot;BFR code&quot;, isActive));
+triggers.setAfterRemove(new Trigger(&quot;AFR code&quot;, isActive));
+triggers.setBeforeUpdate(new Trigger(&quot;BFU code&quot;, isActive));
+triggers.setAfterUpdate(new Trigger(&quot;AFU code&quot;, isActive));
 
-<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
-<span class="n">collections</span><span class="o">.</span><span class="na">updateCollectionTriggers</span><span class="o">(</span><span class="err">“</span><span class="n">testcollection</span><span class="err">”</span><span class="o">,</span> <span class="n">triggers</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackUpdateCollectionTriggers</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onTriggersUpdated</span><span class="o">(</span><span class="n">ScorocodeTriggers</span> <span class="n">triggers</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//trigger updated</span>
-    <span class="o">}</span>
+Collections collections = new Collections();
+collections.updateCollectionTriggers(“testcollection”, triggers, new CallbackUpdateCollectionTriggers() {
+    @Override
+    public void onTriggersUpdated(ScorocodeTriggers triggers) {
+        //trigger updated
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUpdateFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request</span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
-
+    @Override
+    public void onUpdateFailed(String errorCode, String errorMessage) {
+        //error during request
+    }
+});</code></pre>
 
 <hr />
 <p><a name="Collections+createCollectionField"></a></p>
@@ -1588,24 +1570,22 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">ScorocodeField</span> <span class="n">field</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScorocodeField</span><span class="o">(</span><span class="s">&quot;testnumberfield&quot;</span><span class="o">,</span> <span class="n">ScorocodeTypes</span><span class="o">.</span><span class="na">TypeNumber</span><span class="o">,</span> <span class="s">&quot;&quot;</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+ScorocodeField field = new ScorocodeField(&quot;testnumberfield&quot;, ScorocodeTypes.TypeNumber, &quot;&quot;, false, false, false);
 
-<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
-<span class="n">collections</span><span class="o">.</span><span class="na">createCollectionField</span><span class="o">(</span><span class="err">“</span><span class="n">testcollection</span><span class="err">”</span><span class="o">,</span> <span class="n">field</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackAddField</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onFieldAdded</span><span class="o">(</span><span class="n">ScorocodeField</span> <span class="n">field</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//field created</span>
-    <span class="o">}</span>
+Collections collections = new Collections();
+collections.createCollectionField(“testcollection”, field, new CallbackAddField() {
+    @Override
+    public void onFieldAdded(ScorocodeField field) {
+        //field created
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAddFieldFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request</span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
-
+    @Override
+    public void onAddFieldFailed(String errorCode, String errorMessage) {
+        //error during request
+    }
+});</code></pre>
 
 <hr />
 <p><a name="Collections+deleteCollectionField"></a></p>
@@ -1646,22 +1626,20 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
-<span class="n">collections</span><span class="o">.</span><span class="na">deleteCollectionField</span><span class="o">(</span><span class="err">“</span><span class="n">testcoll</span><span class="err">”</span><span class="o">,</span> <span class="s">&quot;testnumberfield&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackDeleteField</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onFieldDeleted</span><span class="o">(</span><span class="n">ScorocodeCollection</span> <span class="n">collection</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//field deleted</span>
-    <span class="o">}</span>
+Collections collections = new Collections();
+collections.deleteCollectionField(“testcoll”, &quot;testnumberfield&quot;, new CallbackDeleteField() {
+    @Override
+    public void onFieldDeleted(ScorocodeCollection collection) {
+        //field deleted
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDeletionFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request</span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
-
+    @Override
+    public void onDeletionFailed(String errorCode, String errorMessage) {
+        //error during request
+    }
+});</code></pre>
 
 <hr />
 <p><a name="Collections+deleteCollection"></a></p>
@@ -1695,21 +1673,20 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">Collections</span> <span class="n">collections</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Collections</span><span class="o">();</span>
-<span class="n">collections</span><span class="o">.</span><span class="na">deleteCollection</span><span class="o">(</span><span class="err">“</span><span class="n">sdfjksdlf2312fdsj</span><span class="err">”</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackDeleteCollection</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCollectionDeleted</span><span class="o">()</span> <span class="o">{</span>
-        <span class="c1">//collection deleted</span>
-    <span class="o">}</span>
+Collections collections = new Collections();
+collections.deleteCollection(“sdfjksdlf2312fdsj”, new CallbackDeleteCollection() {
+    @Override
+    public void onCollectionDeleted() {
+        //collection deleted
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDeletionFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCodes</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request</span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
+    @Override
+    public void onDeletionFailed(String errorCodes, String errorMessage) {
+        //error during request
+    }
+});</code></pre>
               
             </article>
           </div>

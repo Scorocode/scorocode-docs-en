@@ -1020,9 +1020,7 @@
 <p><a name="new_sc.System"></a></p>
 <h2 id="new-system">new System()</h2>
 <p>Scorocode.System. Designer </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sys</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">System</span><span class="p">();</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">var sys = new sc.System();</code></pre>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1052,25 +1050,23 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<pre class="codehilite"><code class="language-js">var sc = require('scorocode');
 
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;5c46ec2f6f94aa92sdfef83122ff1gc&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;86df1sd52d81dbhskn32f1d6a8e15936&quot;</span><span class="p">,</span>
-    <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;e9c6vf5b9d6acd5tyu3aav1405c1e6dc3&quot;</span>
-<span class="p">});</span>
+sc.Init({
+    ApplicationID: &quot;5c46ec2f6f94aa92sdfef83122ff1gc&quot;,
+    JavaScriptKey: &quot;86df1sd52d81dbhskn32f1d6a8e15936&quot;,
+    MasterKey: &quot;e9c6vf5b9d6acd5tyu3aav1405c1e6dc3&quot;
+});
 
-<span class="kd">var</span> <span class="nx">sys</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">System</span><span class="p">();</span>
+var sys = new sc.System();
 
-<span class="nx">sys</span><span class="p">.</span><span class="nx">getDataStats</span><span class="p">()</span>
-   <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">stats</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">stats</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+sys.getDataStats()
+   .then((stats)=&gt;{
+        console.log(stats);
+    })
+    .catch((error)=&gt;{
+        console.log(error)
+    });</code></pre>
 
 <p><strong>Returns</strong>: <code>promise.{dataSize: int, filesSize: int, indexSize: int, store: int}</code> - Returns a promise, which returns an object with the application statistics:</p>
 <ul>
@@ -1103,25 +1099,23 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<pre class="codehilite"><code class="language-js">var sc = require('scorocode');
 
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;5c46ec2f6f94aa92sdfef83122ff1gc&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;86df1sd52d81dbhskn32f1d6a8e15936&quot;</span><span class="p">,</span>
-    <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;e9c6vf5b9d6acd5tyu3aav1405c1e6dc3&quot;</span>
-<span class="p">});</span>
+sc.Init({
+    ApplicationID: &quot;5c46ec2f6f94aa92sdfef83122ff1gc&quot;,
+    JavaScriptKey: &quot;86df1sd52d81dbhskn32f1d6a8e15936&quot;,
+    MasterKey: &quot;e9c6vf5b9d6acd5tyu3aav1405c1e6dc3&quot;
+});
 
-<span class="kd">var</span> <span class="nx">sys</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">System</span><span class="p">();</span>
+var sys = new sc.System();
 
-<span class="nx">sys</span><span class="p">.</span><span class="nx">getApp</span><span class="p">()</span>
-   <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">app</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+sys.getApp()
+   .then((app)=&gt;{
+        console.log(app);
+    })
+    .catch((error)=&gt;{
+        console.log(error)
+    });</code></pre>
 
 <p><strong>Returns</strong>: <code>promise.&lt;App&gt;</code> - Returns a promise, which returns the <code>App</code> object.</p>
 <hr />
@@ -1148,27 +1142,25 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<pre class="codehilite"><code class="language-js">var sc = require('scorocode');
 
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;5c46ec2f6f94aa92sdfef83122ff1gc&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;86df1sd52d81dbhskn32f1d6a8e15936&quot;</span><span class="p">,</span>
-    <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;e9c6vf5b9d6acd5tyu3aav1405c1e6dc3&quot;</span>
-<span class="p">});</span>
+sc.Init({
+    ApplicationID: &quot;5c46ec2f6f94aa92sdfef83122ff1gc&quot;,
+    JavaScriptKey: &quot;86df1sd52d81dbhskn32f1d6a8e15936&quot;,
+    MasterKey: &quot;e9c6vf5b9d6acd5tyu3aav1405c1e6dc3&quot;
+});
 
-<span class="kd">var</span> <span class="nx">system</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">System</span><span class="p">();</span>
-<span class="nx">system</span><span class="p">.</span><span class="nx">getApp</span><span class="p">()</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">app</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">app</span><span class="p">.</span><span class="nx">getCollections</span><span class="p">()</span>
-            <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-          <span class="p">})</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-  <span class="p">});</span>
-</pre></div>
-
+var system = new sc.System();
+system.getApp()
+  .then((app)=&gt;{
+        app.getCollections()
+            .then((result) =&gt; {
+                console.log(result);
+          })
+  })
+  .catch((error)=&gt;{
+      console.log(error)
+  });</code></pre>
 
 <p><strong>Returns</strong>: <code>promise.[Collection]</code> - Returns a promise, which returns an array of <code>Collection</code> objects.</p>
 <hr />
@@ -1202,27 +1194,25 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<pre class="codehilite"><code class="language-js">var sc = require('scorocode');
 
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;5c46ec2f6f94aa92sdfef83122ff1gc&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;86df1sd52d81dbhskn32f1d6a8e15936&quot;</span><span class="p">,</span>
-    <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;e9c6vf5b9d6acd5tyu3aav1405c1e6dc3&quot;</span>
-<span class="p">});</span>
+sc.Init({
+    ApplicationID: &quot;5c46ec2f6f94aa92sdfef83122ff1gc&quot;,
+    JavaScriptKey: &quot;86df1sd52d81dbhskn32f1d6a8e15936&quot;,
+    MasterKey: &quot;e9c6vf5b9d6acd5tyu3aav1405c1e6dc3&quot;
+});
 
-<span class="kd">var</span> <span class="nx">system</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">System</span><span class="p">();</span>
-<span class="nx">system</span><span class="p">.</span><span class="nx">getApp</span><span class="p">()</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">app</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">app</span><span class="p">.</span><span class="nx">getFolderContent</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-          <span class="p">})</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-  <span class="p">});</span>
-</pre></div>
-
+var system = new sc.System();
+system.getApp()
+  .then((app)=&gt;{
+        app.getFolderContent(&quot;/&quot;)
+            .then((result) =&gt; {
+                console.log(result);
+          })
+  })
+  .catch((error)=&gt;{
+      console.log(error)
+  });</code></pre>
 
 <p><strong>Returns</strong>: <code>promise.[Script, Folder]</code> - Returns a promise, which returns an array of <code>Script</code> и <code>Folder</code> objects.</p>
 <hr />
@@ -1256,27 +1246,25 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<pre class="codehilite"><code class="language-js">var sc = require('scorocode');
 
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;5c46ec2f6f94aa92sdfef83122ff1gc&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;86df1sd52d81dbhskn32f1d6a8e15936&quot;</span><span class="p">,</span>
-    <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;e9c6vf5b9d6acd5tyu3aav1405c1e6dc3&quot;</span>
-<span class="p">});</span>
+sc.Init({
+    ApplicationID: &quot;5c46ec2f6f94aa92sdfef83122ff1gc&quot;,
+    JavaScriptKey: &quot;86df1sd52d81dbhskn32f1d6a8e15936&quot;,
+    MasterKey: &quot;e9c6vf5b9d6acd5tyu3aav1405c1e6dc3&quot;
+});
 
-<span class="kd">var</span> <span class="nx">system</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">System</span><span class="p">();</span>
-<span class="nx">system</span><span class="p">.</span><span class="nx">getApp</span><span class="p">()</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">app</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">app</span><span class="p">.</span><span class="nx">getScript</span><span class="p">(</span><span class="s2">&quot;57c941e50293e02aea8b5b14&quot;</span><span class="p">)</span>
-            <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-          <span class="p">})</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-  <span class="p">});</span>
-</pre></div>
-
+var system = new sc.System();
+system.getApp()
+  .then((app)=&gt;{
+        app.getScript(&quot;57c941e50293e02aea8b5b14&quot;)
+            .then((result) =&gt; {
+                console.log(result);
+          })
+  })
+  .catch((error)=&gt;{
+      console.log(error)
+  });</code></pre>
 
 <p><strong>Returns</strong>: <code>promise.Script</code> - Returns a promise, which returns the <code>Script</code> object.</p>
 <hr />
@@ -1317,27 +1305,25 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<pre class="codehilite"><code class="language-js">var sc = require('scorocode');
 
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;5c46ec2f6f94aa92sdfef83122ff1gc&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;86df1sd52d81dbhskn32f1d6a8e15936&quot;</span><span class="p">,</span>
-    <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;e9c6vf5b9d6acd5tyu3aav1405c1e6dc3&quot;</span>
-<span class="p">});</span>
+sc.Init({
+    ApplicationID: &quot;5c46ec2f6f94aa92sdfef83122ff1gc&quot;,
+    JavaScriptKey: &quot;86df1sd52d81dbhskn32f1d6a8e15936&quot;,
+    MasterKey: &quot;e9c6vf5b9d6acd5tyu3aav1405c1e6dc3&quot;
+});
 
-<span class="kd">var</span> <span class="nx">system</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">System</span><span class="p">();</span>
-<span class="nx">system</span><span class="p">.</span><span class="nx">getApp</span><span class="p">()</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">app</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">app</span><span class="p">.</span><span class="nx">getBots</span><span class="p">()</span>
-            <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-          <span class="p">})</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-  <span class="p">});</span>
-</pre></div>
-
+var system = new sc.System();
+system.getApp()
+  .then((app)=&gt;{
+        app.getBots()
+            .then((result) =&gt; {
+                console.log(result);
+          })
+  })
+  .catch((error)=&gt;{
+      console.log(error)
+  });</code></pre>
 
 <p><strong>Returns</strong>: <code>promise.&lt;Bot&gt;</code> - Returns a promise, which returns the <code>Bot</code> object.</p>
               

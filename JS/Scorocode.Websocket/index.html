@@ -982,9 +982,7 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">WS</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;chatroom&#39;</span><span class="p">);</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-js">var WS = new Scorocode.WebSocket('chatroom');</code></pre>
 
 <hr />
 <p><a name="Scorocode.WebSocket+on"></a></p>
@@ -1024,29 +1022,27 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
 
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span><span class="p">,</span>
-    <span class="nx">WebSocketKey</span><span class="o">:</span> <span class="s2">&quot;webSocketKey&quot;</span>
-<span class="p">});</span>
-
-
-<span class="kd">var</span> <span class="nx">WS</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;Helloworld&#39;</span><span class="p">);</span>
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;,
+    WebSocketKey: &quot;webSocketKey&quot;
+});
 
 
-<span class="nx">WS</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;open&quot;</span><span class="p">,</span> <span class="nx">onOpen</span> <span class="p">()</span> <span class="p">{});</span>
-<span class="nx">WS</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;close&quot;</span><span class="p">,</span> <span class="nx">onClose</span> <span class="p">()</span> <span class="p">{});</span>
-<span class="nx">WS</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="nx">onError</span> <span class="p">()</span> <span class="p">{});</span>
-<span class="nx">WS</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="nx">onMessage</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-    <span class="p">});</span>
+var WS = new Scorocode.WebSocket('Helloworld');
 
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s2">&quot;Wello Horld&quot;</span><span class="p">;</span>
-<span class="nx">WS</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</pre></div>
 
+WS.on(&quot;open&quot;, onOpen () {});
+WS.on(&quot;close&quot;, onClose () {});
+WS.on(&quot;error&quot;, onError () {});
+WS.on(&quot;message&quot;, onMessage(data) {
+    console.log(data)
+    });
+
+var data = &quot;Wello Horld&quot;;
+WS.send(data);</code></pre>
 
 <hr />
 <p><a name="Scorocode.WebSocket+send"></a></p>
@@ -1073,20 +1069,19 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span><span class="p">,</span>
-    <span class="nx">WebSocketKey</span><span class="o">:</span> <span class="s2">&quot;webSocketKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;,
+    WebSocketKey: &quot;webSocketKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">WS</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;Helloworld&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="s2">&quot;Wello Horld&quot;</span><span class="p">;</span>
+var WS = new Scorocode.WebSocket('Helloworld');
+var data = &quot;Wello Horld&quot;;
 
-<span class="nx">WS</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">WS</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-<span class="p">});</span>
-</pre></div>
+WS.on('open', function(){
+    WS.send(data);
+});</code></pre>
               
             </article>
           </div>

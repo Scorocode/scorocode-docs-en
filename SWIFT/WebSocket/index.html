@@ -961,10 +961,8 @@
                 <p><a name="WebSocket"></a></p>
 <h2 id="websocket">WebSocket</h2>
 <p>To use WebSocket in your project, you can use the <a href="https://github.com/daltoniam/Starscream">daltoniam/Starscream</a> library with the following url scheme when initializing WebSocket:</p>
-<p><div class="codehilite"><pre><span></span>    <span class="kd">var</span> <span class="nv">socket</span> <span class="p">=</span> <span class="n">WebSocket</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="bp">NSURL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="s">&quot;wss://wss.scorocode.ru/{appID}/{wsKey}/{chanName}&quot;</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
-    <span class="n">socket</span><span class="p">.</span><span class="n">connect</span><span class="p">()</span>
-</pre></div>
-
+<p><pre class="codehilite"><code class="language-SWIFT">    var socket = WebSocket(url: NSURL(string: &quot;wss://wss.scorocode.ru/{appID}/{wsKey}/{chanName}&quot;)!)
+    socket.connect()</code></pre>
 where</p>
 <table>
 <thead>
@@ -1001,89 +999,76 @@ where</p>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span>    <span class="kd">var</span> <span class="nv">socket</span> <span class="p">=</span> <span class="n">WebSocket</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="bp">NSURL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="s">&quot;wss://wss.scorocode.ru/a3d04e75e157b2f7ae20c2fce02f63d6/563452bbc611d8106d5da767365897de/chatroom&quot;</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
-    <span class="n">socket</span><span class="p">.</span><span class="n">connect</span><span class="p">()</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">    var socket = WebSocket(url: NSURL(string: &quot;wss://wss.scorocode.ru/a3d04e75e157b2f7ae20c2fce02f63d6/563452bbc611d8106d5da767365897de/chatroom&quot;)!)
+    socket.connect()</code></pre>
 
 <h3 id="connection-of-the-starscream-library">Connection of the Starscream library</h3>
 <p><strong>See Readme.md of the <a href="https://github.com/daltoniam/Starscream">daltoniam/Starscream</a> repository for details of the Starscream library connection.</strong></p>
 <p><a href="https://github.com/Carthage/Carthage">Carthage</a> must be installed to connect the library to your project.</p>
 <p>Create the "Cartfile" file in the Xcode project root or modify an existing "Cartfile" by writing the following string in it:</p>
-<div class="codehilite"><pre><span></span><span class="n">github</span> <span class="s">&quot;daltoniam/Starscream&quot;</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">github &quot;daltoniam/Starscream&quot;</code></pre>
 
 <p>Close the project in xcode, start in the console:</p>
-<div class="codehilite"><pre><span></span><span class="n">carthage</span> <span class="n">update</span> <span class="o">--</span><span class="n">platform</span> <span class="n">iOS</span><span class="p">,</span><span class="n">Mac</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">carthage update --platform iOS,Mac</code></pre>
 
 <p>Re-open the project in Xcode. To Target -&gt; General -&gt; Linked Frameworks and Libraries from <Project folder> -&gt; Carthage -&gt; Build -&gt; iOS drag and drop 1 file:</p>
-<div class="codehilite"><pre><span></span><span class="n">Starscream</span><span class="p">.</span><span class="n">framework</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">Starscream.framework</code></pre>
 
 <p>To Target -&gt; Build Phases, add New Run Script Phase:</p>
-<div class="codehilite"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">carthage</span> <span class="n">copy</span><span class="o">-</span><span class="n">frameworks</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">/usr/local/bin/carthage copy-frameworks</code></pre>
 
 <p>and Input File:</p>
-<div class="codehilite"><pre><span></span><span class="err">$</span><span class="p">(</span><span class="n">SRCROOT</span><span class="p">)</span><span class="o">/</span><span class="n">Carthage</span><span class="o">/</span><span class="n">Build</span><span class="o">/</span><span class="n">iOS</span><span class="o">/</span><span class="n">Starscream</span><span class="p">.</span><span class="n">framework</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">$(SRCROOT)/Carthage/Build/iOS/Starscream.framework</code></pre>
 
 <h3 id="example-of-starscream-library-usage">Example of Starscream library usage</h3>
 <p><strong>See Readme.md of the <a href="https://github.com/daltoniam/Starscream">daltoniam/Starscream</a> repository for details of the Starscream library connection.</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">import</span> <span class="nc">UIKit</span>
-<span class="kd">import</span> <span class="nc">Starscream</span>
+<pre class="codehilite"><code class="language-SWIFT">import UIKit
+import Starscream
 
-<span class="kd">class</span> <span class="nc">ViewController</span><span class="p">:</span> <span class="bp">UIViewController</span> <span class="p">{</span>
+class ViewController: UIViewController {
 
-    <span class="kd">var</span> <span class="nv">socket</span><span class="p">:</span> <span class="n">WebSocket</span><span class="p">!</span>
+    var socket: WebSocket!
 
-    <span class="kr">@IBOutlet</span> <span class="kd">private</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">textField</span><span class="p">:</span> <span class="bp">UITextField</span><span class="p">!</span>
-    <span class="kr">@IBOutlet</span> <span class="kd">private</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">textView</span><span class="p">:</span> <span class="bp">UITextView</span><span class="p">!</span>
+    @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private weak var textView: UITextView!
 
-    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
-        <span class="c1">// Do any additional setup after loading the view, typically from a nib.</span>
-    <span class="p">}</span>
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
 
-    <span class="kr">@IBAction</span> <span class="kd">private</span> <span class="kd">func</span> <span class="nf">connectTapped</span><span class="p">()</span> <span class="p">{</span>
+    @IBAction private func connectTapped() {
 
-        <span class="n">socket</span> <span class="p">=</span> <span class="n">WebSocket</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="bp">NSURL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="s">&quot;wss://wss.scorocode.ru/a3d04e75e157b2f7ae20c2fce02f63d6/563452bbc611d8106d5da767365897de/chatroom&quot;</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
-        <span class="n">socket</span><span class="p">.</span><span class="n">connect</span><span class="p">()</span>
+        socket = WebSocket(url: NSURL(string: &quot;wss://wss.scorocode.ru/a3d04e75e157b2f7ae20c2fce02f63d6/563452bbc611d8106d5da767365897de/chatroom&quot;)!)
+        socket.connect()
 
-        <span class="n">socket</span><span class="p">.</span><span class="n">onConnect</span> <span class="p">=</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;connected&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
+        socket.onConnect = {
+            print(&quot;connected&quot;)
+        }
 
-        <span class="n">socket</span><span class="p">.</span><span class="n">onText</span> <span class="p">=</span> <span class="p">{</span>
-            <span class="n">text</span> <span class="k">in</span>
-            <span class="bp">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-            <span class="kc">self</span><span class="p">.</span><span class="n">textView</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">textView</span><span class="p">.</span><span class="n">text</span> <span class="o">+</span> <span class="s">&quot;</span><span class="se">\n</span><span class="si">\(</span><span class="n">text</span><span class="si">)</span><span class="s">&quot;</span>
-        <span class="p">}</span>
+        socket.onText = {
+            text in
+            print(text)
+            self.textView.text = self.textView.text + &quot;\n\(text)&quot;
+        }
 
-        <span class="n">socket</span><span class="p">.</span><span class="n">onData</span> <span class="p">=</span> <span class="p">{</span>
-            <span class="n">data</span> <span class="k">in</span>
-            <span class="bp">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-        <span class="p">}</span>
+        socket.onData = {
+            data in
+            print(data)
+        }
 
-    <span class="p">}</span>
+    }
 
-    <span class="kr">@IBAction</span> <span class="kd">private</span> <span class="kd">func</span> <span class="nf">disconnectTapped</span><span class="p">()</span> <span class="p">{</span>
+    @IBAction private func disconnectTapped() {
 
-    <span class="p">}</span>
+    }
 
-    <span class="kr">@IBAction</span> <span class="kd">private</span> <span class="kd">func</span> <span class="nf">sendTapped</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">socket</span><span class="p">.</span><span class="n">writeString</span><span class="p">(</span><span class="n">textField</span><span class="p">.</span><span class="n">text</span><span class="p">!)</span>
-    <span class="p">}</span>
+    @IBAction private func sendTapped() {
+        socket.writeString(textField.text!)
+    }
 
 
-<span class="p">}</span>
-</pre></div>
+}</code></pre>
               
             </article>
           </div>

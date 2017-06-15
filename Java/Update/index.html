@@ -1125,16 +1125,12 @@
 <p><a name="Update_new"></a></p>
 <h3 id="new-update">new Update()</h3>
 <p>Update() constructor</p>
-<div class="codehilite"><pre><span></span><span class="n">Update</span>  <span class="o">=</span> <span class="k">new</span> <span class="n">Update</span><span class="o">();</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-Java">Update  = new Update();</code></pre>
 
 <p>You can work with the methods of Update class using Document's .updateDocument method</p>
-<div class="codehilite"><pre><span></span><span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="s">&quot;ordersCollection&quot;</span><span class="o">);</span>
-<span class="c1">//document.getDocumentById(...);</span>
-<span class="c1">//document.updateDocument();</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-Java">Document document = new Document(&quot;ordersCollection&quot;);
+//document.getDocumentById(...);
+//document.updateDocument();</code></pre>
 
 <hr />
 <p><a name="Update+set"></a></p>
@@ -1168,41 +1164,39 @@
 </tbody>
 </table>
 <p><strong>Example</strong>
-<div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentFound</span><span class="o">(</span><span class="n">DocumentInfo</span> <span class="n">documentInfo</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document found, we can update it</span>
+<pre class="codehilite"><code class="language-Java">final Document document = new Document(“ordersCollection”);
+document.getDocumentById(&quot;KH3JCojAyT&quot;, new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(DocumentInfo documentInfo) {
+                //document found, we can update it
 
-                <span class="n">document</span><span class="o">.</span><span class="na">updateDocument</span><span class="o">()</span>
-                        <span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="s">&quot;exampleField&quot;</span><span class="o">,</span> <span class="s">&quot;random Any1&quot;</span><span class="o">)</span>
-                        <span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="s">&quot;anotherExampleField&quot;</span><span class="o">,</span> <span class="s">&quot;random Any2&quot;</span><span class="o">);</span>
-
-
-                <span class="n">document</span><span class="o">.</span><span class="na">saveDocument</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                        <span class="c1">//document updated successfull</span>
-                    <span class="o">}</span>
+                document.updateDocument()
+                        .set(&quot;exampleField&quot;, &quot;random Any1&quot;)
+                        .set(&quot;anotherExampleField&quot;, &quot;random Any2&quot;);
 
 
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaveFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="c1">//document update failed</span>
-                <span class="c1">//check update info</span>
-                <span class="c1">//see errorCode and errorMessage</span>
-                    <span class="o">}</span>
-                <span class="o">});</span>
-            <span class="o">}</span>
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successfull
+                    }
 
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentNotFound</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document not found</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-</p>
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+                //check update info
+                //see errorCode and errorMessage
+                    }
+                });
+            }
+
+
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });</code></pre></p>
 <hr />
 <p><a name="Update+push"></a></p>
 <h3 id="pushfield-value">.push(field, value)</h3>
@@ -1235,38 +1229,36 @@
 </tbody>
 </table>
 <p><strong>Example</strong>
-<div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentFound</span><span class="o">(</span><span class="n">DocumentInfo</span> <span class="n">documentInfo</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document found, we can update it</span>
+<pre class="codehilite"><code class="language-Java">final Document document = new Document(“ordersCollection”);
+document.getDocumentById(&quot;KH3JCojAyT&quot;, new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(DocumentInfo documentInfo) {
+                //document found, we can update it
 
-                <span class="n">document</span><span class="o">.</span><span class="na">updateDocument</span><span class="o">().</span><span class="na">push</span><span class="o">(</span><span class="s">&quot;array1&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
-
-
-                <span class="n">document</span><span class="o">.</span><span class="na">saveDocument</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                        <span class="c1">//document updated successful</span>
-                    <span class="o">}</span>
-
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaveFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="c1">//document update failed</span>
-                <span class="c1">//check update info</span>
-                <span class="c1">//see errorCode and errorMessage</span>
-                    <span class="o">}</span>
-                <span class="o">});</span>
-            <span class="o">}</span>
+                document.updateDocument().push(&quot;array1&quot;, 1);
 
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentNotFound</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document not found</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-</p>
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successful
+                    }
+
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+                //check update info
+                //see errorCode and errorMessage
+                    }
+                });
+            }
+
+
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });</code></pre></p>
 <hr />
 <p><a name="Update+popFirst"></a></p>
 <h3 id="popfirstfield">.popFirst(field)</h3>
@@ -1292,39 +1284,37 @@
 </tbody>
 </table>
 <p><strong>Example</strong>
-<div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentFound</span><span class="o">(</span><span class="n">DocumentInfo</span> <span class="n">documentInfo</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document found, we can update it</span>
+<pre class="codehilite"><code class="language-Java">final Document document = new Document(“ordersCollection”);
+document.getDocumentById(&quot;KH3JCojAyT&quot;, new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(DocumentInfo documentInfo) {
+                //document found, we can update it
 
-                <span class="n">document</span><span class="o">.</span><span class="na">updateDocument</span><span class="o">().</span><span class="na">popFirst</span><span class="o">(</span><span class="s">&quot;array1&quot;</span><span class="o">);</span>
-
-
-                <span class="n">document</span><span class="o">.</span><span class="na">saveDocument</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                        <span class="c1">//document updated successful</span>
-                    <span class="o">}</span>
+                document.updateDocument().popFirst(&quot;array1&quot;);
 
 
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaveFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="c1">//document update failed</span>
-                <span class="c1">//check update info</span>
-                <span class="c1">//see errorCode and errorMessage</span>
-                    <span class="o">}</span>
-                <span class="o">});</span>
-            <span class="o">}</span>
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successful
+                    }
 
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentNotFound</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document not found</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-</p>
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+                //check update info
+                //see errorCode and errorMessage
+                    }
+                });
+            }
+
+
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });</code></pre></p>
 <hr />
 <p><a name="Update+popLast"></a></p>
 <h3 id="poplastfield">.popLast(field)</h3>
@@ -1350,39 +1340,37 @@
 </tbody>
 </table>
 <p><strong>Example</strong>
-<div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentFound</span><span class="o">(</span><span class="n">DocumentInfo</span> <span class="n">documentInfo</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document found, we can update it</span>
+<pre class="codehilite"><code class="language-Java">final Document document = new Document(“ordersCollection”);
+document.getDocumentById(&quot;KH3JCojAyT&quot;, new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(DocumentInfo documentInfo) {
+                //document found, we can update it
 
-                <span class="n">document</span><span class="o">.</span><span class="na">updateDocument</span><span class="o">().</span><span class="na">popLast</span><span class="o">(</span><span class="s">&quot;array1&quot;</span><span class="o">);</span>
-
-
-                <span class="n">document</span><span class="o">.</span><span class="na">saveDocument</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                        <span class="c1">//document updated successful</span>
-                    <span class="o">}</span>
+                document.updateDocument().popLast(&quot;array1&quot;);
 
 
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaveFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="c1">//document update failed</span>
-                <span class="c1">//check update info</span>
-                <span class="c1">//see errorCode and errorMessage</span>
-                    <span class="o">}</span>
-                <span class="o">});</span>
-            <span class="o">}</span>
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successful
+                    }
 
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentNotFound</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document not found</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-</p>
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+                //check update info
+                //see errorCode and errorMessage
+                    }
+                });
+            }
+
+
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });</code></pre></p>
 <hr />
 <p><a name="Update+pull"></a></p>
 <h3 id="pullfield-value">.pull(field, value)</h3>
@@ -1419,36 +1407,34 @@
 <p>If there are many elements with specified value, this method will remove all of them.</p>
 </div>
 <p><strong>Example</strong>
-<div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentFound</span><span class="o">(</span><span class="n">DocumentInfo</span> <span class="n">documentInfo</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document found, we can update it</span>
+<pre class="codehilite"><code class="language-Java">final Document document = new Document(“ordersCollection”);
+document.getDocumentById(&quot;KH3JCojAyT&quot;, new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(DocumentInfo documentInfo) {
+                //document found, we can update it
 
-                <span class="n">document</span><span class="o">.</span><span class="na">updateDocument</span><span class="o">().</span><span class="na">pull</span><span class="o">(</span><span class="s">&quot;array2&quot;</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span>
+                document.updateDocument().pull(&quot;array2&quot;, 3);
 
-                <span class="n">document</span><span class="o">.</span><span class="na">saveDocument</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                        <span class="c1">//document updated successful</span>
-                    <span class="o">}</span>
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successful
+                    }
 
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaveFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="c1">//document update failed</span>
-                <span class="c1">//check update info</span>
-                <span class="c1">//see errorCode and errorMessage</span>
-                    <span class="o">}</span>
-                <span class="o">});</span>
-            <span class="o">}</span>
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+                //check update info
+                //see errorCode and errorMessage
+                    }
+                });
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentNotFound</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document not found</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-</p>
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });</code></pre></p>
 <hr />
 <p><a name="Update+pullAll"></a></p>
 <h3 id="pullallfield-value">.pullAll(field, value)</h3>
@@ -1481,42 +1467,40 @@
 </tbody>
 </table>
 <p><strong>Example</strong>
-<div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentFound</span><span class="o">(</span><span class="n">DocumentInfo</span> <span class="n">documentInfo</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document found, we can update it</span>
+<pre class="codehilite"><code class="language-Java">final Document document = new Document(“ordersCollection”);
+document.getDocumentById(&quot;KH3JCojAyT&quot;, new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(DocumentInfo documentInfo) {
+                //document found, we can update it
 
-                <span class="c1">//create array of elements to delete from array</span>
-            <span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">objects</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-                <span class="n">objects</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
-                <span class="n">objects</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
-            <span class="n">objects</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+                //create array of elements to delete from array
+            List&lt;Object&gt; objects = new ArrayList&lt;&gt;();
+                objects.add(1);
+                objects.add(2);
+            objects.add(3);
 
-                <span class="n">document</span><span class="o">.</span><span class="na">updateDocument</span><span class="o">().</span><span class="na">pullAll</span><span class="o">(</span><span class="s">&quot;array2&quot;</span><span class="o">,</span> <span class="n">objects</span><span class="o">);</span>
+                document.updateDocument().pullAll(&quot;array2&quot;, objects);
 
-                <span class="n">document</span><span class="o">.</span><span class="na">saveDocument</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                        <span class="c1">//document updated successful</span>
-                    <span class="o">}</span>
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successful
+                    }
 
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaveFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="c1">//document update failed</span>
-                <span class="c1">//check update info</span>
-                <span class="c1">//see errorCode and errorMessage</span>
-                    <span class="o">}</span>
-                <span class="o">});</span>
-            <span class="o">}</span>
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+                //check update info
+                //see errorCode and errorMessage
+                    }
+                });
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentNotFound</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document not found</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-</p>
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });</code></pre></p>
 <hr />
 <p><a name="Update+addToSet"></a></p>
 <h3 id="addtosetfield-value">.addToSet(field, value)</h3>
@@ -1549,36 +1533,34 @@
 </tbody>
 </table>
 <p><strong>Example</strong>
-<div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentFound</span><span class="o">(</span><span class="n">DocumentInfo</span> <span class="n">documentInfo</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document found, we can update it</span>
+<pre class="codehilite"><code class="language-Java">final Document document = new Document(“ordersCollection”);
+document.getDocumentById(&quot;KH3JCojAyT&quot;, new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(DocumentInfo documentInfo) {
+                //document found, we can update it
 
-                <span class="n">document</span><span class="o">.</span><span class="na">updateDocument</span><span class="o">().</span><span class="na">addToSet</span><span class="o">(</span><span class="s">&quot;array4&quot;</span><span class="o">,</span> <span class="mi">7</span><span class="o">);</span>
+                document.updateDocument().addToSet(&quot;array4&quot;, 7);
 
-                <span class="n">document</span><span class="o">.</span><span class="na">saveDocument</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                        <span class="c1">//document updated successful</span>
-                    <span class="o">}</span>
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successful
+                    }
 
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaveFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="c1">//document update failed</span>
-                <span class="c1">//check update info</span>
-                <span class="c1">//see errorCode and errorMessage</span>
-                    <span class="o">}</span>
-                <span class="o">});</span>
-            <span class="o">}</span>
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+                //check update info
+                //see errorCode and errorMessage
+                    }
+                });
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentNotFound</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document not found</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-</p>
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });</code></pre></p>
 <hr />
 <p><a name="Update+inc"></a></p>
 <h3 id="incfield-increasevalue">.inc(field,  increaseValue)</h3>
@@ -1611,37 +1593,35 @@
 </tbody>
 </table>
 <p><strong>Example</strong>
-<div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentFound</span><span class="o">(</span><span class="n">DocumentInfo</span> <span class="n">documentInfo</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document found, we can update it</span>
+<pre class="codehilite"><code class="language-Java">final Document document = new Document(“ordersCollection”);
+document.getDocumentById(&quot;KH3JCojAyT&quot;, new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(DocumentInfo documentInfo) {
+                //document found, we can update it
 
-                <span class="n">document</span><span class="o">.</span><span class="na">updateDocument</span><span class="o">().</span><span class="na">inc</span><span class="o">(</span><span class="s">&quot;numberField&quot;</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
-            <span class="n">document</span><span class="o">.</span><span class="na">updateDocument</span><span class="o">().</span><span class="na">inc</span><span class="o">(</span><span class="s">&quot;anotherNumberField&quot;</span><span class="o">,</span> <span class="o">-</span><span class="mi">10</span><span class="o">);</span>
+                document.updateDocument().inc(&quot;numberField&quot;, 2);
+            document.updateDocument().inc(&quot;anotherNumberField&quot;, -10);
 
-                <span class="n">document</span><span class="o">.</span><span class="na">saveDocument</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                        <span class="c1">//document updated successful</span>
-                    <span class="o">}</span>
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successful
+                    }
 
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaveFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="c1">//document update failed</span>
-                <span class="c1">//check update info</span>
-                <span class="c1">//see errorCode and errorMessage</span>
-                    <span class="o">}</span>
-                <span class="o">});</span>
-            <span class="o">}</span>
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+                //check update info
+                //see errorCode and errorMessage
+                    }
+                });
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentNotFound</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document not found</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-</p>
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });</code></pre></p>
 <hr />
 <p><a name="Update+setCurrentDate"></a></p>
 <h3 id="setcurrentdatefield">.setCurrentDate(field)</h3>
@@ -1667,36 +1647,34 @@
 </tbody>
 </table>
 <p><strong>Example</strong>
-<div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentFound</span><span class="o">(</span><span class="n">DocumentInfo</span> <span class="n">documentInfo</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document found, we can update it</span>
+<pre class="codehilite"><code class="language-Java">final Document document = new Document(“ordersCollection”);
+document.getDocumentById(&quot;KH3JCojAyT&quot;, new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(DocumentInfo documentInfo) {
+                //document found, we can update it
 
-                <span class="n">document</span><span class="o">.</span><span class="na">updateDocument</span><span class="o">().</span><span class="na">setCurrentDate</span><span class="o">(</span><span class="s">&quot;date1&quot;</span><span class="o">);</span>
+                document.updateDocument().setCurrentDate(&quot;date1&quot;);
 
-                <span class="n">document</span><span class="o">.</span><span class="na">saveDocument</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                        <span class="c1">//document updated successful</span>
-                    <span class="o">}</span>
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successful
+                    }
 
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaveFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="c1">//document update failed</span>
-                <span class="c1">//check update info</span>
-                <span class="c1">//see errorCode and errorMessage</span>
-                    <span class="o">}</span>
-                <span class="o">});</span>
-            <span class="o">}</span>
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+                //check update info
+                //see errorCode and errorMessage
+                    }
+                });
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentNotFound</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document not found</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-</p>
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });</code></pre></p>
 <hr />
 <p><a name="Update+mul"></a></p>
 <h3 id="mulfield-value">.mul(field, value)</h3>
@@ -1729,36 +1707,34 @@
 </tbody>
 </table>
 <p><strong>Example</strong>
-<div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentFound</span><span class="o">(</span><span class="n">DocumentInfo</span> <span class="n">documentInfo</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document found, we can update it</span>
+<pre class="codehilite"><code class="language-Java">final Document document = new Document(“ordersCollection”);
+document.getDocumentById(&quot;KH3JCojAyT&quot;, new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(DocumentInfo documentInfo) {
+                //document found, we can update it
 
-                <span class="n">document</span><span class="o">.</span><span class="na">updateDocument</span><span class="o">().</span><span class="na">mul</span><span class="o">(</span><span class="s">&quot;numberForMulTest&quot;</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span>
+                document.updateDocument().mul(&quot;numberForMulTest&quot;, 3);
 
-                <span class="n">document</span><span class="o">.</span><span class="na">saveDocument</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                        <span class="c1">//document updated successful</span>
-                    <span class="o">}</span>
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successful
+                    }
 
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaveFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="c1">//document update failed</span>
-                <span class="c1">//check update info</span>
-                <span class="c1">//see errorCode and errorMessage</span>
-                    <span class="o">}</span>
-                <span class="o">});</span>
-            <span class="o">}</span>
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+                //check update info
+                //see errorCode and errorMessage
+                    }
+                });
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentNotFound</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document not found</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-</p>
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });</code></pre></p>
 <hr />
 <p><a name="Update+min"></a></p>
 <h3 id="minfield-valuetocompare">.min(field, valueToCompare)</h3>
@@ -1791,36 +1767,34 @@
 </tbody>
 </table>
 <p><strong>Example</strong>
-<div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentFound</span><span class="o">(</span><span class="n">DocumentInfo</span> <span class="n">documentInfo</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document found, we can update it</span>
+<pre class="codehilite"><code class="language-Java">final Document document = new Document(“ordersCollection”);
+document.getDocumentById(&quot;KH3JCojAyT&quot;, new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(DocumentInfo documentInfo) {
+                //document found, we can update it
 
-                <span class="n">document</span><span class="o">.</span><span class="na">updateDocument</span><span class="o">().</span><span class="na">min</span><span class="o">(</span><span class="s">&quot;number2&quot;</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
+                document.updateDocument().min(&quot;number2&quot;, 10);
 
-                <span class="n">document</span><span class="o">.</span><span class="na">saveDocument</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                        <span class="c1">//document updated successfull</span>
-                    <span class="o">}</span>
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successfull
+                    }
 
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaveFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="c1">//document update failed</span>
-                <span class="c1">//check update info</span>
-                <span class="c1">//see errorCode and errorMessage</span>
-                    <span class="o">}</span>
-                <span class="o">});</span>
-            <span class="o">}</span>
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+                //check update info
+                //see errorCode and errorMessage
+                    }
+                });
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentNotFound</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document not found</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-</p>
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });</code></pre></p>
 <hr />
 <p><a name="Update+max"></a></p>
 <h3 id="maxfield-valuetocompare">.max(field, valueToCompare)</h3>
@@ -1853,36 +1827,34 @@
 </tbody>
 </table>
 <p><strong>Example</strong>
-<div class="codehilite"><pre><span></span><span class="kd">final</span> <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="err">“</span><span class="n">ordersCollection</span><span class="err">”</span><span class="o">);</span>
-<span class="n">document</span><span class="o">.</span><span class="na">getDocumentById</span><span class="o">(</span><span class="s">&quot;KH3JCojAyT&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackFindDocument</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentFound</span><span class="o">(</span><span class="n">DocumentInfo</span> <span class="n">documentInfo</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document found, we can update it</span>
+<pre class="codehilite"><code class="language-Java">final Document document = new Document(“ordersCollection”);
+document.getDocumentById(&quot;KH3JCojAyT&quot;, new CallbackFindDocument() {
+            @Override
+            public void onDocumentFound(DocumentInfo documentInfo) {
+                //document found, we can update it
 
-                <span class="n">document</span><span class="o">.</span><span class="na">updateDocument</span><span class="o">().</span><span class="na">max</span><span class="o">(</span><span class="s">&quot;number2&quot;</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
+                document.updateDocument().max(&quot;number2&quot;, 10);
 
-                <span class="n">document</span><span class="o">.</span><span class="na">saveDocument</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaved</span><span class="o">()</span> <span class="o">{</span>
-                        <span class="c1">//document updated successfull</span>
-                    <span class="o">}</span>
+                document.saveDocument(new CallbackDocumentSaved() {
+                    @Override
+                    public void onDocumentSaved() {
+                        //document updated successfull
+                    }
 
-                    <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentSaveFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="c1">//document update failed</span>
-                <span class="c1">//check update info</span>
-                <span class="c1">//see errorCode and errorMessage</span>
-                    <span class="o">}</span>
-                <span class="o">});</span>
-            <span class="o">}</span>
+                    @Override
+                    public void onDocumentSaveFailed(String errorCode, String errorMessage) {
+                        //document update failed
+                //check update info
+                //see errorCode and errorMessage
+                    }
+                });
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDocumentNotFound</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//document not found</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-</p>
+            @Override
+            public void onDocumentNotFound(String errorCode, String errorMessage) {
+                //document not found
+            }
+        });</code></pre></p>
 <hr />
 <p><a name="Update+getUpdateInfo"></a></p>
 <h3 id="getupdateinfo">.getUpdateInfo()</h3>

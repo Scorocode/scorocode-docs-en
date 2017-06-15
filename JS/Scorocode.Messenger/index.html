@@ -960,9 +960,7 @@
 <h2 id="new-messenger">new Messenger()</h2>
 <p>Class for message sending</p>
 <p><strong>Example</strong>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-js">var broadcast = new Scorocode.Messenger();</code></pre></p>
 <hr />
 <p><a name="Scorocode.Messenger+sendPush"></a></p>
 <h2 id="sendpushoptions-callbacks">.sendPush(options, callbacks)</h2>
@@ -989,31 +987,29 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span><span class="p">,</span>
-    <span class="nx">MessageKey</span><span class="o">:</span> <span class="s2">&quot;messageKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;,
+    MessageKey: &quot;messageKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">devices</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;devices&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
-<span class="nx">Broadcast</span><span class="p">.</span><span class="nx">sendPush</span><span class="p">({</span>
-        <span class="nx">where</span><span class="o">:</span> <span class="nx">devices</span><span class="p">,</span>
-        <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">{</span>
-                <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;PUSH text!&quot;</span><span class="p">,</span>
-                <span class="p">}</span>           
-            <span class="p">}</span>
-        <span class="p">})</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var devices = new Scorocode.Query(&quot;devices&quot;);
+var broadcast = new Scorocode.Messenger();
+Broadcast.sendPush({
+        where: devices,
+        data: {
+            &quot;data&quot;: {
+                &quot;message&quot;: &quot;PUSH text!&quot;,
+                }           
+            }
+        })
+        .then((success)=&gt;{
+            console.log(success);
+        })
+        .catch((error)=&gt;{
+            console.log(error)
+        });</code></pre>
 
 <p><strong>Returns</strong>: <code>promise.{error: Boolean, count: Number}</code> - Returns a promise, which returns the object containing the result of the query execution.</p>
 <ul>
@@ -1053,29 +1049,27 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span><span class="p">,</span>
-    <span class="nx">MessageKey</span><span class="o">:</span> <span class="s2">&quot;messageKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;,
+    MessageKey: &quot;messageKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">findUsers</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Query</span><span class="p">(</span><span class="s2">&quot;users&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">broadcast</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Messenger</span><span class="p">();</span>
-<span class="nx">broadcast</span><span class="p">.</span><span class="nx">sendPush</span><span class="p">({</span>
-        <span class="nx">where</span><span class="o">:</span> <span class="nx">findUsers</span><span class="p">,</span>
-        <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">&quot;text&quot;</span><span class="o">:</span> <span class="s2">&quot;SMS text&quot;</span>     
-            <span class="p">}</span>
-        <span class="p">})</span>
-        <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>
-        <span class="p">})</span>
-        <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-        <span class="p">});</span>
-</pre></div>
-
+var findUsers = new Scorocode.Query(&quot;users&quot;);
+var broadcast = new Scorocode.Messenger();
+broadcast.sendPush({
+        where: findUsers,
+        data: {
+            &quot;text&quot;: &quot;SMS text&quot;     
+            }
+        })
+        .then((success)=&gt;{
+            console.log(success);
+        })
+        .catch((error)=&gt;{
+            console.log(error)
+        });</code></pre>
 
 <p><strong>Returns</strong>: <code>{error: Boolean, count: Number}</code> - Returns a promise, which returns the object containing the result of the query execution.</p>
 <ul>

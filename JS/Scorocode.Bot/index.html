@@ -962,24 +962,22 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<pre class="codehilite"><code class="language-js">var sc = require('scorocode');
 
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- replace xxx with ApplicationID  key</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- replace xxx with JavaScriptKey  key</span>
-    <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span> <span class="c1">// &lt;- replace xxx with MasterKey</span>
-<span class="p">});</span>
+sc.Init({
+    ApplicationID: &quot;xxx&quot;, // &lt;- replace xxx with ApplicationID  key
+    JavaScriptKey: &quot;xxx&quot;, // &lt;- replace xxx with JavaScriptKey  key
+    MasterKey: &quot;xxx&quot; // &lt;- replace xxx with MasterKey
+});
 
-<span class="kd">var</span> <span class="nx">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Bot</span><span class="p">(</span><span class="s2">&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;</span><span class="p">);</span>
+var bot = new sc.Bot(&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;);
 
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;method&quot;</span><span class="o">:</span> <span class="s2">&quot;methodname&quot;</span><span class="p">,</span> <span class="c1">// Telegram bot API method name </span>
-    <span class="s2">&quot;method_params&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="c1">// Telegram Bot API method params</span>
-    <span class="p">}};</span>
-<span class="nx">bot</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
-</pre></div>
-
+var data = {
+    &quot;method&quot;: &quot;methodname&quot;, // Telegram bot API method name 
+    &quot;method_params&quot;: {
+        // Telegram Bot API method params
+    }};
+bot.send(data)</code></pre>
 
 <hr />
 <p><a name="sc.Bot+send"></a></p>
@@ -1024,24 +1022,23 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<pre class="codehilite"><code class="language-js">var sc = require('scorocode');
 
-<span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- replace xxx with ApplicationID  key</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- replace xxx with JavaScriptKey  key</span>
-    <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span> <span class="c1">// &lt;- replace xxx with MasterKey</span>
-<span class="p">});</span>
+sc.Init({
+    ApplicationID: &quot;xxx&quot;, // &lt;- replace xxx with ApplicationID  key
+    JavaScriptKey: &quot;xxx&quot;, // &lt;- replace xxx with JavaScriptKey  key
+    MasterKey: &quot;xxx&quot; // &lt;- replace xxx with MasterKey
+});
 
-<span class="kd">var</span> <span class="nx">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Bot</span><span class="p">(</span><span class="s2">&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;</span><span class="p">);</span>
+var bot = new sc.Bot(&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;);
 
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;method&quot;</span><span class="o">:</span> <span class="s2">&quot;methodname&quot;</span><span class="p">,</span> <span class="c1">// Telegram bot API method name </span>
-    <span class="s2">&quot;method_params&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="c1">// Telegram Bot API method params</span>
-    <span class="p">}};</span>
+var data = {
+    &quot;method&quot;: &quot;methodname&quot;, // Telegram bot API method name 
+    &quot;method_params&quot;: {
+        // Telegram Bot API method params
+    }};
 
-<span class="nx">bot</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</pre></div>
+bot.send(data);</code></pre>
               
             </article>
           </div>

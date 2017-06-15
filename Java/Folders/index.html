@@ -976,11 +976,9 @@
 <p><a name="Folders_new"></a></p>
 <h2 id="new-folders">new Folders()</h2>
 <p>Конструктор Folders</p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">Folders</span> <span class="n">folders</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Folders</span><span class="o">();</span>
-</pre></div>
-
+Folders folders = new Folders();</code></pre>
 
 <div class="admonition note">
 <p class="admonition-title">Примечание</p>
@@ -1018,22 +1016,20 @@
 </tbody>
 </table>
 <p><strong>Пример</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">Folders</span> <span class="n">folders</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Folders</span><span class="o">();</span>
-<span class="n">folders</span><span class="o">.</span><span class="na">getFoldersList</span><span class="o">(</span><span class="s">&quot;server_code&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackGetFoldersList</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRequestSucceed</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">ScorocodeFolder</span><span class="o">&gt;</span> <span class="n">folderList</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//sdk returned list of folders</span>
-    <span class="o">}</span>
+Folders folders = new Folders();
+folders.getFoldersList(&quot;server_code&quot;, new CallbackGetFoldersList() {
+    @Override
+    public void onRequestSucceed(List&lt;ScorocodeFolder&gt; folderList) {
+        //sdk returned list of folders
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRequestFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request</span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
-
+    @Override
+    public void onRequestFailed(String errorCode, String errorMessage) {
+        //error during request
+    }
+});</code></pre>
 
 <hr />
 <p><a name="Folders+createFolder"></a></p>
@@ -1067,22 +1063,20 @@
 </tbody>
 </table>
 <p><strong>Пример</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">Folders</span> <span class="n">folders</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Folders</span><span class="o">();</span>
-<span class="n">folders</span><span class="o">.</span><span class="na">createFolder</span><span class="o">(</span><span class="s">&quot;test_path&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackCreateNewFolder</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onFolderCreated</span><span class="o">()</span> <span class="o">{</span>
-        <span class="c1">//folder created</span>
-    <span class="o">}</span>
+Folders folders = new Folders();
+folders.createFolder(&quot;test_path&quot;, new CallbackCreateNewFolder() {
+    @Override
+    public void onFolderCreated() {
+        //folder created
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreationFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request</span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
-
+    @Override
+    public void onCreationFailed(String errorCode, String errorMessage) {
+        //error during request
+    }
+});</code></pre>
 
 <hr />
 <p><a name="Folders+deleteFolder"></a></p>
@@ -1116,21 +1110,20 @@
 </tbody>
 </table>
 <p><strong>Пример</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">Folders</span> <span class="n">folders</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Folders</span><span class="o">();</span>
-<span class="n">folders</span><span class="o">.</span><span class="na">deleteFolder</span><span class="o">(</span><span class="s">&quot;server_code&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackDeleteFolder</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onFolderDeleted</span><span class="o">()</span> <span class="o">{</span>
-        <span class="c1">//folder deleted</span>
-    <span class="o">}</span>
+Folders folders = new Folders();
+folders.deleteFolder(&quot;server_code&quot;, new CallbackDeleteFolder() {
+    @Override
+    public void onFolderDeleted() {
+        //folder deleted
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDeletionFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request</span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
+    @Override
+    public void onDeletionFailed(String errorCode, String errorMessage) {
+        //error during request
+    }
+});</code></pre>
               
             </article>
           </div>

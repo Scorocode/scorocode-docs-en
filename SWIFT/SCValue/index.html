@@ -1041,9 +1041,7 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">dataBool</span> <span class="p">=</span> <span class="n">SCBool</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let dataBool = SCBool(true)</code></pre>
 
 <hr />
 <p><a name="SCString"></a> </p>
@@ -1070,9 +1068,7 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">dataString</span> <span class="p">=</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;AbCdE&quot;</span><span class="p">)</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let dataString = SCString(&quot;AbCdE&quot;)</code></pre>
 
 <hr />
 <p><a name="SCInt"></a> </p>
@@ -1099,9 +1095,7 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">dataInt</span> <span class="p">=</span> <span class="n">SCInt</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let dataInt = SCInt(5)</code></pre>
 
 <hr />
 <p><a name="SCDouble"></a> </p>
@@ -1128,9 +1122,7 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">dataDouble</span> <span class="p">=</span> <span class="n">SCDouble</span><span class="p">(</span><span class="mf">3.1415926</span><span class="p">)</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let dataDouble = SCDouble(3.1415926)</code></pre>
 
 <hr />
 <p><a name="SCDate"></a> </p>
@@ -1157,9 +1149,7 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">dataDate</span> <span class="p">=</span> <span class="n">SCDate</span><span class="p">(</span><span class="n">dateFormatter</span><span class="p">.</span><span class="n">dateFromString</span><span class="p">(</span><span class="s">&quot;2016-05-31&quot;</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let dataDate = SCDate(dateFormatter.dateFromString(&quot;2016-05-31&quot;)!)</code></pre>
 
 <hr />
 <p><a name="SCArray"></a> </p>
@@ -1186,16 +1176,14 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">dataBool</span> <span class="p">=</span> <span class="n">SCBool</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">dataString</span> <span class="p">=</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;AbCdE&quot;</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">dataInt</span> <span class="p">=</span> <span class="n">SCInt</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">dataDouble</span> <span class="p">=</span> <span class="n">SCDouble</span><span class="p">(</span><span class="mf">3.1415926</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">dataDate</span> <span class="p">=</span> <span class="n">SCDate</span><span class="p">(</span><span class="n">dateFormatter</span><span class="p">.</span><span class="n">dateFromString</span><span class="p">(</span><span class="s">&quot;2016-05-31&quot;</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">dataDictionary</span> <span class="p">=</span> <span class="n">SCDictionary</span><span class="p">([</span><span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="n">dataString</span><span class="p">,</span> <span class="s">&quot;date&quot;</span> <span class="p">:</span> <span class="n">dataDate</span><span class="p">])</span>
+<pre class="codehilite"><code class="language-SWIFT">let dataBool = SCBool(true)
+let dataString = SCString(&quot;AbCdE&quot;)
+let dataInt = SCInt(5)
+let dataDouble = SCDouble(3.1415926)
+let dataDate = SCDate(dateFormatter.dateFromString(&quot;2016-05-31&quot;)!)
+let dataDictionary = SCDictionary([&quot;name&quot; : dataString, &quot;date&quot; : dataDate])
 
-<span class="kd">let</span> <span class="nv">dataArray</span> <span class="p">=</span> <span class="n">SCArray</span><span class="p">([</span><span class="n">dataBool</span><span class="p">,</span> <span class="n">dataString</span><span class="p">,</span> <span class="n">dataInt</span><span class="p">,</span> <span class="n">dataDouble</span><span class="p">,</span> <span class="n">dataDate</span><span class="p">,</span> <span class="n">dataDictionary</span><span class="p">])</span>
-</pre></div>
-
+let dataArray = SCArray([dataBool, dataString, dataInt, dataDouble, dataDate, dataDictionary])</code></pre>
 
 <hr />
 <p><a name="SCDictionary"></a></p>
@@ -1222,8 +1210,7 @@
 </tr>
 </tbody>
 </table>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">dataDictionary</span> <span class="p">=</span> <span class="n">SCDictionary</span><span class="p">([</span><span class="s">&quot;key1&quot;</span> <span class="p">:</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">),</span> <span class="s">&quot;key2&quot;</span> <span class="p">:</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">)])</span>
-</pre></div>
+<pre class="codehilite"><code class="language-SWIFT">let dataDictionary = SCDictionary([&quot;key1&quot; : SCString(&quot;A&quot;), &quot;key2&quot; : SCString(&quot;B&quot;)])</code></pre>
               
             </article>
           </div>

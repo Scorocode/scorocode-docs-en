@@ -986,17 +986,15 @@
 <h2 id="main-principles">Main principles</h2>
 <p>When your bot is activated, Scorocode creates the <code>webhook</code> to receive Telegram data. The data is available in your server-side script 'pool' object everytime it receives update from Telegram. See <a href="https://core.telegram.org/bots/api#getting-updates">'getting updates' documentation</a> for a complete <code>Update</code> object description.</p>
 <p>Bot's answers are transmitted with the .send(data) method and sc.Bot class, where data is an object with the following structure:</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">&#39;method&#39;:</span> <span class="err">&#39;sendMessage&#39;,</span>                            <span class="err">//</span> <span class="err">Telegram</span> <span class="err">Bot</span> <span class="err">API</span> <span class="err">method</span>
-    <span class="err">&#39;method_params&#39;:</span> <span class="err">{</span>                                  <span class="err">//</span> <span class="err">method</span> <span class="err">parameters</span> <span class="err">to</span> <span class="err">be</span> <span class="err">passed</span>
-      <span class="err">&#39;chat_id&#39;:</span> <span class="err">pool.message.chat.id.toString(),</span>
-      <span class="err">&#39;text&#39;:</span> <span class="err">&#39;Hello!&#39;,</span>
-      <span class="err">&#39;reply_to_message_id&#39;:</span> <span class="err">pool.message.message_id,</span>
-      <span class="err">&#39;reply_markup&#39;:</span> <span class="err">keyBoard</span>
-    <span class="p">}</span><span class="err">,</span>
-  <span class="err">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    'method': 'sendMessage',                            // Telegram Bot API method
+    'method_params': {                                  // method parameters to be passed
+      'chat_id': pool.message.chat.id.toString(),
+      'text': 'Hello!',
+      'reply_to_message_id': pool.message.message_id,
+      'reply_markup': keyBoard
+    },
+  }</code></pre>
 
 <p>See <a href="https://core.telegram.org/bots/api#available-methods">Telegram Bot API documentation</a> for a complete list of available methods and their parameters.</p>
 <div class="admonition note">
@@ -1004,75 +1002,74 @@
 <p>All <code>Telegram Bot API</code> v 2.3.1 methods are supported, except <code>Telegram Bot Games API</code> methods.</p>
 </div>
 <h2 id="bot-server-side-script-example">Bot server-side script example:</h2>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
+<pre class="codehilite"><code class="language-js">var sc = require('scorocode');
 
-<span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-  <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- replace xxx with your appId key</span>
-  <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="c1">// &lt;- replace xxx with your JavaScript key</span>
-  <span class="nx">MasterKey</span><span class="o">:</span> <span class="s2">&quot;xxx&quot;</span>      <span class="c1">// &lt;- replace xxx with your MasterKey key</span>
-<span class="p">});</span>
+var client = sc.Init({
+  ApplicationID: &quot;xxx&quot;, // &lt;- replace xxx with your appId key
+  JavaScriptKey: &quot;xxx&quot;, // &lt;- replace xxx with your JavaScript key
+  MasterKey: &quot;xxx&quot;      // &lt;- replace xxx with your MasterKey key
+});
 
-<span class="kd">var</span> <span class="nx">bot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">Bot</span><span class="p">(</span><span class="s2">&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">querystring</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;querystring&#39;</span><span class="p">);</span>
+var bot = new sc.Bot(&quot;321196098:AAEDbOYD6iLWsHD7w28vqf3a9oBeJAPXXpg&quot;);
+var querystring = require('querystring');
 
-<span class="c1">// Crate a new button for ReplyKeyboardMarkup</span>
-<span class="kd">function</span> <span class="nx">newKeyboardButton</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="nx">request_contact</span><span class="p">,</span> <span class="nx">request_location</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">button</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;text&#39;</span><span class="o">:</span> <span class="nx">text</span>
-  <span class="p">}</span>
+// Crate a new button for ReplyKeyboardMarkup
+function newKeyboardButton(text, request_contact, request_location) {
+  var button = {
+    'text': text
+  }
 
-  <span class="k">if</span> <span class="p">(</span><span class="nx">request_contact</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">button</span><span class="p">.</span><span class="nx">request_contact</span> <span class="o">=</span> <span class="nx">request_contact</span>
-  <span class="p">}</span>
+  if (request_contact) {
+    button.request_contact = request_contact
+  }
 
-  <span class="k">if</span> <span class="p">(</span><span class="nx">request_location</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">button</span><span class="p">.</span><span class="nx">request_location</span> <span class="o">=</span> <span class="nx">request_location</span>
-  <span class="p">}</span>
+  if (request_location) {
+    button.request_location = request_location
+  }
 
-  <span class="k">return</span> <span class="nx">button</span>
-<span class="p">}</span>
+  return button
+}
 
-<span class="c1">// Main logic</span>
+// Main logic
 
-<span class="kr">const</span> <span class="nx">sourceMessage</span> <span class="o">=</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">message</span><span class="p">.</span><span class="nx">text</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()</span>
-<span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="kc">null</span>
+const sourceMessage = pool.message.text.toLowerCase()
+var request = null
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">sourceMessage</span> <span class="o">===</span> <span class="s1">&#39;/start&#39;</span> <span class="o">||</span> <span class="nx">sourceMessage</span> <span class="o">===</span> <span class="s1">&#39;Hi there&#39;</span><span class="p">)</span> <span class="p">{</span>
+if (sourceMessage === '/start' || sourceMessage === 'Hi there') {
 
-  <span class="kd">var</span> <span class="nx">keyBoard</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;keyboard&#39;</span><span class="o">:</span> <span class="p">[</span>
-      <span class="p">[</span> <span class="nx">newKeyboardButton</span><span class="p">(</span><span class="s1">&#39;Hi there&#39;</span><span class="p">)</span> <span class="p">],</span>
-      <span class="p">[</span> <span class="nx">newKeyboardButton</span><span class="p">(</span><span class="s1">&#39;my phone number&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)],</span>
-      <span class="p">[</span> <span class="nx">newKeyboardButton</span><span class="p">(</span><span class="s1">&#39;logo&#39;</span><span class="p">)</span> <span class="p">]</span>
-    <span class="p">]</span>
-  <span class="p">}</span>
+  var keyBoard = {
+    'keyboard': [
+      [ newKeyboardButton('Hi there') ],
+      [ newKeyboardButton('my phone number', true)],
+      [ newKeyboardButton('logo') ]
+    ]
+  }
 
-  <span class="nx">request</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;method&#39;</span><span class="o">:</span> <span class="s1">&#39;sendMessage&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;method_params&#39;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s1">&#39;chat_id&#39;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">message</span><span class="p">.</span><span class="nx">chat</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">toString</span><span class="p">(),</span>
-      <span class="s1">&#39;text&#39;</span><span class="o">:</span> <span class="s1">&#39;Hello!&#39;</span><span class="p">,</span>
-      <span class="s1">&#39;reply_to_message_id&#39;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">message</span><span class="p">.</span><span class="nx">message_id</span><span class="p">,</span>
-      <span class="s1">&#39;reply_markup&#39;</span><span class="o">:</span> <span class="nx">keyBoard</span>
-    <span class="p">},</span>
-  <span class="p">}</span>
+  request = {
+    'method': 'sendMessage',
+    'method_params': {
+      'chat_id': pool.message.chat.id.toString(),
+      'text': 'Hello!',
+      'reply_to_message_id': pool.message.message_id,
+      'reply_markup': keyBoard
+    },
+  }
 
-<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">sourceMessage</span> <span class="o">===</span> <span class="s1">&#39;logo&#39;</span><span class="p">)</span> <span class="p">{</span>
+} else if (sourceMessage === 'logo') {
 
-  <span class="nx">request</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;method&#39;</span><span class="o">:</span> <span class="s1">&#39;sendPhoto&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;method_params&#39;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s1">&#39;chat_id&#39;</span><span class="o">:</span> <span class="nx">pool</span><span class="p">.</span><span class="nx">message</span><span class="p">.</span><span class="nx">chat</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">toString</span><span class="p">(),</span>
-      <span class="s1">&#39;photo&#39;</span><span class="o">:</span> <span class="s1">&#39;https://habrastorage.org/files/aab/c24/364/aabc24364c3b4e109c20ae71da646d91.jpg&#39;</span><span class="p">,</span>
-    <span class="p">},</span>
-  <span class="p">}</span>
+  request = {
+    'method': 'sendPhoto',
+    'method_params': {
+      'chat_id': pool.message.chat.id.toString(),
+      'photo': 'https://habrastorage.org/files/aab/c24/364/aabc24364c3b4e109c20ae71da646d91.jpg',
+    },
+  }
 
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-  <span class="k">return</span>
-<span class="p">}</span>
+} else {
+  return
+}
 
-<span class="nx">bot</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">request</span><span class="p">);</span>
-</pre></div>
+bot.send(request);</code></pre>
               
             </article>
           </div>

@@ -975,23 +975,21 @@
 <h2 id="new-user">new User()</h2>
 <p>Class for application user handling.</p>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
-<span class="nx">appUser</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;user@mailserver.domain&quot;</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="s2">&quot;52c7ab3dab2c&quot;</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="s2">&quot;ChosenOne&quot;</span><span class="p">);</span>
-<span class="nx">appUser</span><span class="p">.</span><span class="nx">signup</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+var appUser = new Scorocode.User();
+appUser.set(&quot;email&quot;, &quot;user@mailserver.domain&quot;).set(&quot;password&quot;, &quot;52c7ab3dab2c&quot;).set(&quot;username&quot;, &quot;ChosenOne&quot;);
+appUser.signup()
+    .then((success)=&gt;{
+        console.log(success);
+    })
+    .catch((error)=&gt;{
+        console.log(error)
+    });</code></pre>
 
 <hr />
 <p><a name="Scorocode.User+signup"></a></p>
@@ -1018,23 +1016,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
-<span class="nx">appUser</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;user@domain.zone&quot;</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="s2">&quot;CorrectHorseBatteryStaple&quot;</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="s2">&quot;ChosenOne&quot;</span><span class="p">);</span>
-<span class="nx">appUser</span><span class="p">.</span><span class="nx">signup</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">success</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+var appUser = new Scorocode.User();
+appUser.set(&quot;email&quot;, &quot;user@domain.zone&quot;).set(&quot;password&quot;, &quot;CorrectHorseBatteryStaple&quot;).set(&quot;username&quot;, &quot;ChosenOne&quot;);
+appUser.signup()
+    .then((success)=&gt;{
+        console.log(success);
+    })
+    .catch((error)=&gt;{
+        console.log(error)
+    });</code></pre>
 
 <p><strong>Возвращает</strong> <code>promise.{Scorocode.User}</code> - returns promise that returns <code>Scorocode.User</code> data</p>
 <hr />
@@ -1076,31 +1072,29 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Scorocode</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;scorocode&#39;</span><span class="p">);</span>
-<span class="nx">Scorocode</span><span class="p">.</span><span class="nx">Init</span><span class="p">({</span>
-    <span class="nx">ApplicationID</span><span class="o">:</span> <span class="s2">&quot;applicationId&quot;</span><span class="p">,</span>
-    <span class="nx">JavaScriptKey</span><span class="o">:</span> <span class="s2">&quot;javascriptKey&quot;</span>
-<span class="p">});</span>
+<pre class="codehilite"><code class="language-js">var Scorocode = require('scorocode');
+Scorocode.Init({
+    ApplicationID: &quot;applicationId&quot;,
+    JavaScriptKey: &quot;javascriptKey&quot;
+});
 
-<span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
-<span class="nx">appUser</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="s2">&quot;user@domain.zone&quot;</span><span class="p">,</span> <span class="s2">&quot;CorrectHorseBatteryStaple&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">loggedIn</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;User successfully logged in \n&quot;</span><span class="p">,</span> <span class="nx">loggedIn</span><span class="p">);</span>
-        <span class="nx">setTimeout</span><span class="p">(</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="nx">appUser</span><span class="p">.</span><span class="nx">logout</span><span class="p">()</span>
-                <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">loggedOut</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;User successfully logged out \n&quot;</span><span class="p">);</span>
-                <span class="p">})</span>
-                <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">errLogout</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">errLogout</span><span class="p">)</span>
-                <span class="p">});</span>
-            <span class="p">},</span><span class="mi">10000</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">errLogin</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">errLogin</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
-
+var appUser = new Scorocode.User();
+appUser.login(&quot;user@domain.zone&quot;, &quot;CorrectHorseBatteryStaple&quot;)
+    .then((loggedIn)=&gt;{
+        console.log(&quot;User successfully logged in \n&quot;, loggedIn);
+        setTimeout( function () {
+            appUser.logout()
+                .then((loggedOut)=&gt;{
+                    console.log(&quot;User successfully logged out \n&quot;);
+                })
+                .catch((errLogout)=&gt;{
+                    console.log(errLogout)
+                });
+            },10000);
+    })
+    .catch((errLogin)=&gt;{
+        console.log(errLogin)
+    });</code></pre>
 
 <p><strong>Returns</strong> <code>promise.{Scorocode.User}</code> -  returns promise that returns <code>Scorocode.User</code> data</p>
 <hr />
@@ -1128,24 +1122,23 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Scorocode</span><span class="p">.</span><span class="nx">User</span><span class="p">();</span>
-<span class="nx">appUser</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="s2">&quot;user@domain.zone&quot;</span><span class="p">,</span> <span class="s2">&quot;CorrectHorseBatteryStaple&quot;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">loggedIn</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;User successfully logged in \n&quot;</span><span class="p">,</span> <span class="nx">loggedIn</span><span class="p">);</span>
-        <span class="nx">setTimeout</span><span class="p">(</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="nx">appUser</span><span class="p">.</span><span class="nx">logout</span><span class="p">()</span>
-                <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">loggedOut</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;User successfully logged out \n&quot;</span><span class="p">);</span>
-                <span class="p">})</span>
-                <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">errLogout</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">errLogout</span><span class="p">)</span>
-                <span class="p">});</span>
-            <span class="p">},</span><span class="mi">10000</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">errLogin</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">errLogin</span><span class="p">)</span>
-    <span class="p">});</span>
-</pre></div>
+<pre class="codehilite"><code class="language-js">var appUser = new Scorocode.User();
+appUser.login(&quot;user@domain.zone&quot;, &quot;CorrectHorseBatteryStaple&quot;)
+    .then((loggedIn)=&gt;{
+        console.log(&quot;User successfully logged in \n&quot;, loggedIn);
+        setTimeout( function () {
+            appUser.logout()
+                .then((loggedOut)=&gt;{
+                    console.log(&quot;User successfully logged out \n&quot;);
+                })
+                .catch((errLogout)=&gt;{
+                    console.log(errLogout)
+                });
+            },10000);
+    })
+    .catch((errLogin)=&gt;{
+        console.log(errLogin)
+    });</code></pre>
               
             </article>
           </div>

@@ -1327,11 +1327,9 @@
 </tbody>
 </table>
 <p><strong>Example</strong> </p>
-<div class="codehilite"><pre><span></span><span class="c1">// Создадим новый экземпляр объекта коллекции items.</span>
-<span class="kd">let</span> <span class="nv">obj1</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="s">&quot;huNr3L7QDh&quot;</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">obj2</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">// Создадим новый экземпляр объекта коллекции items.
+let obj1 = SCObject(collection: &quot;items&quot;, id: &quot;huNr3L7QDh&quot;)
+let obj2 = SCObject(collection: &quot;items&quot;)</code></pre>
 
 <hr />
 <p><a name="SCObject+set"></a></p>
@@ -1358,23 +1356,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong> </p>
-<h2 id="let-newitem-scobjectcollection-items-newitemset-fieldstring-scstringsome-test-string-readacl-scarrayscstring-scstring0123456789-newitemsave-success-error-result-in-if-success-else-if-let-error-error"><div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">newItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">newItem</span><span class="p">.</span><span class="kr">set</span><span class="p">([</span>
-    <span class="s">&quot;fieldString&quot;</span><span class="p">:</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;Some test string&quot;</span><span class="p">),</span>
-    <span class="s">&quot;readACL&quot;</span><span class="p">:</span> <span class="n">SCArray</span><span class="p">([</span><span class="n">SCString</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="p">),</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;0123456789&quot;</span><span class="p">)])</span>
-    <span class="p">])</span>
-<span class="n">newItem</span><span class="p">.</span><span class="n">save</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="c1">// ... </span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="c1">// ...</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="let-newitem-scobjectcollection-items-newitemset-fieldstring-scstringsome-test-string-readacl-scarrayscstring-scstring0123456789-newitemsave-success-error-result-in-if-success-else-if-let-error-error"><pre class="codehilite"><code class="language-SWIFT">let newItem = SCObject(collection: &quot;items&quot;)
+newItem.set([
+    &quot;fieldString&quot;: SCString(&quot;Some test string&quot;),
+    &quot;readACL&quot;: SCArray([SCString(&quot;*&quot;), SCString(&quot;0123456789&quot;)])
+    ])
+newItem.save() {
+    success, error, result in
+    if success {
+        // ... 
+    } else {
+        if let error = error {
+            // ...
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCObject+save"></a></p>
 <h3 id="savecallback">.save(callback)</h3>
 <p>The method saves the object in the data warehouse or updates an object that already exists there</p>
@@ -1399,20 +1395,18 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<h2 id="let-newitem-scobjectcollection-items-newitemsetfieldname-scstringvalue-newitemsave-success-error-result-in-if-success-else-if-let-error-error"><div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">newItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">newItem</span><span class="p">.</span><span class="kr">set</span><span class="p">([</span><span class="s">&quot;fieldName&quot;</span><span class="p">:</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;Value&quot;</span><span class="p">)])</span>
-<span class="n">newItem</span><span class="p">.</span><span class="n">save</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="c1">// ... </span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="c1">// ...</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="let-newitem-scobjectcollection-items-newitemsetfieldname-scstringvalue-newitemsave-success-error-result-in-if-success-else-if-let-error-error"><pre class="codehilite"><code class="language-SWIFT">let newItem = SCObject(collection: &quot;items&quot;)
+newItem.set([&quot;fieldName&quot;: SCString(&quot;Value&quot;)])
+newItem.save() {
+    success, error, result in
+    if success {
+        // ... 
+    } else {
+        if let error = error {
+            // ...
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCObject+getById"></a></p>
 <h3 id="getbyidid-collection-callback">.getById(id, collection, callback)</h3>
 <p>Method for retrieving a collection object from DB by its _id.</p>
@@ -1452,18 +1446,16 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<h2 id="scobjectgetbyidp3otslxw8p-collection-items-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="n">SCObject</span><span class="p">.</span><span class="n">getById</span><span class="p">(</span><span class="s">&quot;p3OtsLXw8p&quot;</span><span class="p">,</span> <span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="scobjectgetbyidp3otslxw8p-collection-items-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">SCObject.getById(&quot;p3OtsLXw8p&quot;, collection: &quot;items&quot;) {
+    success, error, result in
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCObject+get"></a></p>
 <h3 id="getname">.get(name)</h3>
 <p>Method for retrieving data from a specified object field.</p>
@@ -1488,10 +1480,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<h2 id="let-dataitem-scobjectcollection-items-id-hunr3l7qdh-dataitemgetprice"><div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">dataItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="s">&quot;huNr3L7QDh&quot;</span><span class="p">)</span>
-<span class="n">dataItem</span><span class="p">.</span><span class="kr">get</span><span class="p">(</span><span class="s">&quot;price&quot;</span><span class="p">)</span>
-</pre></div>
-</h2>
+<h2 id="let-dataitem-scobjectcollection-items-id-hunr3l7qdh-dataitemgetprice"><pre class="codehilite"><code class="language-SWIFT">let dataItem = SCObject(collection: &quot;items&quot;, id: &quot;huNr3L7QDh&quot;)
+dataItem.get(&quot;price&quot;)</code></pre></h2>
 <p><a name="SCObject+upload"></a></p>
 <h3 id="uploadfield-filename-data-callback">.upload(field, filename, data, callback)</h3>
 <p>File upload method</p>
@@ -1537,32 +1527,30 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<h2 id="let-newitem-scobjectcollection-items-let-image-uiimagenamedforupload-newitemset-description-scstringexample-upload-newitemsave-success-error-result-in-if-success-newitemuploadattachment-imagejpg-data-image-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror-else-if-let-error-error-printerror"><div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">newItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="kd">let</span> <span class="nv">image</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span><span class="s">&quot;forupload&quot;</span><span class="p">)</span>
-<span class="n">newItem</span><span class="p">.</span><span class="kr">set</span><span class="p">([</span>
-    <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;Example upload&quot;</span><span class="p">)</span>
-    <span class="p">])</span>
-<span class="n">newItem</span><span class="p">.</span><span class="n">save</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="n">newItem</span><span class="p">.</span><span class="n">upload</span><span class="p">(</span><span class="s">&quot;attachment&quot;</span><span class="p">,</span> <span class="s">&quot;image.jpg&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">image</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
-            <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-                <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-                    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>   
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-             <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</h2>
+<h2 id="let-newitem-scobjectcollection-items-let-image-uiimagenamedforupload-newitemset-description-scstringexample-upload-newitemsave-success-error-result-in-if-success-newitemuploadattachment-imagejpg-data-image-success-error-result-in-if-success-printsuccess-else-if-let-error-error-printerror-else-if-let-error-error-printerror"><pre class="codehilite"><code class="language-SWIFT">let newItem = SCObject(collection: &quot;items&quot;)
+let image = UIImage(named:&quot;forupload&quot;)
+newItem.set([
+    &quot;description&quot;: SCString(&quot;Example upload&quot;)
+    ])
+newItem.save() {
+    success, error, result in
+    if success {
+        newItem.upload(&quot;attachment&quot;, &quot;image.jpg&quot;, data: image) {
+            success, error, result in
+            if success {
+                print(&quot;Success&quot;)
+            } else {
+            if let error = error {
+                    print(&quot;Error&quot;)
+                }
+            }
+        }   
+    } else {
+        if let error = error {
+             print(&quot;Error&quot;)
+        }
+    }
+}</code></pre></h2>
 <p><a name="SCObject+getFile"></a></p>
 <h3 id="getfilefield-filename-callback">.getFile(field, filename, callback)</h3>
 <p>Method for retrieving file contents</p>
@@ -1601,18 +1589,17 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">item</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="s">&quot;huNr3L7QDh&quot;</span><span class="p">)</span>
-<span class="n">item</span><span class="p">.</span><span class="n">getFileLink</span><span class="p">(</span><span class="s">&quot;attachment&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let item = SCObject(collection: &quot;items&quot;, id: &quot;huNr3L7QDh&quot;)
+item.getFileLink(&quot;attachment&quot;)
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+    if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}
+</code></pre>
 
 <hr />
 <p><a name="SCObject+deleteFile"></a></p>
@@ -1653,18 +1640,16 @@
 </tbody>
 </table>
 <p><strong>Example</strong> </p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">item</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="s">&quot;huNr3L7QDh&quot;</span><span class="p">)</span>
-<span class="n">item</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="s">&quot;attachment&quot;</span><span class="p">,</span> <span class="s">&quot;swiftDocs.pdf&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let item = SCObject(collection: &quot;items&quot;, id: &quot;huNr3L7QDh&quot;)
+item.delete(&quot;attachment&quot;, &quot;swiftDocs.pdf&quot;)
+    if success {
+        print(&quot;Success&quot;)
+    } else {
+    if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre>
 
 <hr />
 <p><a name="SCObject+remove"></a></p>
@@ -1691,19 +1676,17 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">item</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">:</span> <span class="s">&quot;huNr3L7QDh&quot;</span><span class="p">)</span>
-<span class="n">obj</span><span class="p">.</span><span class="n">remove</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">result</span> <span class="k">in</span>
- <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Success&quot;</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">error</span> <span class="p">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Error&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let item = SCObject(collection: &quot;items&quot;, id: &quot;huNr3L7QDh&quot;)
+obj.remove() {
+    success, error, result in
+ if success {
+        print(&quot;Success&quot;)
+    } else {
+        if let error = error {
+            print(&quot;Error&quot;)
+        }
+    }
+}</code></pre>
 
 <p><strong>Exception</strong></p>
 <p>"Id is not specified" - <code>String</code></p>
@@ -1739,10 +1722,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">editItem</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;Sierra Army Depot&quot;</span><span class="p">))</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let editItem = SCObject(collection: &quot;items&quot;)
+editItem.push(&quot;location&quot;, SCString(&quot;Sierra Army Depot&quot;))</code></pre>
 
 <hr />
 <p><a name="SCObject+pushEach"></a></p>
@@ -1776,10 +1757,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="n">collection</span><span class="p">)</span>
-<span class="n">editItem</span><span class="p">.</span><span class="n">pushEach</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="n">SCArray</span><span class="p">([</span><span class="n">SCString</span><span class="p">(</span><span class="s">&quot;Sierra Army Depot&quot;</span><span class="p">),</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;Navarro&quot;</span><span class="p">)]))</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let editItem = SCObject(collection: collection)
+editItem.pushEach(&quot;location&quot;, SCArray([SCString(&quot;Sierra Army Depot&quot;), SCString(&quot;Navarro&quot;)]))</code></pre>
 
 <hr />
 <p><a name="SCObject+pull"></a></p>
@@ -1875,10 +1854,9 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">editItem</span><span class="p">.</span><span class="n">addToSet</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">))</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let editItem = SCObject(collection: &quot;items&quot;)
+editItem.addToSet(&quot;location&quot;, SCString(&quot;A&quot;))
+</code></pre>
 
 <hr />
 <p><a name="SCObject+addToSetEach"></a></p>
@@ -1912,10 +1890,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">editItem</span><span class="p">.</span><span class="n">addToSetEach</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="n">SCArray</span><span class="p">([</span><span class="n">SCString</span><span class="p">(</span><span class="s">&quot;Sierra Army Depot&quot;</span><span class="p">),</span> <span class="n">SCString</span><span class="p">(</span><span class="s">&quot;Navarro&quot;</span><span class="p">)]))</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let editItem = SCObject(collection: &quot;items&quot;)
+editItem.addToSetEach(&quot;location&quot;, SCArray([SCString(&quot;Sierra Army Depot&quot;), SCString(&quot;Navarro&quot;)]))</code></pre>
 
 <hr />
 <p><a name="SCObject+pop"></a></p>
@@ -1949,10 +1925,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong> </p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">editItem</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&quot;location&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let editItem = SCObject(collection: &quot;items&quot;)
+editItem.pop(&quot;location&quot;, 1)</code></pre>
 
 <hr />
 <p><a name="SCObject+inc"></a></p>
@@ -1986,10 +1960,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong> </p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">editItem</span><span class="p">.</span><span class="n">inc</span><span class="p">(</span><span class="s">&quot;amount&quot;</span><span class="p">,</span> <span class="n">SCInt</span><span class="p">(</span><span class="o">-</span><span class="mi">14</span><span class="p">))</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let editItem = SCObject(collection: &quot;items&quot;)
+editItem.inc(&quot;amount&quot;, SCInt(-14))</code></pre>
 
 <hr />
 <p><a name="SCObject+currentDate"></a></p>
@@ -2023,10 +1995,9 @@
 </tbody>
 </table>
 <p><strong>Example</strong>:</p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">editItem</span><span class="p">.</span><span class="n">currentDate</span><span class="p">(</span><span class="s">&quot;someDate&quot;</span><span class="p">,</span> <span class="n">typeSpec</span><span class="p">:</span> <span class="s">&quot;date&quot;</span><span class="p">)</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let editItem = SCObject(collection: &quot;items&quot;)
+editItem.currentDate(&quot;someDate&quot;, typeSpec: &quot;date&quot;)
+</code></pre>
 
 <hr />
 <p><a name="SCObject+mul"></a></p>
@@ -2060,10 +2031,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">editItem</span><span class="p">.</span><span class="bp">min</span><span class="p">(</span><span class="s">&quot;price&quot;</span><span class="p">,</span> <span class="n">SCDouble</span><span class="p">(</span><span class="mf">42.42</span><span class="p">))</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let editItem = SCObject(collection: &quot;items&quot;)
+editItem.min(&quot;price&quot;, SCDouble(42.42))</code></pre>
 
 <hr />
 <p><a name="SCObject+min"></a></p>
@@ -2097,10 +2066,8 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-<span class="n">editItem</span><span class="p">.</span><span class="bp">min</span><span class="p">(</span><span class="s">&quot;price&quot;</span><span class="p">,</span> <span class="n">SCInt</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-SWIFT">let editItem = SCObject(collection: &quot;items&quot;)
+editItem.min(&quot;price&quot;, SCInt(42))</code></pre>
 
 <hr />
 <p><a name="SCObject+max"></a></p>
@@ -2134,8 +2101,7 @@
 </tbody>
 </table>
 <p><strong>Example</strong>  </p>
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nv">editItem</span> <span class="p">=</span> <span class="n">SCObject</span><span class="p">(</span><span class="n">collection</span><span class="p">:</span> <span class="s">&quot;items&quot;</span><span class="p">)</span>
-</pre></div>
+<pre class="codehilite"><code class="language-SWIFT">let editItem = SCObject(collection: &quot;items&quot;)</code></pre>
               
             </article>
           </div>

@@ -1004,9 +1004,7 @@
 <h3 id="new-user">new User()</h3>
 <p>User initialization</p>
 <p><strong>Example</strong> 
-<div class="codehilite"><pre><span></span><span class="n">User</span> <span class="n">appUser</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">();</span>
-</pre></div>
-</p>
+<pre class="codehilite"><code class="language-Java">User appUser = new User();</code></pre></p>
 <hr />
 <p><a name="User+register1"></a></p>
 <h3 id="registercallback-username-email-password">.register(callback, username, email, password)</h3>
@@ -1060,26 +1058,25 @@
 </tbody>
 </table>
 <p><strong>Example</strong> </p>
-<div class="codehilite"><pre><span></span><span class="n">Document</span> <span class="n">doc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">(</span><span class="s">&quot;users&quot;</span><span class="o">);</span>
-<span class="n">doc</span><span class="o">.</span><span class="na">setField</span><span class="o">(</span><span class="s">&quot;city&quot;</span><span class="o">,</span> <span class="s">&quot;Moscow&quot;</span><span class="o">);</span>
-<span class="n">doc</span><span class="o">.</span><span class="na">setField</span><span class="o">(</span><span class="s">&quot;isPlaceAnyOrder&quot;</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
-<span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">();</span>
-<span class="n">user</span><span class="o">.</span><span class="na">register</span><span class="o">(</span><span class="s">&quot;any_username&quot;</span><span class="o">,</span> <span class="s">&quot;anyemail@mailinator.com&quot;</span><span class="o">,</span> <span class="s">&quot;test1111&quot;</span><span class="o">,</span> <span class="n">doc</span><span class="o">.</span><span class="na">getDocumentContent</span><span class="o">(),</span> 
+<pre class="codehilite"><code class="language-Java">Document doc = new Document(&quot;users&quot;);
+doc.setField(&quot;city&quot;, &quot;Moscow&quot;);
+doc.setField(&quot;isPlaceAnyOrder&quot;, true);
+User user = new User();
+user.register(&quot;any_username&quot;, &quot;anyemail@mailinator.com&quot;, &quot;test1111&quot;, doc.getDocumentContent(), 
 
-    <span class="k">new</span> <span class="n">CallbackRegisterUser</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRegisterSucceed</span><span class="o">()</span> <span class="o">{</span>
-                <span class="c1">//user register succeed</span>
-            <span class="o">}</span>
+    new CallbackRegisterUser() {
+            @Override
+            public void onRegisterSucceed() {
+                //user register succeed
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRegisterFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//user regiser failed</span>
-                <span class="c1">//See errorCode and errorMessage</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-
+            @Override
+            public void onRegisterFailed(String errorCode, String errorMessage) {
+                //user regiser failed
+                //See errorCode and errorMessage
+            }
+        });
+</code></pre>
 
 <hr />
 <p><a name="User+register2"></a></p>
@@ -1127,22 +1124,20 @@
 </tbody>
 </table>
 <p><strong>Example</strong> </p>
-<div class="codehilite"><pre><span></span><span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">();</span>
-<span class="n">user</span><span class="o">.</span><span class="na">register</span><span class="o">(</span><span class="s">&quot;any_username&quot;</span><span class="o">,</span> <span class="s">&quot;anyemail@gmail.com&quot;</span><span class="o">,</span> <span class="s">&quot;test1111&quot;</span><span class="o">,</span> <span class="n">doc</span><span class="o">.</span><span class="na">getDocumentContent</span><span class="o">(),</span> 
-    <span class="k">new</span> <span class="n">CallbackRegisterUser</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRegisterSucceed</span><span class="o">()</span> <span class="o">{</span>
-                <span class="c1">//user register succeed</span>
-            <span class="o">}</span>
+<pre class="codehilite"><code class="language-Java">User user = new User();
+user.register(&quot;any_username&quot;, &quot;anyemail@gmail.com&quot;, &quot;test1111&quot;, doc.getDocumentContent(), 
+    new CallbackRegisterUser() {
+            @Override
+            public void onRegisterSucceed() {
+                //user register succeed
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRegisterFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//user regiser failed</span>
-        <span class="c1">//See errorCode and errorMessage</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-
+            @Override
+            public void onRegisterFailed(String errorCode, String errorMessage) {
+                //user regiser failed
+        //See errorCode and errorMessage
+            }
+        });</code></pre>
 
 <hr />
 <p><a name="User+login"></a></p>
@@ -1183,22 +1178,21 @@
 </tbody>
 </table>
 <p><strong>Example</strong> </p>
-<h2 id="user-user-new-user-userloginanymailmailcom-any-pass-new-callbackloginuser-override-public-void-onloginsucceedresponselogin-responselogin-login-succed-see-returned-responselogin-instance-which-contain-session-id-and-user-info-override-public-void-onloginfailedstring-errorcode-string-errormessage-login-failed-see-errorcode-and-errormessage"><div class="codehilite"><pre><span></span><span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">();</span>
-<span class="n">user</span><span class="o">.</span><span class="na">login</span><span class="o">(</span><span class="err">“</span><span class="n">anymail</span><span class="nd">@mail.com</span><span class="err">”</span><span class="o">,</span> <span class="err">“</span><span class="n">any</span> <span class="n">pass</span><span class="err">”</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackLoginUser</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onLoginSucceed</span><span class="o">(</span><span class="n">ResponseLogin</span> <span class="n">responseLogin</span><span class="o">)</span> <span class="o">{</span>
-                 <span class="c1">//login succed. See returned responseLogin instance:</span>
-                 <span class="c1">//which contain session id and user info   </span>
-            <span class="o">}</span>
+<h2 id="user-user-new-user-userloginanymailmailcom-any-pass-new-callbackloginuser-override-public-void-onloginsucceedresponselogin-responselogin-login-succed-see-returned-responselogin-instance-which-contain-session-id-and-user-info-override-public-void-onloginfailedstring-errorcode-string-errormessage-login-failed-see-errorcode-and-errormessage"><pre class="codehilite"><code class="language-Java">User user = new User();
+user.login(“anymail@mail.com”, “any pass”, new CallbackLoginUser() {
+            @Override
+            public void onLoginSucceed(ResponseLogin responseLogin) {
+                 //login succed. See returned responseLogin instance:
+                 //which contain session id and user info   
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onLoginFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                 <span class="c1">//Login failed. </span>
-          <span class="c1">//See errorCode and errorMessage</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
-</h2>
+            @Override
+            public void onLoginFailed(String errorCode, String errorMessage) {
+                 //Login failed. 
+          //See errorCode and errorMessage
+            }
+        });
+</code></pre></h2>
 <p><a name="User+logout"></a></p>
 <h3 id="logoutcallback">.logout(callback)</h3>
 <p>Method for application user deauthentication. </p>
@@ -1223,20 +1217,20 @@
 </tbody>
 </table>
 <p><strong>Example</strong> </p>
-<div class="codehilite"><pre><span></span><span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">();</span>
-<span class="n">user</span><span class="o">.</span><span class="na">logout</span><span class="o">(</span><span class="k">new</span> <span class="n">CallbackLogoutUser</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onLogoutSucceed</span><span class="o">()</span> <span class="o">{</span>
-                <span class="c1">//user logout succeed</span>
-            <span class="o">}</span>
+<pre class="codehilite"><code class="language-Java">User user = new User();
+user.logout(new CallbackLogoutUser() {
+            @Override
+            public void onLogoutSucceed() {
+                //user logout succeed
+            }
 
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onLogoutFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//user logout failed</span>
-                <span class="c1">//See errorCode and errorMessage</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</pre></div>
+            @Override
+            public void onLogoutFailed(String errorCode, String errorMessage) {
+                //user logout failed
+                //See errorCode and errorMessage
+            }
+        });
+</code></pre>
               
             </article>
           </div>

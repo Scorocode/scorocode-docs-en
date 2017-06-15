@@ -991,11 +991,9 @@
 <p><a name="ScorocodeScript_new"></a></p>
 <h2 id="new-scorocodescript">new ScorocodeScript()</h2>
 <p>Конструктор ScorocodeScript</p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">ScorocodeScript</span> <span class="n">newScript</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScorocodeScript</span><span class="o">();</span>
-</pre></div>
-
+ScorocodeScript newScript = new ScorocodeScript();</code></pre>
 
 <div class="admonition note">
 <p class="admonition-title">Примечание</p>
@@ -1033,24 +1031,22 @@
 </tbody>
 </table>
 <p><strong>Пример</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">ScorocodeScript</span> <span class="n">script</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScorocodeScript</span><span class="o">();</span>
-<span class="n">script</span><span class="o">.</span><span class="na">setScriptName</span><span class="o">(</span><span class="s">&quot;testscript.js&quot;</span><span class="o">);</span>
-<span class="n">script</span><span class="o">.</span><span class="na">setScriptPath</span><span class="o">(</span><span class="s">&quot;testscript.js&quot;</span><span class="o">);</span>
-<span class="k">new</span> <span class="n">Script</span><span class="o">().</span><span class="na">createScript</span><span class="o">(</span><span class="n">script</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackCreateScript</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onScriptCreated</span><span class="o">(</span><span class="n">ScorocodeScript</span> <span class="n">script</span><span class="o">)</span> <span class="o">{</span>
-         <span class="c1">//script created</span>
-    <span class="o">}</span>
+ScorocodeScript script = new ScorocodeScript();
+script.setScriptName(&quot;testscript.js&quot;);
+script.setScriptPath(&quot;testscript.js&quot;);
+new Script().createScript(script, new CallbackCreateScript() {
+    @Override
+    public void onScriptCreated(ScorocodeScript script) {
+         //script created
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreationFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request         </span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
-
+    @Override
+    public void onCreationFailed(String errorCode, String errorMessage) {
+        //error during request         
+    }
+});</code></pre>
 
 <hr />
 <p><a name="ScorocodeScript+getScriptById"></a></p>
@@ -1084,22 +1080,20 @@
 </tbody>
 </table>
 <p><strong>Пример</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">Script</span> <span class="n">script</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Script</span><span class="o">();</span>
-<span class="n">script</span><span class="o">.</span><span class="na">getScriptById</span><span class="o">(</span><span class="n">testScript</span><span class="o">.</span><span class="na">getScriptId</span><span class="o">(),</span> <span class="k">new</span> <span class="n">CallbackGetScriptById</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRequestSucceed</span><span class="o">(</span><span class="n">ScorocodeScript</span> <span class="n">script</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//sdk returned script</span>
-    <span class="o">}</span>
+Script script = new Script();
+script.getScriptById(testScript.getScriptId(), new CallbackGetScriptById() {
+    @Override
+    public void onRequestSucceed(ScorocodeScript script) {
+        //sdk returned script
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRequestFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request</span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
-
+    @Override
+    public void onRequestFailed(String errorCode, String errorMessage) {
+        //error during request
+    }
+});</code></pre>
 
 <hr />
 <p><a name="ScorocodeScript+updateScript"></a></p>
@@ -1140,27 +1134,25 @@
 </tbody>
 </table>
 <p><strong>Пример</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="n">ScorocodeScript</span> <span class="n">newScript</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScorocodeScript</span><span class="o">()</span>
-        <span class="o">.</span><span class="na">setScriptId</span><span class="o">(</span><span class="s">&quot;sdfsdfdsdsfdf&quot;</span><span class="o">)</span>
-        <span class="o">.</span><span class="na">setScriptName</span><span class="o">(</span><span class="s">&quot;testscript&quot;</span><span class="o">)</span>
-        <span class="o">.</span><span class="na">setScriptSourceCode</span><span class="o">(</span><span class="s">&quot;updated source code&quot;</span><span class="o">);</span>
+ScorocodeScript newScript = new ScorocodeScript()
+        .setScriptId(&quot;sdfsdfdsdsfdf&quot;)
+        .setScriptName(&quot;testscript&quot;)
+        .setScriptSourceCode(&quot;updated source code&quot;);
 
-<span class="n">Script</span> <span class="n">script</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Script</span><span class="o">();</span>
-<span class="n">script</span><span class="o">.</span><span class="na">updateScript</span><span class="o">(</span><span class="s">&quot;assafdfsdf&quot;</span><span class="o">,</span> <span class="n">newScript</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackUpdateScript</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUpdateScriptSucceed</span><span class="o">(</span><span class="n">ScorocodeScript</span> <span class="n">scorocodeScript</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//script updated</span>
-    <span class="o">}</span>
+Script script = new Script();
+script.updateScript(&quot;assafdfsdf&quot;, newScript, new CallbackUpdateScript() {
+    @Override
+    public void onUpdateScriptSucceed(ScorocodeScript scorocodeScript) {
+        //script updated
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onUpdateScriptFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request</span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
-
+    @Override
+    public void onUpdateScriptFailed(String errorCode, String errorMessage) {
+        //error during request
+    }
+});</code></pre>
 
 <hr />
 <p><a name="ScorocodeScript+deleteScript"></a></p>
@@ -1194,20 +1186,19 @@
 </tbody>
 </table>
 <p><strong>Пример</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">ScorocodeSdk</span><span class="o">.</span><span class="na">initWith</span><span class="o">(</span><span class="s">&quot;db8a1b41b8543397a798a181d9891b4c&quot;</span><span class="o">,</span> <span class="s">&quot;563452bbc611d8106d5da767365897de&quot;</span><span class="o">,</span> <span class="s">&quot;28f06b89b62165c33de55265166d8781&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<pre class="codehilite"><code class="language-Java">ScorocodeSdk.initWith(&quot;db8a1b41b8543397a798a181d9891b4c&quot;, &quot;563452bbc611d8106d5da767365897de&quot;, &quot;28f06b89b62165c33de55265166d8781&quot;, null, null, null, null);
 
-<span class="k">new</span> <span class="n">Script</span><span class="o">().</span><span class="na">deleteScript</span><span class="o">(</span><span class="n">scriptId</span><span class="o">,</span> <span class="k">new</span> <span class="n">CallbackDeleteScript</span><span class="o">()</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onScriptDeleted</span><span class="o">()</span> <span class="o">{</span>
-       <span class="c1">//script deleted</span>
-    <span class="o">}</span>
+new Script().deleteScript(scriptId, new CallbackDeleteScript() {
+    @Override
+    public void onScriptDeleted() {
+       //script deleted
+    }
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDeletionFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">errorCode</span><span class="o">,</span> <span class="n">String</span> <span class="n">errorMessage</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//error during request</span>
-    <span class="o">}</span>
-<span class="o">});</span>
-</pre></div>
+    @Override
+    public void onDeletionFailed(String errorCode, String errorMessage) {
+        //error during request
+    }
+});</code></pre>
               
             </article>
           </div>

@@ -992,54 +992,46 @@
 <p><strong>https://api.scorocode.ru/api/v1/data/insert</strong></p>
 <p>Method: <code>POST</code></p>
 <p>Headers: <code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">application</span> <span class="err">identifier,</span> <span class="err">mandatory</span>
-    <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">client</span> <span class="err">key,</span> <span class="err">mandatory</span>
-    <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">access</span> <span class="err">key,</span> <span class="err">optional,</span> <span class="err">masterKey</span> <span class="err">for</span> <span class="err">full</span> <span class="err">access</span>
-    <span class="nt">&quot;sess&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">session</span> <span class="err">ID,</span> <span class="err">mandatory</span> <span class="err">if</span> <span class="err">acc</span> <span class="err">!=</span> <span class="err">masterKey</span> <span class="err">and</span> <span class="err">app</span> <span class="err">security</span> <span class="err">settings</span> <span class="err">do</span> <span class="err">not</span> <span class="err">allow</span> <span class="err">anonymous</span> <span class="err">access</span> <span class="err">for</span> <span class="err">this</span> <span class="err">operation</span>
-    <span class="nt">&quot;coll&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">collection</span> <span class="err">name,</span> <span class="err">mandatory</span>
-    <span class="nt">&quot;doc&quot;</span>         <span class="p">:</span> <span class="p">{},</span> <span class="err">//</span> <span class="err">document</span> <span class="err">with</span> <span class="err">field_name:value</span> <span class="err">pairs</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;app&quot;         : &quot;&quot;, // application identifier, mandatory
+    &quot;cli&quot;         : &quot;&quot;, // client key, mandatory
+    &quot;acc&quot;         : &quot;&quot;, // access key, optional, masterKey for full access
+    &quot;sess&quot;        : &quot;&quot;, // session ID, mandatory if acc != masterKey and app security settings do not allow anonymous access for this operation
+    &quot;coll&quot;        : &quot;&quot;, // collection name, mandatory
+    &quot;doc&quot;         : {}, // document with field_name:value pairs
+}</code></pre>
 
 <div class="admonition tip">
 <p class="admonition-title">cURL example</p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
-<span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
-<span class="s1">    &quot;acc&quot;: &quot;&quot;,</span>
-<span class="s1">    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,</span>
-<span class="s1">    &quot;coll&quot;: &quot;items&quot;,</span>
-<span class="s1">    &quot;doc&quot;: {</span>
-<span class="s1">        &quot;exampleField&quot;: &quot;Today is June, 18. It&#39;</span>s Muriel<span class="s1">&#39;s birthday! Muriel is now 20 years old. Happy Birthday, Muriel!&quot;,</span>
-<span class="s1">        &quot;anotherExampleField&quot;: &quot;I don&#39;</span>t know what to say. I used to want to be an astrophysicist. Unfortunately, this is true.<span class="s2">&quot;</span>
-<span class="s2">    }</span>
-<span class="s2">}&#39; &quot;</span>https://api.scorocode.ru/api/v1/data/insert<span class="s2">&quot;</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-bash">curl -X POST -H &quot;Content-Type: application/json&quot; -d '{
+    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
+    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
+    &quot;acc&quot;: &quot;&quot;,
+    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,
+    &quot;coll&quot;: &quot;items&quot;,
+    &quot;doc&quot;: {
+        &quot;exampleField&quot;: &quot;Today is June, 18. It's Muriel's birthday! Muriel is now 20 years old. Happy Birthday, Muriel!&quot;,
+        &quot;anotherExampleField&quot;: &quot;I don't know what to say. I used to want to be an astrophysicist. Unfortunately, this is true.&quot;
+    }
+}' &quot;https://api.scorocode.ru/api/v1/data/insert&quot;</code></pre>
 
 </div>
 <p><strong>Responses:</strong></p>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{}</span>        <span class="err">//</span> <span class="err">document</span> <span class="err">with</span> <span class="err">field_name</span><span class="p">:</span><span class="err">value</span> <span class="err">pairs</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : false,
+    &quot;result&quot;      : {}        // document with field_name:value pairs
+}</code></pre>
 
 </div>
 <div class="admonition failure">
 <p class="admonition-title">Error</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Error</span> <span class="err">code</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Error text&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : true,
+    &quot;errCode&quot;     : 4XX/5XX, // Error code
+    &quot;errMsg&quot;      : &quot;Error text&quot;
+}</code></pre>
 
 </div>
 <hr />
@@ -1047,17 +1039,15 @@
 <p><strong>https://api.scorocode.ru/api/v1/data/remove</strong></p>
 <p>Method: <code>POST</code></p>
 <p>Headers: <code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;app&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">application</span> <span class="err">identifier,</span> <span class="err">mandatory</span>
-    <span class="nt">&quot;cli&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">client</span> <span class="err">key,</span> <span class="err">mandatory</span>
-    <span class="nt">&quot;acc&quot;</span>         <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">access</span> <span class="err">key,</span> <span class="err">optional,</span> <span class="err">masterKey</span> <span class="err">for</span> <span class="err">full</span> <span class="err">access</span>
-    <span class="nt">&quot;sess&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">session</span> <span class="err">ID,</span> <span class="err">mandatory</span> <span class="err">if</span> <span class="err">acc</span> <span class="err">!=</span> <span class="err">masterKey</span> <span class="err">and</span> <span class="err">app</span> <span class="err">security</span> <span class="err">settings</span> <span class="err">do</span> <span class="err">not</span> <span class="err">allow</span> <span class="err">anonymous</span> <span class="err">access</span> <span class="err">for</span> <span class="err">this</span> <span class="err">operation</span>
-    <span class="nt">&quot;coll&quot;</span>        <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">collection</span> <span class="err">name,</span> <span class="err">mandatory</span>
-    <span class="nt">&quot;query&quot;</span>       <span class="p">:</span> <span class="p">{},</span> <span class="err">//</span> <span class="err">query</span> <span class="err">with</span> <span class="err">field_name/operator:value</span> <span class="err">pairs,</span> <span class="err">optional</span>
-    <span class="nt">&quot;limit&quot;</span>       <span class="p">:</span> <span class="err">int</span> <span class="err">//</span> <span class="err">limit</span><span class="p">,</span> <span class="err">optional,</span> <span class="err">default</span> <span class="err">value</span> <span class="err">is</span> <span class="err">1000</span> 
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;app&quot;         : &quot;&quot;, // application identifier, mandatory
+    &quot;cli&quot;         : &quot;&quot;, // client key, mandatory
+    &quot;acc&quot;         : &quot;&quot;, // access key, optional, masterKey for full access
+    &quot;sess&quot;        : &quot;&quot;, // session ID, mandatory if acc != masterKey and app security settings do not allow anonymous access for this operation
+    &quot;coll&quot;        : &quot;&quot;, // collection name, mandatory
+    &quot;query&quot;       : {}, // query with field_name/operator:value pairs, optional
+    &quot;limit&quot;       : int // limit, optional, default value is 1000 
+}</code></pre>
 
 <div class="admonition warning">
 <p class="admonition-title">Limitations</p>
@@ -1065,44 +1055,38 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">cURL example</p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
-<span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
-<span class="s1">    &quot;acc&quot;: &quot;&quot;,</span>
-<span class="s1">    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,</span>
-<span class="s1">    &quot;coll&quot;: &quot;items&quot;,</span>
-<span class="s1">    &quot;query&quot;: {</span>
-<span class="s1">        &quot;exampleField&quot;: { </span>
-<span class="s1">            &quot;$eq&quot;: &quot;Today is June, 18. It&#39;</span>s Muriel<span class="s1">&#39;s birthday! Muriel is now 20 years old. Happy Birthday, Muriel!&quot;</span>
-<span class="s1">        }</span>
-<span class="s1">    }</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/data/remove&quot;</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-bash">curl -X POST -H &quot;Content-Type: application/json&quot; -d '{
+    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
+    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
+    &quot;acc&quot;: &quot;&quot;,
+    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,
+    &quot;coll&quot;: &quot;items&quot;,
+    &quot;query&quot;: {
+        &quot;exampleField&quot;: { 
+            &quot;$eq&quot;: &quot;Today is June, 18. It's Muriel's birthday! Muriel is now 20 years old. Happy Birthday, Muriel!&quot;
+        }
+    }
+}' &quot;https://api.scorocode.ru/api/v1/data/remove&quot;</code></pre>
 
 </div>
 <p><strong>Responses:</strong></p>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;count&quot;</span>       <span class="p">:</span> <span class="err">int</span><span class="p">,</span> <span class="err">//</span> <span class="err">Amount</span> <span class="err">of</span> <span class="err">deleted</span> <span class="err">documents</span>
-        <span class="nt">&quot;docs&quot;</span>        <span class="p">:</span> <span class="p">[]</span> <span class="err">//</span> <span class="err">Array</span> <span class="err">of</span> <span class="err">deleted</span> <span class="err">documents</span> <span class="err">_id&#39;s</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : false,
+    &quot;result&quot;      : {
+        &quot;count&quot;       : int, // Amount of deleted documents
+        &quot;docs&quot;        : [] // Array of deleted documents _id's
+}</code></pre>
 
 </div>
 <div class="admonition failure">
 <p class="admonition-title">Error</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Error</span> <span class="err">code</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Error text&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : true,
+    &quot;errCode&quot;     : 4XX/5XX, // Error code
+    &quot;errMsg&quot;      : &quot;Error text&quot;
+}</code></pre>
 
 </div>
 <hr />
@@ -1110,7 +1094,7 @@
 <p><strong>https://api.scorocode.ru/api/v1/data/update</strong></p>
 <p>Method: <code>POST</code></p>
 <p>Headers: <code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     &quot;app&quot;         : &quot;&quot;, // application identifier, mandatory
     &quot;cli&quot;         : &quot;&quot;, // client key, mandatory
     &quot;acc&quot;         : &quot;&quot;, // access key, mandatory or masterKey for full access
@@ -1119,9 +1103,7 @@
     &quot;query&quot;       : {}, // query with field_name/operator:value pairs, optional
     &quot;doc&quot;         : {}, // document with operator:{field_name:value} pairs, mandatory
     &quot;limit&quot;       : int // limit, optional, default value is 1000 
-}
-</pre></div>
-
+}</code></pre>
 
 <div class="admonition warning">
 <p class="admonition-title">Limitations</p>
@@ -1129,51 +1111,45 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">cURL example</p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
-<span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
-<span class="s1">    &quot;acc&quot;: &quot;&quot;,</span>
-<span class="s1">    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,</span>
-<span class="s1">    &quot;coll&quot;: &quot;items&quot;,</span>
-<span class="s1">    &quot;query&quot;: {</span>
-<span class="s1">        &quot;exampleField&quot;: { </span>
-<span class="s1">            &quot;$eq&quot;: &quot;Today is June, 18. It&#39;</span>s Muriel<span class="s1">&#39;s birthday! Muriel is now 20 years old. Happy Birthday, Muriel!&quot;</span>
-<span class="s1">        }</span>
-<span class="s1">    },</span>
-<span class="s1">     &quot;doc&quot;: {</span>
-<span class="s1">        &quot;$set&quot;: {</span>
-<span class="s1">            &quot;exampleField&quot;: &quot;Happy Birthday, Muriel!&quot;</span>
-<span class="s1">        }</span>
-<span class="s1">    },</span>
-<span class="s1">    &quot;limit&quot;: 1</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/data/update&quot;</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-bash">curl -X POST -H &quot;Content-Type: application/json&quot; -d '{
+    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
+    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
+    &quot;acc&quot;: &quot;&quot;,
+    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,
+    &quot;coll&quot;: &quot;items&quot;,
+    &quot;query&quot;: {
+        &quot;exampleField&quot;: { 
+            &quot;$eq&quot;: &quot;Today is June, 18. It's Muriel's birthday! Muriel is now 20 years old. Happy Birthday, Muriel!&quot;
+        }
+    },
+     &quot;doc&quot;: {
+        &quot;$set&quot;: {
+            &quot;exampleField&quot;: &quot;Happy Birthday, Muriel!&quot;
+        }
+    },
+    &quot;limit&quot;: 1
+}' &quot;https://api.scorocode.ru/api/v1/data/update&quot;</code></pre>
 
 </div>
 <p><strong>Responses:</strong></p>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;count&quot;</span>       <span class="p">:</span> <span class="err">int</span><span class="p">,</span> <span class="err">//</span> <span class="err">Amount</span> <span class="err">of</span> <span class="err">modified</span> <span class="err">documents</span>
-        <span class="nt">&quot;docs&quot;</span>        <span class="p">:</span> <span class="p">[]</span> <span class="err">//</span> <span class="err">Array</span> <span class="err">of</span> <span class="err">modified</span> <span class="err">documents</span> <span class="err">_id&#39;s</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : false,
+    &quot;result&quot;      : {
+        &quot;count&quot;       : int, // Amount of modified documents
+        &quot;docs&quot;        : [] // Array of modified documents _id's
+    }
+}</code></pre>
 
 </div>
 <div class="admonition failure">
 <p class="admonition-title">Error</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Error</span> <span class="err">code</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Error text&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : true,
+    &quot;errCode&quot;     : 4XX/5XX, // Error code
+    &quot;errMsg&quot;      : &quot;Error text&quot;
+}</code></pre>
 
 </div>
 <hr />
@@ -1181,7 +1157,7 @@
 <p><strong>https://api.scorocode.ru/api/v1/data/updatebyid</strong></p>
 <p>Method: <code>POST</code></p>
 <p>Headers: <code>Content-Type: application/json</code></p>
-<div class="codehilite"><pre><span></span>{
+<pre class="codehilite"><code>{
     &quot;app&quot;         : &quot;&quot;, // application identifier, mandatory
     &quot;cli&quot;         : &quot;&quot;, // client key, mandatory
     &quot;acc&quot;         : &quot;&quot;, // access key, mandatory or masterKey for full access
@@ -1189,51 +1165,43 @@
     &quot;coll&quot;        : &quot;&quot;, // collection name, mandatory
     &quot;query&quot;       : {}, // query with &quot;_id&quot;: &quot;document identifier&quot; pair, mandatory
     &quot;doc&quot;         : {}, // document with operator:{field_name:value} pairs, mandatory
-}
-</pre></div>
-
+}</code></pre>
 
 <div class="admonition tip">
 <p class="admonition-title">cURL example</p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
-<span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
-<span class="s1">    &quot;acc&quot;: &quot;&quot;,</span>
-<span class="s1">    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,</span>
-<span class="s1">    &quot;coll&quot;: &quot;items&quot;,</span>
-<span class="s1">    &quot;query&quot;: {</span>
-<span class="s1">        &quot;_id&quot; : &quot;jQ4ZwEbBUj&quot;</span>
-<span class="s1">    },</span>
-<span class="s1">     &quot;doc&quot;: {</span>
-<span class="s1">        &quot;$set&quot;: {</span>
-<span class="s1">            &quot;exampleField&quot;: &quot;Happy Birthday, Muriel!&quot;</span>
-<span class="s1">        }</span>
-<span class="s1">    }</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/data/updatebyid&quot;</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-bash">curl -X POST -H &quot;Content-Type: application/json&quot; -d '{
+    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
+    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
+    &quot;acc&quot;: &quot;&quot;,
+    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,
+    &quot;coll&quot;: &quot;items&quot;,
+    &quot;query&quot;: {
+        &quot;_id&quot; : &quot;jQ4ZwEbBUj&quot;
+    },
+     &quot;doc&quot;: {
+        &quot;$set&quot;: {
+            &quot;exampleField&quot;: &quot;Happy Birthday, Muriel!&quot;
+        }
+    }
+}' &quot;https://api.scorocode.ru/api/v1/data/updatebyid&quot;</code></pre>
 
 </div>
 <p><strong>Responses:</strong></p>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="p">{}</span> <span class="err">//</span> <span class="err">updated</span> <span class="err">document</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : false,
+    &quot;result&quot;      : {} // updated document
+}</code></pre>
 
 </div>
 <div class="admonition failure">
 <p class="admonition-title">Error</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Error</span> <span class="err">code</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Error text&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : true,
+    &quot;errCode&quot;     : 4XX/5XX, // Error code
+    &quot;errMsg&quot;      : &quot;Error text&quot;
+}</code></pre>
 
 </div>
 <hr />
@@ -1251,48 +1219,42 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">cURL example</p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
-<span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
-<span class="s1">    &quot;acc&quot;: &quot;&quot;,</span>
-<span class="s1">    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,</span>
-<span class="s1">    &quot;coll&quot;: &quot;items&quot;,</span>
-<span class="s1">    &quot;query&quot;: {</span>
-<span class="s1">        &quot;exampleField&quot;: { </span>
-<span class="s1">            &quot;$eq&quot;: &quot;Today is June, 18. It&#39;</span>s Muriel<span class="s1">&#39;s birthday! Muriel is now 20 years old. Happy Birthday, Muriel!&quot;</span>
-<span class="s1">        }</span>
-<span class="s1">    },</span>
-<span class="s1">    &quot;sort&quot;: {</span>
-<span class="s1">        &quot;updatedAt&quot;: 1</span>
-<span class="s1">    }, </span>
-<span class="s1">    &quot;fields&quot;: [&quot;updatedAt&quot;, &quot;exampleField&quot;, &quot;anotherExampleField&quot;],</span>
-<span class="s1">    &quot;limit&quot;: 10,</span>
-<span class="s1">    &quot;skip&quot;: 20</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/data/find&quot;</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-bash">curl -X POST -H &quot;Content-Type: application/json&quot; -d '{
+    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
+    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
+    &quot;acc&quot;: &quot;&quot;,
+    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,
+    &quot;coll&quot;: &quot;items&quot;,
+    &quot;query&quot;: {
+        &quot;exampleField&quot;: { 
+            &quot;$eq&quot;: &quot;Today is June, 18. It's Muriel's birthday! Muriel is now 20 years old. Happy Birthday, Muriel!&quot;
+        }
+    },
+    &quot;sort&quot;: {
+        &quot;updatedAt&quot;: 1
+    }, 
+    &quot;fields&quot;: [&quot;updatedAt&quot;, &quot;exampleField&quot;, &quot;anotherExampleField&quot;],
+    &quot;limit&quot;: 10,
+    &quot;skip&quot;: 20
+}' &quot;https://api.scorocode.ru/api/v1/data/find&quot;</code></pre>
 
 </div>
 <p><strong>Responses:</strong></p>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="err">string</span> <span class="err">//</span> <span class="err">base</span><span class="mi">64</span> <span class="err">encoded</span> <span class="err">string</span> <span class="err">with</span> <span class="err">BSON</span> <span class="err">formatted</span> <span class="err">data</span>  
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : false,
+    &quot;result&quot;      : string // base64 encoded string with BSON formatted data  
+}</code></pre>
 
 </div>
 <div class="admonition failure">
 <p class="admonition-title">Error</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Error</span> <span class="err">code</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Error text&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : true,
+    &quot;errCode&quot;     : 4XX/5XX, // Error code
+    &quot;errMsg&quot;      : &quot;Error text&quot;
+}</code></pre>
 
 </div>
 <hr />
@@ -1302,42 +1264,36 @@
 <p>Headers: <code>Content-Type: application/json</code></p>
 <div class="admonition tip">
 <p class="admonition-title">cURL example</p>
-<div class="codehilite"><pre><span></span>curl -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{</span>
-<span class="s1">    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,</span>
-<span class="s1">    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,</span>
-<span class="s1">    &quot;acc&quot;: &quot;&quot;,</span>
-<span class="s1">    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,</span>
-<span class="s1">    &quot;coll&quot;: &quot;items&quot;,</span>
-<span class="s1">    &quot;query&quot;: {</span>
-<span class="s1">        &quot;exampleField&quot;: { </span>
-<span class="s1">            &quot;$eq&quot;: &quot;Today is June, 18. It&#39;</span>s Muriel<span class="s1">&#39;s birthday! Muriel is now 20 years old. Happy Birthday, Muriel!&quot;</span>
-<span class="s1">        }</span>
-<span class="s1">    }</span>
-<span class="s1">}&#39;</span> <span class="s2">&quot;https://api.scorocode.ru/api/v1/data/count&quot;</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-bash">curl -X POST -H &quot;Content-Type: application/json&quot; -d '{
+    &quot;app&quot;: &quot;db8a1b41b8543397a798a181d9891b4c&quot;,
+    &quot;cli&quot;: &quot;ad6a8fe72ef7dfb9c46958aacb15196a&quot;,
+    &quot;acc&quot;: &quot;&quot;,
+    &quot;sess&quot;: &quot;rYgRe6xL2y8VccMJ&quot;,
+    &quot;coll&quot;: &quot;items&quot;,
+    &quot;query&quot;: {
+        &quot;exampleField&quot;: { 
+            &quot;$eq&quot;: &quot;Today is June, 18. It's Muriel's birthday! Muriel is now 20 years old. Happy Birthday, Muriel!&quot;
+        }
+    }
+}' &quot;https://api.scorocode.ru/api/v1/data/count&quot;</code></pre>
 
 </div>
 <p><strong>Responses:</strong></p>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;result&quot;</span>      <span class="p">:</span> <span class="err">int</span> <span class="err">//</span> <span class="err">Returns</span> <span class="err">the</span> <span class="err">count</span> <span class="err">of</span> <span class="err">documents</span> <span class="err">that</span> <span class="err">would</span> <span class="err">match</span> <span class="err">a</span> <span class="err">query</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : false,
+    &quot;result&quot;      : int // Returns the count of documents that would match a query
+}</code></pre>
 
 </div>
 <div class="admonition failure">
 <p class="admonition-title">Error</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;error&quot;</span>       <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;errCode&quot;</span>     <span class="p">:</span> <span class="mi">4</span><span class="err">XX/</span><span class="mi">5</span><span class="err">XX</span><span class="p">,</span> <span class="err">//</span> <span class="err">Error</span> <span class="err">code</span>
-    <span class="nt">&quot;errMsg&quot;</span>      <span class="p">:</span> <span class="s2">&quot;Error text&quot;</span>
-<span class="p">}</span>
-</pre></div>
-
+<pre class="codehilite"><code class="language-JSON">{
+    &quot;error&quot;       : true,
+    &quot;errCode&quot;     : 4XX/5XX, // Error code
+    &quot;errMsg&quot;      : &quot;Error text&quot;
+}</code></pre>
 
 </div>
               

@@ -951,43 +951,27 @@
 <p>Install <a href="https://github.com/Carthage/Carthage">Carthage</a></p>
 <p>Create an application</p>
 <p>Create the "Cartfile" file in the project root and write the following lines in it:</p>
-<div class="codehilite"><pre><span></span>github &quot;Alamofire/Alamofire&quot; ~&gt; 3.3
+<pre class="codehilite"><code>github &quot;Alamofire/Alamofire&quot; ~&gt; 3.3
 github &quot;SwiftyJSON/SwiftyJSON&quot;
-github &quot;daltoniam/Starscream&quot;
-</pre></div>
-
+github &quot;daltoniam/Starscream&quot;</code></pre>
 
 <p>Close the project in Xcode, start in the console:</p>
-<p><div class="codehilite"><pre><span></span>carthage update --platform iOS,Mac
-</pre></div>
-
+<p><pre class="codehilite"><code>carthage update --platform iOS,Mac</code></pre>
 Re-open the project in Xcode. To Target -&gt; General -&gt; Linked Frameworks and Libraries from <Project folder> -&gt; Carthage -&gt; Build -&gt; iOS, drag and drop 3 files:</p>
-<div class="codehilite"><pre><span></span>Alamofire.framework
+<pre class="codehilite"><code>Alamofire.framework
 SwiftyJSON.framework
-Starscream.framework
-</pre></div>
-
+Starscream.framework</code></pre>
 
 <p>To Target -&gt; Build Phases, add New Run Script Phase:</p>
 <p>Script:</p>
-<p><div class="codehilite"><pre><span></span>/usr/local/bin/carthage copy-frameworks
-</pre></div>
-
+<p><pre class="codehilite"><code>/usr/local/bin/carthage copy-frameworks</code></pre>
 Three Input Files:</p>
-<p><div class="codehilite"><pre><span></span>$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework
-</pre></div>
-
-<div class="codehilite"><pre><span></span>$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework
-</pre></div>
-
+<p><pre class="codehilite"><code>$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework</code></pre>
+<pre class="codehilite"><code>$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework</code></pre>
 and
-<div class="codehilite"><pre><span></span>$(SRCROOT)/Carthage/Build/iOS/Starscream.framework
-</pre></div>
-</p>
+<pre class="codehilite"><code>$(SRCROOT)/Carthage/Build/iOS/Starscream.framework</code></pre></p>
 <p>If bridging header is missing, create it with the following contents:</p>
-<div class="codehilite"><pre><span></span>#import &quot;BSONSerialization.h&quot;
-</pre></div>
-
+<pre class="codehilite"><code>#import &quot;BSONSerialization.h&quot;</code></pre>
 
 <p>Create a new group in the project (for example, SCLib).</p>
 <p>Add three folders to it (BSON, API, Model) from the SCLib project folder retrieved from the repository.</p>
